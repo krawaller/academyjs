@@ -1,0 +1,10 @@
+/*** built-in emcee chapter styles ***/
+
+body .reveal section .sectioncount {
+    font-size: 0.7em;
+}
+
+.reveal strong, .reveal dt, .reveal em {
+    color: #8799db;
+    font-weight: normal;
+}
