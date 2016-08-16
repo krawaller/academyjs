@@ -1,5 +1,5 @@
 var source = __dirname + '/../source/'
-var output = __dirname + '/../output/'
+var output = __dirname + '/../slides/'
 
 var revealTheme = 'black.css'
 var highlightTheme = 'zenburn.css'

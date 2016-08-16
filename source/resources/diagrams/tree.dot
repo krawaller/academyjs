@@ -1,0 +1,10 @@
+digraph {
+  rankdir = TD
+  bgcolor = transparent
+  grandpa -> dad -> me
+  grandpa -> auntie
+  auntie -> cousin1
+  auntie -> cousin2
+  dad -> brother1
+  dad -> brother2
+}

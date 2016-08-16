@@ -1,0 +1,11 @@
+digraph {
+  rankdir = TD
+  bgcolor = transparent
+
+  object -> type
+  object -> attribute
+  object -> children
+
+  attribute [label="attributes"]
+  children [label="children"]
+}

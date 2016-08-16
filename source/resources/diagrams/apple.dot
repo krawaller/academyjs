@@ -1,0 +1,7 @@
+digraph {
+  rankdir = LR
+  bgcolor = transparent
+  apple -> tastiness -> 7
+  apple -> ease -> 8
+  apple -> forbidden
+}

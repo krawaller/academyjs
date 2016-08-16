@@ -1,0 +1,14 @@
+digraph {
+  rankdir = LR
+  bgcolor = transparent
+
+  basket -> price -> 15
+  basket -> children -> apple
+  children -> banana
+
+  apple -> aprice -> 8
+  banana -> bprice -> 9
+
+  aprice [label="price"]
+  bprice [label="price"]
+}

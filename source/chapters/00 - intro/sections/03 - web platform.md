@@ -29,6 +29,10 @@ But a **modern SPA** (Single Page Application) is more like this:
 
 ~~~
 
-To complicate matters further, web tech has **escaped from the browser**:
+Additionally, web tech has **escaped from the browser**:
 
 ![](resources/diagrams/webapp-deploy.svg)
+
+~~~
+
+In essence: **web tech is on the (high) rise**, and even if you intend stay in a sheltered Java garden, knowledge about the web platform will serve you well.
