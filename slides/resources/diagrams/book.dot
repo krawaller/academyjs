@@ -1,0 +1,15 @@
+digraph {
+  rankdir = TD
+  bgcolor = transparent
+  book -> textNode1
+  book -> title -> textNode2
+  book -> textNode3
+  book -> author -> textNode4
+  book -> textNode5
+
+  textNode1 [label="textNode\n(whitespace)"]
+  textNode2 [label="textNode\n(Naiv Super)"]
+  textNode3 [label="textNode\n(whitespace)"]
+  textNode4 [label="textNode\n(Erlend Loe)"]
+  textNode5 [label="textNode\n(whitespace)"]
+}

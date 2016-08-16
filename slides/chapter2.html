@@ -34,12 +34,14 @@
                 <h3>Sections in this chapter</h3>
                 <ol>
                     <li><a href="#/3">Nested&nbsp;data</a></li>
-                    <li><a href="#/4">Exercise&nbsp;1&nbsp;-&nbsp;Geneaology</a></li>
+                    <li><a href="#/4">Exercise&nbsp;-&nbsp;Geneaology</a></li>
+                    <li><a href="#/5">XML</a></li>
+                    <li><a href="#/6">Exercise&nbsp;-&nbsp;Back&nbsp;to&nbsp;the&nbsp;past</a></li>
                 </ol>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 1/2</div>
+                    <div class='sectioncount'>Section 1/4</div>
                     <h3>Nested data</h3>
                     <p>Matryoshka time!</h3>
                 </section>
@@ -114,8 +116,8 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 2/2</div>
-                    <h3>Exercise 1 - Geneaology</h3>
+                    <div class='sectioncount'>Section 2/4</div>
+                    <h3>Exercise - Geneaology</h3>
                     <p>Adam and Eve, sitting in a tree</h3>
                 </section>
                 <section>
@@ -148,7 +150,120 @@
                     <p><img src="resources/diagrams/tree.svg" alt=""></p>
                 </section>
                 <section>
-                    <p>Send a <strong>definition of your rules</strong> and the <strong>encoded family tree</strong> to David!</p>
+                    <p>To submit the exercise;</p>
+                    <ul>
+                        <li><strong>create a folder with your name</strong> in the <code>webweek/submissions</code> dropbox</li>
+                        <li><strong>create a folder</strong> titled <code>Geneaology</code> in your folder</li>
+                        <li>put the <strong>definition of your rules</strong> and the <strong>encoded family tree</strong> in the folder. One file or two, your choice.</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 3/4</div>
+                    <h3>XML</h3>
+                    <p>not quite as cool as it used to be?</h3>
+                </section>
+                <section>
+                    <p>Before we talk about HTML, let&#39;s <strong>look at how XML (eXtensible Markup Language) has solved the exercise</strong> you just did!</p>
+                    <p>There is a lot more to be said about XML, but we don&#39;t care about that - only the syntax.</p>
+                </section>
+                <section>
+                    <p>Starting with the <strong>encapsulation</strong> - XML delimits objects by an <strong>opening and closing tag</strong> which <strong>contains the type</strong>.</p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">shelf</span>&gt;</span>
+</code></pre>
+                    <p>The opening tag is <code>&lt;type&gt;</code>, the closing is <code>&lt;/type&gt;</code> - the same but with a forward slash before the type.</p>
+                </section>
+                <section>
+                    <p>Now, <strong>attributes</strong>! They...</p>
+                    <ul>
+                        <li>are put <strong>inside the opening tag</strong>.</li>
+                        <li>are <strong>separated with whitespace</strong></li>
+                        <li>uses an <strong>equal sign before the value</strong></li>
+                        <li>has the <strong>value within quotes</strong></li>
+                    </ul>
+                </section>
+                <section>
+                    <p>So if we have a heavy oaken shelf, we get: </p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span> <span class="hljs-attr">wood</span>=<span class="hljs-string">"oak"</span> <span class="hljs-attr">weight</span>=<span class="hljs-string">"85kg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">shelf</span>&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>What about <strong>children</strong>? They are simply listed <strong>between the opening and closing tags</strong>!</p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span> <span class="hljs-attr">wood</span>=<span class="hljs-string">"oak"</span> <span class="hljs-attr">weight</span>=<span class="hljs-string">"85kg"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animal</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">shelf</span>&gt;</span>
+</code></pre>
+                    <p><strong>Whitespace is allowed</strong> wherever, which lets us space out the information in a readable way.</p>
+                </section>
+                <section>
+                    <p>For an element with no children, XML has an alternative shorthand with <strong>self-closing tags</strong>. So instead of this:</p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animal</span>&gt;</span>
+</code></pre>
+                    <p>we could have done this:</p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>/&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>Finally something that our discussion on nested data didn&#39;t touch: XML allows <strong>leaf text nodes</strong> as children, by simply typing normal text instead of an element within the tags:</p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">famous-quote</span>&gt;</span>Alea Jacta Est<span class="hljs-tag">&lt;/<span class="hljs-name">famous-quote</span>&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>Although powerful this also gives rise to <strong>ambiguity</strong>. For example, should we encode a book like this...</p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">book</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Naiv Super"</span> <span class="hljs-attr">author</span>=<span class="hljs-string">"Erlend Loe"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>...or like this?</p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">book</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Naiv Super<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span>Erlend Loe<span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span>
+</code></pre>
+                    <p>Also, we <strong>lied before</strong> - whitespace within the tags means text nodes! So the definition above...</p>
+                </section>
+                <section>
+                    <p>...will actually be interpreted as this:</p>
+                    <p><img src="resources/diagrams/book.svg" alt=""></p>
+                    <p>(although the interpreter can be made to skip those whitespace nodes)</p>
+                </section>
+                <section>
+                    <p>This does however allow us to do stuff like this, which can be quite useful:</p>
+                    <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">truth</span>&gt;</span>I am <span class="hljs-tag">&lt;<span class="hljs-name">emphasis</span>&gt;</span>really<span class="hljs-tag">&lt;/<span class="hljs-name">emphasis</span>&gt;</span> good at this!<span class="hljs-tag">&lt;/<span class="hljs-name">truth</span>&gt;</span>
+</code></pre>
+                    <p><img src="resources/diagrams/truth.svg" alt=""></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 4/4</div>
+                    <h3>Exercise - Back to the past</h3>
+                    <p>First blood 2</h3>
+                </section>
+                <section>
+                    <p>You all saw this one coming - your mission, should you choose to accept it, is to <strong>redo the geneaology in XML</strong>!</p>
+                    <p>The translation might mean that you have to make choices, as noted earlier. Bonus points if you reason around these!</p>
+                </section>
+                <section>
+                    <p>Before you submit your work you should <strong>validate your xml</strong>. A nice service for that can be found at <a href="https://validator.w3.org/#validate_by_input">https://validator.w3.org/#validate_by_input</a>.</p>
+                </section>
+                <section>
+                    <p>Note that you have to put this line:</p>
+                    <pre><code><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span><span class="hljs-meta">?&gt;</span></span>
+</code></pre>
+                    <p>...at the top of your xml, otherwise the validator will balk because <em>reasons</em>.</p>
+                </section>
+                <section>
+                    <p>You can <strong>ignore warnings</strong> - as long as you see the green banner, all is well:</p>
+                    <p><img src="resources/images/validation.png" alt=""></p>
+                </section>
+                <section>
+                    <p>To submit;</p>
+                    <ul>
+                        <li>make a <code>Back to the past</code> folder in the dropbox</li>
+                        <li>put a file there containing the XML:ified geneaology</li>
+                    </ul>
                 </section>
             </section>
 
@@ -179,7 +294,7 @@
                 var code = e.which ||  e.keyCode;
                 if (code === 13) {
                     window.location.href = basehref + "index.html?from=" + (2 - 1);
-                } else if (code >= 49 && code <= 2 + 48) {
+                } else if (code >= 49 && code <= 4 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 1);
                 }
                 if (2 < 3) {

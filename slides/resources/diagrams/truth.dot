@@ -1,0 +1,10 @@
+digraph {
+  rankdir = TD
+  bgcolor = transparent
+  truth -> iAm
+  truth -> emphasis -> really
+  truth -> good
+
+  iAm [label="I am "]
+  good [label="good at this!"]
+}

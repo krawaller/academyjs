@@ -1,5 +1,5 @@
 ---
-title: Exercise 1 - Geneaology
+title: Exercise - Geneaology
 tagline: Adam and Eve, sitting in a tree
 ---
 
@@ -37,7 +37,11 @@ Yes, that means it's not a tree in the traditional sense, but something like thi
 
 ~~~
 
-Send a **definition of your rules** and the **encoded family tree** to David!
+To submit the exercise;
+
+* **create a folder with your name** in the `webweek/submissions` dropbox
+* **create a folder** titled `Geneaology` in your folder
+* put the **definition of your rules** and the **encoded family tree** in the folder. One file or two, your choice.
 
 
 
