@@ -1,0 +1,24 @@
+digraph {
+  rankdir = LR
+  col0, col1, col2, col3, col4, col5, col6 [color=transparent; fontcolor=transparent]
+  row1start, row2start, row3start, row4start [label="hyakushō"]
+  row1start -> row2start -> row3start -> row4start [color=transparent]
+  row1end, row2end, row3end, row4end [label="ninja"]
+  row1end -> row2end -> row3end -> row4end [color=transparent]
+  col0 -> col1 -> col2 -> col3 -> col4 -> col5 -> col6 [color=transparent]
+  {rank=same; row1start, row2start, row3start, row4start, col0}
+  {rank=same; row1end, row2end, row3end, row4end, col6}
+
+  HTML, CSS, JS, curiosity [shape=box]
+  curiosity [label="webtech\ncuriosity"]
+
+  row1start -> HTML -> row1end [arrowhead=none]
+  row2start -> CSS -> row2end [arrowhead=none]
+  row3start -> JS -> row3end [arrowhead=none]
+  row4start -> curiosity -> row4end [arrowhead=none]
+
+  {rank=same; HTML, col4}
+  {rank=same; CSS, col1}
+  {rank=same; JS, col3}
+  {rank=same; curiosity, col5}
+}

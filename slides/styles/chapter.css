@@ -8,3 +8,18 @@ body .reveal section .sectioncount {
     color: #8799db;
     font-weight: normal;
 }
+
+
+.slides .question:before {
+  content: "?";
+  display: block;
+  font-size: 130px;
+  color: red;
+}
+
+.slides .answer:before {
+  content: "!";
+  display: block;
+  font-size: 130px;
+  color: red;
+}

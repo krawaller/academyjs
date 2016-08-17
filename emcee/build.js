@@ -41,9 +41,16 @@ function getFiles(srcpath) {
 }
 
 function makeSlides(lump){
-  return '<section>'+lump.split(DIVIDER).map(function(sec){
-    return marked( sec.replace(/^\s*|\s*$/g,'') )
-  }).join('</section><section>')+'</section>'
+  return lump.split(DIVIDER).map(function(sec){
+    var content = marked( sec.replace(/^\s*|\s*$/g,'') );
+    var pre = '<section>'
+    if (content.match(/^\s*<p>\s*<strong>Question:?<\/strong>/)){
+      pre = '<section class="question">'
+    } else if (content.match(/^\s*<p>\s*<strong>Answer:?<\/strong>/)){
+      pre = '<section class="answer">'
+    }
+    return pre + content + '</section>'
+  }).join('')
 }
 
 fsx.removeSync(output);

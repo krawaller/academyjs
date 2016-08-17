@@ -37,11 +37,12 @@
                     <li><a href="#/4">Exercise&nbsp;-&nbsp;Geneaology</a></li>
                     <li><a href="#/5">XML</a></li>
                     <li><a href="#/6">Exercise&nbsp;-&nbsp;Back&nbsp;to&nbsp;the&nbsp;past</a></li>
+                    <li><a href="#/7">HTML&nbsp;basics</a></li>
                 </ol>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 1/4</div>
+                    <div class='sectioncount'>Section 1/5</div>
                     <h3>Nested data</h3>
                     <p>Matryoshka time!</h3>
                 </section>
@@ -116,7 +117,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 2/4</div>
+                    <div class='sectioncount'>Section 2/5</div>
                     <h3>Exercise - Geneaology</h3>
                     <p>Adam and Eve, sitting in a tree</h3>
                 </section>
@@ -152,15 +153,14 @@
                 <section>
                     <p>To submit the exercise;</p>
                     <ul>
-                        <li><strong>create a folder with your name</strong> in the <code>webweek/submissions</code> dropbox</li>
-                        <li><strong>create a folder</strong> titled <code>Geneaology</code> in your folder</li>
+                        <li><strong>create a folder</strong> titled <code>Geneaology</code> in your submission folder</li>
                         <li>put the <strong>definition of your rules</strong> and the <strong>encoded family tree</strong> in the folder. One file or two, your choice.</li>
                     </ul>
                 </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 3/4</div>
+                    <div class='sectioncount'>Section 3/5</div>
                     <h3>XML</h3>
                     <p>not quite as cool as it used to be?</h3>
                 </section>
@@ -221,7 +221,8 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span>Erlend Loe<span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span>
 </code></pre>
-                    <p>Also, we <strong>lied before</strong> - whitespace within the tags means text nodes! So the definition above...</p>
+                    <p>Also, we <strong>lied before</strong> - whitespace within the tags does have meaning, as they
+                        <strong>become text nodes</strong>! So the definition above...</p>
                 </section>
                 <section>
                     <p>...will actually be interpreted as this:</p>
@@ -234,10 +235,18 @@
 </code></pre>
                     <p><img src="resources/diagrams/truth.svg" alt=""></p>
                 </section>
+                <section>
+                    <p>As a final note, learn the <strong>vocabulary</strong>:</p>
+                    <ul>
+                        <li>an <strong>element</strong> is an object / entity / thing / whatever you want to call it.</li>
+                        <li>an element is defined using an <strong>opening and a closing tag</strong> (or a self-closing tag).</li>
+                    </ul>
+                    <p>In essence: the element is the object, while the tags are the delimiters for the object.</p>
+                </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 4/4</div>
+                    <div class='sectioncount'>Section 4/5</div>
                     <h3>Exercise - Back to the past</h3>
                     <p>First blood 2</h3>
                 </section>
@@ -265,6 +274,67 @@
                         <li>put a file there containing the XML:ified geneaology</li>
                     </ul>
                 </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 5/5</div>
+                    <h3>HTML basics</h3>
+                    <p>finally getting to the point</h3>
+                </section>
+                <section>
+                    <p>Now, finally - <strong>HTML</strong>! HyperText Markup Language is a <strong>flavour of XML</strong> for <strong>encoding documents meant to be consumed on the web</strong>.</p>
+                    <p>Much like Photoshop expects a <code>.psd</code> file, your favourite <strong>web browser wants <code>.html</code></strong>.</p>
+                </section>
+                <section>
+                    <p>An <strong>HTML document</strong> has the following structure:</p>
+                    <p><img src="resources/diagrams/htmldoc.svg" alt=""></p>
+                </section>
+                <section>
+                    <p>Translated to <strong>actual HTML</strong>, that becomes the following:</p>
+                    <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></section>
+                <section>
+                    <p>By adding an optional leading <code>&lt;!DOCTYPE html&gt;</code> thingie, we tell the browser that this is a modern <strong>HTML5</strong> document.</p>
+                    <pre><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                    <p>We won&#39;t go into (too) much detail, but suffice to say that <strong>you should always include it</strong>.</p>
+                </section>
+                <section>
+                    <p>So, <strong>what metadata</strong> goes into the <code>&lt;head&gt;</code> tag?</p>
+                    <p>A heck of a lot of stuff, but we&#39;ll now cover <strong>two common examples</strong>.</p>
+                </section>
+                <section>
+                    <p>First off, we set the <strong>document title</strong> as a text node in a <code>&lt;title&gt;</code> tag:</p>
+                    <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>My AWESOME site<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+</code></pre>
+                    <p>The browser will then bubble that title up in different ways when your page is displayed.</p>
+                </section>
+                <section>
+                    <p>We can also set the <strong>character set</strong> as a <code>charset</code> attribute on a <code>&lt;meta&gt;</code> tag:</p>
+                    <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf8"</span>&gt;</span>
+</code></pre>
+                    <p>This (hopefully) prepares the browser to show <strong>Unicode characters</strong>. Without this, for example Swedish characters like <code>å</code>, <code>ä</code> and <code>ö</code> might be displayed wrongly.</p>
+                </section>
+                <section class="question">
+                    <p><strong>Question</strong>: Did you notice something weird on the previous slide?</p>
+                </section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: The <code>&lt;meta&gt;</code> element wasn&#39;t closed!</p>
+                    <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf8"</span>&gt;</span>
+</code></pre>
+                    <p>While XML is very strict, HTML takes a looser approach; <strong>elements which never have children do not have to be closed</strong>.</p>
+                </section>
+                <section>
+                    <p>There was a <strong>stricter flavour called XHTML</strong> which enforced well-formed XML, but that never took off.</p>
+                </section>
+                <section></section>
             </section>
 
             <section>
@@ -294,7 +364,7 @@
                 var code = e.which ||  e.keyCode;
                 if (code === 13) {
                     window.location.href = basehref + "index.html?from=" + (2 - 1);
-                } else if (code >= 49 && code <= 4 + 48) {
+                } else if (code >= 49 && code <= 5 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 1);
                 }
                 if (2 < 3) {

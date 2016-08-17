@@ -21,9 +21,16 @@ Here follows some points on what is to follow!
 
 * The **focus will be on concepts and the big picture**, not the nitty gritties.
 * We will strive to adhere to **accelerated learning's focus on exercises**, but
-* conveying the big picture does **require some dogfooding of theory**.
+* conveying the big picture does **require dogfooding of theory**.
 
 ~~~
 
 * It is **forbidden to keep a question to yourself**. Ask away! Because,
 * **there are no stupid questions**. <span style='text-decoration: line-through;'>Only stupid people.</span>
+
+~~~
+
+The **goal** boiled down - we want you to...
+
+* **understand the fundamentals** of <span style='text-decoration: line-through;'>the father</span> HTML, <span style='text-decoration: line-through;'>the son</span> CSS and <span style='text-decoration: line-through;'>the holy spirit</span> JavaScript.
+* **know where to go fo the specifics**

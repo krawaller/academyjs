@@ -16,7 +16,7 @@ Contact information:
 * **Twitter**: [krawaller](http://twitter.com/krawaller)
 * **Phone**: 0708-293094
 
-The week I'm yours to command! :)
+This week I'm yours to command! :)
 
 ~~~
 

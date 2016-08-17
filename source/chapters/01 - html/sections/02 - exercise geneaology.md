@@ -39,8 +39,7 @@ Yes, that means it's not a tree in the traditional sense, but something like thi
 
 To submit the exercise;
 
-* **create a folder with your name** in the `webweek/submissions` dropbox
-* **create a folder** titled `Geneaology` in your folder
+* **create a folder** titled `Geneaology` in your submission folder
 * put the **definition of your rules** and the **encoded family tree** in the folder. One file or two, your choice.
 
 

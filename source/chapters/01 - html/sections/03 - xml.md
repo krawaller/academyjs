@@ -17,7 +17,6 @@ Starting with the **encapsulation** - XML delimits objects by an **opening and c
 
 The opening tag is `<type>`, the closing is `</type>` - the same but with a forward slash before the type.
 
-
 ~~~
 
 
@@ -89,7 +88,8 @@ Although powerful this also gives rise to **ambiguity**. For example, should we 
 </book>
 ```
 
-Also, we **lied before** - whitespace within the tags means text nodes! So the definition above...
+Also, we **lied before** - whitespace within the tags does have meaning, as they 
+**become text nodes**! So the definition above...
 
 ~~~
 
@@ -108,3 +108,13 @@ This does however allow us to do stuff like this, which can be quite useful:
 ```
 
 ![](resources/diagrams/truth.svg)
+
+~~~
+
+As a final note, learn the **vocabulary**:
+
+* an **element** is an object / entity / thing / whatever you want to call it.
+* an element is defined using an **opening and a closing tag** (or a self-closing tag).
+
+In essence: the element is the object, while the tags are the delimiters for the object.
+
