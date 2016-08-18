@@ -1,0 +1,17 @@
+digraph {
+  rankdir = LR
+  bgcolor = transparent
+
+  subgraph cluster_old {
+    label="Old HTML"
+    bold, i
+  }
+
+  subgraph cluster_new {
+    label="New HTML"
+    strong, em
+  }
+
+  bold -> strong
+  i -> em
+}

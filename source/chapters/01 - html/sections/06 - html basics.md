@@ -76,12 +76,14 @@ This (hopefully) prepares the browser to show **Unicode characters**. Without th
 <meta charset="utf8">
 ```
 
-While XML is very strict, HTML takes a looser approach; **elements which never have children do not have to be closed**.
+What's up with that?!
+
+~~~
+
+While XML is very strict, HTML takes a looser approach; **elements which never have children do not have to be closed**. OCD:ers beware!
+
+(to the point: [http://xkcd.com/859/](http://xkcd.com/859/)
 
 ~~~
 
 There was a **stricter flavour called XHTML** which enforced well-formed XML, but that never took off.
-
-~~~
-
-

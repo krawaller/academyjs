@@ -114,7 +114,7 @@ This does however allow us to do stuff like this, which can be quite useful:
 As a final note, learn the **vocabulary**:
 
 * an **element** is an object / entity / thing / whatever you want to call it.
-* an element is defined using an **opening and a closing tag** (or a self-closing tag).
+* an element is defined using an opening and a closing **tag** (or a self-closing tag).
 
-In essence: the element is the object, while the tags are the delimiters for the object.
+In essence: the **element is the object**, while the **tags are the delimiters** for the object.
 

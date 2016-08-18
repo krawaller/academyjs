@@ -13,9 +13,18 @@ For each part of the holy trinity, and for your interest in the web platform, **
 
 ~~~
 
+Throughout the week we'll be **using Github for exercise submissions**. 
+
+~~~
+
 To submit;
 
 * jot down your answers in a simple **text file**
-* **create a folder with your name** in the `webweek/submissions` dropbox folder
-* make a **ninjaness** folder in your submission folder
-* **place the text file** in the ninjaness folder
+* **fork the repo** at [github.com/krawaller/academysubs](https://github.com/krawaller/academysubs)
+* **download the repo** to your computer
+* make sure you are working in the **`gh-pages` branch**
+* create a folder named after your github user in `submissions/ninjaness`.
+* **add the text file** with your answers to that folder 
+* **commit** the changes
+* **push** to your fork
+* now **make a pull request**!

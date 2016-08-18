@@ -38,11 +38,14 @@
                     <li><a href="#/5">XML</a></li>
                     <li><a href="#/6">Exercise&nbsp;-&nbsp;Back&nbsp;to&nbsp;the&nbsp;past</a></li>
                     <li><a href="#/7">HTML&nbsp;basics</a></li>
+                    <li><a href="#/8">HTML&nbsp;content</a></li>
+                    <li><a href="#/9">Semantics</a></li>
+                    <li><a href="#/10">Two&nbsp;special&nbsp;elements</a></li>
                 </ol>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 1/5</div>
+                    <div class='sectioncount'>Section 1/8</div>
                     <h3>Nested data</h3>
                     <p>Matryoshka time!</h3>
                 </section>
@@ -50,10 +53,10 @@
                     <p>Understanding HTML requires understanding the concept of <strong>nested data</strong>. So that is where we&#39;ll start!</p>
                 </section>
                 <section>
-                    <p>We will approach this in a roundabout way by <strong>designing our own language</strong>.</p>
+                    <p>We will approach this in a roundabout way by <strong>designing our own language</strong>. </p>
+                    <p>Let&#39;s first consider how we <strong>describe a single object</strong>!</p>
                 </section>
                 <section>
-                    <p>Let&#39;s first consider how we <strong>describe a single object</strong>.</p>
                     <p>We need some kind of <strong>divider</strong>, so that people can tell where the description <strong>starts and ends</strong>. Why not go with <strong>opening and closing brackets</strong>?</p>
                     <pre><code>[   ]
 </code></pre></section>
@@ -117,7 +120,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 2/5</div>
+                    <div class='sectioncount'>Section 2/8</div>
                     <h3>Exercise - Geneaology</h3>
                     <p>Adam and Eve, sitting in a tree</h3>
                 </section>
@@ -153,14 +156,16 @@
                 <section>
                     <p>To submit the exercise;</p>
                     <ul>
-                        <li><strong>create a folder</strong> titled <code>Geneaology</code> in your submission folder</li>
+                        <li>navigate to <code>/submissions/geneaology</code> in your fork of <code>academysubs</code></li>
+                        <li><strong>create a folder</strong> with your user name there</li>
                         <li>put the <strong>definition of your rules</strong> and the <strong>encoded family tree</strong> in the folder. One file or two, your choice.</li>
+                        <li><strong>push</strong> and make a <strong>pull request</strong></li>
                     </ul>
                 </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 3/5</div>
+                    <div class='sectioncount'>Section 3/8</div>
                     <h3>XML</h3>
                     <p>not quite as cool as it used to be?</h3>
                 </section>
@@ -239,14 +244,14 @@
                     <p>As a final note, learn the <strong>vocabulary</strong>:</p>
                     <ul>
                         <li>an <strong>element</strong> is an object / entity / thing / whatever you want to call it.</li>
-                        <li>an element is defined using an <strong>opening and a closing tag</strong> (or a self-closing tag).</li>
+                        <li>an element is defined using an opening and a closing <strong>tag</strong> (or a self-closing tag).</li>
                     </ul>
-                    <p>In essence: the element is the object, while the tags are the delimiters for the object.</p>
+                    <p>In essence: the <strong>element is the object</strong>, while the <strong>tags are the delimiters</strong> for the object.</p>
                 </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 4/5</div>
+                    <div class='sectioncount'>Section 4/8</div>
                     <h3>Exercise - Back to the past</h3>
                     <p>First blood 2</h3>
                 </section>
@@ -270,14 +275,16 @@
                 <section>
                     <p>To submit;</p>
                     <ul>
-                        <li>make a <code>Back to the past</code> folder in the dropbox</li>
-                        <li>put a file there containing the XML:ified geneaology</li>
+                        <li>navigate to <code>/submissions/backtothepast</code> in your fork of <code>academysubs</code></li>
+                        <li><strong>create a folder</strong> with your user name there</li>
+                        <li>put the <strong>definition of your rules</strong> and the <strong>encoded family tree</strong> in the folder. One file or two, your choice.</li>
+                        <li><strong>push</strong> and make a <strong>pull request</strong></li>
                     </ul>
                 </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 5/5</div>
+                    <div class='sectioncount'>Section 5/8</div>
                     <h3>HTML basics</h3>
                     <p>finally getting to the point</h3>
                 </section>
@@ -329,12 +336,228 @@
                     <p><strong>Answer</strong>: The <code>&lt;meta&gt;</code> element wasn&#39;t closed!</p>
                     <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf8"</span>&gt;</span>
 </code></pre>
-                    <p>While XML is very strict, HTML takes a looser approach; <strong>elements which never have children do not have to be closed</strong>.</p>
+                    <p>What&#39;s up with that?!</p>
+                </section>
+                <section>
+                    <p>While XML is very strict, HTML takes a looser approach; <strong>elements which never have children do not have to be closed</strong>. OCD:ers beware!</p>
+                    <p>(to the point: <a href="http://xkcd.com/859/">http://xkcd.com/859/</a></p>
                 </section>
                 <section>
                     <p>There was a <strong>stricter flavour called XHTML</strong> which enforced well-formed XML, but that never took off.</p>
                 </section>
-                <section></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 6/8</div>
+                    <h3>HTML content</h3>
+                    <p>let's talk body parts</h3>
+                </section>
+                <section>
+                    <p>As we said before the <code>&lt;body&gt;</code> element contains the actual <strong>contents</strong> of the document, that the browser will show on screen.</p>
+                    <p>So, what does that look like?</p>
+                </section>
+                <section>
+                    <p>Basically, the browser will display the <strong>leaf text nodes</strong>.</p>
+                    <p>So let&#39;s say we feed it this <strong>nonsense</strong>:</p>
+                    <pre><code><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>BAR BAZ! <span class="hljs-tag">&lt;<span class="hljs-name">bin</span> <span class="hljs-attr">gnu</span>=<span class="hljs-string">"wee"</span>&gt;</span>boo<span class="hljs-tag">&lt;/<span class="hljs-name">bin</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">laj</span> <span class="hljs-attr">boo</span>=<span class="hljs-string">"foo"</span>&gt;</span>gnork.<span class="hljs-tag">&lt;/<span class="hljs-name">laj</span>&gt;</span>
+       Amen.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></section>
+                <section>
+                    <p>...then the browser would display this:</p>
+                    <p><img src="resources/images/nonsense.png" alt=""></p>
+                </section>
+                <section>
+                    <p>This means we can deduce that...</p>
+                    <ul>
+                        <li>the <strong>element types and attributes are simply ignored</strong>,</li>
+                        <li>as are the <strong>linebreaks</strong>.</li>
+                        <li>Sequences of <strong>spaces are collapsed</strong> into a single space.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>But of course, there are <strong>elements with special meaning</strong> to the browser. These fall into <strong>two categories</strong>:</p>
+                    <ul>
+                        <li><strong>Block level</strong> elements that take up the full width of the document.</li>
+                        <li><strong>Inline</strong> elements that flow with the text. This is the default, as we saw with our nonsense elements.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>The perhaps <strong>most common elements</strong> are...</p>
+                    <ul>
+                        <li>the <strong><code>&lt;div&gt;</code></strong>, short for divider, which is a generic block level element.</li>
+                        <li>the <strong><code>&lt;span&gt;</code></strong>, which is a generic inline element.</li>
+                    </ul>
+                </section>
+                <section class="question">
+                    <p><strong>Quiz</strong>: Knowing what you just learned, what would this look like?</p>
+                    <pre><code><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Thorin Fili <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">Kili</span>=<span class="hljs-string">"Balin"</span>&gt;</span>Dwalin<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">Oin</span>=<span class="hljs-string">"Gloin"</span>&gt;</span>Dori <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Nori<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> Ori<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+       Bifur
+       <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Bombur<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: Well, like this of course!</p>
+                    <p><img src="resources/images/dwarves.png" alt=""></p>
+                </section>
+                <section>
+                    <p>On the subject of generic elements - there are also some <strong>generic attributes</strong> that we can set on all elements.</p>
+                    <p>For example the <strong><code>lang</code> attribute</strong>...</p>
+                    <pre><code>&lt;<span class="hljs-keyword">div</span> lang=<span class="hljs-string">"en"</span>&gt;...&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                    <p>...allows the browser to provide checking and dictionary lookup for the correct language.</p>
+                </section>
+                <section>
+                    <p>MDN has a <strong>full list of generic attributes</strong> here:</p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes</a></p>
+                    <p>We&#39;ll meet a few of them later.</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 7/8</div>
+                    <h3>Semantics</h3>
+                    <p>say what you mean</h3>
+                </section>
+                <section>
+                    <p>You just met <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> which are generic elements. But, most elements you use will be <strong>semantic</strong>.</p>
+                    <p>And this is important - the primary purpose of HTML is to <strong>explain to the browser what the content is</strong>, so that the browser can make informed decisions on how to display it.</p>
+                </section>
+                <section>
+                    <p>Here are some <strong>common elements</strong> useful for <strong>marking up text</strong>:</p>
+                    <ul>
+                        <li>A <code>&lt;p&gt;</code> element represents a <strong>paragraph</strong> of text. It will be displayed as a block with a bottom margin.</li>
+                        <li>The <code>&lt;h1&gt; - &lt;h6&gt;</code> elements are <strong>headlines</strong>. 1 is the most important. They are blocks, with a bottom margin and a bigger and bolder look the lower the number.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Some more;</p>
+                    <ul>
+                        <li>A <code>&lt;strong&gt;</code> element is used for an inline section of text that you want to <strong>highlight</strong>. Typically displayed in bold.</li>
+                        <li>Similarly there is an <code>&lt;em&gt;</code> element for <strong>emphasis</strong>, typically displayed in italics.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>So feeding the browser this:</p>
+                    <pre><code><span class="hljs-meta">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Monday 24/3<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ashley was so <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>annoying<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> today, OMG!!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>When I badmouth someone, I do it to their <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>FACE<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>!
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></section>
+                <section>
+                    <p>...we get this:</p>
+                    <p><img src="resources/images/textstyle.png" alt=""></p>
+                </section>
+                <section>
+                    <p>There are <strong>rules on where in the structure an element can appear</strong>, which all depend on their semantic meaning. </p>
+                    <p>For example, it makes no sense to nest a paragraph inside another paragraph, so that is forbidden.</p>
+                </section>
+                <section>
+                    <p>In earlier HTML, many elements dealt with <strong>appearance</strong>. For example;</p>
+                    <ul>
+                        <li>there was a <code>&lt;bold&gt;</code> element</li>
+                        <li>and an <code>&lt;i&gt;</code> element (short for italics).</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Now they are <strong>deprecated in favour of semantic versions</strong>:</p>
+                    <p><img src="resources/diagrams/evolve.svg" alt=""></p>
+                    <p>This is typical for HTML as a whole.</p>
+                </section>
+                <section>
+                    <p>So, what <strong>other elements</strong> we can use? </p>
+                    <p>Too many to mention, but check the full reference at MDN:</p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 8/8</div>
+                    <h3>Two special elements</h3>
+                    <p>Tweedle-dum, tweedle-dee</h3>
+                </section>
+                <section>
+                    <p>In this section we&#39;ll take a quick look at <strong>two important elements</strong>. First out is the <strong><code>&lt;img&gt;</code></strong> element, which lets us insert images into our documents:</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"resources/images/6074.png"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"sooo pretty"</span>&gt;</span>
+</code></pre>
+                    <p><img src="resources/images/6074.png" title="sooo pretty"></p>
+                </section>
+                <section>
+                    <p>We control the image mainly through two attributes:</p>
+                    <ul>
+                        <li><code>src</code> which is an <strong>address to the image file</strong>. It can be either
+                            <ul>
+                                <li><strong>relative</strong>, pointing to a resource on the same server, or</li>
+                                <li><strong>absolute</strong>, pointing anywhere</li>
+                            </ul>
+                        </li>
+                        <li><code>title</code>, which will be displayed as a tooltip in most browsers</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Note that as <strong>an image will never have a child</strong>, just like the meta element, we <strong>don&#39;t need to close it</strong>.</p>
+                </section>
+                <section>
+                    <p>When you need all <strong>details about a specific element</strong> such as the <code>img</code> element, MDN again has you covered:</p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img</a></p>
+                </section>
+                <section class="question">
+                    <p><strong>Quiz</strong>: Now for the second important element, which is arguably the <strong>most important of all</strong>. Can you think of which it is?</p>
+                </section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: The <em>anchor</em>, or <code>&lt;a&gt;</code> element as we know it! Without that, there would be no inter<strong>net</strong>.</p>
+                </section>
+                <section>
+                    <p>The anchor has a <strong><code>href</code> attribute</strong> which control what page it leads to. </p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://bit.ly/hespeaksthetruth"</span>&gt;</span>the truth<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+                    <p>Just like image sources it can be <strong>relative or absolute</strong>.</p>
+                </section>
+                <section>
+                    <p>Here is MDN:s full spec for the anchor element:</p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a</a></p>
+                </section>
+                <section class="question">
+                    <p><strong>Quiz</strong>: The image tooltip is controlled by a title attribute, but for the link text we used the element children. Why didn&#39;t they go for something like this...</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.boardgamegeek.com/"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"best site ever"</span>&gt;</span>
+</code></pre>
+                    <p>...instead of the current syntax which requires a closing tag?</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.boardgamegeek.com/"</span>&gt;</span>best site ever<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+                </section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: We might want to make images or big chunks of text or html into a link, but inside an attribute we can only enter text!</p>
+                    <p>But be careful looking for meaning in syntax details; most of it has just kind of happened.</p>
+                </section>
+                <section>
+                    <p>A final short note; before the anchor, all elements we saw just meant</p>
+                    <ul>
+                        <li><strong>semantic meaning</strong> and some</li>
+                        <li><strong>default styling</strong>, most importantly whether they are</li>
+                        <li><strong>block or inline</strong>.</li>
+                    </ul>
+                    <p>But the anchor is the first example of an element that has <strong>behaviour</strong>.</p>
+                </section>
+                <section>
+                    <p>There are others, but they work mostly in conjunction with JavaScript, so we leave them be for now.</p>
+                </section>
             </section>
 
             <section>
@@ -364,7 +587,7 @@
                 var code = e.which ||  e.keyCode;
                 if (code === 13) {
                     window.location.href = basehref + "index.html?from=" + (2 - 1);
-                } else if (code >= 49 && code <= 5 + 48) {
+                } else if (code >= 49 && code <= 8 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 1);
                 }
                 if (2 < 3) {

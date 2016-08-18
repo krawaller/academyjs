@@ -39,8 +39,10 @@ Yes, that means it's not a tree in the traditional sense, but something like thi
 
 To submit the exercise;
 
-* **create a folder** titled `Geneaology` in your submission folder
+* navigate to `/submissions/geneaology` in your fork of `academysubs`
+* **create a folder** with your user name there
 * put the **definition of your rules** and the **encoded family tree** in the folder. One file or two, your choice.
+* **push** and make a **pull request**
 
 
 

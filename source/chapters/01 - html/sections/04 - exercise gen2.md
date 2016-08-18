@@ -31,5 +31,7 @@ You can **ignore warnings** - as long as you see the green banner, all is well:
 
 To submit;
 
-* make a `Back to the past` folder in the dropbox
-* put a file there containing the XML:ified geneaology
+* navigate to `/submissions/backtothepast` in your fork of `academysubs`
+* **create a folder** with your user name there
+* put the **definition of your rules** and the **encoded family tree** in the folder. One file or two, your choice.
+* **push** and make a **pull request**

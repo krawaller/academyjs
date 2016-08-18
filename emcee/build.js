@@ -44,7 +44,7 @@ function makeSlides(lump){
   return lump.split(DIVIDER).map(function(sec){
     var content = marked( sec.replace(/^\s*|\s*$/g,'') );
     var pre = '<section>'
-    if (content.match(/^\s*<p>\s*<strong>Question:?<\/strong>/)){
+    if (content.match(/^\s*<p>\s*<strong>(Question|Quiz):?<\/strong>/)){
       pre = '<section class="question">'
     } else if (content.match(/^\s*<p>\s*<strong>Answer:?<\/strong>/)){
       pre = '<section class="answer">'

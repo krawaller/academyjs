@@ -9,9 +9,9 @@ Understanding HTML requires understanding the concept of **nested data**. So tha
 
 We will approach this in a roundabout way by **designing our own language**. 
 
-~~~
+Let's first consider how we **describe a single object**!
 
-Let's first consider how we **describe a single object**.
+~~~
 
 We need some kind of **divider**, so that people can tell where the description **starts and ends**. Why not go with **opening and closing brackets**?
 
