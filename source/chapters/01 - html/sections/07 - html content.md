@@ -95,3 +95,4 @@ MDN has a **full list of generic attributes** here:
 [https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes)
 
 We'll meet a few of them later.
+
