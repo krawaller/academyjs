@@ -1,0 +1,16 @@
+digraph {
+  bgcolor = transparent
+  rankdir = TD
+
+  CSSsel [label="CSS\nselector", color=grey, fontcolor=grey]
+
+  desc [label="element\ndescriptions", color=grey, fontcolor=grey]
+
+  combinators [label="combinators"]
+
+  CSSsel -> desc [color=grey]
+
+  CSSsel -> combinators [color=grey]
+
+
+}

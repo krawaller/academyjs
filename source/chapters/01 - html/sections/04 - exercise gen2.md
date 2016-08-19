@@ -31,7 +31,7 @@ You can **ignore warnings** - as long as you see the green banner, all is well:
 
 To submit;
 
-* navigate to `/submissions/backtothepast` in your fork of `academysubs`
-* **create a folder** with your user name there
-* put the **definition of your rules** and the **encoded family tree** in the folder. One file or two, your choice.
-* **push** and make a **pull request**
+1. navigate to `/submissions/backtothepast` in your fork of `academysubs`
+1. **create a folder** with your user name there
+1. put the **definition of your rules** and the **encoded family tree** in the folder. One file or two, your choice.
+1. **push** and make a **pull request**

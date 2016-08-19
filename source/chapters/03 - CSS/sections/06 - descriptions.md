@@ -5,6 +5,8 @@ tagline: The wanted poster
 
 The most important part of a CSS selector is to **describe elements** that should be selected.
 
+![](resources/diagrams/css-selectors-desc.svg)
+
 ~~~
 
 There are **five different aspects** that we can describe, each with its own syntax:

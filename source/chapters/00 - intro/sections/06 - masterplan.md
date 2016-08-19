@@ -21,7 +21,7 @@ Here follows some points on what is to follow!
 
 * The **focus will be on concepts and the big picture**, not the nitty gritties.
 * We will strive to adhere to **accelerated learning's focus on exercises**, but
-* conveying the big picture does **require dogfooding of theory**.
+* conveying the big picture does **require gorgeing of theory**.
 
 ~~~
 

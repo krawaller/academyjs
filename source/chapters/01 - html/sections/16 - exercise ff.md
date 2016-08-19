@@ -57,9 +57,9 @@ If you're using IntelliJ or Webstorm you can do that from inside the IDE.
 
 When you're done you know what to do;
 
-* navigate to `/submissions/fightingfantasy` in your fork of `academysubs`
-* **copy in your game folder** there, but **rename it to your username**
-* **commit**, **push** and create a **pull request**!
+1. navigate to `/submissions/fightingfantasy` in your fork of `academysubs`
+1. **copy in your game folder** there, but **rename it to your username**
+1. **commit**, **push** and create a **pull request**!
 
 ~~~
 

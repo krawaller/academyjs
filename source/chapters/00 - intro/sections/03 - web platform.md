@@ -25,7 +25,7 @@ Traditionally, **web apps looked like this**:
 
 ![](resources/diagrams/webapp-before.svg)
 
-Web tech was just the UI. The real coding was done in `php` / `ruby` / `java`.
+Web tech was just the UI. The real coding was done in `php` / `ruby` / `java` / `.NET`.
 
 ~~~
 
@@ -41,4 +41,4 @@ Additionally, web tech has **escaped from the browser**:
 
 ~~~
 
-In essence: **web tech is on the (high) rise**, and even if you intend stay in a sheltered Java garden, knowledge about the web platform will serve you well.
+In essence: **web tech is on the (high) rise**, and even if you intend to stay in a sheltered Java garden, knowledge about the web platform will serve you well.

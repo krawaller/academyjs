@@ -170,6 +170,7 @@
                 </section>
                 <section>
                     <p>The most important part of a CSS selector is to <strong>describe elements</strong> that should be selected.</p>
+                    <p><img src="resources/diagrams/css-selectors-desc.svg" alt=""></p>
                 </section>
                 <section>
                     <p>There are <strong>five different aspects</strong> that we can describe, each with its own syntax:</p>
@@ -264,8 +265,49 @@
                     <p>Many wanted posters!</h3>
                 </section>
                 <section>
-                    <p>bla bla combining many descriptions</p>
+                    <p>Let&#39;s now look at the other half of selectors, namely how we <strong>combine</strong> descriptions!</p>
+                    <p><img src="resources/diagrams/css-selectors-comb.svg" alt=""></p>
+                </section>
+                <section>
+                    <p>There are <strong>four different ways</strong> that descriptions can be combined, which we&#39;ll look at one at a time:</p>
                     <p><img src="resources/diagrams/css-combinators.svg" alt=""></p>
+                </section>
+                <section>
+                    <p>The perhaps most common one is the <strong>descendant combinator</strong>. By having <strong>two descriptions with space between</strong>...</p>
+                    <pre><code><span class="hljs-selector-tag">div</span> p
+</code></pre>
+                    <p>...we match all elements that</p>
+                    <ul>
+                        <li><strong>match the last description</strong></li>
+                        <li>have an <strong>ancestor matching the first description</strong>. This can be any number of generations up the tree.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>I think it is <strong>unfortunate that the descendant combinators doesn&#39;t have a non-space symbol</strong>, something like this:</p>
+                    <pre><code><span class="hljs-selector-tag">div</span> _ p
+</code></pre>
+                    <p>Whitespace elsewhere in CSS doesn&#39;t have meaning, but here it suddenly does. To help with this, <strong>think of descendant combinators as invisible symbols</strong>!</p>
+                </section>
+                <section><pre><code><span class="hljs-selector-tag">div</span> &gt; p
+</code></pre>
+                    <p>The <strong>child combinator</strong> is very similar to descendant selector, but here the first selector must match the <strong>parent</strong> and not just any ancestor.</p>
+                    <p>Thus the child combinator is <strong>smaller in scope</strong> than the descendant combinator.</p>
+                </section>
+                <section><pre><code><span class="hljs-selector-tag">div</span> ~ p
+</code></pre>
+                    <p>The <strong>sibling combinator</strong> is similar to the descendant combinator, but <strong>works horisontally</strong> instead: it matches elements that...</p>
+                    <ul>
+                        <li><strong>match the last description</strong></li>
+                        <li>have an <strong>older sibling that matches the first description</strong></li>
+                    </ul>
+                </section>
+                <section><pre><code><span class="hljs-selector-tag">div</span> + p
+</code></pre>
+                    <p>Finally the <strong>adjacent sibling combinator</strong> works in the exact same way, but requires the <strong>neighbouring older sibling to match the first description</strong>.</p>
+                </section>
+                <section>
+                    <p>The two <strong>sibling combinators are not often used</strong>, but they are <strong>good at what they do</strong>.</p>
+                    <p>Solving that problem with other means would require <strong>brittle workarounds</strong>, something you often see from web developers who don&#39;t know about them.</p>
                 </section>
             </section>
             <section>

@@ -96,7 +96,7 @@ The id allows us to **easily target the element** from CSS or JavaScript.
 
 ~~~
 
-The **`class` attribute** is a bit special: in that string of text you can list a number of "classes" separated by spaces, to **group elements together** in themed categories.
+The **`class` attribute** is a bit special: in that string of text you can list a number of "classes" separated by spaces. Many elements can share the same class(es), allowing us to **group elements together** in themed categories.
 
 ```html
 <div class="wrapper article">...</div>
@@ -127,5 +127,6 @@ Finally - if for whatever reason you want to insert a **comment** into HTML, or 
 
 ~~~
 
+Beware that these **comments still shows up in the source code**, so no cursing!
 
-Beware that it still shows up in the source code, so no cursing!
+![](resources/images/comments.png)
