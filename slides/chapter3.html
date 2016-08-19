@@ -34,13 +34,13 @@
                 <h3>Sections in this chapter</h3>
                 <ol>
                     <li><a href="#/3">Overview</a></li>
-                    <li><a href="#/4">Inclusion</a></li>
-                    <li><a href="#/5">CSS&nbsp;selectors</a></li>
-                    <li><a href="#/6">Element&nbsp;descriptions</a></li>
-                    <li><a href="#/7">Combinators</a></li>
-                    <li><a href="#/8">Exercise&nbsp;-&nbsp;Battle</a></li>
+                    <li><a href="#/4">CSS&nbsp;selectors</a></li>
+                    <li><a href="#/5">Element&nbsp;descriptions</a></li>
+                    <li><a href="#/6">Combinators</a></li>
+                    <li><a href="#/7">Exercise&nbsp;-&nbsp;Battle</a></li>
+                    <li><a href="#/8">Inclusion</a></li>
                     <li><a href="#/9">basic&nbsp;styles</a></li>
-                    <li><a href="#/10">Order</a></li>
+                    <li><a href="#/10">Exercise&nbsp;-&nbsp;Style&nbsp;the&nbsp;game</a></li>
                 </ol>
             </section>
             <section>
@@ -81,61 +81,6 @@
             <section>
                 <section>
                     <div class='sectioncount'>Section 2/8</div>
-                    <h3>Inclusion</h3>
-                    <p>smuggling in the paint</h3>
-                </section>
-                <section>
-                    <p>There are <strong>3 different ways</strong> in which we can <strong>apply CSS</strong> to our content:</p>
-                    <ul>
-                        <li>linking to a <strong>separate <code>.css</code> file</strong></li>
-                        <li>putting it into a <strong><code>style</code> tag</strong></li>
-                        <li>inlining it in the <strong><code>style</code> attribute</strong> of an element</li>
-                    </ul>
-                    <p>(We can also <strong>mutate styles dynamically</strong> with JavaScript, but that comes later!)</p>
-                </section>
-                <section>
-                    <p>A separate file means using a <strong><code>&lt;link&gt;</code> element</strong>:</p>
-                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles/mystyles.css"</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-        <span class="hljs-comment">&lt;!-- lots of HTML content here --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
-                </section>
-                <section>
-                    <p>The <strong><code>&lt;style&gt;</code> element</strong> simply <strong>wraps the CSS code</strong>. It can go anywhere, but customarily in the head:</p>
-                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
-<span class="hljs-comment">/* Lots of CSS code here */</span>
-        </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-        <span class="hljs-comment">&lt;!-- lots of HTML content here --&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
-                </section>
-                <section>
-                    <p><strong>Inlining in the <code>style</code> attribute</strong> means we don&#39;t need selectors, since the style rules are applied to this particular element.</p>
-                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-weight: bold;"</span>&gt;</span>It will never happen again.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</code></pre>
-                </section>
-                <section class="question">
-                    <p><strong>Quiz</strong>: Which method do you think is the most common, and why?</p>
-                </section>
-                <section class="answer">
-                    <p><strong>Answer</strong>: In almost all situations <strong>a separate file is preferred</strong>, since that gives us a good separation of concerns. Style tags arguably gives us that too, so the primary thing is to <strong>be careful with inlining styles</strong>.</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 3/8</div>
                     <h3>CSS selectors</h3>
                     <p>The targeting mechanism</h3>
                 </section>
@@ -164,7 +109,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 4/8</div>
+                    <div class='sectioncount'>Section 3/8</div>
                     <h3>Element descriptions</h3>
                     <p>The wanted poster</h3>
                 </section>
@@ -260,7 +205,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 5/8</div>
+                    <div class='sectioncount'>Section 4/8</div>
                     <h3>Combinators</h3>
                     <p>Many wanted posters!</h3>
                 </section>
@@ -312,12 +257,67 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 6/8</div>
+                    <div class='sectioncount'>Section 5/8</div>
                     <h3>Exercise - Battle</h3>
                     <p>winner takes it all</h3>
                 </section>
                 <section>
                     <p>weee selector battle!</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 6/8</div>
+                    <h3>Inclusion</h3>
+                    <p>smuggling in the paint</h3>
+                </section>
+                <section>
+                    <p>There are <strong>3 different ways</strong> in which we can <strong>apply CSS</strong> to our content:</p>
+                    <ul>
+                        <li>linking to a <strong>separate <code>.css</code> file</strong></li>
+                        <li>putting it into a <strong><code>style</code> tag</strong></li>
+                        <li>inlining it in the <strong><code>style</code> attribute</strong> of an element</li>
+                    </ul>
+                    <p>(We can also <strong>mutate styles dynamically</strong> with JavaScript, but that comes later!)</p>
+                </section>
+                <section>
+                    <p>A separate file means using a <strong><code>&lt;link&gt;</code> element</strong>:</p>
+                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles/mystyles.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- lots of HTML content here --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>The <strong><code>&lt;style&gt;</code> element</strong> simply <strong>wraps the CSS code</strong>. It can go anywhere, but customarily in the head:</p>
+                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+<span class="hljs-comment">/* Lots of CSS code here */</span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- lots of HTML content here --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p><strong>Inlining in the <code>style</code> attribute</strong> means we don&#39;t need selectors, since the style rules are applied to this particular element.</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-weight: bold;"</span>&gt;</span>It will never happen again.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                </section>
+                <section class="question">
+                    <p><strong>Quiz</strong>: Which method do you think is the most common, and why?</p>
+                </section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: In almost all situations <strong>a separate file is preferred</strong>, since that gives us a good separation of concerns. Style tags arguably gives us that too, so the primary thing is to <strong>be careful with inlining styles</strong>.</p>
                 </section>
             </section>
             <section>
@@ -333,18 +333,12 @@
             <section>
                 <section>
                     <div class='sectioncount'>Section 8/8</div>
-                    <h3>Order</h3>
-                    <p>let the race begin!</h3>
-                </section>
-                <section class="question">
-                    <p><strong>Question</strong>: Hey - if styles can be applied in different ways, <strong>in which order</strong> are they applied?</p>
-                </section>
-                <section class="answer">
-                    <p><strong>Answer</strong>: Great question. Understanding this is super important! Here&#39;s the gist:</p>
-                    <p><img src="resources/diagrams/css-order.svg" alt=""></p>
+                    <h3>Exercise - Style the game</h3>
+                    <p>Hiring an illustrator</h3>
                 </section>
                 <section>
-                    <p>specificity, what is that?</p>
+                    <p>Time to return to your choose-your-own-adventure and make it <strong>slightly less drab</strong>!</p>
+                    <p><img src="resources/images/houseofhell.jpg" alt=""></p>
                 </section>
             </section>
 
