@@ -8,16 +8,16 @@ digraph {
 
   combinators [label="combinators"]
 
-  CSSsel:w -> desc
+  CSSsel -> desc
 
-  CSSsel:e -> combinators
+  CSSsel -> combinators
 
   descfoo [shape=box; label="describes a\nsingle element"]
 
   combfoo [shape=box; label="combines many\ndescriptions"]
 
-  desc -> descfoo
+  desc -> descfoo [dir=none]
 
-  combinators -> combfoo
+  combinators -> combfoo [dir=none]
 
 }

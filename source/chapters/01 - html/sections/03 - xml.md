@@ -19,7 +19,6 @@ The opening tag is `<type>`, the closing is `</type>` - the same but with a forw
 
 ~~~
 
-
 Now, **attributes**! They...
 
 * are put **inside the opening tag**.

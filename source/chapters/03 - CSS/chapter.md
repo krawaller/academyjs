@@ -1,5 +1,5 @@
 ---
-title: CSS
+title: CSS basics
 tagline: layout and style
 ---
 

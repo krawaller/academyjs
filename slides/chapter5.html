@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>JavaScript basics</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="styles/reveal.css">
+    <link rel="stylesheet" href="styles/theme.css" id="theme">
+    <link rel="stylesheet" href="styles/code.css">
+    <link rel="stylesheet" href="styles/chapter.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <div class="chapternumber"> chapter 5 of 7 </div>
+                <h1>JavaScript basics</h1>
+                <span>the holy spirit</span>
+            </section>
+
+            <section>
+                <h3>Sections in this chapter</h3>
+                <ol>
+                    <li><a href="#/2">The&nbsp;language</a></li>
+                    <li><a href="#/3">Inclusion</a></li>
+                    <li><a href="#/4">Statements&nbsp;vs&nbsp;Expressions</a></li>
+                    <li><a href="#/5">Scope</a></li>
+                    <li><a href="#/6">Context</a></li>
+                    <li><a href="#/7">Asynchronicity</a></li>
+                </ol>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 1/6</div>
+                    <h3>The language</h3>
+                    <p>meeting the wize men</h3>
+                </section>
+                <section></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 2/6</div>
+                    <h3>Inclusion</h3>
+                    <p>plugging it in</h3>
+                </section>
+                <section></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 3/6</div>
+                    <h3>Statements vs Expressions</h3>
+                    <p>You say potato</h3>
+                </section>
+                <section></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 4/6</div>
+                    <h3>Scope</h3>
+                    <p>what is within reach?</h3>
+                </section>
+                <section></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 5/6</div>
+                    <h3>Context</h3>
+                    <p>what is within reach NOW?</h3>
+                </section>
+                <section></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 6/6</div>
+                    <h3>Asynchronicity</h3>
+                    <p>Time travel!</h3>
+                </section>
+                <section>
+                    <p>wee</p>
+                </section>
+            </section>
+
+            <section>
+                <h3>Next</h3><a href="chapter6.html">The DOM</a>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="js/head.js" type="text/javascript"></script>
+    <script src="js/reveal.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            showNotes: false,
+            transition: 'slide'
+        })
+
+        window.onload = function() {
+
+            var basehref = window.location.href.replace(/chapter\d.*?$/, '')
+
+            window.addEventListener("keypress", function(e) {
+                var code = e.which ||  e.keyCode;
+                if (code === 13) {
+                    window.location.href = basehref + "index.html?from=" + (5 - 1);
+                } else if (code >= 49 && code <= 6 + 48) {
+                    window.location.hash = "#/" + (code - 48 + 1 + 0);
+                }
+                if (5 < 7) {
+                    if (code === 99) { // the letter C for next Chapter
+                        window.location.href = basehref + "chapter" + (5 + 1) + ".html"
+                    }
+                }
+            });
+
+            var links = document.querySelectorAll("a.link");
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                link.innerHTML = link.innerHTML.replace(/ /g, '&nbsp;')
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

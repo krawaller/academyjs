@@ -18,7 +18,7 @@ We also need an **editor**. As HTML, CSS and JavaScript isn't (necessarily) comp
 
 Finally you need a **good resources** for looking up specifics. I recommend Mozilla Developer Network, or **MDN** for short.
 
-![](images/resources/mdn.png)
+![](resources/images/mdn.png)
 
 Find it at [https://developer.mozilla.org/](https://developer.mozilla.org/).
 

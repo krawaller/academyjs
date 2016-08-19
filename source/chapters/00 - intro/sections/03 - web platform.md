@@ -15,6 +15,12 @@ The **Web platform** is really the combination of three separate technologies:
 
 ~~~
 
+(And we don't acknowledge the existence of **flash** either)
+
+![](resources/diagrams/platform-flash.svg)
+
+~~~
+
 Traditionally, **web apps looked like this**:
 
 ![](resources/diagrams/webapp-before.svg)

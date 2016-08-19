@@ -13,8 +13,8 @@ Basically, the browser will display the **leaf text nodes**.
 
 So let's say we feed it this **nonsense**:
 
-```
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html>
     <head></head>
     <body>
@@ -57,8 +57,8 @@ The perhaps **most common elements** are...
 
 **Quiz**: Knowing what you just learned, what would this look like?
 
-```
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html>
     <head></head>
     <body>
@@ -78,21 +78,54 @@ The perhaps **most common elements** are...
 
 ~~~
 
-On the subject of generic elements - there are also some **generic attributes** that we can set on all elements.
+On the subject of generic elements - there are also some **generic attributes** that we can set on all elements. MDN has a full list here:
 
-For example the **`lang` attribute**...
+[https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes)
+
+We'll take a look at a few of them now:
+
+~~~
+
+The **`id` attribute** allows us to give a unique name to an element that for some reason is special:
+
+```html
+<div id="app-wrapper">...</div>
+```
+
+The id allows us to **easily target the element** from CSS or JavaScript.
+
+~~~
+
+The **`class` attribute** is a bit special: in that string of text you can list a number of "classes" separated by spaces, to **group elements together** in themed categories.
+
+```html
+<div class="wrapper article">...</div>
+```
+
+These **groups can then be targeted** in CSS or JavaScript.
+
+~~~
+
+And just to show an example that doesn't have to do with targeting - the **`lang` attribute**...
 
 ```
 <div lang="en">...</div>
 ```
 
-...allows the browser to provide checking and dictionary lookup for the correct language.
+...allows the browser to **provide spell checking and dictionary lookup** for the correct language.
 
 ~~~
 
-MDN has a **full list of generic attributes** here:
+Finally - if for whatever reason you want to insert a **comment** into HTML, or temporarily exclude some elements from the flow, just wrap it within `<!--` and `-->`:
 
-[https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes)
+```html
+<div>a paragraph of text</div>
+<!-- <div>a paragraph which has been commented out</div>
+<div>this paragraph too is outcommented</div>-->
+<div>but this one is still visible!</div>
+```
 
-We'll meet a few of them later.
+~~~
 
+
+Beware that it still shows up in the source code, so no cursing!

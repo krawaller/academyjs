@@ -26,7 +26,7 @@ Some more;
 So feeding the browser this:
 
 ```
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head></head>
     <body>

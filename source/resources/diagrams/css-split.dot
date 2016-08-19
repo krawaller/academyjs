@@ -1,0 +1,7 @@
+digraph {
+  rankdir = TD
+  bgcolor = transparent
+  CSS -> selectors
+  CSS -> rule
+  rule [label="style rules"]
+}

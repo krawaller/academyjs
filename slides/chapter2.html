@@ -23,7 +23,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 2 of 3 </div>
+                <div class="chapternumber"> chapter 2 of 7 </div>
                 <h1>HTML</h1>
                 <span>lingua franca of the web</span>
             </section>
@@ -364,7 +364,7 @@
                 <section>
                     <p>Basically, the browser will display the <strong>leaf text nodes</strong>.</p>
                     <p>So let&#39;s say we feed it this <strong>nonsense</strong>:</p>
-                    <pre><code><span class="hljs-meta">&lt;!doctype html&gt;</span>
+                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
@@ -373,7 +373,8 @@
        Amen.
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre></section>
+</code></pre>
+                </section>
                 <section>
                     <p>...then the browser would display this:</p>
                     <p><img src="resources/images/nonsense.png" alt=""></p>
@@ -402,7 +403,7 @@
                 </section>
                 <section class="question">
                     <p><strong>Quiz</strong>: Knowing what you just learned, what would this look like?</p>
-                    <pre><code><span class="hljs-meta">&lt;!doctype html&gt;</span>
+                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
@@ -412,22 +413,45 @@
        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Bombur<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre></section>
+</code></pre>
+                </section>
                 <section class="answer">
                     <p><strong>Answer</strong>: Well, like this of course!</p>
                     <p><img src="resources/images/dwarves.png" alt=""></p>
                 </section>
                 <section>
-                    <p>On the subject of generic elements - there are also some <strong>generic attributes</strong> that we can set on all elements.</p>
-                    <p>For example the <strong><code>lang</code> attribute</strong>...</p>
-                    <pre><code>&lt;<span class="hljs-keyword">div</span> lang=<span class="hljs-string">"en"</span>&gt;...&lt;/<span class="hljs-keyword">div</span>&gt;
-</code></pre>
-                    <p>...allows the browser to provide checking and dictionary lookup for the correct language.</p>
+                    <p>On the subject of generic elements - there are also some <strong>generic attributes</strong> that we can set on all elements. MDN has a full list here:</p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes</a></p>
+                    <p>We&#39;ll take a look at a few of them now:</p>
                 </section>
                 <section>
-                    <p>MDN has a <strong>full list of generic attributes</strong> here:</p>
-                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes</a></p>
-                    <p>We&#39;ll meet a few of them later.</p>
+                    <p>The <strong><code>id</code> attribute</strong> allows us to give a unique name to an element that for some reason is special:</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app-wrapper"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <p>The id allows us to <strong>easily target the element</strong> from CSS or JavaScript.</p>
+                </section>
+                <section>
+                    <p>The <strong><code>class</code> attribute</strong> is a bit special: in that string of text you can list a number of &quot;classes&quot; separated by spaces, to <strong>group elements together</strong> in themed categories.</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrapper article"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                    <p>These <strong>groups can then be targeted</strong> in CSS or JavaScript.</p>
+                </section>
+                <section>
+                    <p>And just to show an example that doesn&#39;t have to do with targeting - the <strong><code>lang</code> attribute</strong>...</p>
+                    <pre><code>&lt;<span class="hljs-keyword">div</span> lang=<span class="hljs-string">"en"</span>&gt;...&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+                    <p>...allows the browser to <strong>provide spell checking and dictionary lookup</strong> for the correct language.</p>
+                </section>
+                <section>
+                    <p>Finally - if for whatever reason you want to insert a <strong>comment</strong> into HTML, or temporarily exclude some elements from the flow, just wrap it within <code>&lt;!--</code> and <code>--&gt;</code>:</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a paragraph of text<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- &lt;div&gt;a paragraph which has been commented out&lt;/div&gt;
+&lt;div&gt;this paragraph too is outcommented&lt;/div&gt;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>but this one is still visible!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>Beware that it still shows up in the source code, so no cursing!</p>
                 </section>
             </section>
             <section>
@@ -456,7 +480,7 @@
                 </section>
                 <section>
                     <p>So feeding the browser this:</p>
-                    <pre><code><span class="hljs-meta">&lt;!doctype html&gt;</span>
+                    <pre><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
@@ -636,7 +660,7 @@
             </section>
 
             <section>
-                <h3>Next</h3><a href="chapter3.html">CSS</a>
+                <h3>Next</h3><a href="chapter3.html">CSS basics</a>
             </section>
 
         </div>
@@ -665,7 +689,7 @@
                 } else if (code >= 49 && code <= 9 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 2);
                 }
-                if (2 < 3) {
+                if (2 < 7) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (2 + 1) + ".html"
                     }
