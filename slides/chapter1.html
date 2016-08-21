@@ -23,7 +23,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 1 of 6 </div>
+                <div class="chapternumber"> chapter 1 of 3 </div>
                 <h1>Introduction</h1>
                 <span>Setting the scene</span>
             </section>
@@ -94,7 +94,7 @@
                 <section>
                     <p>Traditionally, <strong>web apps looked like this</strong>:</p>
                     <p><img src="resources/diagrams/webapp-before.svg" alt=""></p>
-                    <p>Web tech was just the UI. The real coding was done in <code>php</code> / <code>ruby</code> / <code>java</code> / <code>.NET</code>.</p>
+                    <p>Web tech was <strong>just the UI</strong>. The real coding was done in <code>php</code> / <code>ruby</code> / <code>java</code> / <code>.NET</code>.</p>
                 </section>
                 <section>
                     <p>But a <strong>modern SPA</strong> (Single Page Application) is more like this:</p>
@@ -103,6 +103,10 @@
                 <section>
                     <p>Additionally, web tech has <strong>escaped from the browser</strong>:</p>
                     <p><img src="resources/diagrams/webapp-deploy.svg" alt=""></p>
+                </section>
+                <section>
+                    <p>And blurring the lines even further - there are framework to <strong>compile web to native code</strong>:</p>
+                    <p><img src="resources/diagrams/webapp-deploy-compile.svg" alt=""></p>
                 </section>
                 <section>
                     <p>In essence: <strong>web tech is on the (high) rise</strong>, and even if you intend to stay in a sheltered Java garden, knowledge about the web platform will serve you well.</p>
@@ -129,6 +133,7 @@
                         <li>The web course will be <strong>centered around these slides</strong>.</li>
                         <li>They are <strong>available online</strong> at <a href="http://blog.krawaller.se/academyjs/slides">http://blog.krawaller.se/academyjs/slides</a>.</li>
                         <li>I will <strong>regularly update</strong> them during the week.</li>
+                        <li>You&#39;ll <strong>get a pdf</strong> when we&#39;re done!</li>
                     </ul>
                 </section>
                 <section>
@@ -163,16 +168,28 @@
                     <p>This is not just for consuming web content - the <strong>developer tools</strong> inside the browser is an integral part of our setup. Consider it part of our IDE without the I!</p>
                 </section>
                 <section>
-                    <p>We also need an <strong>editor</strong>. As HTML, CSS and JavaScript isn&#39;t (necessarily) compiled, any text editor can be used, but preferrably one with good web tooling. You have two good choices:</p>
+                    <p>We also need an <strong>editor</strong>. As HTML, CSS and JavaScript isn&#39;t (necessarily) compiled, any text editor can be used, but preferrably one with <strong>good web tooling</strong>. You have two good choices:</p>
                     <ul>
-                        <li><strong>Upgrade IntelliJ</strong> (the Community edition does not support JS)</li>
+                        <li><strong>Upgrade IntelliJ</strong> (Community edition doesn&#39;t support JS)</li>
                         <li>Install the <strong>free trial for Webstorm</strong> which is very similar</li>
                     </ul>
+                </section>
+                <section>
+                    <p>We&#39;ll likely also <strong>play around with NodeJS</strong>, I haven&#39;t quite decided yet.</p>
+                    <p>It is a useful tool anyhow, so if you&#39;re curious go ahead and install it!</p>
                 </section>
                 <section>
                     <p>Finally you need a <strong>good resources</strong> for looking up specifics. I recommend Mozilla Developer Network, or <strong>MDN</strong> for short.</p>
                     <p><img src="resources/images/mdn.png" alt=""></p>
                     <p>Find it at <a href="https://developer.mozilla.org/">https://developer.mozilla.org/</a>.</p>
+                </section>
+                <section>
+                    <p>I do <strong>NOT recomment W3Schools</strong>, who will be at the top of every googling. They are good at SEO, not explanations and documentations.</p>
+                    <p>I suggest either</p>
+                    <ul>
+                        <li><strong>blocking them from google results</strong>, or </li>
+                        <li><strong>prefixing your queries with MDN</strong></li>
+                    </ul>
                 </section>
                 <section>
                     <p>Whichever resource you use, it is important to <strong>have somewhere within reach to go for details</strong>. </p>
@@ -193,7 +210,7 @@
                     <p>(I promise to try to not let the answer to question 4 affect me)</p>
                 </section>
                 <section>
-                    <p>Throughout the week we&#39;ll be <strong>using Github for exercise submissions</strong>.</p>
+                    <p>Throughout the week we&#39;ll be <strong>using Github for exercise submissions</strong>. This &quot;exercise&quot; serves as an excuse to try that process out.</p>
                 </section>
                 <section>
                     <p>To submit;</p>
@@ -241,7 +258,7 @@
                 } else if (code >= 49 && code <= 5 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 0);
                 }
-                if (1 < 6) {
+                if (1 < 3) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (1 + 1) + ".html"
                     }

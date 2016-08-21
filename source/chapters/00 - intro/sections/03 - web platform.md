@@ -25,7 +25,7 @@ Traditionally, **web apps looked like this**:
 
 ![](resources/diagrams/webapp-before.svg)
 
-Web tech was just the UI. The real coding was done in `php` / `ruby` / `java` / `.NET`.
+Web tech was **just the UI**. The real coding was done in `php` / `ruby` / `java` / `.NET`.
 
 ~~~
 
@@ -38,6 +38,12 @@ But a **modern SPA** (Single Page Application) is more like this:
 Additionally, web tech has **escaped from the browser**:
 
 ![](resources/diagrams/webapp-deploy.svg)
+
+~~~
+
+And blurring the lines even further - there are framework to **compile web to native code**:
+
+![](resources/diagrams/webapp-deploy-compile.svg)
 
 ~~~
 

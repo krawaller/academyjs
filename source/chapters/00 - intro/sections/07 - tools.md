@@ -9,10 +9,16 @@ This is not just for consuming web content - the **developer tools** inside the 
 
 ~~~
 
-We also need an **editor**. As HTML, CSS and JavaScript isn't (necessarily) compiled, any text editor can be used, but preferrably one with good web tooling. You have two good choices:
+We also need an **editor**. As HTML, CSS and JavaScript isn't (necessarily) compiled, any text editor can be used, but preferrably one with **good web tooling**. You have two good choices:
 
-* **Upgrade IntelliJ** (the Community edition does not support JS)
+* **Upgrade IntelliJ** (Community edition doesn't support JS)
 * Install the **free trial for Webstorm** which is very similar
+
+~~~
+
+We'll likely also **play around with NodeJS**, I haven't quite decided yet.
+
+It is a useful tool anyhow, so if you're curious go ahead and install it!
 
 ~~~
 
@@ -21,6 +27,15 @@ Finally you need a **good resources** for looking up specifics. I recommend Mozi
 ![](resources/images/mdn.png)
 
 Find it at [https://developer.mozilla.org/](https://developer.mozilla.org/).
+
+~~~
+
+I do **NOT recomment W3Schools**, who will be at the top of every googling. They are good at SEO, not explanations and documentations.
+
+I suggest either
+
+* **blocking them from google results**, or 
+* **prefixing your queries with MDN**
 
 ~~~
 

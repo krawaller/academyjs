@@ -51,3 +51,10 @@ Then to **submit the exercise**:
 1. **create a folder** with your user name there
 1. copy the **styled site files** into the folder.
 1. **push** and make a **pull request**
+
+~~~
+
+**Challenge**: If you grow bored with styling your game - do a **pull request to the CSS battle app** to make it look less crap!
+
+The git repo is at [https://github.com/krawaller/cssbattle](https://github.com/krawaller/cssbattle), and my sad CSS is in `styles.css` in the root.
+

@@ -13,7 +13,7 @@ For each part of the holy trinity, and for your interest in the web platform, **
 
 ~~~
 
-Throughout the week we'll be **using Github for exercise submissions**. 
+Throughout the week we'll be **using Github for exercise submissions**. This "exercise" serves as an excuse to try that process out.
 
 ~~~
 

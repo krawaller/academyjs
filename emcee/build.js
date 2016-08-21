@@ -127,6 +127,8 @@ var course = {
       return fm(fsx.readFileSync(source+'chapters/'+chapDir+'/sections/'+secFile)+'')
     })
     return chapter;
+  }).filter(function(c){
+    return !c.attributes.draft;
   })
 }
 

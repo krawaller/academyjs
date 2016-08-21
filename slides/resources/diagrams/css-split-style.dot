@@ -1,0 +1,11 @@
+digraph {
+  rankdir = TD
+  bgcolor = transparent
+  CSS -> selectors [color=gray]
+  CSS -> rule [color=gray]
+  CSS, selectors [color=gray,fontcolor=gray]
+
+  rule [label="style rules"]
+
+
+}

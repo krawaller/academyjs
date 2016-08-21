@@ -23,7 +23,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 3 of 6 </div>
+                <div class="chapternumber"> chapter 3 of 3 </div>
                 <h1>CSS basics</h1>
                 <span>layout and style</span>
             </section>
@@ -39,7 +39,7 @@
                     <li><a href="#/6">Combinators</a></li>
                     <li><a href="#/7">Exercise&nbsp;-&nbsp;Battle</a></li>
                     <li><a href="#/8">Inclusion</a></li>
-                    <li><a href="#/9">basic&nbsp;styles</a></li>
+                    <li><a href="#/9">Basic&nbsp;styles</a></li>
                     <li><a href="#/10">The&nbsp;browser&nbsp;devtools</a></li>
                     <li><a href="#/11">Exercise&nbsp;-&nbsp;Style&nbsp;the&nbsp;game</a></li>
                 </ol>
@@ -260,10 +260,26 @@
                 <section>
                     <div class='sectioncount'>Section 5/9</div>
                     <h3>Exercise - Battle</h3>
-                    <p>winner takes it all</h3>
+                    <p>2 (or 3) goes in, 1 comes out</h3>
                 </section>
                 <section>
-                    <p>weee selector battle!</p>
+                    <p>This is a small <strong>intermission exercise</strong> to do some <strong>practicing on CSS selectors</strong>. You&#39;ll need...</p>
+                    <ul>
+                        <li>a <strong>reference</strong> at the ready - MDN works fine</li>
+                        <li><strong>an opponent or two</strong>. Literaly - you must be 2 or 3 people.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Go to <a href="http://blog.krawaller.se/cssbattle/">http://blog.krawaller.se/cssbattle/</a>, and you&#39;re met with this simple form:</p>
+                    <p><img src="resources/images/battlehall.png" alt=""></p>
+                </section>
+                <section>
+                    <p>Enter the <strong>same room as your opponent(s)</strong>, but using <strong>different names</strong>. You will then all end up in the same <strong>battle arena</strong>:</p>
+                    <p><img src="resources/images/battle.png" alt=""></p>
+                </section>
+                <section>
+                    <p>Each of you can <strong>set your selector</strong>, and <strong>everyone sees everyone&#39;s results</strong>.</p>
+                    <p>There are <strong>no hardcoded rules</strong>, but we suggest you <strong>take turn to make a selection</strong>, and then the other(s) should <strong>make the same selection</strong> as fast as possible.</p>
                 </section>
             </section>
             <section>
@@ -324,11 +340,81 @@
             <section>
                 <section>
                     <div class='sectioncount'>Section 7/9</div>
-                    <h3>basic styles</h3>
+                    <h3>Basic styles</h3>
                     <p>lipstick on a p</h3>
                 </section>
                 <section>
-                    <p>wdokefirgj</p>
+                    <p>We spent a lot of time talking about selectors. Now for the <strong>style rules</strong>!</p>
+                    <p><img src="resources/diagrams/css-split-style.svg" alt=""></p>
+                </section>
+                <section>
+                    <p>The <strong>syntax</strong> is simple enough:</p>
+                    <pre><code class="lang-css"><span class="hljs-selector-tag">font-weight</span>: <span class="hljs-selector-tag">bold</span>;
+</code></pre>
+                    <ol>
+                        <li>You type out the <strong>property</strong> you want to style,</li>
+                        <li>then a <strong>colon separator</strong>,</li>
+                        <li>followed by the <strong>value</strong> for the property,</li>
+                        <li>and finally an <strong>ending semicolon</strong>.</li>
+                    </ol>
+                </section>
+                <section>
+                    <p>We can have <strong>as many rules as we want</strong> within the brackets:</p>
+                    <pre><code class="lang-css"><span class="hljs-selector-class">.article</span> <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">font-weight</span>: normal;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#EEE</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1.5em</span>;
+}
+</code></pre>
+                </section>
+                <section>
+                    <p>So, <strong>what properties</strong> can we style? Lots and lots! For this <strong>basic section</strong>, here follows a few you need to know!</p>
+                </section>
+                <section>
+                    <div style="float:right;width:300px;background-color:white;margin-left:1em;margin-bottom:2em;">
+                        <div style="background-color: magenta; padding-left: 20px; margin-left:10px">
+                            Alea Jacta Est
+                        </div>
+                    </div>
+
+                    <p>In all four cardinal directions you can apply <strong>padding</strong> and <strong>margin</strong> to an element. The inner div has:</p>
+                    <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">background-color</span>: magenta;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">2em</span>;
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1em</span>;
+}
+</code></pre>
+                </section>
+                <section>
+                    <p>In essence, <strong>padding becomes part of the element</strong> while <strong>margin sizes the void around it</strong> that no other element can enter.</p>
+                </section>
+                <section>
+                    <div style="float:right;width:300px;background-color:white;margin-left:1em;margin-bottom:2em;">
+                        <div style="background-color: magenta; padding-left: 20px; margin-left:10px;border-left: 3px solid red;">
+                            Alea Jacta Est
+                        </div>
+                    </div>
+
+                    <p><strong>Between the margin and padding</strong> you can apply a <strong>border</strong>.</p>
+                    <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">background-color</span>: magenta;
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">2em</span>;
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1em</span>;
+  <span class="hljs-attribute">border-left</span>: <span class="hljs-number">3px</span> solid red;
+}
+</code></pre>
+                </section>
+                <section>
+                    <p>If you want the same margin/padding/border in all directions, there is a <strong>shorthand</strong>:</p>
+                    <pre><code><span class="hljs-keyword">border: </span><span class="hljs-number">3</span>px solid red<span class="hljs-comment">;</span>
+</code></pre></section>
+                <section>
+                    <p>You&#39;ve already seen <strong><code>background-color</code></strong> - the good twin to that is <strong><code>color</code> which colours the text</strong>.</p>
+                    <p>The <code>color</code> property is <strong>inherited</strong> to children, a trait it shares with some other properties.</p>
+                </section>
+                <section>
+                    <p>As we said there are many more properties, but now you <strong>have enough to get started</strong>.</p>
+                    <p>Note that <strong>these properties were all for looks</strong> - next chapter we&#39;ll talk more about <strong>layout</strong>!</p>
                 </section>
             </section>
             <section>
@@ -351,7 +437,6 @@
                         <li><strong>CSS experimenting</strong>, as you can toggle the styles, try out new values and even add completely new styles.</li>
                     </ul>
                 </section>
-                <section></section>
             </section>
             <section>
                 <section>
@@ -398,10 +483,16 @@
                         <li><strong>push</strong> and make a <strong>pull request</strong></li>
                     </ol>
                 </section>
+                <section class="challenge">
+                    <p><strong>Challenge</strong>: If you grow bored with styling your game - do a <strong>pull request to the CSS battle app</strong> to make it look less crap!</p>
+                    <p>The git repo is at <a href="https://github.com/krawaller/cssbattle">https://github.com/krawaller/cssbattle</a>, and my sad CSS is in <code>styles.css</code> in the root.</p>
+                </section>
             </section>
 
             <section>
-                <h3>Next</h3><a href="chapter4.html">Advanced CSS</a>
+                <h1>The end</h1>
+                <p>...or perhaps the beginning?</p><br/><br/>
+                <p><a href="index.html">back to index</a></p>
             </section>
 
         </div>
@@ -430,7 +521,7 @@
                 } else if (code >= 49 && code <= 9 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 1);
                 }
-                if (3 < 6) {
+                if (3 < 3) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (3 + 1) + ".html"
                     }

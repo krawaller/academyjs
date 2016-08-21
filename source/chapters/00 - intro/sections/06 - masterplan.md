@@ -16,6 +16,7 @@ Here follows some points on what is to follow!
 * The web course will be **centered around these slides**.
 * They are **available online** at [http://blog.krawaller.se/academyjs/slides](http://blog.krawaller.se/academyjs/slides).
 * I will **regularly update** them during the week.
+* You'll **get a pdf** when we're done!
 
 ~~~
 
