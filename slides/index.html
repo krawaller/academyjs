@@ -34,7 +34,6 @@
                 <li><a class="chapterlink" href="chapter4.html">Advanced CSS</a></li>
                 <li><a class="chapterlink" href="chapter5.html">JavaScript basics</a></li>
                 <li><a class="chapterlink" href="chapter6.html">The DOM</a></li>
-                <li><a class="chapterlink" href="chapter7.html">jQuery</a></li>
             </ul>
         </div>
     </div>
@@ -64,10 +63,10 @@
             if (code === 13 || code === 32) {
                 window.location = activeLink.href;
             } else if (code === 40) {
-                markLink(current === 7 - 1 ? 0 : current + 1);
+                markLink(current === 6 - 1 ? 0 : current + 1);
             } else if (code === 38) {
-                markLink(current === 0 ? 7 - 1 : current - 1);
-            } else if (code >= 49 && code <= 7 + 48) {
+                markLink(current === 0 ? 6 - 1 : current - 1);
+            } else if (code >= 49 && code <= 6 + 48) {
                 window.location = document.querySelectorAll(".chapterlink")[code - 49].href;
             }
         });

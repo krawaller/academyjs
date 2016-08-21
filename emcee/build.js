@@ -48,6 +48,8 @@ function makeSlides(lump){
       pre = '<section class="question">'
     } else if (content.match(/^\s*<p>\s*<strong>Answer:?<\/strong>/)){
       pre = '<section class="answer">'
+    } else if (content.match(/^\s*<p>\s*<strong>Challenge:?<\/strong>/)){
+      pre = '<section class="challenge">'
     }
     return pre + content + '</section>'
   }).join('')

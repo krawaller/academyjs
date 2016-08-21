@@ -23,7 +23,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 3 of 7 </div>
+                <div class="chapternumber"> chapter 3 of 6 </div>
                 <h1>CSS basics</h1>
                 <span>layout and style</span>
             </section>
@@ -40,12 +40,13 @@
                     <li><a href="#/7">Exercise&nbsp;-&nbsp;Battle</a></li>
                     <li><a href="#/8">Inclusion</a></li>
                     <li><a href="#/9">basic&nbsp;styles</a></li>
-                    <li><a href="#/10">Exercise&nbsp;-&nbsp;Style&nbsp;the&nbsp;game</a></li>
+                    <li><a href="#/10">The&nbsp;browser&nbsp;devtools</a></li>
+                    <li><a href="#/11">Exercise&nbsp;-&nbsp;Style&nbsp;the&nbsp;game</a></li>
                 </ol>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 1/8</div>
+                    <div class='sectioncount'>Section 1/9</div>
                     <h3>Overview</h3>
                     <p>CSS from a chopper</h3>
                 </section>
@@ -80,7 +81,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 2/8</div>
+                    <div class='sectioncount'>Section 2/9</div>
                     <h3>CSS selectors</h3>
                     <p>The targeting mechanism</h3>
                 </section>
@@ -109,7 +110,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 3/8</div>
+                    <div class='sectioncount'>Section 3/9</div>
                     <h3>Element descriptions</h3>
                     <p>The wanted poster</h3>
                 </section>
@@ -205,7 +206,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 4/8</div>
+                    <div class='sectioncount'>Section 4/9</div>
                     <h3>Combinators</h3>
                     <p>Many wanted posters!</h3>
                 </section>
@@ -257,7 +258,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 5/8</div>
+                    <div class='sectioncount'>Section 5/9</div>
                     <h3>Exercise - Battle</h3>
                     <p>winner takes it all</h3>
                 </section>
@@ -267,7 +268,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 6/8</div>
+                    <div class='sectioncount'>Section 6/9</div>
                     <h3>Inclusion</h3>
                     <p>smuggling in the paint</h3>
                 </section>
@@ -322,7 +323,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 7/8</div>
+                    <div class='sectioncount'>Section 7/9</div>
                     <h3>basic styles</h3>
                     <p>lipstick on a p</h3>
                 </section>
@@ -332,13 +333,70 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 8/8</div>
+                    <div class='sectioncount'>Section 8/9</div>
+                    <h3>The browser devtools</h3>
+                    <p>Your new BFF</h3>
+                </section>
+                <section>
+                    <p>Contrary to the web developer of yesteryear, today we have <strong>very powerful developer tools</strong> built into almost all browsers. We&#39;ll be looking at Chrome, but there are analogs in the others.</p>
+                </section>
+                <section>
+                    <p>They <strong>show you the element tree</strong> and <strong>provide info on specific elements</strong>.</p>
+                    <p><img src="resources/images/devtoolcss.png" alt=""></p>
+                </section>
+                <section>
+                    <p>This is especially useful for</p>
+                    <ul>
+                        <li><strong>CSS debugging</strong>, as you can see exactly <strong>what styles are applied</strong> and from where and with <strong>which selectors</strong> they came.</li>
+                        <li><strong>CSS experimenting</strong>, as you can toggle the styles, try out new values and even add completely new styles.</li>
+                    </ul>
+                </section>
+                <section></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 9/9</div>
                     <h3>Exercise - Style the game</h3>
                     <p>Hiring an illustrator</h3>
                 </section>
                 <section>
                     <p>Time to return to your choose-your-own-adventure and make it <strong>slightly less drab</strong>!</p>
                     <p><img src="resources/images/houseofhell.jpg" alt=""></p>
+                </section>
+                <section>
+                    <p>In other words: <strong>add some CSS to the site you made earlier</strong>!</p>
+                    <p>Since we want the same styling on all pages, and aren&#39;t using any templating system, you should <strong>put the styles in a style sheet</strong> which you then <code>link</code> into all pages.</p>
+                </section>
+                <section>
+                    <p>How pretty must it be? Not very, but here are <strong>some suggestions</strong>:</p>
+                    <ul>
+                        <li>Find a style for <strong>each different section</strong> (header, main, footer, text, links, etc), and try to make them look clearly defined.</li>
+                        <li>Also make a good <strong>container</strong> for the entire app. These commonly have side margins.</li>
+                        <li>Experiment with <strong>typography</strong>. Try out different fonts, letter spacing and line spacing.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>We encourage you to use this as an excuse to <strong>get to know the dev tools</strong>. You should <strong>do the experimenting</strong> in there, and only add the CSS code when you have a good idea of what you want.</p>
+                </section>
+                <section class="challenge">
+                    <p><strong>Challenge</strong>:, use the <code>:first-child</code> and <code>:first-letter</code> pseudoclasses to make some nice <strong>drop caps</strong>. </p>
+                    <p><img src="resources/images/dropcaps.png" alt=""></p>
+                    <p>There are some good pointers at <strong>CSS-Tricks</strong>: <a href="https://css-tricks.com/snippets/css/drop-caps/">https://css-tricks.com/snippets/css/drop-caps/</a></p>
+                </section>
+                <section class="challenge">
+                    <p><strong>Challenge</strong>: Use the <code>@font-face</code> feature to bring in some more game-like font!</p>
+                    <p><img src="resources/images/gametext.png" alt=""></p>
+                    <p>You can also cheat by using <a href="https://fonts.google.com">https://fonts.google.com</a>.</p>
+                </section>
+                <section>
+                    <p><strong>Don&#39;t overwrite the old files</strong> - copy them into a new folder.</p>
+                    <p>Then to <strong>submit the exercise</strong>:</p>
+                    <ol>
+                        <li>navigate to <code>/submissions/gamev2</code> in your fork of <code>academysubs</code></li>
+                        <li><strong>create a folder</strong> with your user name there</li>
+                        <li>copy the <strong>styled site files</strong> into the folder.</li>
+                        <li><strong>push</strong> and make a <strong>pull request</strong></li>
+                    </ol>
                 </section>
             </section>
 
@@ -369,10 +427,10 @@
                 var code = e.which ||  e.keyCode;
                 if (code === 13) {
                     window.location.href = basehref + "index.html?from=" + (3 - 1);
-                } else if (code >= 49 && code <= 8 + 48) {
+                } else if (code >= 49 && code <= 9 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 1);
                 }
-                if (3 < 7) {
+                if (3 < 6) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (3 + 1) + ".html"
                     }

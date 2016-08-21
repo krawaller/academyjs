@@ -1,0 +1,26 @@
+digraph {
+  bgcolor = transparent
+  rankdir = TD
+
+  jQuery [label="jQuery's\nideas"]
+
+  jQuery -> select
+  jQuery -> facade
+  jQuery -> implicit
+  jQuery -> chain
+
+  facade -> facadefoo [dir=none]
+  select -> selectfoo [dir=none]
+  implicit -> implicitfoo [dir=none]
+  chain -> chainfoo [dir=none]
+
+  facade [label="façade"]
+  select [label="selectors"]
+  implicit [label="implicit\nlooping"]
+  chain [label="chaining"]
+
+  facadefoo [shape=box,label="abstracting\nbrowser diffs"]
+  selectfoo [shape=box,label="powerful\nalternative\nnode selection"]
+  implicitfoo [shape=box,label="manipulating\nselections\nwith ease"]
+  chainfoo [shape=box,label="connecting\nselection &\nmanipulation"]
+}
