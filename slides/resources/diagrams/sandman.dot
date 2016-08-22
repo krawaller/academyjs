@@ -1,0 +1,16 @@
+digraph {
+  rankdir = TD
+  bgcolor = transparent
+  p -> note1 [style="dashed"]
+  p -> Eeexiiit
+  p -> em1 -> light
+  p -> Eeenteeer
+  p -> em2 -> niiight
+  p -> note2 [style="dashed"]
+
+  p [label="<p>"]
+  em1 [label="<em>"]
+  em2 [label="<em>"]
+  note1 [label="♬",style="dashed"]
+  note2 [label="♫♩",style="dashed"]
+}

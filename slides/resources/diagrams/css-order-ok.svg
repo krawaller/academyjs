@@ -10,29 +10,29 @@
 <title>%3</title>
 <!-- important -->
 <g id="node1" class="node"><title>important</title>
-<ellipse fill="none" stroke="black" cx="62" cy="-93" rx="53.2029" ry="25.4118"/>
+<ellipse fill="none" stroke="black" stroke-dasharray="5,2" cx="62" cy="-93" rx="53.2029" ry="25.4118"/>
 <text text-anchor="middle" x="62" y="-95.8" font-family="Times,serif" font-size="14.00">rule with</text>
 <text text-anchor="middle" x="62" y="-81.8" font-family="Times,serif" font-size="14.00">!important</text>
 </g>
 <!-- inline -->
 <g id="node2" class="node"><title>inline</title>
-<ellipse fill="none" stroke="black" cx="223" cy="-93" rx="30.4949" ry="18"/>
+<ellipse fill="none" stroke="black" stroke-dasharray="5,2" cx="223" cy="-93" rx="30.4949" ry="18"/>
 <text text-anchor="middle" x="223" y="-88.8" font-family="Times,serif" font-size="14.00">inline</text>
 </g>
 <!-- important&#45;&gt;inline -->
 <g id="edge1" class="edge"><title>important&#45;&gt;inline</title>
-<path fill="none" stroke="black" d="M115.503,-93C137.379,-93 162.35,-93 182.611,-93"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M115.503,-93C137.379,-93 162.35,-93 182.611,-93"/>
 <polygon fill="black" stroke="black" points="182.736,-96.5001 192.736,-93 182.736,-89.5001 182.736,-96.5001"/>
 </g>
 <!-- importantfoo -->
 <g id="node7" class="node"><title>importantfoo</title>
-<polygon fill="none" stroke="black" points="123.407,-50 0.592738,-50 0.592738,-14 123.407,-14 123.407,-50"/>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="123.407,-50 0.592738,-50 0.592738,-14 123.407,-14 123.407,-50"/>
 <text text-anchor="middle" x="62" y="-34.8" font-family="Times,serif" font-size="14.00">Considered a hack.</text>
 <text text-anchor="middle" x="62" y="-20.8" font-family="Times,serif" font-size="14.00">Use as last resort</text>
 </g>
 <!-- important&#45;&gt;importantfoo -->
 <g id="edge6" class="edge"><title>important&#45;&gt;importantfoo</title>
-<path fill="none" stroke="black" d="M62,-67.5337C62,-61.7256 62,-55.9175 62,-50.1094"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M62,-67.5337C62,-61.7256 62,-55.9175 62,-50.1094"/>
 </g>
 <!-- styles -->
 <g id="node3" class="node"><title>styles</title>
@@ -41,18 +41,18 @@
 </g>
 <!-- inline&#45;&gt;styles -->
 <g id="edge2" class="edge"><title>inline&#45;&gt;styles</title>
-<path fill="none" stroke="black" d="M253.343,-93C275.257,-93 305.442,-93 329.48,-93"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M253.343,-93C275.257,-93 305.442,-93 329.48,-93"/>
 <polygon fill="black" stroke="black" points="329.701,-96.5001 339.701,-93 329.701,-89.5001 329.701,-96.5001"/>
 </g>
 <!-- inlinefoo -->
 <g id="node6" class="node"><title>inlinefoo</title>
-<polygon fill="none" stroke="black" points="285.936,-57 160.064,-57 160.064,-21 285.936,-21 285.936,-57"/>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="285.936,-57 160.064,-57 160.064,-21 285.936,-21 285.936,-57"/>
 <text text-anchor="middle" x="223" y="-41.8" font-family="Times,serif" font-size="14.00">Trumps everything.</text>
 <text text-anchor="middle" x="223" y="-27.8" font-family="Times,serif" font-size="14.00">Be careful!</text>
 </g>
 <!-- inline&#45;&gt;inlinefoo -->
 <g id="edge5" class="edge"><title>inline&#45;&gt;inlinefoo</title>
-<path fill="none" stroke="black" d="M223,-74.7902C223,-68.907 223,-63.0238 223,-57.1406"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M223,-74.7902C223,-68.907 223,-63.0238 223,-57.1406"/>
 </g>
 <!-- inherit -->
 <g id="node4" class="node"><title>inherit</title>

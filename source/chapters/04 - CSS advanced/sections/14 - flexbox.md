@@ -1,6 +1,6 @@
 ---
 title: Flexbox
-tagling: solving the age-old riddle
+tagline: solving the age-old riddle
 draft: true
 ---
 

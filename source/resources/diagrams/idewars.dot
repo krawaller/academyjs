@@ -1,0 +1,19 @@
+digraph {
+  rankdir = LR
+  col0, col1, col2, col3, col4, col5, col6 [color=transparent; fontcolor=transparent]
+  row1start, row2start [label="feather"]
+  row1start -> row2start [color=transparent]
+  row1end, row2end [label="black hole"]
+  row1end -> row2end [color=transparent]
+  col0 -> col1 -> col2 -> col3 -> col4 -> col5 -> col6 [color=transparent]
+  {rank=same; row1start, row2start, col0}
+  {rank=same; row1end, row2end, col6}
+
+  IntelliJ, Sublime [shape=box]
+
+  row1start -> IntelliJ -> row1end [arrowhead=none]
+  row2start -> Sublime -> row2end [arrowhead=none]
+
+  {rank=same; IntelliJ, col5}
+  {rank=same; Sublime, col1}
+}

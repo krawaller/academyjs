@@ -9,10 +9,22 @@ This is not just for consuming web content - the **developer tools** inside the 
 
 ~~~
 
+Another very useful function in the browser is to be able to **view source**. All web apps transmit their entire source code to the browser, so snoop away!
+
+![](resources/images/viewsource.png)
+
+~~~
+
 We also need an **editor**. As HTML, CSS and JavaScript isn't (necessarily) compiled, any text editor can be used, but preferrably one with **good web tooling**. You have two good choices:
 
 * **Upgrade IntelliJ** (Community edition doesn't support JS)
 * Install the **free trial for Webstorm** which is very similar
+
+~~~
+
+There is an **ongoing religious war** between whether **IDE:s or editors** are the optimum. You don't have to take sides, but it is good to understand the problem to be able to form an opinion.
+
+![](resources/diagrams/idewars.svg) 
 
 ~~~
 

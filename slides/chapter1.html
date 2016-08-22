@@ -23,7 +23,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 1 of 3 </div>
+                <div class="chapternumber"> chapter 1 of 4 </div>
                 <h1>Introduction</h1>
                 <span>Setting the scene</span>
             </section>
@@ -145,6 +145,16 @@
                 </section>
                 <section>
                     <ul>
+                        <li>We will talk about <strong>the situation right now</strong>, and not dwell on what has been.</li>
+                    </ul>
+                    <div class="equality">
+                        <img src="resources/images/html5.png" alt="js">
+                        <span></span>
+                        <img src="resources/images/css3.png" alt="heart">
+                    </div>
+                </section>
+                <section>
+                    <ul>
                         <li>It is <strong>forbidden to keep a question to yourself</strong>. Ask away! Because,</li>
                         <li><strong>there are no stupid questions</strong>. <span style='text-decoration: line-through;'>Only stupid people.</span></li>
                     </ul>
@@ -168,11 +178,19 @@
                     <p>This is not just for consuming web content - the <strong>developer tools</strong> inside the browser is an integral part of our setup. Consider it part of our IDE without the I!</p>
                 </section>
                 <section>
+                    <p>Another very useful function in the browser is to be able to <strong>view source</strong>. All web apps transmit their entire source code to the browser, so snoop away!</p>
+                    <p><img src="resources/images/viewsource.png" alt=""></p>
+                </section>
+                <section>
                     <p>We also need an <strong>editor</strong>. As HTML, CSS and JavaScript isn&#39;t (necessarily) compiled, any text editor can be used, but preferrably one with <strong>good web tooling</strong>. You have two good choices:</p>
                     <ul>
                         <li><strong>Upgrade IntelliJ</strong> (Community edition doesn&#39;t support JS)</li>
                         <li>Install the <strong>free trial for Webstorm</strong> which is very similar</li>
                     </ul>
+                </section>
+                <section>
+                    <p>There is an <strong>ongoing religious war</strong> between whether <strong>IDE:s or editors</strong> are the optimum. You don&#39;t have to take sides, but it is good to understand the problem to be able to form an opinion.</p>
+                    <p><img src="resources/diagrams/idewars.svg" alt=""></p>
                 </section>
                 <section>
                     <p>We&#39;ll likely also <strong>play around with NodeJS</strong>, I haven&#39;t quite decided yet.</p>
@@ -258,7 +276,7 @@
                 } else if (code >= 49 && code <= 5 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 0);
                 }
-                if (1 < 3) {
+                if (1 < 4) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (1 + 1) + ".html"
                     }

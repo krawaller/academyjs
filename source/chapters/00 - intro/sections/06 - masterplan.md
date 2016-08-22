@@ -26,6 +26,16 @@ Here follows some points on what is to follow!
 
 ~~~
 
+* We will talk about **the situation right now**, and not dwell on what has been.
+
+<div class="equality">
+  ![js](resources/images/html5.png)
+  <span></span>
+  ![heart](resources/images/css3.png)
+</div>
+
+~~~
+
 * It is **forbidden to keep a question to yourself**. Ask away! Because,
 * **there are no stupid questions**. <span style='text-decoration: line-through;'>Only stupid people.</span>
 

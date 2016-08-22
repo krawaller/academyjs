@@ -2,7 +2,7 @@ digraph {
   rankdir = LR
   bgcolor = transparent
 
-  inline -> important -> styles -> defaults
+  important -> inline -> styles -> inherit -> defaults
 
   important [label="rule with\n!important"]
   defaults [label="browser\ndefaults"]
@@ -10,15 +10,18 @@ digraph {
   inline -> inlinefoo [dir=none]
   important -> importantfoo [dir=none]
   styles -> stylesfoo [dir=none]
+  inherit -> inheritfoo [dir=none]
   defaults -> defaultsfoo [dir=none]
 
   inlinefoo [shape=box,label="Trumps everything.\nBe careful!"]
   importantfoo [shape=box,label="Considered a hack.\nUse as last resort"]
   stylesfoo [shape=box,label="Sorted first by\nspecificity,\nthen by order"]
+  inheritfoo [shape=box,label="Some styles are\ninherited to children"]
   defaultsfoo [shape=box,label="Often reset\nso we have\ntotal control"]
 
   {rank=same;inline,inlinefoo}
   {rank=same;important,importantfoo}
   {rank=same;styles,stylesfoo}
+  {rank=same;inherit,inheritfoo}
   {rank=same;defaults,defaultsfoo}
 }

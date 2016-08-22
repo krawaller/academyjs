@@ -66,7 +66,13 @@ This (hopefully) prepares the browser to show **Unicode characters**. Without th
 
 ~~~
 
-**Question**: Did you notice something weird on the previous slide?
+Although that's not the entire truth - it also matters **how the file is saved**.
+
+In short: **encoding sucks**.
+
+~~~
+
+**Question**: Did you notice something weird on the slide with the meta element code?
 
 ~~~
 

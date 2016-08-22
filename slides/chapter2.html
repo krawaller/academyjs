@@ -23,7 +23,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 2 of 3 </div>
+                <div class="chapternumber"> chapter 2 of 4 </div>
                 <h1>HTML</h1>
                 <span>lingua franca of the web</span>
             </section>
@@ -335,8 +335,12 @@
 </code></pre>
                     <p>This (hopefully) prepares the browser to show <strong>Unicode characters</strong>. Without this, for example Swedish characters like <code>å</code>, <code>ä</code> and <code>ö</code> might be displayed wrongly.</p>
                 </section>
+                <section>
+                    <p>Although that&#39;s not the entire truth - it also matters <strong>how the file is saved</strong>.</p>
+                    <p>In short: <strong>encoding sucks</strong>.</p>
+                </section>
                 <section class="question">
-                    <p><strong>Question</strong>: Did you notice something weird on the previous slide?</p>
+                    <p><strong>Question</strong>: Did you notice something weird on the slide with the meta element code?</p>
                 </section>
                 <section class="answer">
                     <p><strong>Answer</strong>: The <code>&lt;meta&gt;</code> element wasn&#39;t closed!</p>
@@ -712,7 +716,7 @@
                 } else if (code >= 49 && code <= 10 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 2);
                 }
-                if (2 < 3) {
+                if (2 < 4) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (2 + 1) + ".html"
                     }
