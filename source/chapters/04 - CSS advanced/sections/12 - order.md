@@ -1,7 +1,6 @@
 ---
 title: Order
 tagline: let the race begin!
-draft: true
 ---
 
 **Question**: So, styles can be defined in many different places. But, **what happens when the same style is applied in different ways**?

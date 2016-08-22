@@ -188,8 +188,12 @@
                 </section>
                 <section>
                     <p>In other words, <code>:before</code> and <code>:after</code> are <strong>misleading names</strong>, they should have been called something else. Also there should be an <em>actual</em> before and after, but there isn&#39;t.</p>
-                    <p>But still, the <strong>pseudo elements are a powerful tool</strong> when the moment is right.</p>
                 </section>
+                <section>
+                    <p>But still, the <strong>pseudo elements are a powerful tool</strong> when the moment is right.</p>
+                    <p>Note that you don&#39;t have to use it for text content - we can also set <code>display</code> to <code>block</code>, add background images and all sort of shenanigans!</p>
+                </section>
+                <section></section>
             </section>
             <section>
                 <section>
@@ -251,7 +255,36 @@
                     <p>solving the age-old riddle</h3>
                 </section>
                 <section>
-                    <p>Flexbox! :D</p>
+                    <p>There are <strong>two common problems</strong> that are embarrasingly hard to solve using regular CSS:</p>
+                    <ul>
+                        <li><strong>centering things vertically</strong></li>
+                        <li>having <strong>columns of equal height</strong></li>
+                    </ul>
+                    <p>CSS3 finally brought us a remedy: <strong>Flexbox</strong>!</p>
+                </section>
+                <section>
+                    <p>The basic idea is simple; in this <strong>new display mode</strong> you select...</p>
+                    <ul>
+                        <li>opt in to the <strong>new display mode</strong> (<code>display: flex</code>)</li>
+                        <li>choose <strong>vertical or horisontal direction</strong> (<code>flex-direction</code>)</li>
+                        <li>how the <strong>content should be aligned along the direction axis</strong> (<code>justify-content</code>)</li>
+                        <li>and also <strong>perpendicular to the direction axis</strong> (<code>align-items</code>)</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>There are <strong>some more flex properties</strong>, and also some <strong>for the children</strong> in a box, which gives you <strong>even more control</strong>.</p>
+                </section>
+                <section>
+                    <p>This is <strong>hard to visualise from textual explanations</strong>, so try out an interactive tutorial here: <a href="http://blog.krawaller.se/flexboxdemo/">http://blog.krawaller.se/flexboxdemo/</a></p>
+                    <p>There are also <strong>two popular games</strong> that demonstrate the concept:</p>
+                    <ul>
+                        <li>Flexbox Froggy @ <a href="http://flexboxfroggy.com/">http://flexboxfroggy.com/</a></li>
+                        <li>Flexbox Defence @ <a href="http://www.flexboxdefense.com/">http://www.flexboxdefense.com/</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Remember how CSS selectors were so good at what they did that they leaked over into JS? It is <strong>the same with flexbox</strong> - it turned out to be such an efficient way to lay out things that it is <strong>used in many frameworks</strong>,
+                        most noteably by <strong>React Native</strong>.</p>
                 </section>
             </section>
 

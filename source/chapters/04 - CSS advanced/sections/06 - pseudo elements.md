@@ -43,4 +43,11 @@ Note however that the notes **don't actually come before and after** the `p` ele
 
 In other words, `:before` and `:after` are **misleading names**, they should have been called something else. Also there should be an *actual* before and after, but there isn't.
 
+~~~
+
 But still, the **pseudo elements are a powerful tool** when the moment is right.
+
+Note that you don't have to use it for text content - we can also set `display` to `block`, add background images and all sort of shenanigans!
+
+~~~
+
