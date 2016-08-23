@@ -479,10 +479,16 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"
                     <ul>
                         <li>Create <strong>a few other shops with different prices</strong></li>
                         <li><strong>Collect all shops</strong> in a <code>shops</code> object: <code>{ICA: {...}, coop: {...}, ...}</code>;</li>
-                        <li>Create a <strong><code>findCheapestStore</code> function</strong> that takes the <code>shops</code> object and a recipe, and tells you which store is the chepest for that recipe!</li>
                     </ul>
-                    <p><img src="resources/diagrams/beststore.svg" alt=""></p>
+                    <p>And <strong>THEN</strong>:</p>
                 </section>
+                <section>
+                    <p>Create a <strong><code>findCheapestStore</code> function</strong> that takes the <code>shops</code> object and a recipe, and tells you which store is the chepest for that recipe!</p>
+                    <p><img src="resources/diagrams/beststore.svg" alt=""></p>
+                    <p>Now demonstrate that for a few recipes:</p>
+                    <pre><code>console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Shop for supersoup at "</span>+findCheapestStore(supersoup,stores));
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Shop for stew at "</span>+costOfRecipe(stew,stores));
+</code></pre></section>
             </section>
 
             <section>
