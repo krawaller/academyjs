@@ -73,6 +73,14 @@ delete myObject.newProp;
 
 ~~~
 
+If we **access a non-existing property** we always get `undefined`.
+
+```javascript
+myObject.bogusProp; // undefined
+```
+
+~~~
+
 Contrary to primitives, **objects are references**, which means that this is false since it is **two different objects**:
 
 ```javascript

@@ -47,9 +47,22 @@ var randomNumber = Math.floor(Math.random()*3); // an integer from 1-10
 
 ~~~
 
-Use all these pieces to create a guess-the-number game!
+Note that **all values from `prompt` are strings**, so you might need to **cast it to a number**:
 
-Note that **all values from `prompt` are strings**!
+```
+var guess = parseInt(prompt("Enter your guess"));
+```
+
+~~~
+
+Now - ***use all these pieces** to create a **guess-the-number game**! You should...
+
+* **generate a number** between 1-10
+* allow the user **up to 3 guesses**.
+
+~~~
+
+This exercise should be **submitted to the `academysubs/guessthenumber` folder** in the same repo as before!
 
 ~~~
 

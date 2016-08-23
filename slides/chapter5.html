@@ -38,7 +38,7 @@
                     <li><a href="#/6">Objects</a></li>
                     <li><a href="#/7">Arrays</a></li>
                     <li><a href="#/8">Functions</a></li>
-                    <li><a href="#/9">Type&nbsp;casting</a></li>
+                    <li><a href="#/9">Exercise&nbsp;-&nbsp;cooking&nbsp;time!</a></li>
                 </ol>
             </section>
             <section>
@@ -219,8 +219,18 @@
 </code></pre>
                 </section>
                 <section>
-                    <p>Use all these pieces to create a guess-the-number game!</p>
-                    <p>Note that <strong>all values from <code>prompt</code> are strings</strong>!</p>
+                    <p>Note that <strong>all values from <code>prompt</code> are strings</strong>, so you might need to <strong>cast it to a number</strong>:</p>
+                    <pre><code>var guess = parseInt(<span class="hljs-name">prompt</span>(<span class="hljs-string">"Enter your guess"</span>))<span class="hljs-comment">;</span>
+</code></pre></section>
+                <section>
+                    <p>Now - <strong>*use all these pieces</strong> to create a <strong>guess-the-number game</strong>! You should...</p>
+                    <ul>
+                        <li><strong>generate a number</strong> between 1-10</li>
+                        <li>allow the user <strong>up to 3 guesses</strong>.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>This exercise should be <strong>submitted to the <code>academysubs/guessthenumber</code> folder</strong> in the same repo as before!</p>
                 </section>
                 <section class="challenge">
                     <p><strong>Challenge</strong>: Make it so that the user can play again if he wants to after the game is over!</p>
@@ -278,6 +288,11 @@
                 <section>
                     <p>And we <strong>delete a property</strong> using the <code>delete</code> keyword:</p>
                     <pre><code class="lang-javascript"><span class="hljs-keyword">delete</span> myObject.newProp;
+</code></pre>
+                </section>
+                <section>
+                    <p>If we <strong>access a non-existing property</strong> we always get <code>undefined</code>.</p>
+                    <pre><code class="lang-javascript">myObject.bogusProp; <span class="hljs-comment">// undefined</span>
 </code></pre>
                 </section>
                 <section>
@@ -423,14 +438,51 @@ myObject.beingAnnoying(); <span class="hljs-regexp">//</span> <span class="hljs-
             <section>
                 <section>
                     <div class='sectioncount'>Section 8/8</div>
-                    <h3>Type casting</h3>
-                    <p>alchemy extraordinaire!</h3>
+                    <h3>Exercise - cooking time!</h3>
+                    <p>getting functional</h3>
                 </section>
                 <section>
-                    <p>And a <strong>weird value called <code>NaN</code></strong> (not a number) which we get when we do <strong>numeric operations on non-numbers</strong>.</p>
-                    <p>Btw, <strong>run this code</strong>:</p>
-                    <pre><code><span class="hljs-built_in">Array</span>(<span class="hljs-number">16</span>).<span class="hljs-keyword">join</span>(<span class="hljs-string">"wat"</span><span class="hljs-number">-1</span>) + <span class="hljs-string">" Batman!"</span>;
+                    <p>Now that you&#39;ve gotten to know <strong>objects</strong>, <strong>arrays</strong> and <strong>functions</strong> - let&#39;s <strong>throw them into the mixer</strong> and see what happens!</p>
+                </section>
+                <section>
+                    <p>Create another <strong>barebones html page</strong> with a <strong>script element to house your code</strong>.</p>
+                </section>
+                <section>
+                    <p>In that script element, <strong>define at least 3 recipe objects</strong> using different ingredients:</p>
+                    <pre><code>var supersoup = {
+<span class="hljs-symbol">  potato:</span> <span class="hljs-number">3</span>,
+<span class="hljs-symbol">  onion:</span> <span class="hljs-number">1</span>,
+<span class="hljs-symbol">  corn:</span> <span class="hljs-number">1</span>
+};
+</code></pre>
+                    <p>The <strong>keys are ingredients</strong>, and the values are <strong>how many of the ingredient is needed</strong>.</p>
+                </section>
+                <section>
+                    <p>Now define a <strong>shop object</strong> containing all used <strong>ingredients as keys</strong> and the corresponding <strong>price per ingredient as value</strong>.</p>
+                    <pre><code>var ICA = {
+<span class="hljs-symbol">  potato:</span> <span class="hljs-number">12</span>,
+<span class="hljs-symbol">  tomato:</span> <span class="hljs-number">7</span>,
+<span class="hljs-symbol">  cucumber:</span> <span class="hljs-number">3</span>
+};
 </code></pre></section>
+                <section>
+                    <p>Now <strong>create a function</strong> that <strong>calculates the cost for a recipe</strong>...</p>
+                    <p><img src="resources/diagrams/recipecostcalc.svg" alt=""></p>
+                </section>
+                <section>
+                    <p>...and <strong>try it for a few of them</strong>:</p>
+                    <pre><code>console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Supersoup costs "</span>+costOfRecipe(supersoup,ICA));
+console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"My famous stew costs "</span>+costOfRecipe(stew,ICA));
+</code></pre></section>
+                <section class="challenge">
+                    <p><strong>Challenge</strong>: Too easy? How about this:</p>
+                    <ul>
+                        <li>Create <strong>a few other shops with different prices</strong></li>
+                        <li><strong>Collect all shops</strong> in a <code>shops</code> object: <code>{ICA: {...}, coop: {...}, ...}</code>;</li>
+                        <li>Create a <strong><code>findCheapestStore</code> function</strong> that takes the <code>shops</code> object and a recipe, and tells you which store is the chepest for that recipe!</li>
+                    </ul>
+                    <p><img src="resources/diagrams/beststore.svg" alt=""></p>
+                </section>
             </section>
 
             <section>
