@@ -34,3 +34,20 @@ The Equality boxes are also prevalent throughout
 .reveal .equality img.isblack { /* special style for imgs which needs some kind of bg work */
 
 }
+
+/** CSS demos ***/
+
+#instantexample, #transitionexample {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  background-color: green;
+}
+
+#instantexample:hover, #transitionexample:hover {
+  transform: rotate(45deg);
+}
+
+#transitionexample {
+  transition: transform 1s ease;
+}

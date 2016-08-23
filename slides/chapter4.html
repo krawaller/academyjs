@@ -34,14 +34,15 @@
                     <li><a href="#/2">Pseudo&nbsp;Elements</a></li>
                     <li><a href="#/3">CSS&nbsp;Deluxe</a></li>
                     <li><a href="#/4">Exercise&nbsp;-&nbsp;Build&nbsp;step</a></li>
-                    <li><a href="#/5">Order</a></li>
-                    <li><a href="#/6">Flexbox</a></li>
-                    <li><a href="#/7">Exercise&nbsp;-&nbsp;Faux&nbsp;columns</a></li>
+                    <li><a href="#/5">Transitions</a></li>
+                    <li><a href="#/6">Order</a></li>
+                    <li><a href="#/7">Flexbox</a></li>
+                    <li><a href="#/8">Exercise&nbsp;-&nbsp;Faux&nbsp;columns</a></li>
                 </ol>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 1/6</div>
+                    <div class='sectioncount'>Section 1/7</div>
                     <h3>Pseudo Elements</h3>
                     <p>Where did you come from?!</h3>
                 </section>
@@ -81,7 +82,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 2/6</div>
+                    <div class='sectioncount'>Section 2/7</div>
                     <h3>CSS Deluxe</h3>
                     <p>bells and whistles</h3>
                 </section>
@@ -154,7 +155,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 3/6</div>
+                    <div class='sectioncount'>Section 3/7</div>
                     <h3>Exercise - Build step</h3>
                     <p>LESS is more</h3>
                 </section>
@@ -200,7 +201,52 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 4/6</div>
+                    <div class='sectioncount'>Section 4/7</div>
+                    <h3>Transitions</h3>
+                    <p>Slowing things down</h3>
+                </section>
+                <section>
+                    <p>Normally, if a <strong>style property of an element changes value</strong>, the <strong>change is instantaneous</strong>.</p>
+                </section>
+                <section>
+                    <p>For example, we apply this style...</p>
+                    <pre><code class="lang-css"><span class="hljs-selector-id">#instantexample</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(45deg);
+}
+</code></pre>
+                    <p>...to this <code>div</code>, so <strong>try hovering over it</strong>!</p>
+                    <div id="instantexample"></div>
+                </section>
+                <section>
+                    <p>This div is exactly the same as before, but with <strong>one additional rule</strong>:</p>
+                    <pre><code><span class="hljs-selector-id">#transitionexample</span> {
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">1s</span> ease;
+}
+</code></pre>
+                    <p>Try <strong>hovering again</strong>!</p>
+                    <div id="transitionexample"></div>
+                </section>
+                <section>
+                    <p>As you probably figure, transitions are <strong>a really powerful way to do CSS-only animations</strong>.</p>
+                    <p>Some notes;</p>
+                    <ul>
+                        <li>The <strong>full shorthand syntax</strong> is <code>transition: &lt;property&gt; &lt;duration&gt; &lt;timing function&gt; &lt;delay&gt;</code></li>
+                        <li>We can transition <strong>more than one property</strong> by separating them with <code>,</code>: <code>transition: width 2s, height 2s</code></li>
+                        <li>As with many new / experimental technologies some browsers might require <strong>vendor prefixes</strong> still: <code>-webkit-transition</code>, <code>-ms-transition</code>, etc. Although the need is growing less and less frequent.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>As per usual there are <strong>lots more detail on MDN</strong>:</p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">https://developer.mozilla.org/en-US/docs/Web/CSS/transition</a></p>
+                </section>
+                <section>
+                    <p>Btw, the <strong><code>transform</code> property</strong> that we used as a transition example is really powerful, and worthy of looking up for its own sake!</p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a></p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 5/7</div>
                     <h3>Order</h3>
                     <p>let the race begin!</h3>
                 </section>
@@ -253,7 +299,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 5/6</div>
+                    <div class='sectioncount'>Section 6/7</div>
                     <h3>Flexbox</h3>
                     <p>solving the age-old riddle</h3>
                 </section>
@@ -292,7 +338,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 6/6</div>
+                    <div class='sectioncount'>Section 7/7</div>
                     <h3>Exercise - Faux columns</h3>
                     <p>The holy grail</h3>
                 </section>
@@ -317,6 +363,7 @@
                     <ul>
                         <li>I got the <strong>text</strong> from <a href="http://baconipsum.com/">http://baconipsum.com/</a></li>
                         <li>The <strong>structure</strong> should just be a div with two divs inside</li>
+                        <li>You will <strong>need to play with <code>flex</code> on the children</strong></li>
                         <li>Experiment yourself first, but if you get stuck then <strong>go googling</strong>!</li>
                     </ul>
                 </section>
@@ -354,7 +401,7 @@
                 var code = e.which ||  e.keyCode;
                 if (code === 13) {
                     window.location.href = basehref + "index.html?from=" + (4 - 1);
-                } else if (code >= 49 && code <= 6 + 48) {
+                } else if (code >= 49 && code <= 7 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 0);
                 }
                 if (4 < 4) {
