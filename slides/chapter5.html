@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>JavaScript basics</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="styles/reveal.css">
+    <link rel="stylesheet" href="styles/theme.css" id="theme">
+    <link rel="stylesheet" href="styles/code.css">
+    <link rel="stylesheet" href="styles/chapter.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <div class="chapternumber"> chapter 5 of 5 </div>
+                <h1>JavaScript basics</h1>
+                <span>the holy spirit</span>
+            </section>
+
+            <section>
+                <h3>Sections in this chapter</h3>
+                <ol>
+                    <li><a href="#/2">Introducing&nbsp;JavaScript</a></li>
+                    <li><a href="#/3">Inclusion</a></li>
+                    <li><a href="#/4">JS&nbsp;at&nbsp;a&nbsp;glance</a></li>
+                    <li><a href="#/5">Exercise&nbsp;-&nbsp;testing&nbsp;the&nbsp;waters</a></li>
+                    <li><a href="#/6">Objects</a></li>
+                    <li><a href="#/7">Arrays</a></li>
+                    <li><a href="#/8">Functions</a></li>
+                    <li><a href="#/9">Type&nbsp;casting</a></li>
+                </ol>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 1/8</div>
+                    <h3>Introducing JavaScript</h3>
+                    <p>better the devil you know</h3>
+                </section>
+                <section>
+                    <p>So, <strong>JavaScript</strong>! It is:</p>
+                    <ul>
+                        <li>Functional</li>
+                        <li>Object Oriented</li>
+                        <li>Dynamically typed</li>
+                        <li>Loosely typed</li>
+                        <li>Syntactically C-like</li>
+                    </ul>
+                    <p>What?</p>
+                </section>
+                <section>
+                    <p><strong>Functional</strong>, meaning that it <strong>emphasizes the application of functions</strong></p>
+                    <p>This in contrast to imperative programming, which <strong>emphasizes changes in state</strong>.</p>
+                </section>
+                <section>
+                    <p><strong>Object Oriented</strong>, meaning that it <strong>uses objects</strong> (data structures consisting of data and behavior) and that <strong>most things are objects</strong>.</p>
+                </section>
+                <section>
+                    <p><strong>Dynamically typed</strong>, meaning that it <strong>performs the majority of its type checking at run-time</strong> as opposed to at compile-time</p>
+                </section>
+                <section>
+                    <p><strong>Loosely typed</strong>, meaning that <strong>any value can be stored in any variable or bound to any parameter</strong>, and JavaScript will do any necessary conversions.</p>
+                </section>
+                <section>
+                    <p><strong>Syntactically C-like</strong>, for instance it has..</p>
+                    <ul>
+                        <li><code>{...}</code> for blocks</li>
+                        <li><code>;</code> as a statement separator</li>
+                        <li><code>=</code> for assignment</li>
+                        <li><code>/* ... */</code> and <code>//</code> for comments</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 2/8</div>
+                    <h3>Inclusion</h3>
+                    <p>plugging it in</h3>
+                </section>
+                <section>
+                    <p>There are <strong>three ways to include JS in a web app</strong></p>
+                    <ul>
+                        <li>script element containing code</li>
+                        <li>script element referencing a file</li>
+                        <li>inline event handler in an element attribute</li>
+                    </ul>
+                </section>
+                <section>
+                    <p>A <strong>script element with code</strong> might look like this:</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="actionscript">
+    <span class="hljs-comment">/* ...javascript code here... */</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>While a <strong>script element referencing a separate file</strong> might look like this:</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/mycode.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+                    <p>Note that you <strong>should not self-close the script element</strong>, as that might cause weird behaviour!</p>
+                </section>
+                <section>
+                    <p>An <strong>inline event handler</strong> looks like this:</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"alert('You clicked, OMG!');"</span>&gt;</span>Don't click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+                    <p>As you might have guessed, <strong>inline handlers are a bad idea</strong>.</p>
+                </section>
+                <section>
+                    <p>In fact, most of the logic here <strong>tightly resembles what we said about CSS inclusion</strong>!</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 3/8</div>
+                    <h3>JS at a glance</h3>
+                    <p>a whirlwind tour!</h3>
+                </section>
+                <section>
+                    <p>Hold on tight, for now we&#39;ll <strong>run through some JS basics</strong>!</p>
+                    <p>To try the snippets, <strong>paste them into the Console tab of the Chrome developer tools</strong>.</p>
+                </section>
+                <section>
+                    <p>There <strong>is no <code>main</code> function</strong> - JS code is simply <strong>run from top to bottom</strong>.</p>
+                </section>
+                <section>
+                    <p>We <strong>declare variables using the <code>var</code> keyword</strong>, and <strong>assign using <code>=</code></strong>. No type specification needed, since JS is loosely typed.</p>
+                    <pre><code><span class="hljs-keyword">var</span> x = <span class="hljs-string">"Hello"</span> + <span class="hljs-string">" "</span> + <span class="hljs-string">"world!"</span>;
+</code></pre>
+                    <p>We <strong>end statements with <code>;</code></strong>. These are actually optional, but <strong>leaving them out can cause problems</strong>!</p>
+                </section>
+                <section>
+                    <p>You just saw <strong>string literals</strong>. There are also...</p>
+                    <ul>
+                        <li><strong>numbers</strong>: <code>3</code>, <code>2.04</code> (all numbers are floating points)</li>
+                        <li><strong>booleans</strong>: <code>true</code>, <code>false</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <p>And <strong>two single-value types</strong>:</p>
+                    <ul>
+                        <li><strong>null</strong>: <code>null</code></li>
+                        <li><strong>undefined</strong>: <code>undefined</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <p><strong>Equality testing</strong> is done by</p>
+                    <ul>
+                        <li><code>==</code> (which does type coercion, so <code>3 == &quot;3&quot;</code> is <code>true</code>)</li>
+                        <li><code>===</code> (also comparing type, so <code>3 === &quot;3&quot;</code> is <code>false</code>)</li>
+                    </ul>
+                    <p>There are also <code>!=</code> and <code>!==</code> negative variants.</p>
+                </section>
+                <section>
+                    <p>You will <strong>recognize <code>if</code> statement syntax</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (x === <span class="hljs-number">3</span>){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Correct!"</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Not quite..."</span>);
+}
+</code></pre>
+                    <p>The <code>else</code> part is of course optional.</p>
+                </section>
+                <section>
+                    <p>Also the <strong>for loop</strong> is rather classical:</p>
+                    <pre><code><span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span>=<span class="hljs-number">0</span>; <span class="hljs-built_in">i</span>&lt;<span class="hljs-number">1000</span>; <span class="hljs-built_in">i</span>=<span class="hljs-built_in">i</span>+<span class="hljs-number">1</span>){
+  console.log(i+" bottles of beer on the wall");
+}
+</code></pre></section>
+                <section>
+                    <p>As is the <strong>while</strong>:</p>
+                    <pre><code><span class="hljs-keyword">while</span>(x &gt; <span class="hljs-number">0</span>){
+  x = x<span class="hljs-number">-1</span>;
+  console.<span class="hljs-built_in">log</span>(x+<span class="hljs-string">" bottles left"</span>);
+}
+</code></pre></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 4/8</div>
+                    <h3>Exercise - testing the waters</h3>
+                    <p>Getting our feet wet</h3>
+                </section>
+                <section>
+                    <p>Best way to learn to swim - <strong>jump into the deep end</strong>! You will now try your hand at JavaScript by creating a simple <strong>guess the number</strong> game.</p>
+                </section>
+                <section>
+                    <p>Create a <strong>super-simple html file</strong> that only contains the necessary structure, as well as a <strong>script element where you will put your code</strong>.</p>
+                </section>
+                <section>
+                    <p>We <strong>won&#39;t use the html</strong> as an interface. Instead we&#39;ll communicate using two otherwise useless methods:</p>
+                </section>
+                <section>
+                    <p>First we have <strong><code>prompt</code></strong>. By executing this code:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> answer = prompt(<span class="hljs-string">"What is your name?"</span>);
+</code></pre>
+                </section>
+                <section>
+                    <p>Then <strong>execution of the program is paused</strong> until the user has replied using the <strong>popup</strong> that the browser opened:</p>
+                    <p><img src="resources/images/prompt.png" alt=""></p>
+                </section>
+                <section>
+                    <p>The other otherwise useless method is <strong><code>alert</code></strong>, which is the <strong>same thing but without the input field</strong>.</p>
+                    <pre><code class="lang-javascript">alert(<span class="hljs-string">"WRONG!"</span>);
+</code></pre>
+                    <p><img src="resources/images/alert.png" alt=""></p>
+                </section>
+                <section>
+                    <p>We can <strong>generate a random value</strong> using the <code>random</code> and <code>floor</code> methods of the built-in <code>Math</code> object:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> randomNumber = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">3</span>); <span class="hljs-comment">// an integer from 1-10</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>Use all these pieces to create a guess-the-number game!</p>
+                    <p>Note that <strong>all values from <code>prompt</code> are strings</strong>!</p>
+                </section>
+                <section class="challenge">
+                    <p><strong>Challenge</strong>: Make it so that the user can play again if he wants to after the game is over!</p>
+                </section>
+                <section class="challenge">
+                    <p><strong>Challenge</strong>: Check the input from the user and <strong>give error message</strong> if the input is faulty!</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 5/8</div>
+                    <h3>Objects</h3>
+                    <p>bags of data</h3>
+                </section>
+                <section>
+                    <p>The types we&#39;ve seen so far have been <strong>atomic primitives</strong>. But JavaScript also has two <strong>composite data types</strong>, namely <strong>objects</strong> and <strong>arrays</strong>!</p>
+                    <p>Althought technically <strong>arrays are a special kind of objects</strong>, but, never mind.</p>
+                </section>
+                <section>
+                    <p>An object in JavaScript is a <strong>collection of key-value pairs</strong>, often called a <strong>dictionary</strong> in other languages. </p>
+                    <p>The <strong>property names (keys) are always strings</strong>, and the <strong>property values can be anything</strong>.</p>
+                </section>
+                <section>
+                    <p>We can <strong>create an object literal</strong> like this:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myObject = {
+  someProp: <span class="hljs-number">42</span>,
+  anotherProp: <span class="hljs-string">"hello!"</span>
+};
+</code></pre>
+                </section>
+                <section>
+                    <p>There are <strong>two different ways to access a value</strong>.</p>
+                    <p>We can use <strong>dot notation</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = myObject.someProp; <span class="hljs-comment">// 42</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>Or we can use <strong>bracket notation</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> y = myObject[<span class="hljs-string">"someProp"</span>]; <span class="hljs-comment">// "hello!"</span>
+</code></pre>
+                </section>
+                <section class="question">
+                    <p><strong>Question</strong>: The <strong>dot notation seems much smoother</strong>, so <strong>why would we ever want bracket notation</strong>?</p>
+                </section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: That allows us to do <strong>dynamic lookups</strong>:</p>
+                    <pre><code><span class="hljs-keyword">var</span> propName = <span class="hljs-string">"someProp"</span>;
+<span class="hljs-keyword">var</span> z = myObject[propName]; <span class="hljs-comment">// 42</span>
+</code></pre></section>
+                <section>
+                    <p>We <strong>add a property simply by assigning to it</strong>:</p>
+                    <pre><code class="lang-javaScript"><span class="hljs-keyword">var</span> myObject.newProp = <span class="hljs-number">777</span>;
+</code></pre>
+                </section>
+                <section>
+                    <p>And we <strong>delete a property</strong> using the <code>delete</code> keyword:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">delete</span> myObject.newProp;
+</code></pre>
+                </section>
+                <section>
+                    <p>Contrary to primitives, <strong>objects are references</strong>, which means that this is false since it is <strong>two different objects</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> test = {a:<span class="hljs-number">1</span>} === {a:<span class="hljs-number">1</span>}; <span class="hljs-comment">// false</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>While this is true, since they <strong>point to the same object</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = {a:<span class="hljs-number">1</span>};
+<span class="hljs-keyword">var</span> y = x;
+<span class="hljs-keyword">var</span> test = x === y; <span class="hljs-comment">// true</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>Since <strong>objects are references</strong> they are <strong>always truthy</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">if</span> ({}){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"An empty object is truthy!"</span>); <span class="hljs-comment">// will be shown!</span>
+}
+</code></pre>
+                </section>
+                <section>
+                    <p>We can <strong>iterate over objects</strong> using a <strong><code>for..in</code>loop</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> myObject){
+  <span class="hljs-built_in">console</span>.log(key+<span class="hljs-string">" has value "</span>+myObject[key]);
+}
+</code></pre>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 6/8</div>
+                    <h3>Arrays</h3>
+                    <p>Ordered lists</h3>
+                </section>
+                <section>
+                    <p>A special kind of objects are <strong>arrays</strong>, which are an <strong>ordered list of values</strong>.</p>
+                    <p>You could say that they are <strong>objects where the keys are always named 0, 1, 2...</strong>.</p>
+                </section>
+                <section>
+                    <p>We can <strong>create arrays</strong> using the <strong>array literal notation</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> list = [<span class="hljs-string">"tomatoes"</span>,<span class="hljs-number">42</span>,<span class="hljs-literal">false</span>];
+</code></pre>
+                </section>
+                <section>
+                    <p>An array <strong>has a length property</strong> that tells us how many elements it contains:</p>
+                    <pre><code class="lang-javascript">list.length <span class="hljs-comment">// 3</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>We can <strong>add a new value</strong> by calling the <code>push</code> method:</p>
+                    <pre><code class="lang-javascript">list.push(<span class="hljs-string">"foobar"</span>);
+list.length <span class="hljs-comment">// 4</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>It is common to <strong>iterate using a regular for loop</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i &lt; list.length; i = i+<span class="hljs-number">1</span>){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Item "</span>+i+<span class="hljs-string">" is "</span>+list[i]);
+}
+</code></pre>
+                </section>
+                <section>
+                    <p>There are a <strong>whole bunch of array methods</strong> - see the MDN reference for a full list:</p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a></p>
+                </section>
+                <section class="question">
+                    <p><strong>Question</strong>: The <code>length</code> property was rather convenient - is there something <strong>similar on regular objects</strong>?</p>
+                </section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: Not directly, but we can get an <strong>array of all keys for an object</strong> using the <code>keys</code> method of the global <code>Object</code> object:</p>
+                    <pre><code><span class="hljs-built_in">var</span> <span class="hljs-built_in">keys</span> = Object.<span class="hljs-built_in">keys</span>(myObject); <span class="hljs-comment">// ["someProp","anotherProp"]</span>
+</code></pre></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 7/8</div>
+                    <h3>Functions</h3>
+                    <p>code in a can</h3>
+                </section>
+                <section>
+                    <p>There are <strong>two different ways to define a function</strong> in JavaScript. First as a <strong>named function</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echoer</span>(<span class="hljs-params">word,times</span>)</span>{
+  <span class="hljs-keyword">var</span> echo = <span class="hljs-string">""</span>;
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; times; i = i + <span class="hljs-number">1</span>){
+    echo = echo + word;
+  }
+  <span class="hljs-keyword">return</span> echo;
+}
+</code></pre>
+                </section>
+                <section>
+                    <p>Or as an <strong>anonymous function</strong> which we can assign to a variable:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> echoer = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">word,times</span>)</span>{
+  <span class="hljs-keyword">var</span> echo = <span class="hljs-string">""</span>;
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; times; i = i + <span class="hljs-number">1</span>){
+    echo = echo + word + <span class="hljs-string">" "</span>;
+  }
+  <span class="hljs-keyword">return</span> echo;
+}
+</code></pre>
+                    <p>Mostly it <strong>doesn&#39;t really matter</strong> which way you choose.</p>
+                </section>
+                <section>
+                    <p>As the example showed, we use <strong><code>return something</code></strong> to return a value. If you just do <code>return;</code>, the returned value is <code>undefined</code>, which it also is if you don&#39;t use <code>return</code>                        at all.</p>
+                </section>
+                <section>
+                    <p>We <strong>execute a method by using parens</strong>, and <strong>listing eventual parameters</strong> within those:</p>
+                    <pre><code><span class="hljs-keyword">var</span> withEcho = echoer(<span class="hljs-string">"hello"</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// "hello hello hello "</span>
+</code></pre></section>
+                <section>
+                    <p>Now for something super cool - since <strong>functions are first class citizens</strong>, we can send them around just like any value. Which also means that a function can take, and return, other functions! Such a function is called
+                        a <strong>higher order function</strong>.</p>
+                    <p>As a contrived example, say we have this function:</p>
+                    <pre><code><span class="hljs-keyword">var</span> spam = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
+}
+</code></pre></section>
+                <section>
+                    <p>And then we have this higher order function:</p>
+                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repeater</span><span class="hljs-params">(func,times)</span>{</span>
+  <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
+    func();
+}
+</code></pre></section>
+                <section>
+                    <p>If we now do this:</p>
+                    <pre><code class="lang-javascript">repeater(spam,<span class="hljs-number">3</span>);
+</code></pre>
+                    <p>We would see this in the console:</p>
+                    <pre><code><span class="hljs-string">"SPAM!"</span>
+<span class="hljs-string">"SPAM!"</span>
+<span class="hljs-string">"SPAM!"</span>
+</code></pre></section>
+                <section>
+                    <p>There is nothing stopping us from <strong>having functions on objects</strong>:</p>
+                    <pre><code>myObject.beingAnnoying = spam;
+myObject.beingAnnoying(); <span class="hljs-regexp">//</span> <span class="hljs-string">"SPAM!"</span>
+</code></pre>
+                    <p>When a function is a property on an object it is called a <strong>method</strong> of that object.</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 8/8</div>
+                    <h3>Type casting</h3>
+                    <p>alchemy extraordinaire!</h3>
+                </section>
+                <section>
+                    <p>And a <strong>weird value called <code>NaN</code></strong> (not a number) which we get when we do <strong>numeric operations on non-numbers</strong>.</p>
+                    <p>Btw, <strong>run this code</strong>:</p>
+                    <pre><code><span class="hljs-built_in">Array</span>(<span class="hljs-number">16</span>).<span class="hljs-keyword">join</span>(<span class="hljs-string">"wat"</span><span class="hljs-number">-1</span>) + <span class="hljs-string">" Batman!"</span>;
+</code></pre></section>
+            </section>
+
+            <section>
+                <h1>The end</h1>
+                <p>...or perhaps the beginning?</p><br/><br/>
+                <p><a href="index.html">back to index</a></p>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="js/head.js" type="text/javascript"></script>
+    <script src="js/reveal.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            showNotes: false,
+            transition: 'slide'
+        })
+
+        window.onload = function() {
+
+            var basehref = window.location.href.replace(/chapter\d.*?$/, '')
+
+            window.addEventListener("keypress", function(e) {
+                var code = e.which ||  e.keyCode;
+                if (code === 13) {
+                    window.location.href = basehref + "index.html?from=" + (5 - 1);
+                } else if (code >= 49 && code <= 8 + 48) {
+                    window.location.hash = "#/" + (code - 48 + 1 + 0);
+                }
+                if (5 < 5) {
+                    if (code === 99) { // the letter C for next Chapter
+                        window.location.href = basehref + "chapter" + (5 + 1) + ".html"
+                    }
+                }
+            });
+
+            var links = document.querySelectorAll("a.link");
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                link.innerHTML = link.innerHTML.replace(/ /g, '&nbsp;')
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

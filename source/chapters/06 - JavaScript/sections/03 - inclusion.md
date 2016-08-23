@@ -1,5 +1,44 @@
 ---
 title: Inclusion
 tagline: plugging it in
-draft: true
 ---
+
+There are **three ways to include JS in a web app**
+
+* script element containing code
+* script element referencing a file
+* inline event handler in an element attribute
+
+~~~
+
+A **script element with code** might look like this:
+
+```html
+<script type="text/javascript">
+    /* ...javascript code here... */
+</script>
+```
+
+~~~
+
+While a **script element referencing a separate file** might look like this:
+
+```html
+<script type="text/javascript" src="/js/mycode.js"></script>
+```
+
+Note that you **should not self-close the script element**, as that might cause weird behaviour!
+
+~~~
+
+An **inline event handler** looks like this:
+
+```html
+<button onclick="alert('You clicked, OMG!');">Don't click me</button>
+```
+
+As you might have guessed, **inline handlers are a bad idea**.
+
+~~~
+
+In fact, most of the logic here **tightly resembles what we said about CSS inclusion**!
