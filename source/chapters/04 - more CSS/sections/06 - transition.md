@@ -35,7 +35,9 @@ Try **hovering again**!
 
 ~~~
 
-As you probably figure, transitions are **a really powerful way to do CSS-only animations**.
+As you probably figure, transitions are **a really powerful way to do CSS-only animations**, and **well worth getting to know well**.
+
+~~~
 
 Some notes;
 
