@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Advanced CSS</title>
+    <title>More CSS</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -24,23 +24,64 @@
         <div class="slides">
             <section>
                 <div class="chapternumber"> chapter 4 of 4 </div>
-                <h1>Advanced CSS</h1>
+                <h1>More CSS</h1>
                 <span>sharpening the tools</span>
             </section>
 
             <section>
                 <h3>Sections in this chapter</h3>
                 <ol>
-                    <li><a href="#/2">CSS&nbsp;Deluxe</a></li>
-                    <li><a href="#/3">Exercise&nbsp;-&nbsp;Build&nbsp;step</a></li>
-                    <li><a href="#/4">Pseudo&nbsp;Elements</a></li>
+                    <li><a href="#/2">Pseudo&nbsp;Elements</a></li>
+                    <li><a href="#/3">CSS&nbsp;Deluxe</a></li>
+                    <li><a href="#/4">Exercise&nbsp;-&nbsp;Build&nbsp;step</a></li>
                     <li><a href="#/5">Order</a></li>
                     <li><a href="#/6">Flexbox</a></li>
+                    <li><a href="#/7">Exercise&nbsp;-&nbsp;Faux&nbsp;columns</a></li>
                 </ol>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 1/5</div>
+                    <div class='sectioncount'>Section 1/6</div>
+                    <h3>Pseudo Elements</h3>
+                    <p>Where did you come from?!</h3>
+                </section>
+                <section>
+                    <p>You&#39;ve already met pseudo classes. However, the <strong>pseudo elements</strong> do something we haven&#39;t yet seen - they <strong>add new elements</strong> to the document!</p>
+                </section>
+                <section>
+                    <p>Say we have this <code>p</code> element:</p>
+                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Eeexiiit <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>light!<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> Eeenteeer <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>niiiight!<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+                </section>
+                <section>
+                    <p>And we target it with this CSS:</p>
+                    <pre><code class="lang-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:before</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">"♬ "</span>;
+}
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:after</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">" ♫♩"</span>
+}
+</code></pre>
+                </section>
+                <section>
+                    <p>Then we get this <strong>output</strong>:</p>
+                    <p><img src="resources/images/sandman.png" alt=""></p>
+                </section>
+                <section>
+                    <p>Note however that the notes <strong>don&#39;t actually come before and after</strong> the <code>p</code> element, but rather <strong>become the youngest and oldest children</strong>:</p>
+                    <p><img src="resources/diagrams/sandman.svg" alt=""></p>
+                </section>
+                <section>
+                    <p>In other words, <code>:before</code> and <code>:after</code> are <strong>misleading names</strong>, they should have been called something else. Also there should be an <em>actual</em> before and after, but there isn&#39;t.</p>
+                </section>
+                <section>
+                    <p>But still, the <strong>pseudo elements are a powerful tool</strong> when the moment is right.</p>
+                    <p>Note that you don&#39;t have to use it for text content - we can also set <code>display</code> to <code>block</code>, add background images and all sort of shenanigans!</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 2/6</div>
                     <h3>CSS Deluxe</h3>
                     <p>bells and whistles</h3>
                 </section>
@@ -113,7 +154,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 2/5</div>
+                    <div class='sectioncount'>Section 3/6</div>
                     <h3>Exercise - Build step</h3>
                     <p>LESS is more</h3>
                 </section>
@@ -153,51 +194,13 @@
                     <p><strong>Challenge</strong>: Of course, having to remember to compile the <code>.less</code> file is tiresome. It is therefore common to <strong>set up an automagic compiler</strong>. Try your hand at this! There are many solutions,
                         one suggestion is to use this: <a href="https://github.com/jonycheung/deadsimple-less-watch-compiler">https://github.com/jonycheung/deadsimple-less-watch-compiler</a>.</p>
                 </section>
+                <section class="challenge">
+                    <p><strong>Challenge</strong>: If you still have time and/or energy left over, try to <strong>find some use for pseudo elements</strong> in your app!</p>
+                </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 3/5</div>
-                    <h3>Pseudo Elements</h3>
-                    <p>Where did you come from?!</h3>
-                </section>
-                <section>
-                    <p>You&#39;ve already met pseudo classes. However, the <strong>pseudo elements</strong> do something we haven&#39;t yet seen - they <strong>add new elements</strong> to the document!</p>
-                </section>
-                <section>
-                    <p>Say we have this <code>p</code> element:</p>
-                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Eeexiiit <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>light!<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> Eeenteeer <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>niiiight!<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</code></pre>
-                </section>
-                <section>
-                    <p>And we target it with this CSS:</p>
-                    <pre><code class="lang-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:before</span> {
-  <span class="hljs-attribute">content</span>: <span class="hljs-string">"♬ "</span>;
-}
-<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:after</span> {
-  <span class="hljs-attribute">content</span>: <span class="hljs-string">" ♫♩"</span>
-}
-</code></pre>
-                </section>
-                <section>
-                    <p>Then we get this <strong>output</strong>:</p>
-                    <p><img src="resources/images/sandman.png" alt=""></p>
-                </section>
-                <section>
-                    <p>Note however that the notes <strong>don&#39;t actually come before and after</strong> the <code>p</code> element, but rather <strong>become the youngest and oldest children</strong>:</p>
-                    <p><img src="resources/diagrams/sandman.svg" alt=""></p>
-                </section>
-                <section>
-                    <p>In other words, <code>:before</code> and <code>:after</code> are <strong>misleading names</strong>, they should have been called something else. Also there should be an <em>actual</em> before and after, but there isn&#39;t.</p>
-                </section>
-                <section>
-                    <p>But still, the <strong>pseudo elements are a powerful tool</strong> when the moment is right.</p>
-                    <p>Note that you don&#39;t have to use it for text content - we can also set <code>display</code> to <code>block</code>, add background images and all sort of shenanigans!</p>
-                </section>
-                <section></section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 4/5</div>
+                    <div class='sectioncount'>Section 4/6</div>
                     <h3>Order</h3>
                     <p>let the race begin!</h3>
                 </section>
@@ -250,7 +253,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 5/5</div>
+                    <div class='sectioncount'>Section 5/6</div>
                     <h3>Flexbox</h3>
                     <p>solving the age-old riddle</h3>
                 </section>
@@ -287,6 +290,40 @@
                         most noteably by <strong>React Native</strong>.</p>
                 </section>
             </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 6/6</div>
+                    <h3>Exercise - Faux columns</h3>
+                    <p>The holy grail</h3>
+                </section>
+                <section>
+                    <p>We mentioned <strong>columns of equal height</strong> before:</p>
+                    <p><img src="resources/images/fauxcols.png" alt=""></p>
+                </section>
+                <section>
+                    <p>More specifically, we mean</p>
+                    <ul>
+                        <li>Two columns who <strong>both extend to the bottom of their parent</strong></li>
+                        <li>The <strong>longest column desides the height of the parent</strong></li>
+                    </ul>
+                    <p>As previously stated, this is <strong>very difficult with regular CSS</strong>.</p>
+                </section>
+                <section>
+                    <p>But, <strong>rather easy with Flexbox</strong>, which is what I used to create the screenshot!</p>
+                    <p>And now, of course it is your turn to <strong>recreate the screenshot using HTML and CSS</strong>!</p>
+                </section>
+                <section>
+                    <p>Some pointers;</p>
+                    <ul>
+                        <li>I got the <strong>text</strong> from <a href="http://baconipsum.com/">http://baconipsum.com/</a></li>
+                        <li>The <strong>structure</strong> should just be a div with two divs inside</li>
+                        <li>Experiment yourself first, but if you get stuck then <strong>go googling</strong>!</li>
+                    </ul>
+                </section>
+                <section class="challenge">
+                    <p><strong>Challenge</strong>: If you&#39;re really serious about your webdev chops, find a way to <strong>steal my exact colours</strong>!</p>
+                </section>
+            </section>
 
             <section>
                 <h1>The end</h1>
@@ -317,7 +354,7 @@
                 var code = e.which ||  e.keyCode;
                 if (code === 13) {
                     window.location.href = basehref + "index.html?from=" + (4 - 1);
-                } else if (code >= 49 && code <= 5 + 48) {
+                } else if (code >= 49 && code <= 6 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 0);
                 }
                 if (4 < 4) {

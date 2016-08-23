@@ -1,5 +1,4 @@
 ---
-title: Advanced CSS
+title: More CSS
 tagline: sharpening the tools
-draft: false
 ---

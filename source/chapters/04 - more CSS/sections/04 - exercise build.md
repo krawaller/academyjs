@@ -52,3 +52,7 @@ Submit by **adding, committing, pushing and make a PR** as usual!
 ~~~
 
 **Challenge**: Of course, having to remember to compile the `.less` file is tiresome. It is therefore common to **set up an automagic compiler**. Try your hand at this! There are many solutions, one suggestion is to use this: [https://github.com/jonycheung/deadsimple-less-watch-compiler](https://github.com/jonycheung/deadsimple-less-watch-compiler).
+
+~~~
+
+**Challenge**: If you still have time and/or energy left over, try to **find some use for pseudo elements** in your app!

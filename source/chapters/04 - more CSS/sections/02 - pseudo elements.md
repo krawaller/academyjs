@@ -1,7 +1,6 @@
 ---
 title: Pseudo Elements
 tagline: Where did you come from?!
-draft: true
 ---
 
 You've already met pseudo classes. However, the **pseudo elements** do something we haven't yet seen - they **add new elements** to the document!
@@ -49,5 +48,4 @@ But still, the **pseudo elements are a powerful tool** when the moment is right.
 
 Note that you don't have to use it for text content - we can also set `display` to `block`, add background images and all sort of shenanigans!
 
-~~~
 
