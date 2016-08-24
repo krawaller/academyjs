@@ -70,6 +70,14 @@ Don't make your selectors more specific than they need to be!
 
 ~~~
 
+> Thou shalt keep your CSS organized
+
+Keeping order in your Java project is easy - **give classes good names**, **sort them in modules**, etc. But **doing it in CSS is hard**!
+
+Still, **you must try**! Use **comments**, **file separation** and **structure**.
+
+~~~
+
 And now for the **most important commandment of all**.
 
 ~~~
