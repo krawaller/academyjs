@@ -38,12 +38,13 @@
                     <li><a href="#/6">Objects</a></li>
                     <li><a href="#/7">Arrays</a></li>
                     <li><a href="#/8">Functions</a></li>
-                    <li><a href="#/9">Exercise&nbsp;-&nbsp;cooking&nbsp;time!</a></li>
+                    <li><a href="#/9">Functional&nbsp;programming</a></li>
+                    <li><a href="#/10">Exercise&nbsp;-&nbsp;cooking&nbsp;time!</a></li>
                 </ol>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 1/8</div>
+                    <div class='sectioncount'>Section 1/9</div>
                     <h3>Introducing JavaScript</h3>
                     <p>better the devil you know</h3>
                 </section>
@@ -83,7 +84,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 2/8</div>
+                    <div class='sectioncount'>Section 2/9</div>
                     <h3>Inclusion</h3>
                     <p>plugging it in</h3>
                 </section>
@@ -120,7 +121,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 3/8</div>
+                    <div class='sectioncount'>Section 3/9</div>
                     <h3>JS at a glance</h3>
                     <p>a whirlwind tour!</h3>
                 </section>
@@ -185,7 +186,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 4/8</div>
+                    <div class='sectioncount'>Section 4/9</div>
                     <h3>Exercise - testing the waters</h3>
                     <p>Getting our feet wet</h3>
                 </section>
@@ -241,7 +242,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 5/8</div>
+                    <div class='sectioncount'>Section 5/9</div>
                     <h3>Objects</h3>
                     <p>bags of data</h3>
                 </section>
@@ -324,7 +325,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 6/8</div>
+                    <div class='sectioncount'>Section 6/9</div>
                     <h3>Arrays</h3>
                     <p>Ordered lists</h3>
                 </section>
@@ -369,7 +370,7 @@ list.length <span class="hljs-comment">// 4</span>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 7/8</div>
+                    <div class='sectioncount'>Section 7/9</div>
                     <h3>Functions</h3>
                     <p>code in a can</h3>
                 </section>
@@ -403,9 +404,45 @@ list.length <span class="hljs-comment">// 4</span>
                     <p>We <strong>execute a method by using parens</strong>, and <strong>listing eventual parameters</strong> within those:</p>
                     <pre><code><span class="hljs-keyword">var</span> withEcho = echoer(<span class="hljs-string">"hello"</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// "hello hello hello "</span>
 </code></pre></section>
+                <section class="question">
+                    <p><strong>Question</strong>: What is the <strong>difference</strong> between this:</p>
+                    <pre><code>var x = <span class="hljs-function"><span class="hljs-keyword">func</span>;</span>
+</code></pre>
+                    <p>and <strong>this</strong>:</p>
+                    <pre><code><span class="hljs-keyword">var</span> x = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span>;
+</code></pre></section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: Well:</p>
+                    <ul>
+                        <li>
+                            <p>In the <strong>first example</strong>, <strong><code>x</code> has a reference to <code>func</code></strong>. Which means that after that, <strong>doing <code>x()</code> and <code>func()</code> would yield the same thing</strong>.</p>
+                        </li>
+                        <li>
+                            <p>In the <strong>second example</strong>, <strong><code>x</code> is whatever <code>func</code> returned</strong>.</p>
+                        </li>
+                    </ul>
+                </section>
                 <section>
-                    <p>Now for something super cool - since <strong>functions are first class citizens</strong>, we can send them around just like any value. Which also means that a function can take, and return, other functions! Such a function is called
-                        a <strong>higher order function</strong>.</p>
+                    <p>A final observation - There is nothing stopping us from <strong>having functions on objects</strong>:</p>
+                    <pre><code>myObject.beingAnnoying = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
+};
+myObject.beingAnnoying(); <span class="hljs-comment">// "SPAM!"</span>
+</code></pre>
+                    <p>When a function is a property on an object it is called a <strong>method</strong> of that object.</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 8/9</div>
+                    <h3>Functional programming</h3>
+                    <p>Jumping down the rabbit hole</h3>
+                </section>
+                <section>
+                    <p>Now for something super cool - since <strong>functions are first class citizens</strong>, we can <strong>send them around just like any value</strong>.</p>
+                    <p>Which also means that <strong>a function can take, and/or return, other functions</strong>! Such a function is called a <strong>higher order function</strong>.</p>
+                </section>
+                <section>
                     <p>As a contrived example, say we have this function:</p>
                     <pre><code><span class="hljs-keyword">var</span> spam = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
@@ -416,6 +453,7 @@ list.length <span class="hljs-comment">// 4</span>
                     <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repeater</span><span class="hljs-params">(func,times)</span>{</span>
   <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
     func();
+  }
 }
 </code></pre></section>
                 <section>
@@ -428,16 +466,29 @@ list.length <span class="hljs-comment">// 4</span>
 <span class="hljs-string">"SPAM!"</span>
 </code></pre></section>
                 <section>
-                    <p>There is nothing stopping us from <strong>having functions on objects</strong>:</p>
-                    <pre><code>myObject.beingAnnoying = spam;
-myObject.beingAnnoying(); <span class="hljs-regexp">//</span> <span class="hljs-string">"SPAM!"</span>
+                    <p>To show we can also <strong>return new functions</strong>, take a look at this beauty:</p>
+                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiplier</span><span class="hljs-params">(func,times)</span>{</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
+      func();
+    }
+  };
+}
+</code></pre></section>
+                <section>
+                    <p>Did you see the difference? <code>multiplier</code> doesn&#39;t execute the parameter function, but <strong>returns a new function</strong>!</p>
+                    <pre><code>var tripleSpam = multiplier(<span class="hljs-name">spam</span>,<span class="hljs-number">3</span>)<span class="hljs-comment">;</span>
 </code></pre>
-                    <p>When a function is a property on an object it is called a <strong>method</strong> of that object.</p>
+                    <p>If we <strong>execute the returned function</strong> we get the triple spam:</p>
+                    <pre><code>tripleSpam(); // SPAM! SPAM! SPAM!
+</code></pre></section>
+                <section>
+                    <p>Functional programming is a <strong>really powerful tool</strong>, and something that is likely to <strong>get you hooked once you have learned it</strong>. We warmly encourage you to explore the subject!</p>
                 </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 8/8</div>
+                    <div class='sectioncount'>Section 9/9</div>
                     <h3>Exercise - cooking time!</h3>
                     <p>getting functional</h3>
                 </section>
@@ -520,7 +571,7 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"
                 var code = e.which ||  e.keyCode;
                 if (code === 13) {
                     window.location.href = basehref + "index.html?from=" + (5 - 1);
-                } else if (code >= 49 && code <= 8 + 48) {
+                } else if (code >= 49 && code <= 9 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 0);
                 }
                 if (5 < 5) {

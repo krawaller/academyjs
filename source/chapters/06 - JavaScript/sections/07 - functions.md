@@ -45,49 +45,34 @@ var withEcho = echoer("hello",3); // "hello hello hello "
 
 ~~~
 
-Now for something super cool - since **functions are first class citizens**, we can send them around just like any value. Which also means that a function can take, and return, other functions! Such a function is called a **higher order function**.
-
-As a contrived example, say we have this function:
+**Question**: What is the **difference** between this:
 
 ```
-var spam = function(){
+var x = func;
+```
+
+and **this**:
+
+```
+var x = func();
+```
+
+~~~
+
+**Answer**: Well:
+
+* In the **first example**, **`x` has a reference to `func`**. Which means that after that, **doing `x()` and `func()` would yield the same thing**.
+
+* In the **second example**, **`x` is whatever `func` returned**.
+
+~~~
+
+A final observation - There is nothing stopping us from **having functions on objects**:
+
+```
+myObject.beingAnnoying = function(){
   console.log("SPAM!");
-}
-```
-
-~~~
-
-And then we have this higher order function:
-
-```
-function repeater(func,times){
-  for(var i = 0; i < times; i = i + 1){
-    func();
-}
-```
-
-~~~
-
-If we now do this:
-
-```javascript
-repeater(spam,3);
-```
-
-We would see this in the console:
-
-```
-"SPAM!"
-"SPAM!"
-"SPAM!"
-```
-
-~~~
-
-There is nothing stopping us from **having functions on objects**:
-
-```
-myObject.beingAnnoying = spam;
+};
 myObject.beingAnnoying(); // "SPAM!"
 ```
 
