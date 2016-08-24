@@ -162,7 +162,7 @@
                 </section>
                 <section>
                     <p>You will <strong>recognize <code>if</code> statement syntax</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (x === <span class="hljs-number">3</span>){
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (guess === correctAnswer){
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Correct!"</span>);
 } <span class="hljs-keyword">else</span> {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Not quite..."</span>);
@@ -322,6 +322,22 @@
 }
 </code></pre>
                 </section>
+                <section>
+                    <p>Finally: <strong>object can contain other objects</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> me = {
+  name: <span class="hljs-string">"David"</span>,
+  address: {
+    street: <span class="hljs-string">"Åsgatan 9"</span>,
+    zip: <span class="hljs-number">27131</span>,
+    city: <span class="hljs-string">"Ystad"</span>
+  }
+}
+</code></pre>
+                </section>
+                <section>
+                    <p>We can <strong>access properties to any depth</strong>: </p>
+                    <pre><code><span class="hljs-keyword">var</span> myZip = me.address.<span class="hljs-keyword">zip</span>;
+</code></pre></section>
             </section>
             <section>
                 <section>

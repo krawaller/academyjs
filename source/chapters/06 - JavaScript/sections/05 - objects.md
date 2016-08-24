@@ -117,3 +117,25 @@ for (var key in myObject){
 }
 ```
 
+~~~
+
+Finally: **object can contain other objects**:
+
+```javascript
+var me = {
+  name: "David",
+  address: {
+    street: "Åsgatan 9",
+    zip: 27131,
+    city: "Ystad"
+  }
+}
+```
+
+~~~
+
+We can **access properties to any depth**: 
+
+```
+var myZip = me.address.zip;
+```

@@ -49,7 +49,7 @@ There are also `!=` and `!==` negative variants.
 You will **recognize `if` statement syntax**:
 
 ```javascript
-if (x === 3){
+if (guess === correctAnswer){
   console.log("Correct!");
 } else {
   console.log("Not quite...");
