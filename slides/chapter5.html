@@ -38,8 +38,8 @@
                     <li><a href="#/6">Objects</a></li>
                     <li><a href="#/7">Arrays</a></li>
                     <li><a href="#/8">Functions</a></li>
-                    <li><a href="#/9">Functional&nbsp;programming</a></li>
-                    <li><a href="#/10">Exercise&nbsp;-&nbsp;cooking&nbsp;time!</a></li>
+                    <li><a href="#/9">Exercise&nbsp;-&nbsp;cooking&nbsp;time!</a></li>
+                    <li><a href="#/10">Functional&nbsp;programming</a></li>
                 </ol>
             </section>
             <section>
@@ -460,60 +460,6 @@ myObject.beingAnnoying(); <span class="hljs-comment">// "SPAM!"</span>
             <section>
                 <section>
                     <div class='sectioncount'>Section 8/9</div>
-                    <h3>Functional programming</h3>
-                    <p>Jumping down the rabbit hole</h3>
-                </section>
-                <section>
-                    <p>Now for something super cool - since <strong>functions are first class citizens</strong>, we can <strong>send them around just like any value</strong>.</p>
-                    <p>Which also means that <strong>a function can take, and/or return, other functions</strong>! Such a function is called a <strong>higher order function</strong>.</p>
-                </section>
-                <section>
-                    <p>As a contrived example, say we have this function:</p>
-                    <pre><code><span class="hljs-keyword">var</span> spam = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
-}
-</code></pre></section>
-                <section>
-                    <p>And then we have this higher order function:</p>
-                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repeater</span><span class="hljs-params">(func,times)</span>{</span>
-  <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
-    func();
-  }
-}
-</code></pre></section>
-                <section>
-                    <p>If we now do this:</p>
-                    <pre><code class="lang-javascript">repeater(spam,<span class="hljs-number">3</span>);
-</code></pre>
-                    <p>We would see this in the console:</p>
-                    <pre><code><span class="hljs-string">"SPAM!"</span>
-<span class="hljs-string">"SPAM!"</span>
-<span class="hljs-string">"SPAM!"</span>
-</code></pre></section>
-                <section>
-                    <p>To show we can also <strong>return new functions</strong>, take a look at this beauty:</p>
-                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiplier</span><span class="hljs-params">(func,times)</span>{</span>
-  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-    <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
-      func();
-    }
-  };
-}
-</code></pre></section>
-                <section>
-                    <p>Did you see the difference? <code>multiplier</code> doesn&#39;t execute the parameter function, but <strong>returns a new function</strong>!</p>
-                    <pre><code>var tripleSpam = multiplier(<span class="hljs-name">spam</span>,<span class="hljs-number">3</span>)<span class="hljs-comment">;</span>
-</code></pre>
-                    <p>If we <strong>execute the returned function</strong> we get the triple spam:</p>
-                    <pre><code>tripleSpam(); // SPAM! SPAM! SPAM!
-</code></pre></section>
-                <section>
-                    <p>Functional programming is a <strong>really powerful tool</strong>, and something that is likely to <strong>get you hooked once you have learned it</strong>. We warmly encourage you to explore the subject!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 9/9</div>
                     <h3>Exercise - cooking time!</h3>
                     <p>getting functional</h3>
                 </section>
@@ -565,6 +511,60 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"
                     <pre><code>console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Shop for supersoup at "</span>+findCheapestStore(supersoup,stores));
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Shop for stew at "</span>+costOfRecipe(stew,stores));
 </code></pre></section>
+            </section>
+            <section>
+                <section>
+                    <div class='sectioncount'>Section 9/9</div>
+                    <h3>Functional programming</h3>
+                    <p>Jumping down the rabbit hole</h3>
+                </section>
+                <section>
+                    <p>Now for something super cool - since <strong>functions are first class citizens</strong>, we can <strong>send them around just like any value</strong>.</p>
+                    <p>Which also means that <strong>a function can take, and/or return, other functions</strong>! Such a function is called a <strong>higher order function</strong>.</p>
+                </section>
+                <section>
+                    <p>As a contrived example, say we have this function:</p>
+                    <pre><code><span class="hljs-keyword">var</span> spam = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
+}
+</code></pre></section>
+                <section>
+                    <p>And then we have this higher order function:</p>
+                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repeater</span><span class="hljs-params">(func,times)</span>{</span>
+  <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
+    func();
+  }
+}
+</code></pre></section>
+                <section>
+                    <p>If we now do this:</p>
+                    <pre><code class="lang-javascript">repeater(spam,<span class="hljs-number">3</span>);
+</code></pre>
+                    <p>We would see this in the console:</p>
+                    <pre><code><span class="hljs-string">"SPAM!"</span>
+<span class="hljs-string">"SPAM!"</span>
+<span class="hljs-string">"SPAM!"</span>
+</code></pre></section>
+                <section>
+                    <p>To show we can also <strong>return new functions</strong>, take a look at this beauty:</p>
+                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiplier</span><span class="hljs-params">(func,times)</span>{</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
+      func();
+    }
+  };
+}
+</code></pre></section>
+                <section>
+                    <p>Did you see the difference? <code>multiplier</code> doesn&#39;t execute the parameter function, but <strong>returns a new function</strong>!</p>
+                    <pre><code>var tripleSpam = multiplier(<span class="hljs-name">spam</span>,<span class="hljs-number">3</span>)<span class="hljs-comment">;</span>
+</code></pre>
+                    <p>If we <strong>execute the returned function</strong> we get the triple spam:</p>
+                    <pre><code>tripleSpam(); // SPAM! SPAM! SPAM!
+</code></pre></section>
+                <section>
+                    <p>Functional programming is a <strong>really powerful tool</strong>, and something that is likely to <strong>get you hooked once you have learned it</strong>. We warmly encourage you to explore the subject!</p>
+                </section>
             </section>
 
             <section>
