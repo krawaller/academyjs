@@ -34,7 +34,7 @@ npm install -g less
 After that you now have access to the **`lessc` command**. You use it like this:
 
 ```
-less path/to/styles.less wanted/output/path/styles.css
+lessc path/to/styles.less wanted/output/path/styles.css
 ```
 
 ~~~
