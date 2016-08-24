@@ -17,10 +17,27 @@ var list = ["tomatoes",42,false];
 
 ~~~
 
+
+Since **arrays are objects** we **access elements as before**:
+
+```javascript
+var firstItem = list[0]; // "tomatoes"
+```
+
+~~~
+
 An array **has a length property** that tells us how many elements it contains:
 
 ```javascript
 list.length // 3
+```
+
+~~~
+
+Which means I can **pick the last item** by doing this:
+
+```
+var lastItem = list[list.length-1]; // false
 ```
 
 ~~~

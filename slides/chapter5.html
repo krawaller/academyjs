@@ -355,10 +355,19 @@
 </code></pre>
                 </section>
                 <section>
+                    <p>Since <strong>arrays are objects</strong> we <strong>access elements as before</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> firstItem = list[<span class="hljs-number">0</span>]; <span class="hljs-comment">// "tomatoes"</span>
+</code></pre>
+                </section>
+                <section>
                     <p>An array <strong>has a length property</strong> that tells us how many elements it contains:</p>
                     <pre><code class="lang-javascript">list.length <span class="hljs-comment">// 3</span>
 </code></pre>
                 </section>
+                <section>
+                    <p>Which means I can <strong>pick the last item</strong> by doing this:</p>
+                    <pre><code><span class="hljs-keyword">var</span> lastItem = <span class="hljs-keyword">list</span>[<span class="hljs-keyword">list</span>.length<span class="hljs-number">-1</span>]; // <span class="hljs-literal">false</span>
+</code></pre></section>
                 <section>
                     <p>We can <strong>add a new value</strong> by calling the <code>push</code> method:</p>
                     <pre><code class="lang-javascript">list.push(<span class="hljs-string">"foobar"</span>);
