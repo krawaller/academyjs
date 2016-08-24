@@ -74,7 +74,7 @@ Don't make your selectors more specific than they need to be!
 
 Keeping order in your Java project is easy - **give classes good names**, **sort them in modules**, etc. But **doing it in CSS is hard**!
 
-Still, **you must try**! Use **comments**, **file separation** and **structure**.
+Still, **you must try**! Use **comments**, **file separation** and **structure**. A good tip is to **do whatever Nicole Sullivan says**: [http://www.stubbornella.org/](http://www.stubbornella.org/)
 
 ~~~
 
