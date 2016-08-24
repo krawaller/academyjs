@@ -41,4 +41,15 @@ As you might have guessed, **inline handlers are a bad idea**.
 
 ~~~
 
-In fact, most of the logic here **tightly resembles what we said about CSS inclusion**!
+**Question**: Wasn't all of this **extremely similar** to how **CSS inclusion** works?
+
+~~~
+
+**Answer**: Yes! :)
+
+~~~
+
+Btw - remember that we now just talked about **including JS in a web app**, that is, a HTML + CSS + JS app that runs in the browser.
+
+But **JS can run in other places too** - in Node, servers, IoT - anywhere!
+

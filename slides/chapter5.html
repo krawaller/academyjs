@@ -23,7 +23,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 5 of 5 </div>
+                <div class="chapternumber"> chapter 5 of 6 </div>
                 <h1>JavaScript basics</h1>
                 <span>the holy spirit</span>
             </section>
@@ -39,12 +39,11 @@
                     <li><a href="#/7">Arrays</a></li>
                     <li><a href="#/8">Functions</a></li>
                     <li><a href="#/9">Exercise&nbsp;-&nbsp;cooking&nbsp;time!</a></li>
-                    <li><a href="#/10">Functional&nbsp;programming</a></li>
                 </ol>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 1/9</div>
+                    <div class='sectioncount'>Section 1/8</div>
                     <h3>Introducing JavaScript</h3>
                     <p>better the devil you know</h3>
                 </section>
@@ -84,7 +83,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 2/9</div>
+                    <div class='sectioncount'>Section 2/8</div>
                     <h3>Inclusion</h3>
                     <p>plugging it in</h3>
                 </section>
@@ -115,13 +114,20 @@
 </code></pre>
                     <p>As you might have guessed, <strong>inline handlers are a bad idea</strong>.</p>
                 </section>
+                <section class="question">
+                    <p><strong>Question</strong>: Wasn&#39;t all of this <strong>extremely similar</strong> to how <strong>CSS inclusion</strong> works?</p>
+                </section>
+                <section class="answer">
+                    <p><strong>Answer</strong>: Yes! :)</p>
+                </section>
                 <section>
-                    <p>In fact, most of the logic here <strong>tightly resembles what we said about CSS inclusion</strong>!</p>
+                    <p>Btw - remember that we now just talked about <strong>including JS in a web app</strong>, that is, a HTML + CSS + JS app that runs in the browser.</p>
+                    <p>But <strong>JS can run in other places too</strong> - in Node, servers, IoT - anywhere!</p>
                 </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 3/9</div>
+                    <div class='sectioncount'>Section 3/8</div>
                     <h3>JS at a glance</h3>
                     <p>a whirlwind tour!</h3>
                 </section>
@@ -134,26 +140,32 @@
                 </section>
                 <section>
                     <p>We <strong>declare variables using the <code>var</code> keyword</strong>, and <strong>assign using <code>=</code></strong>. No type specification needed, since JS is loosely typed.</p>
-                    <pre><code><span class="hljs-keyword">var</span> x = <span class="hljs-string">"Hello"</span> + <span class="hljs-string">" "</span> + <span class="hljs-string">"world!"</span>;
+                    <pre><code><span class="hljs-keyword">var</span> x = <span class="hljs-string">"Hello world!"</span>;
 </code></pre>
                     <p>We <strong>end statements with <code>;</code></strong>. These are actually optional, but <strong>leaving them out can cause problems</strong>!</p>
                 </section>
                 <section>
-                    <p>You just saw <strong>string literals</strong>. There are also...</p>
+                    <p>Since <strong>a variable can contain any type</strong>, the language offers a <strong>way to check</strong>:</p>
+                    <pre><code><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> x); <span class="hljs-regexp">//</span> <span class="hljs-string">"string"</span>
+</code></pre>
+                    <p>The output from <code>console.log</code> is visible in the Developer tools console tab.</p>
+                </section>
+                <section>
+                    <p>You saw <strong>string literals</strong> earlier. There are also...</p>
                     <ul>
                         <li><strong>numbers</strong>: <code>3</code>, <code>2.04</code> (all numbers are floating points)</li>
                         <li><strong>booleans</strong>: <code>true</code>, <code>false</code></li>
                     </ul>
                 </section>
                 <section>
-                    <p>And <strong>two single-value types</strong>:</p>
+                    <p>And <strong>two single-value voidish types</strong>:</p>
                     <ul>
                         <li><strong>null</strong>: <code>null</code></li>
                         <li><strong>undefined</strong>: <code>undefined</code></li>
                     </ul>
                 </section>
                 <section>
-                    <p><strong>Equality testing</strong> is done by</p>
+                    <p><strong>Equality testing</strong> is done in two ways:</p>
                     <ul>
                         <li><code>==</code> (which does type coercion, so <code>3 == &quot;3&quot;</code> is <code>true</code>)</li>
                         <li><code>===</code> (also comparing type, so <code>3 === &quot;3&quot;</code> is <code>false</code>)</li>
@@ -183,10 +195,13 @@
   console.<span class="hljs-built_in">log</span>(x+<span class="hljs-string">" bottles left"</span>);
 }
 </code></pre></section>
+                <section>
+                    <p>This was a <strong>very superficial tour</strong> to give you what you need to test the waters. There is sooo much more to say!</p>
+                </section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 4/9</div>
+                    <div class='sectioncount'>Section 4/8</div>
                     <h3>Exercise - testing the waters</h3>
                     <p>Getting our feet wet</h3>
                 </section>
@@ -215,8 +230,8 @@
                     <p><img src="resources/images/alert.png" alt=""></p>
                 </section>
                 <section>
-                    <p>We can <strong>generate a random value</strong> using the <code>random</code> and <code>floor</code> methods of the built-in <code>Math</code> object:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> randomNumber = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">3</span>)+<span class="hljs-number">1</span>; <span class="hljs-comment">// gives 1-10</span>
+                    <p>We can <strong>generate a random value</strong> using the <strong><code>random</code> and <code>floor</code> methods</strong> of the built-in <strong><code>Math</code> object</strong>:</p>
+                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> randomNumber = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">10</span>)+<span class="hljs-number">1</span>; <span class="hljs-comment">// gives 1-10</span>
 </code></pre>
                 </section>
                 <section>
@@ -242,7 +257,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 5/9</div>
+                    <div class='sectioncount'>Section 5/8</div>
                     <h3>Objects</h3>
                     <p>bags of data</h3>
                 </section>
@@ -341,7 +356,7 @@
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 6/9</div>
+                    <div class='sectioncount'>Section 6/8</div>
                     <h3>Arrays</h3>
                     <p>Ordered lists</h3>
                 </section>
@@ -395,7 +410,7 @@ list.length <span class="hljs-comment">// 4</span>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 7/9</div>
+                    <div class='sectioncount'>Section 7/8</div>
                     <h3>Functions</h3>
                     <p>code in a can</h3>
                 </section>
@@ -456,10 +471,16 @@ myObject.beingAnnoying(); <span class="hljs-comment">// "SPAM!"</span>
 </code></pre>
                     <p>When a function is a property on an object it is called a <strong>method</strong> of that object.</p>
                 </section>
+                <section>
+                    <p>And to end on a meta note; there is also nothing stopping us from <strong>having objects (or anything else) on functions</strong>, since <strong>functions are objects</strong>.</p>
+                    <pre><code>var <span class="hljs-function"><span class="hljs-keyword">func</span> = <span class="hljs-title">function</span><span class="hljs-params">()</span>{};</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span>.<span class="hljs-title">prop</span> = {<span class="hljs-title">hello</span>:"<span class="hljs-title">world</span>!"};</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-function"><span class="hljs-keyword">func</span>.<span class="hljs-title">prop</span>.<span class="hljs-title">hello</span>); // "<span class="hljs-title">world</span>!"</span>
+</code></pre></section>
             </section>
             <section>
                 <section>
-                    <div class='sectioncount'>Section 8/9</div>
+                    <div class='sectioncount'>Section 8/8</div>
                     <h3>Exercise - cooking time!</h3>
                     <p>getting functional</h3>
                 </section>
@@ -484,7 +505,9 @@ myObject.beingAnnoying(); <span class="hljs-comment">// "SPAM!"</span>
                     <pre><code>var ICA = {
 <span class="hljs-symbol">  potato:</span> <span class="hljs-number">12</span>,
 <span class="hljs-symbol">  tomato:</span> <span class="hljs-number">7</span>,
-<span class="hljs-symbol">  cucumber:</span> <span class="hljs-number">3</span>
+<span class="hljs-symbol">  cucumber:</span> <span class="hljs-number">3</span>,
+<span class="hljs-symbol">  corn:</span> <span class="hljs-number">5</span>,
+  <span class="hljs-comment">// ...</span>
 };
 </code></pre></section>
                 <section>
@@ -512,65 +535,9 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"
 console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Shop for stew at "</span>+costOfRecipe(stew,stores));
 </code></pre></section>
             </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 9/9</div>
-                    <h3>Functional programming</h3>
-                    <p>Jumping down the rabbit hole</h3>
-                </section>
-                <section>
-                    <p>Now for something super cool - since <strong>functions are first class citizens</strong>, we can <strong>send them around just like any value</strong>.</p>
-                    <p>Which also means that <strong>a function can take, and/or return, other functions</strong>! Such a function is called a <strong>higher order function</strong>.</p>
-                </section>
-                <section>
-                    <p>As a contrived example, say we have this function:</p>
-                    <pre><code><span class="hljs-keyword">var</span> spam = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
-}
-</code></pre></section>
-                <section>
-                    <p>And then we have this higher order function:</p>
-                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repeater</span><span class="hljs-params">(func,times)</span>{</span>
-  <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
-    func();
-  }
-}
-</code></pre></section>
-                <section>
-                    <p>If we now do this:</p>
-                    <pre><code class="lang-javascript">repeater(spam,<span class="hljs-number">3</span>);
-</code></pre>
-                    <p>We would see this in the console:</p>
-                    <pre><code><span class="hljs-string">"SPAM!"</span>
-<span class="hljs-string">"SPAM!"</span>
-<span class="hljs-string">"SPAM!"</span>
-</code></pre></section>
-                <section>
-                    <p>To show we can also <strong>return new functions</strong>, take a look at this beauty:</p>
-                    <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiplier</span><span class="hljs-params">(func,times)</span>{</span>
-  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-    <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
-      func();
-    }
-  };
-}
-</code></pre></section>
-                <section>
-                    <p>Did you see the difference? <code>multiplier</code> doesn&#39;t execute the parameter function, but <strong>returns a new function</strong>!</p>
-                    <pre><code>var tripleSpam = multiplier(<span class="hljs-name">spam</span>,<span class="hljs-number">3</span>)<span class="hljs-comment">;</span>
-</code></pre>
-                    <p>If we <strong>execute the returned function</strong> we get the triple spam:</p>
-                    <pre><code>tripleSpam(); // SPAM! SPAM! SPAM!
-</code></pre></section>
-                <section>
-                    <p>Functional programming is a <strong>really powerful tool</strong>, and something that is likely to <strong>get you hooked once you have learned it</strong>. We warmly encourage you to explore the subject!</p>
-                </section>
-            </section>
 
             <section>
-                <h1>The end</h1>
-                <p>...or perhaps the beginning?</p><br/><br/>
-                <p><a href="index.html">back to index</a></p>
+                <h3>Next</h3><a href="chapter6.html">The DOM & jQuery</a>
             </section>
 
         </div>
@@ -596,10 +563,10 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"
                 var code = e.which ||  e.keyCode;
                 if (code === 13) {
                     window.location.href = basehref + "index.html?from=" + (5 - 1);
-                } else if (code >= 49 && code <= 9 + 48) {
+                } else if (code >= 49 && code <= 8 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 0);
                 }
-                if (5 < 5) {
+                if (5 < 6) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (5 + 1) + ".html"
                     }

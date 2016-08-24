@@ -31,7 +31,9 @@ Now define a **shop object** containing all used **ingredients as keys** and the
 var ICA = {
   potato: 12,
   tomato: 7,
-  cucumber: 3
+  cucumber: 3,
+  corn: 5,
+  // ...
 };
 ```
 

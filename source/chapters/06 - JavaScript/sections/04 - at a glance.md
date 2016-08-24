@@ -16,28 +16,38 @@ There **is no `main` function** - JS code is simply **run from top to bottom**.
 We **declare variables using the `var` keyword**, and **assign using `=`**. No type specification needed, since JS is loosely typed.
 
 ```
-var x = "Hello" + " " + "world!";
+var x = "Hello world!";
 ```
 
 We **end statements with `;`**. These are actually optional, but **leaving them out can cause problems**!
 
 ~~~
 
-You just saw **string literals**. There are also...
+Since **a variable can contain any type**, the language offers a **way to check**:
+
+```
+console.log(typeof x); // "string"
+```
+
+The output from `console.log` is visible in the Developer tools console tab.
+
+~~~
+
+You saw **string literals** earlier. There are also...
 
 * **numbers**: `3`, `2.04` (all numbers are floating points)
 * **booleans**: `true`, `false`
 
 ~~~
 
-And **two single-value types**:
+And **two single-value voidish types**:
 
 * **null**: `null`
 * **undefined**: `undefined`
 
 ~~~
 
-**Equality testing** is done by
+**Equality testing** is done in two ways:
 
 * `==` (which does type coercion, so `3 == "3"` is `true`)
 * `===` (also comparing type, so `3 === "3"` is `false`)
@@ -78,3 +88,7 @@ while(x > 0){
   console.log(x+" bottles left");
 }
 ```
+
+~~~
+
+This was a **very superficial tour** to give you what you need to test the waters. There is sooo much more to say!

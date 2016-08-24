@@ -1,13 +1,13 @@
 digraph {
   bgcolor = transparent
   rankdir = TD
-  html -> attributes
-  dom -> properties
+  html -> attributes [dir=none]
+  dom -> properties [dir=none]
 
   html [label="HTML\nelement"]
   dom [label="DOM\nnode"]
 
-  
+  attributes, properties [shape=box]
 
   attributes -> properties [style=dashed,label="initializes\n(sometimes)"]
   {rank=same;attributes,properties}

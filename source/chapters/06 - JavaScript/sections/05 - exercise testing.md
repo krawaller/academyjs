@@ -39,10 +39,10 @@ alert("WRONG!");
 
 ~~~
 
-We can **generate a random value** using the `random` and `floor` methods of the built-in `Math` object:
+We can **generate a random value** using the **`random` and `floor` methods** of the built-in **`Math` object**:
 
 ```javascript
-var randomNumber = Math.floor(Math.random()*3)+1; // gives 1-10
+var randomNumber = Math.floor(Math.random()*10)+1; // gives 1-10
 ```
 
 ~~~

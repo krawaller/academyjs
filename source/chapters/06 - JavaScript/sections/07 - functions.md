@@ -77,3 +77,14 @@ myObject.beingAnnoying(); // "SPAM!"
 ```
 
 When a function is a property on an object it is called a **method** of that object.
+
+~~~
+
+And to end on a meta note; there is also nothing stopping us from **having objects (or anything else) on functions**, since **functions are objects**.
+
+```
+var func = function(){};
+func.prop = {hello:"world!"};
+console.log(func.prop.hello); // "world!"
+```
+

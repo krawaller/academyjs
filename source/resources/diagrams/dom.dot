@@ -1,0 +1,5 @@
+digraph {
+  bgcolor = transparent
+  rankdir = LR
+  HTML -> DOM -> JS [dir=none]
+}
