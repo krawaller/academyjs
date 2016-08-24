@@ -11,7 +11,7 @@ It is an **interactive tutorial** somewhat reminiscent of the games we've been p
 
 Go to [http://try.jquery.com](http://try.jquery.com) and you'll see this:
 
-![](resources/images/try.jquery.com)
+![](resources/images/tryjquery.png)
 
 ~~~
 
