@@ -62,7 +62,7 @@ Don't make your selectors more specific than they need to be!
 
 ~~~
 
-**Question**: Ehm, doesn't that commandment collide with the previous one? Isn't it **easier to avoid cluttering the html if we have more complex selectors**?
+**Question**: Ehm, doesn't that commandment collide with the previous one? Isn't it **easier to avoid cluttering the html if we have more complex selectors**? And **easier to write short selectors if we add some classes or extra divs to the html**?
 
 ~~~
 
