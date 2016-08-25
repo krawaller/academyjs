@@ -56,6 +56,12 @@ The only difference is that **`querySelector` always return 0 or 1 elements**, w
 
 ~~~
 
+The `querySelector` methods are a good example of how **the DOM has improved in later years**. But go back in time, and it was rather horrible to work with.
+
+This is a big reason for **JavaScript's bad reputation**, since JS is what we use to interact with the DOM. But, the fact is that **interacting with the DOM would suck in any language**. It wasn't JS' fault!
+
+~~~
+
 **Question**: All those words, but we still don't know **what DOM stands for**?
 
 ~~~
