@@ -89,3 +89,15 @@ And as its API is rather easy, using jQuery can be a better way to learn the DOM
 So: definitely **learn jQuery**, but make sure to **also understand what is actually going on**. 
 
 Practice from time to time to **do it without jQuery**.
+
+~~~
+
+Ending by **zooming out**; this is what you'll be doing with jQuery most of the time:
+
+```
+$(someSelector).someMethod();
+```
+
+We 
+* **select some elements**, and
+* **do something with them**
