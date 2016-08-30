@@ -1,0 +1,3 @@
+[submodule "mc2"]
+	path = mc2
+	url = https://github.com/edumentab/mc2.git
