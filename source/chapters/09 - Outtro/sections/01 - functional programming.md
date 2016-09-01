@@ -1,6 +1,6 @@
 ---
 title: Functional programming
-tagline: Jumping down the rabbit hole
+tagline: Jumping down the rabbit hole 
 ---
 
 So - since **functions are first class citizens**, we can **send them around just like any value**.
