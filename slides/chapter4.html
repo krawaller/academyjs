@@ -23,7 +23,7 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 4 of 6 </div>
+                <div class="chapternumber"> chapter 4 of 7 </div>
                 <h1>More CSS</h1>
                 <span>sharpening the tools</span>
             </section>
@@ -47,17 +47,17 @@
                 <section>
                     <div class='sectioncount'>Section 1/10</div>
                     <h3>Pseudo Elements</h3>
-                    <p>Where did you come from?!</h3>
+                    <p>Where did you come from?!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>You&#39;ve already met pseudo classes. However, the <strong>pseudo elements</strong> do something we haven&#39;t yet seen - they <strong>add new elements</strong> to the document!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Say we have this <code>p</code> element:</p>
                     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Eeexiiit <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>light!<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> Eeenteeer <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>niiiight!<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>And we target it with this CSS:</p>
                     <pre><code class="lang-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:before</span> {
   <span class="hljs-attribute">content</span>: <span class="hljs-string">"♬ "</span>;
@@ -67,18 +67,18 @@
 }
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Then we get this <strong>output</strong>:</p>
                     <p><img src="resources/images/sandman.png" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Note however that the notes <strong>don&#39;t actually come before and after</strong> the <code>p</code> element, but rather <strong>become the youngest and oldest children</strong>:</p>
                     <p><img src="resources/diagrams/sandman.svg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>In other words, <code>:before</code> and <code>:after</code> are <strong>misleading names</strong>, they should have been called something else. Also there should be an <em>actual</em> before and after, but there isn&#39;t.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>But still, the <strong>pseudo elements are a powerful tool</strong> when the moment is right.</p>
                     <p>Note that you don&#39;t have to use it for text content - we can also set <code>display</code> to <code>block</code>, add background images and all sort of shenanigans!</p>
                 </section>
@@ -87,9 +87,9 @@
                 <section>
                     <div class='sectioncount'>Section 2/10</div>
                     <h3>CSS Deluxe</h3>
-                    <p>bells and whistles</h3>
+                    <p>bells and whistles</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Although CSS has grown more powerful, there is still <strong>a lot to be desired</strong>.</p>
                     <ul>
                         <li><strong>variables</strong></li>
@@ -98,7 +98,7 @@
                         <li><strong>nested declarations</strong></li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>This has driven many to try to <strong>add a layer on top of CSS</strong>. The two most popular solutions are <strong>SASS and LESS</strong>.</p>
                     <div class="equality">
                         <img src="resources/images/sass.svg" alt="js">
@@ -109,11 +109,11 @@
 
                     <p>Read more at <a href="http://sass-lang.com/">http://sass-lang.com/</a> and <a href="http://lesscss.org/">http://lesscss.org/</a>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The idea is that we write in a language that <strong>compiles down to regular CSS</strong>.</p>
                     <p><img src="resources/diagrams/css-compile.svg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The LESS homepage shows <strong>this LESS code</strong>:</p>
                     <pre><code class="lang-less"><span class="hljs-variable">@base:</span> <span class="hljs-number">#f938ab</span>;
 
@@ -131,7 +131,7 @@
 }
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>...which <strong>compiles to this CSS</strong>:</p>
                     <pre><code class="lang-css"><span class="hljs-selector-class">.box</span> {
   <span class="hljs-attribute">color</span>: <span class="hljs-number">#fe33ac</span>;
@@ -143,11 +143,11 @@
 }
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Of course, using something like this means that we require a <strong>build step</strong>!</p>
                     <p>But as you will find, this is something that is <strong>regularly used</strong> in the web world, even though HTML, CSS and JS are all interpreted.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Why? <strong>Many reasons</strong>, three of which are:</p>
                     <ul>
                         <li>use <strong>preprocess languages</strong> for CSS or JS</li>
@@ -160,30 +160,30 @@
                 <section>
                     <div class='sectioncount'>Section 3/10</div>
                     <h3>Exercise - Build step</h3>
-                    <p>LESS is more</h3>
+                    <p>LESS is more</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>No surprise - we&#39;ll now <strong>integrate LESS</strong> into our game!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>As we saw, this means that we now need a <strong>build step</strong> which <strong>compiles the LESS code into CSS</strong>.And the first step to install LESS is, perhaps surprisingly, to <strong>install Node</strong>!</p>
                     <p><img src="resources/images/node.jpg" alt=""></p>
                     <p>More on Node, and installation instructions, here: <a href="https://nodejs.org/">https://nodejs.org/</a></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>We&#39;ll talk more about Node, which is a JavaScript runtime, later. Now we just need it to use <strong>npm</strong>, which is a <strong>package manager</strong> that runs in Node. LESS is distributed as such a package.</p>
                     <p><img src="resources/images/npm.png" alt=""></p>
                     <p>You can read more about npm here: <a href="https://www.npmjs.com/">https://www.npmjs.com/</a></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>LESS is installed as a global command. Once you have installed Node, open a <strong>terminal</strong> - it doesn&#39;t matter in which folder you are - and type:</p>
                     <pre><code>npm <span class="hljs-keyword">install</span> -g <span class="hljs-keyword">less</span>
 </code></pre></section>
-                <section>
+                <section class="slide">
                     <p>After that you now have access to the <strong><code>lessc</code> command</strong>. You use it like this:</p>
-                    <pre><code>lessc <span class="hljs-built_in">path</span>/to/styles.less wanted/output/<span class="hljs-built_in">path</span>/styles.css
+                    <pre><code>lessc path<span class="hljs-regexp">/to/</span>styles.less wanted<span class="hljs-regexp">/output/</span>path<span class="hljs-regexp">/styles.css</span>
 </code></pre></section>
-                <section>
+                <section class="slide">
                     <p>To integrate this in your project:</p>
                     <ol>
                         <li><strong>Rename</strong> your <code>.css</code> file to <code>.less</code>. CSS is valid LESS! </li>
@@ -191,14 +191,14 @@
                         <li><strong>Use <code>lessc</code></strong> to compile your code into <code>.css</code>!</li>
                     </ol>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Submit by <strong>adding, committing, pushing and make a PR</strong> as usual!</p>
                 </section>
-                <section class="challenge">
+                <section class="slide challenge">
                     <p><strong>Challenge</strong>: Of course, having to remember to compile the <code>.less</code> file is tiresome. It is therefore common to <strong>set up an automagic compiler</strong>. Try your hand at this! There are many solutions,
                         one suggestion is to use this: <a href="https://github.com/jonycheung/deadsimple-less-watch-compiler">https://github.com/jonycheung/deadsimple-less-watch-compiler</a>.</p>
                 </section>
-                <section class="challenge">
+                <section class="slide challenge">
                     <p><strong>Challenge</strong>: If you still have time and/or energy left over, try to <strong>find some use for pseudo elements</strong> in your app!</p>
                 </section>
             </section>
@@ -206,12 +206,12 @@
                 <section>
                     <div class='sectioncount'>Section 4/10</div>
                     <h3>Transitions</h3>
-                    <p>Slowing things down</h3>
+                    <p>Slowing things down</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Normally, if a <strong>style property of an element changes value</strong>, the <strong>change is instantaneous</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>For example, we apply this style...</p>
                     <pre><code class="lang-css"><span class="hljs-selector-id">#instantexample</span><span class="hljs-selector-pseudo">:hover</span> {
   <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(45deg);
@@ -220,7 +220,7 @@
                     <p>...to this <code>div</code>, so <strong>try hovering over it</strong>!</p>
                     <div id="instantexample"></div>
                 </section>
-                <section>
+                <section class="slide">
                     <p>This div is exactly the same as before, but with <strong>one additional rule</strong>:</p>
                     <pre><code><span class="hljs-selector-id">#transitionexample</span> {
   <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">1s</span> ease;
@@ -229,10 +229,10 @@
                     <p>Try <strong>hovering again</strong>!</p>
                     <div id="transitionexample"></div>
                 </section>
-                <section>
+                <section class="slide">
                     <p>As you probably figure, transitions are <strong>a really powerful way to do CSS-only animations</strong>, and <strong>well worth getting to know well</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Some notes;</p>
                     <ul>
                         <li>The <strong>full shorthand syntax</strong> is <code>transition: &lt;property&gt; &lt;duration&gt; &lt;timing function&gt; &lt;delay&gt;</code></li>
@@ -240,11 +240,11 @@
                         <li>As with many new / experimental technologies some browsers might require <strong>vendor prefixes</strong> still: <code>-webkit-transition</code>, <code>-ms-transition</code>, etc. Although the need is growing less and less frequent.</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>As per usual there are <strong>lots more detail on MDN</strong>:</p>
                     <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">https://developer.mozilla.org/en-US/docs/Web/CSS/transition</a></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Btw, the <strong><code>transform</code> property</strong> that we used as a transition example is really powerful, and worthy of looking up for its own sake!</p>
                     <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a></p>
                 </section>
@@ -253,23 +253,23 @@
                 <section>
                     <div class='sectioncount'>Section 5/10</div>
                     <h3>Animations</h3>
-                    <p>ACTUAL animations, that is!</h3>
+                    <p>ACTUAL animations, that is!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>With <strong>transitions</strong> we can do <strong>simple animations from one state to another</strong>.</p>
                     <p>But CSS also provides <strong>actual animations</strong> where we <strong>change between predefined frames</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Behold <strong>this beautiful example</strong>!</p>
                     <div id="animationexample">
                         <div></div>
                     </div>
                 </section>
-                <section>
+                <section class="slide">
                     <p>An animation consists of <strong>two parts</strong>. First we <strong>name the animation</strong> and <strong>define the keyframes</strong>, which contain <strong>property values</strong> to be reached at <strong>various points during the animation timeline</strong>.
                         These values will <strong>transition</strong> from one point to the next.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The earlier animation was <strong>defined like this</strong>:</p>
                     <pre><code class="lang-css">@<span class="hljs-keyword">keyframes</span> looparound {
   0% {
@@ -295,7 +295,7 @@
 }
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>And our element then <strong>used the animation</strong> by specifying <strong>name</strong>, <strong>duration</strong> and <strong>repeats</strong>:</p>
                     <pre><code class="lang-css"><span class="hljs-selector-id">#animationexample</span> &gt; <span class="hljs-selector-tag">div</span> {
   <span class="hljs-attribute">animation-name</span>: looparound;
@@ -304,7 +304,7 @@
 }
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>If we only want to <strong>go from one set of property values to another</strong>, then we <strong>might as well just use transitions</strong>.</p>
                     <p>But there are <strong>more than two frames involved</strong> we must <strong>use animations instead</strong>!</p>
                 </section>
@@ -313,16 +313,16 @@
                 <section>
                     <div class='sectioncount'>Section 6/10</div>
                     <h3>Exercise - Going overboard</h3>
-                    <p>Because more is always better</h3>
+                    <p>Because more is always better</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Our newfound knowledge leaves us no choice - we absolutely must <strong>add transitions and animations</strong> to our game!</p>
                     <p>Look your game over, and <strong>any place where you can cram movement, do it</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>When you&#39;re done, <strong>add new files</strong>, <strong>commit</strong>, <strong>push</strong> and do a <strong>PR</strong> as per usual!</p>
                 </section>
-                <section class="challenge">
+                <section class="slide challenge">
                     <p><strong>Challenge</strong>: For extra annoyment points, <strong>read up on <code>transform</code></strong> and do some <strong><code>transition</code> or <code>transformation</code></strong> with that! I have it from good authority
                         that <strong>users LOVE when you use <code>skew</code></strong>! Promise!</p>
                 </section>
@@ -331,16 +331,16 @@
                 <section>
                     <div class='sectioncount'>Section 7/10</div>
                     <h3>Order</h3>
-                    <p>let the race begin!</h3>
+                    <p>let the race begin!</p>
                 </section>
-                <section class="question">
+                <section class="slide question">
                     <p><strong>Question</strong>: So, styles can be defined in many different places. But, <strong>what happens when the same style is applied in different ways</strong>?</p>
                 </section>
-                <section class="answer">
+                <section class="slide answer">
                     <p><strong>Answer</strong>: The browser follows a strict pecking order:</p>
                     <p><img src="resources/diagrams/css-order.svg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>There were some things in there that we don&#39;t yet know about. First, <code>!important</code> - this is a keyword you can <strong>add to the end of a rule</strong> to bring it to the top of the pecking order.</p>
                     <pre><code class="lang-css"><span class="hljs-selector-class">.special</span> {
    <span class="hljs-attribute">background</span>: yellow <span class="hljs-meta">!important</span>;
@@ -348,12 +348,12 @@
 </code></pre>
                     <p>But as noted this is <strong>considered bad practice</strong>, just as <strong>inline styles are considered harmful</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>So if we <strong>avoid those two</strong>...</p>
                     <p><img src="resources/diagrams/css-order-ok.svg" alt=""></p>
                     <p>...the primary order decider is <strong>specificity</strong>. But, what is that?</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Specificity is the <strong>&quot;weight&quot; of the rule</strong>, which is calculated according to a formula. The gist;</p>
                     <ul>
                         <li><strong><code>#id</code></strong> selectors are the heaviest</li>
@@ -361,7 +361,7 @@
                         <li>and finally <strong>type</strong>.</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Say you have this style...</p>
                     <pre><code><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-line</span> {
   <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2em</span>;
@@ -369,13 +369,13 @@
 </code></pre>
                     <p>...but you are also using an <strong>external CSS sheet</strong> which <strong>overrides your style</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Then you need to <strong>make your style more specific</strong>, often by <strong>prefixing it with ancestor specifications</strong> that you otherwise don&#39;t need: </p>
                     <pre><code><span class="hljs-selector-tag">body</span> div<span class="hljs-selector-id">#app-wrapper</span> <span class="hljs-selector-tag">p</span>:first-line {
   <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2em</span>;
 }
 </code></pre></section>
-                <section>
+                <section class="slide">
                     <p>A final note; since <strong>browser defaults can vary</strong>, it is common to use a <strong>reset sheet</strong> to be (more) sure that everything looks the same in different browsers.</p>
                     <p>An <strong>old but popular sheet</strong> is the one by CSS guru Eric Meyer which you can find here: <a href="http://meyerweb.com/eric/tools/css/reset/">http://meyerweb.com/eric/tools/css/reset/</a></p>
                 </section>
@@ -384,12 +384,12 @@
                 <section>
                     <div class='sectioncount'>Section 8/10</div>
                     <h3>Good behaviour</h3>
-                    <p>Our code of conduct</h3>
+                    <p>Our code of conduct</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>We&#39;ve touched upon most of these points already, but let&#39;s <strong>gather up the stone tablets of CSS behaviour rules</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <blockquote>
                         <p>Thou shalt not use visual elements</p>
                     </blockquote>
@@ -399,7 +399,7 @@
                     </ul>
                     <p>These are <strong>FORBIDDEN</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <blockquote>
                         <p>Thou shalt not use visual attributes</p>
                     </blockquote>
@@ -409,7 +409,7 @@
                     </ul>
                     <p>These are <strong>VERBOTEN</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <blockquote>
                         <p>Thou shalt keep the <code>html</code> as clean as possible</p>
                     </blockquote>
@@ -423,7 +423,7 @@
 }
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>...you should <strong>skip the class</strong> and just do this:</p>
                     <pre><code class="lang-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-child</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#CCC</span>;
@@ -431,32 +431,32 @@
 </code></pre>
                     <p>Try to <strong>solve the selection without cluttering the html</strong>, as much as possible.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <blockquote>
                         <p>Thou shalt keep your selectors simple</p>
                     </blockquote>
                     <p>Don&#39;t make your selectors more specific than they need to be!</p>
                 </section>
-                <section class="question">
+                <section class="slide question">
                     <p><strong>Question</strong>: Ehm, doesn&#39;t that commandment collide with the previous one? Isn&#39;t it <strong>easier to avoid cluttering the html if we have more complex selectors</strong>? And <strong>easier to write short selectors if we add some classes or extra divs to the html</strong>?</p>
                 </section>
-                <section class="answer">
+                <section class="slide answer">
                     <p><strong>Answer</strong>: Yes. :D</p>
                 </section>
-                <section>
+                <section class="slide">
                     <blockquote>
                         <p>Thou shalt keep your CSS organized</p>
                     </blockquote>
                     <p>Keeping order in your Java project is easy - <strong>give classes good names</strong>, <strong>sort them in modules</strong>, etc. But <strong>doing it in CSS is hard</strong>!</p>
                     <p>Still, <strong>you must try</strong>! Use <strong>comments</strong>, <strong>file separation</strong> and <strong>structure</strong>. A good tip is to <strong>do whatever Nicole Sullivan says</strong>: <a href="http://www.stubbornella.org/">http://www.stubbornella.org/</a></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>And now for the <strong>most important commandment of all</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Are you ready?</p>
                 </section>
-                <section>
+                <section class="slide">
                     <blockquote>
                         <p>Thou must be patient!</p>
                     </blockquote>
@@ -468,9 +468,9 @@
                 <section>
                     <div class='sectioncount'>Section 9/10</div>
                     <h3>Flexbox</h3>
-                    <p>solving the age-old riddle</h3>
+                    <p>solving the age-old riddle</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>There are <strong>two common problems</strong> that are embarrasingly hard to solve using regular CSS:</p>
                     <ul>
                         <li><strong>centering things vertically</strong></li>
@@ -478,7 +478,7 @@
                     </ul>
                     <p>CSS3 finally brought us a remedy: <strong>Flexbox</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The basic idea is simple; in this <strong>new display mode</strong> you select...</p>
                     <ul>
                         <li>opt in to the <strong>new display mode</strong> (<code>display: flex</code>)</li>
@@ -487,10 +487,10 @@
                         <li>and also <strong>perpendicular to the direction axis</strong> (<code>align-items</code>)</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>There are <strong>some more flex properties</strong>, and also some <strong>for the children</strong> in a box, which gives you <strong>even more control</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>This is <strong>hard to visualise from textual explanations</strong>, so try out an interactive tutorial here: <a href="http://blog.krawaller.se/flexboxdemo/">http://blog.krawaller.se/flexboxdemo/</a></p>
                     <p>There are also <strong>two popular games</strong> that demonstrate the concept:</p>
                     <ul>
@@ -498,7 +498,7 @@
                         <li>Flexbox Defence @ <a href="http://www.flexboxdefense.com/">http://www.flexboxdefense.com/</a></li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Remember how CSS selectors were so good at what they did that they leaked over into JS? It is <strong>the same with flexbox</strong> - it turned out to be such an efficient way to lay out things that it is <strong>used in many frameworks</strong>,
                         most noteably by <strong>React Native</strong>.</p>
                 </section>
@@ -507,13 +507,13 @@
                 <section>
                     <div class='sectioncount'>Section 10/10</div>
                     <h3>Exercise - Faux columns</h3>
-                    <p>The holy grail</h3>
+                    <p>The holy grail</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>We mentioned <strong>columns of equal height</strong> before:</p>
                     <p><img src="resources/images/fauxcols.png" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>More specifically, we mean</p>
                     <ul>
                         <li>Two columns who <strong>both extend to the bottom of their parent</strong></li>
@@ -521,11 +521,11 @@
                     </ul>
                     <p>As previously stated, this is <strong>very difficult with regular CSS</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>But, <strong>rather easy with Flexbox</strong>, which is what I used to create the screenshot!</p>
                     <p>And now, of course it is your turn to <strong>recreate the screenshot using HTML and CSS</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Some pointers;</p>
                     <ul>
                         <li>I got the <strong>text</strong> from <a href="http://baconipsum.com/">http://baconipsum.com/</a></li>
@@ -534,7 +534,7 @@
                         <li>Experiment yourself first, but if you get stuck then <strong>go googling</strong>!</li>
                     </ul>
                 </section>
-                <section class="challenge">
+                <section class="slide challenge">
                     <p><strong>Challenge</strong>: If you&#39;re really serious about your webdev chops, find a way to <strong>steal my exact colours</strong>!</p>
                 </section>
             </section>
@@ -569,7 +569,7 @@
                 } else if (code >= 49 && code <= 10 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 0);
                 }
-                if (4 < 6) {
+                if (4 < 7) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (4 + 1) + ".html"
                     }

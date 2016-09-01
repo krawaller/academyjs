@@ -1,6 +1,7 @@
 ---
 title: Attributes VS properties
 tagline: You say potato
+draft: true
 ---
 
 Two important words: HTML elements have **attributes** but DOM nodes have **properties**.

@@ -23,14 +23,14 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <div class="chapternumber"> chapter 2 of 6 </div>
+                <div class="chapternumber"> chapter 2 of 7 </div>
                 <h1>HTML</h1>
                 <span>lingua franca of the web</span>
             </section>
-            <section>
+            <section class="slide">
                 <p>Before we begin - are we seriously going to <strong>waste time talking about HTML</strong>? which we all already know how it works or could learn in 5 minutes?!</p>
             </section>
-            <section>
+            <section class="slide">
                 <p>Yes. Having a good <strong>understanding of the fundamentals</strong> is important, and in my experience, <strong>even many web people lack that</strong>.</p>
                 <p>However we <strong>won&#39;t dwell on details</strong>, just make sure we have a solid grasp of what&#39;s going on.</p>
             </section>
@@ -53,24 +53,24 @@
                 <section>
                     <div class='sectioncount'>Section 1/10</div>
                     <h3>Nested data</h3>
-                    <p>Matryoshka time!</h3>
+                    <p>Matryoshka time!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Understanding HTML requires understanding the concept of <strong>nested data</strong>. So that is where we&#39;ll start!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>We will approach this in a roundabout way by <strong>designing our own language</strong>. </p>
                     <p>Let&#39;s first consider how we <strong>describe a single object</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>We need some kind of <strong>divider</strong>, so that people can tell where the description <strong>starts and ends</strong>. Why not go with <strong>opening and closing brackets</strong>?</p>
                     <pre><code>[   ]
 </code></pre></section>
-                <section>
+                <section class="slide">
                     <p>Most systems involve their objects being classified by <strong>type</strong>, so let&#39;s introduce that. We&#39;ll simply put the type within the brackets:</p>
                     <pre><code>[apple]   [pear]   [banana]
 </code></pre></section>
-                <section>
+                <section class="slide">
                     <p>But objects can also have <strong>other characteristics</strong> apart from their type. These are often called <strong>attributes</strong>. They come in two flavours:</p>
                     <ul>
                         <li><strong>attributes with a value</strong> (<code>length</code> has a number)</li>
@@ -78,7 +78,7 @@
                     </ul>
                     <p>We could forbid the no-value option, but that would be cowardly.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>How should we <strong>mark up the attributes</strong> in our language? Let&#39;s...</p>
                     <ul>
                         <li><strong>list them inside curly braces</strong> after the type.</li>
@@ -86,17 +86,17 @@
                         <li>use <code>,</code> to <strong>separate between different attributes</strong>.</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>So if we have this:</p>
                     <p><img src="resources/diagrams/apple.svg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>...then we mark it up like this:</p>
                     <pre><code>[apple{tastiness:7,ease:8,forbidden}]
 </code></pre>
                     <p>(btw: <a href="https://xkcd.com/388/">https://xkcd.com/388/</a>)</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Finally, objects can <strong>contain other objects</strong>. Otherwise it wouldn&#39;t be <em>nested</em> data!</p>
                     <p>For our toy language we decide to...</p>
                     <ul>
@@ -104,22 +104,22 @@
                         <li><strong>separate children</strong> with <code>,</code> to be consistent</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>So with this data:</p>
                     <p><img src="resources/diagrams/fruits.svg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>...we would get this markup:</p>
                     <pre><code>[basket{price:15}([apple{price:8}],[banana{price:9}])]
 </code></pre>
                     <p>If we <strong>allowed filler whitespace</strong> it could be made more readable, but where&#39;s the sport in that?</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>To recap - an <strong>object</strong> can have...</p>
                     <p><img src="resources/diagrams/object.svg" alt=""></p>
                     <p>...so any expression language for nested data must be able to handle these things.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Regarding <strong>object relations</strong> we have so far only discussed parent-child.</p>
                     <p>But conceivably there could also be <strong>other relations</strong>! However, this is outside of the scope of our definition of nested data.</p>
                 </section>
@@ -128,12 +128,12 @@
                 <section>
                     <div class='sectioncount'>Section 2/10</div>
                     <h3>Exercise - Geneaology</h3>
-                    <p>Adam and Eve, sitting in a tree</h3>
+                    <p>Adam and Eve, sitting in a tree</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>To truly wrap our brains around nested data you shall now <strong>design your own language</strong>!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>That means <strong>revisiting all the decisions</strong> we just went through:</p>
                     <ul>
                         <li>how to <strong>encapsulate</strong> an object</li>
@@ -142,11 +142,11 @@
                         <li>how to express <strong>children</strong></li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Your language does <strong>not have to be useful</strong>, so you get bonus points for being far out!</p>
                     <p>It does however <strong>have to be unambiguous</strong>, so make your rules very clear!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>When you have defined your rules, use them to <strong>encode your family tree</strong>!</p>
                     <ol>
                         <li>Start with your <strong>favourite grandparent</strong></li>
@@ -155,11 +155,11 @@
                         <li>Decide on a <strong>number of attributes</strong> to encode for each person. Name? Zodiac sign? Favourite folk metal band?</li>
                     </ol>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Yes, that means it&#39;s not a tree in the traditional sense, but something like this:</p>
                     <p><img src="resources/diagrams/tree.svg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>To submit the exercise;</p>
                     <ol>
                         <li>navigate to <code>/submissions/geneaology</code> in your fork of <code>academysubs</code></li>
@@ -173,19 +173,19 @@
                 <section>
                     <div class='sectioncount'>Section 3/10</div>
                     <h3>XML</h3>
-                    <p>not quite as cool as it used to be?</h3>
+                    <p>not quite as cool as it used to be?</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Before we talk about HTML, let&#39;s <strong>look at how XML (eXtensible Markup Language) has solved the exercise</strong> you just did!</p>
                     <p>There is a lot more to be said about XML, but we don&#39;t care about that - only the syntax.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Starting with the <strong>encapsulation</strong> - XML delimits objects by an <strong>opening and closing tag</strong> which <strong>contains the type</strong>.</p>
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">shelf</span>&gt;</span>
 </code></pre>
                     <p>The opening tag is <code>&lt;type&gt;</code>, the closing is <code>&lt;/type&gt;</code> - the same but with a forward slash before the type.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Now, <strong>attributes</strong>! They...</p>
                     <ul>
                         <li>are put <strong>inside the opening tag</strong>.</li>
@@ -194,12 +194,12 @@
                         <li>has the <strong>value within quotes</strong></li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>So if we have a heavy oaken shelf, we get: </p>
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span> <span class="hljs-attr">wood</span>=<span class="hljs-string">"oak"</span> <span class="hljs-attr">weight</span>=<span class="hljs-string">"85kg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">shelf</span>&gt;</span>
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>What about <strong>children</strong>? They are simply listed <strong>between the opening and closing tags</strong>!</p>
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span> <span class="hljs-attr">wood</span>=<span class="hljs-string">"oak"</span> <span class="hljs-attr">weight</span>=<span class="hljs-string">"85kg"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animal</span>&gt;</span>
@@ -207,7 +207,7 @@
 </code></pre>
                     <p><strong>Whitespace is allowed</strong> wherever, which lets us space out the information in a readable way.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>For an element with no children, XML has an alternative shorthand with <strong>self-closing tags</strong>. So instead of this:</p>
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animal</span>&gt;</span>
 </code></pre>
@@ -215,17 +215,17 @@
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>/&gt;</span>
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Finally something that our discussion on nested data didn&#39;t touch: XML allows <strong>leaf text nodes</strong> as children, by simply typing normal text instead of an element within the tags:</p>
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">famous-quote</span>&gt;</span>Alea Jacta Est<span class="hljs-tag">&lt;/<span class="hljs-name">famous-quote</span>&gt;</span>
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Although powerful this also gives rise to <strong>ambiguity</strong>. For example, should we encode a book like this...</p>
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">book</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Naiv Super"</span> <span class="hljs-attr">author</span>=<span class="hljs-string">"Erlend Loe"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span>
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>...or like this?</p>
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">book</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Naiv Super<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -235,18 +235,18 @@
                     <p>Also, we <strong>lied before</strong> - whitespace within the tags does have meaning, as they
                         <strong>become text nodes</strong>! So the definition above...</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>...will actually be interpreted as this:</p>
                     <p><img src="resources/diagrams/book.svg" alt=""></p>
                     <p>(although the interpreter can be made to skip those whitespace nodes)</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>This does however allow us to do stuff like this, which can be quite useful:</p>
                     <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">truth</span>&gt;</span>I am <span class="hljs-tag">&lt;<span class="hljs-name">emphasis</span>&gt;</span>really<span class="hljs-tag">&lt;/<span class="hljs-name">emphasis</span>&gt;</span> good at this!<span class="hljs-tag">&lt;/<span class="hljs-name">truth</span>&gt;</span>
 </code></pre>
                     <p><img src="resources/diagrams/truth.svg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>As a final note, learn the <strong>vocabulary</strong>:</p>
                     <ul>
                         <li>an <strong>element</strong> is an object / entity / thing / whatever you want to call it.</li>
@@ -259,26 +259,26 @@
                 <section>
                     <div class='sectioncount'>Section 4/10</div>
                     <h3>Exercise - Back to the past</h3>
-                    <p>First blood 2</h3>
+                    <p>First blood 2</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>You all saw this one coming - your mission, should you choose to accept it, is to <strong>redo the geneaology in XML</strong>!</p>
                     <p>The translation might mean that you have to make choices, as noted earlier. Bonus points if you reason around these!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Before you submit your work you should <strong>validate your xml</strong>. A nice service for that can be found at <a href="https://validator.w3.org/#validate_by_input">https://validator.w3.org/#validate_by_input</a>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Note that you have to put this line:</p>
                     <pre><code><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span><span class="hljs-meta">?&gt;</span></span>
 </code></pre>
                     <p>...at the top of your xml, otherwise the validator will balk because <em>reasons</em>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>You can <strong>ignore warnings</strong> - as long as you see the green banner, all is well:</p>
                     <p><img src="resources/images/validation.png" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>To submit;</p>
                     <ol>
                         <li>navigate to <code>/submissions/backtothepast</code> in your fork of <code>academysubs</code></li>
@@ -292,24 +292,24 @@
                 <section>
                     <div class='sectioncount'>Section 5/10</div>
                     <h3>HTML basics</h3>
-                    <p>finally getting to the point</h3>
+                    <p>finally getting to the point</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Now, finally - <strong>HTML</strong>! HyperText Markup Language is a <strong>flavour of XML</strong> for <strong>encoding documents meant to be consumed on the web</strong>.</p>
                     <p>Much like Photoshop expects a <code>.psd</code> file, your favourite <strong>web browser wants <code>.html</code></strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>An <strong>HTML document</strong> has the following structure:</p>
                     <p><img src="resources/diagrams/htmldoc.svg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Translated to <strong>actual HTML</strong>, that becomes the following:</p>
                     <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre></section>
-                <section>
+                <section class="slide">
                     <p>By adding an optional leading <code>&lt;!DOCTYPE html&gt;</code> thingie, we tell the browser that this is a modern <strong>HTML5</strong> document.</p>
                     <pre><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -319,40 +319,40 @@
 </code></pre>
                     <p>We won&#39;t go into (too) much detail, but suffice to say that <strong>you should always include it</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>So, <strong>what metadata</strong> goes into the <code>&lt;head&gt;</code> tag?</p>
                     <p>A heck of a lot of stuff, but we&#39;ll now cover <strong>two common examples</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>First off, we set the <strong>document title</strong> as a text node in a <code>&lt;title&gt;</code> tag:</p>
                     <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>My AWESOME site<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
 </code></pre>
                     <p>The browser will then bubble that title up in different ways when your page is displayed.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>We can also set the <strong>character set</strong> as a <code>charset</code> attribute on a <code>&lt;meta&gt;</code> tag:</p>
                     <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf8"</span>&gt;</span>
 </code></pre>
                     <p>This (hopefully) prepares the browser to show <strong>Unicode characters</strong>. Without this, for example Swedish characters like <code>å</code>, <code>ä</code> and <code>ö</code> might be displayed wrongly.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Although that&#39;s not the entire truth - it also matters <strong>how the file is saved</strong>.</p>
                     <p>In short: <strong>encoding sucks</strong>.</p>
                 </section>
-                <section class="question">
+                <section class="slide question">
                     <p><strong>Question</strong>: Did you notice something weird on the slide with the meta element code?</p>
                 </section>
-                <section class="answer">
+                <section class="slide answer">
                     <p><strong>Answer</strong>: The <code>&lt;meta&gt;</code> element wasn&#39;t closed!</p>
                     <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf8"</span>&gt;</span>
 </code></pre>
                     <p>What&#39;s up with that?!</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>While XML is very strict, HTML takes a looser approach; <strong>elements which never have children do not have to be closed</strong>. OCD:ers beware!</p>
                     <p>(to the point: <a href="http://xkcd.com/859/">http://xkcd.com/859/</a></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>There was a <strong>stricter flavour called XHTML</strong> which enforced well-formed XML, but that never took off.</p>
                 </section>
             </section>
@@ -360,13 +360,13 @@
                 <section>
                     <div class='sectioncount'>Section 6/10</div>
                     <h3>HTML content</h3>
-                    <p>let's talk body parts</h3>
+                    <p>let's talk body parts</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>As we said before the <code>&lt;body&gt;</code> element contains the actual <strong>contents</strong> of the document, that the browser will show on screen.</p>
                     <p>So, what does that look like?</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Basically, the browser will display the <strong>leaf text nodes</strong>.</p>
                     <p>So let&#39;s say we feed it this <strong>nonsense</strong>:</p>
                     <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
@@ -380,11 +380,11 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>...then the browser would display this:</p>
                     <p><img src="resources/images/nonsense.png" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>This means we can deduce that...</p>
                     <ul>
                         <li>the <strong>element types and attributes are simply ignored</strong>,</li>
@@ -392,21 +392,21 @@
                         <li>Sequences of <strong>spaces are collapsed</strong> into a single space.</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>But of course, there are <strong>elements with special meaning</strong> to the browser. These fall into <strong>two categories</strong>:</p>
                     <ul>
                         <li><strong>Block level</strong> elements that take up the full width of the document.</li>
                         <li><strong>Inline</strong> elements that flow with the text. This is the default, as we saw with our nonsense elements.</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The perhaps <strong>most common elements</strong> are...</p>
                     <ul>
                         <li>the <strong><code>&lt;div&gt;</code></strong>, short for divider, which is a generic block level element.</li>
                         <li>the <strong><code>&lt;span&gt;</code></strong>, which is a generic inline element.</li>
                     </ul>
                 </section>
-                <section class="question">
+                <section class="slide question">
                     <p><strong>Quiz</strong>: Knowing what you just learned, what would this look like?</p>
                     <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -420,34 +420,34 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
                 </section>
-                <section class="answer">
+                <section class="slide answer">
                     <p><strong>Answer</strong>: Well, like this of course!</p>
                     <p><img src="resources/images/dwarves.png" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>On the subject of generic elements - there are also some <strong>generic attributes</strong> that we can set on all elements. MDN has a full list here:</p>
                     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes</a></p>
                     <p>We&#39;ll take a look at a few of them now:</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The <strong><code>id</code> attribute</strong> allows us to give a unique name to an element that for some reason is special:</p>
                     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app-wrapper"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
                     <p>The id allows us to <strong>easily target the element</strong> from CSS or JavaScript.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The <strong><code>class</code> attribute</strong> is a bit special: in that string of text you can list a number of &quot;classes&quot; separated by spaces. Many elements can share the same class(es), allowing us to <strong>group elements together</strong>                        in themed categories.</p>
                     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrapper article"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
                     <p>These <strong>groups can then be targeted</strong> in CSS or JavaScript.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>And just to show an example that doesn&#39;t have to do with targeting - the <strong><code>lang</code> attribute</strong>...</p>
                     <pre><code>&lt;<span class="hljs-keyword">div</span> lang=<span class="hljs-string">"en"</span>&gt;...&lt;/<span class="hljs-keyword">div</span>&gt;
 </code></pre>
                     <p>...allows the browser to <strong>provide spell checking and dictionary lookup</strong> for the correct language.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Finally - if for whatever reason you want to insert a <strong>comment</strong> into HTML, or temporarily exclude some elements from the flow, just wrap it within <code>&lt;!--</code> and <code>--&gt;</code>:</p>
                     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a paragraph of text<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-comment">&lt;!-- &lt;div&gt;a paragraph which has been commented out&lt;/div&gt;
@@ -455,7 +455,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>but this one is still visible!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Beware that these <strong>comments still shows up in the source code</strong>, so no cursing!</p>
                     <p><img src="resources/images/comments.png" alt=""></p>
                 </section>
@@ -464,13 +464,13 @@
                 <section>
                     <div class='sectioncount'>Section 7/10</div>
                     <h3>Exercise - Hello world!</h3>
-                    <p>Let your presence be known</h3>
+                    <p>Let your presence be known</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Time for a quick <strong>hello world</strong> intermission exercise!</p>
                     <p><img src="resources/images/helloworld.jpg" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>While steeling ourselves for what is to come;</p>
                     <ol>
                         <li>open the <strong>simplest possible editor</strong> you can find (likely Notepad on Windows)</li>
@@ -485,27 +485,27 @@
                 <section>
                     <div class='sectioncount'>Section 8/10</div>
                     <h3>Semantics</h3>
-                    <p>say what you mean</h3>
+                    <p>say what you mean</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>You just met <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> which are generic elements. But, most elements you use will be <strong>semantic</strong>.</p>
                     <p>And this is important - the primary purpose of HTML is to <strong>explain to the browser what the content is</strong>, so that the browser can make informed decisions on how to display it.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Here are some <strong>common elements</strong> useful for <strong>marking up text</strong>:</p>
                     <ul>
                         <li>A <strong><code>&lt;p&gt;</code></strong> element represents a <strong>paragraph</strong> of text. It will be displayed as a block with a bottom margin.</li>
                         <li>The <strong><code>&lt;h1&gt; - &lt;h6&gt;</code></strong> elements are <strong>headlines</strong>. 1 is the most important. They are blocks, with a bottom margin and a bigger and bolder look the lower the number.</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Some more;</p>
                     <ul>
                         <li>A <strong><code>&lt;strong&gt;</code></strong> element is used for an inline section of text that you want to <strong>highlight</strong>. Typically displayed in bold.</li>
                         <li>Similarly there is an <strong><code>&lt;em&gt;</code></strong> element for <strong>emphasis</strong>, typically displayed in italics.</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>So feeding the browser this:</p>
                     <pre><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
@@ -517,32 +517,32 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre></section>
-                <section>
+                <section class="slide">
                     <p>...we get this:</p>
                     <p><img src="resources/images/textstyle.png" alt=""></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>There are <strong>rules on where in the structure an element can appear</strong>, which all depend on their semantic meaning. </p>
                     <p>For example, it makes no sense to nest a paragraph inside another paragraph, so that is forbidden.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>In earlier HTML, many elements dealt with <strong>appearance</strong>. For example;</p>
                     <ul>
                         <li>there was a <code>&lt;bold&gt;</code> element</li>
                         <li>and an <code>&lt;i&gt;</code> element (short for italics).</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Now they are <strong>deprecated in favour of semantic versions</strong>:</p>
                     <p><img src="resources/diagrams/evolve.svg" alt=""></p>
                     <p>This is typical for HTML as a whole.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>So, what <strong>other elements</strong> we can use? </p>
                     <p>Too many to mention, but check the full reference at MDN:</p>
                     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The fact that HTML content is semantic is also the reason why we haven&#39;t mentioned <strong>layout</strong> or <strong>style</strong> yet.</p>
                     <p>Those things should <strong>only live in CSS-land</strong>. HTML is content, CSS is style and layout, and never the two shall meet, lest sadness and pandemonium ensues.</p>
                 </section>
@@ -551,15 +551,15 @@
                 <section>
                     <div class='sectioncount'>Section 9/10</div>
                     <h3>Two special elements</h3>
-                    <p>Tweedle-dum, tweedle-dee</h3>
+                    <p>Tweedle-dum, tweedle-dee</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>In this section we&#39;ll take a quick look at <strong>two important elements</strong>. First out is the <strong><code>&lt;img&gt;</code></strong> element, which lets us insert images into our documents:</p>
                     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"resources/images/6074.png"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"sooo pretty"</span>&gt;</span>
 </code></pre>
                     <p><img src="resources/images/6074.png" title="sooo pretty"></p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>We control the image mainly through two attributes:</p>
                     <ul>
                         <li><code>src</code> which is an <strong>address to the image file</strong>. It can be either
@@ -571,30 +571,30 @@
                         <li><code>title</code>, which will be displayed as a tooltip in most browsers</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Note that as <strong>an image will never have a child</strong>, just like the meta element, we <strong>don&#39;t need to close it</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>When you need all <strong>details about a specific element</strong> such as the <code>img</code> element, MDN again has you covered:</p>
                     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img</a></p>
                 </section>
-                <section class="question">
+                <section class="slide question">
                     <p><strong>Quiz</strong>: Now for the second important element, which is arguably the <strong>most important of all</strong>. Can you think of which it is?</p>
                 </section>
-                <section class="answer">
+                <section class="slide answer">
                     <p><strong>Answer</strong>: The <em>anchor</em>, or <code>&lt;a&gt;</code> element as we know it! Without that, there would be no inter<strong>net</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>The anchor has a <strong><code>href</code> attribute</strong> which control what page it leads to. </p>
                     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://bit.ly/hespeaksthetruth"</span>&gt;</span>the truth<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
                     <p>Just like image sources it can be <strong>relative or absolute</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Here is MDN:s full spec for the anchor element:</p>
                     <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a</a></p>
                 </section>
-                <section class="question">
+                <section class="slide question">
                     <p><strong>Quiz</strong>: The image tooltip is controlled by a title attribute, but for the link text we used the element children. Why didn&#39;t they go for something like this...</p>
                     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.boardgamegeek.com/"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"best site ever"</span>&gt;</span>
 </code></pre>
@@ -602,11 +602,11 @@
                     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.boardgamegeek.com/"</span>&gt;</span>best site ever<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
                 </section>
-                <section class="answer">
+                <section class="slide answer">
                     <p><strong>Answer</strong>: We might want to make images or big chunks of text or html into a link, but inside an attribute we can only enter text!</p>
                     <p>But be careful looking for meaning in syntax details; most of it has just kind of happened.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>A final short note; before the anchor, all elements we saw just meant</p>
                     <ul>
                         <li><strong>semantic meaning</strong> and some</li>
@@ -615,7 +615,7 @@
                     </ul>
                     <p>But the anchor is the first example of an element that has <strong>behaviour</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>There are others, but they work mostly in conjunction with JavaScript, so we leave them be for now.</p>
                 </section>
             </section>
@@ -623,9 +623,9 @@
                 <section>
                     <div class='sectioncount'>Section 10/10</div>
                     <h3>Exercise - Fighting Fantasy</h3>
-                    <p>left or right, block or strike?</h3>
+                    <p>left or right, block or strike?</p>
                 </section>
-                <section>
+                <section class="slide">
                     <div style="float:right;margin-left:2em;">
                         <img src="resources/images/ff.jpg" alt="">
                     </div>
@@ -633,7 +633,7 @@
                     <p>Apologies, but yes - now you get to <strong>make a website</strong>.</p>
                     <p>Not only that, you are going to make a classic <strong>gamebook</strong> adventure! Anyone recognizes this?</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>They work something like this:</p>
                     <blockquote>
                         <p>A dark hallway extends into the unknown. You can just make out the outline of a door to your left.</p>
@@ -643,10 +643,10 @@
                         </ul>
                     </blockquote>
                 </section>
-                <section>
+                <section class="slide">
                     <p>We are now going to <strong>emulate the same thing</strong> but using a <strong>website with links</strong> instead of a <strong>book with page-turning instructions</strong>.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <div style="float:right;margin-left:2em;">
                         <img src="resources/images/files.png" alt="">
                     </div>
@@ -654,7 +654,7 @@
                     <p>Create a <strong>folder for your game</strong>. It should contain an <strong>image folder</strong> and <strong>a <code>.html</code> file per page</strong>. The first page should be called <code>index.html</code>.</p>
                     <p>Use a <strong>maximum of 5 pages</strong>, we&#39;re just testing the waters here.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>To start off, create a <strong>basic html content structure</strong> for your pages. It should...</p>
                     <ul>
                         <li>have a <strong>header section</strong> with the name of the game</li>
@@ -662,14 +662,14 @@
                         <li>a <strong>navigation section</strong>, perhaps a list, with the current possible options</li>
                     </ul>
                 </section>
-                <section>
+                <section class="slide">
                     <p>A good tip is to check out the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">MDN element reference</a>, particularly the <strong>Content sectioning</strong> part.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>As you&#39;re working, you can try the game out simply by <strong>opening the file in the browser</strong>.</p>
                     <p>If you&#39;re using IntelliJ or Webstorm you can do that from inside the IDE.</p>
                 </section>
-                <section>
+                <section class="slide">
                     <p>When you&#39;re done you know what to do;</p>
                     <ol>
                         <li>navigate to <code>/submissions/fightingfantasy</code> in your fork of <code>academysubs</code></li>
@@ -677,7 +677,7 @@
                         <li><strong>commit</strong>, <strong>push</strong> and create a <strong>pull request</strong>!</li>
                     </ol>
                 </section>
-                <section>
+                <section class="slide">
                     <p>Now we get to see <strong>why we&#39;re using the <code>gh-pages</code> branch</strong>; if we have a repo named</p>
                     <pre><code>http://www.github.<span class="hljs-keyword">com</span>/<span class="hljs-symbol">&lt;myusername&gt;</span>/<span class="hljs-symbol">&lt;myreponame&gt;</span>
 </code></pre>
@@ -716,7 +716,7 @@
                 } else if (code >= 49 && code <= 10 + 48) {
                     window.location.hash = "#/" + (code - 48 + 1 + 2);
                 }
-                if (2 < 6) {
+                if (2 < 7) {
                     if (code === 99) { // the letter C for next Chapter
                         window.location.href = basehref + "chapter" + (2 + 1) + ".html"
                     }
