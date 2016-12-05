@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
 
     <title>JavaScript basics</title>
@@ -10,413 +10,279 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="mc2/styles/bootstrapgrid.css">
+    <link rel="stylesheet" href="mc2/styles/reveal.css">
+    <link rel="stylesheet" href="mc2/styles/theme.css" id="theme">
+    <link rel="stylesheet" href="mc2/styles/code.css">
+    <link rel="stylesheet" href="mc2/styles/chapter.css">
+    <!--STARTCOURSESPECIFICSTYLES--><link rel="stylesheet" href="styles/styles.css"><!--ENDCOURSESPECIFICSTYLES-->
+  </head>
 
-    <link rel="stylesheet" href="styles/reveal.css">
-    <link rel="stylesheet" href="styles/theme.css" id="theme">
-    <link rel="stylesheet" href="styles/code.css">
-    <link rel="stylesheet" href="styles/chapter.css">
-    <link rel="stylesheet" href="styles/styles.css">
-
-</head>
-
-<body>
+  <body>
+    <div id="pos"></div>
     <div class="reveal">
-        <div class="slides">
-            <section>
-                <div class="chapternumber"> chapter 5 of 7 </div>
-                <h1>JavaScript basics</h1>
-                <span>the holy spirit</span>
-            </section>
-
-            <section>
-                <h3>Sections in this chapter</h3>
-                <ol>
-                    <li><a href="#/2">Introducing&nbsp;JavaScript</a></li>
-                    <li><a href="#/3">Inclusion</a></li>
-                    <li><a href="#/4">JS&nbsp;at&nbsp;a&nbsp;glance</a></li>
-                    <li><a href="#/5">Exercise&nbsp;-&nbsp;testing&nbsp;the&nbsp;waters</a></li>
-                    <li><a href="#/6">Objects</a></li>
-                    <li><a href="#/7">Arrays</a></li>
-                    <li><a href="#/8">Functions</a></li>
-                    <li><a href="#/9">Exercise&nbsp;-&nbsp;cooking&nbsp;time!</a></li>
-                </ol>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 1/8</div>
-                    <h3>Introducing JavaScript</h3>
-                    <p>better the devil you know</p>
-                </section>
-                <section class="slide">
-                    <p>So, <strong>JavaScript</strong>! It is:</p>
-                    <ul>
-                        <li>Functional</li>
-                        <li>Object Oriented</li>
-                        <li>Dynamically typed</li>
-                        <li>Loosely typed</li>
-                        <li>Syntactically C-like</li>
-                    </ul>
-                    <p>What?</p>
-                </section>
-                <section class="slide">
-                    <p><strong>Functional</strong>, meaning that it <strong>emphasizes the application of functions</strong></p>
-                    <p>This in contrast to imperative programming, which <strong>emphasizes changes in state</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p><strong>Object Oriented</strong>, meaning that it <strong>uses objects</strong> (data structures consisting of data and behavior) and that <strong>most things are objects</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p><strong>Dynamically typed</strong>, meaning that it <strong>performs the majority of its type checking at run-time</strong> as opposed to at compile-time</p>
-                </section>
-                <section class="slide">
-                    <p><strong>Loosely typed</strong>, meaning that <strong>any value can be stored in any variable or bound to any parameter</strong>, and JavaScript will do any necessary conversions.</p>
-                </section>
-                <section class="slide">
-                    <p><strong>Syntactically C-like</strong>, for instance it has..</p>
-                    <ul>
-                        <li><code>{...}</code> for blocks</li>
-                        <li><code>;</code> as a statement separator</li>
-                        <li><code>=</code> for assignment</li>
-                        <li><code>/* ... */</code> and <code>//</code> for comments</li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 2/8</div>
-                    <h3>Inclusion</h3>
-                    <p>plugging it in</p>
-                </section>
-                <section class="slide">
-                    <p>There are <strong>three ways to include JS in a web app</strong></p>
-                    <ul>
-                        <li>script element containing code</li>
-                        <li>script element referencing a file</li>
-                        <li>inline event handler in an element attribute</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>A <strong>script element with code</strong> might look like this:</p>
-                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="actionscript">
+      <div class="slides">
+        <section>
+          <div class="chapternumber"> chapter 5 of 7 </div>
+          <h1>JavaScript basics</h1>
+          <span>the holy spirit</span>
+        </section>
+        
+        <section>
+          <h3>Sections in this chapter</h3>
+          <ol>
+          <!--STARTSECTIONINDEX--><li><a href="#/2">Introducing&nbsp;JavaScript</a></li><li><a href="#/3">Inclusion</a></li><li><a href="#/4">JS&nbsp;at&nbsp;a&nbsp;glance</a></li><li><a href="#/5">Exercise&nbsp;-&nbsp;testing&nbsp;the&nbsp;waters</a></li><li><a href="#/6">Objects</a></li><li><a href="#/7">Arrays</a></li><li><a href="#/8">Functions</a></li><li><a href="#/9">Exercise&nbsp;-&nbsp;cooking&nbsp;time!</a></li><!--ENDSECTIONINDEX-->
+          </ol>
+        </section>
+        <!--STARTCHAPTERCONTENT--><!--STARTSECTION1--><section>
+  <section>
+    <div class='sectioncount'>Section 1/8</div>
+    <h3>Introducing JavaScript</h3>
+    <p>better the devil you know</p>
+  </section>
+  <section class="slide"  data-pos="5-1-1"><span class="pos">5-1-1</span><p>So, <strong>JavaScript</strong>! It is:</p>
+<ul>
+<li>Functional</li>
+<li>Object Oriented</li>
+<li>Dynamically typed</li>
+<li>Loosely typed</li>
+<li>Syntactically C-like</li>
+</ul>
+<p>What?</p>
+</section><section class="slide"  data-pos="5-1-2"><span class="pos">5-1-2</span><p><strong>Functional</strong>, meaning that it <strong>emphasizes the application of functions</strong></p>
+<p>This in contrast to imperative programming, which <strong>emphasizes changes in state</strong>.</p>
+</section><section class="slide"  data-pos="5-1-3"><span class="pos">5-1-3</span><p><strong>Object Oriented</strong>, meaning that it <strong>uses objects</strong> (data structures consisting of data and behavior) and that <strong>most things are objects</strong>.</p>
+</section><section class="slide"  data-pos="5-1-4"><span class="pos">5-1-4</span><p><strong>Dynamically typed</strong>, meaning that it <strong>performs the majority of its type checking at run-time</strong> as opposed to at compile-time</p>
+</section><section class="slide"  data-pos="5-1-5"><span class="pos">5-1-5</span><p><strong>Loosely typed</strong>, meaning that <strong>any value can be stored in any variable or bound to any parameter</strong>, and JavaScript will do any necessary conversions.</p>
+</section><section class="slide"  data-pos="5-1-6"><span class="pos">5-1-6</span><p><strong>Syntactically C-like</strong>, for instance it has..</p>
+<ul>
+<li><code>{...}</code> for blocks</li>
+<li><code>;</code> as a statement separator</li>
+<li><code>=</code> for assignment</li>
+<li><code>/* ... */</code> and <code>//</code> for comments</li>
+</ul>
+</section>
+</section><!--ENDSECTION1--><!--STARTSECTION2--><section>
+  <section>
+    <div class='sectioncount'>Section 2/8</div>
+    <h3>Inclusion</h3>
+    <p>plugging it in</p>
+  </section>
+  <section class="slide"  data-pos="5-2-1"><span class="pos">5-2-1</span><p>There are <strong>three ways to include JS in a web app</strong></p>
+<ul>
+<li>script element containing code</li>
+<li>script element referencing a file</li>
+<li>inline event handler in an element attribute</li>
+</ul>
+</section><section class="slide"  data-pos="5-2-2"><span class="pos">5-2-2</span><p>A <strong>script element with code</strong> might look like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="actionscript">
     <span class="hljs-comment">/* ...javascript code here... */</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>While a <strong>script element referencing a separate file</strong> might look like this:</p>
-                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/mycode.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</section><section class="slide"  data-pos="5-2-3"><span class="pos">5-2-3</span><p>While a <strong>script element referencing a separate file</strong> might look like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/mycode.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
-                    <p>Note that you <strong>should not self-close the script element</strong>, as that might cause weird behaviour!</p>
-                </section>
-                <section class="slide">
-                    <p>An <strong>inline event handler</strong> looks like this:</p>
-                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"alert('You clicked, OMG!');"</span>&gt;</span>Don't click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<p>Note that you <strong>should not self-close the script element</strong>, as that might cause weird behaviour!</p>
+</section><section class="slide"  data-pos="5-2-4"><span class="pos">5-2-4</span><p>An <strong>inline event handler</strong> looks like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"alert('You clicked, OMG!');"</span>&gt;</span>Don't click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-                    <p>As you might have guessed, <strong>inline handlers are a bad idea</strong>.</p>
-                </section>
-                <section class="slide question">
-                    <p><strong>Question</strong>: Wasn&#39;t all of this <strong>extremely similar</strong> to how <strong>CSS inclusion</strong> works?</p>
-                </section>
-                <section class="slide answer">
-                    <p><strong>Answer</strong>: Yes! :)</p>
-                </section>
-                <section class="slide">
-                    <p>Btw - remember that we now just talked about <strong>including JS in a web app</strong>, that is, a HTML + CSS + JS app that runs in the browser.</p>
-                    <p>But <strong>JS can run in other places too</strong> - in Node, servers, IoT - anywhere!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 3/8</div>
-                    <h3>JS at a glance</h3>
-                    <p>a whirlwind tour!</p>
-                </section>
-                <section class="slide">
-                    <p>Hold on tight, for now we&#39;ll <strong>run through some JS basics</strong>!</p>
-                    <p>To try the snippets, <strong>paste them into the Console tab of the Chrome developer tools</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>There <strong>is no <code>main</code> function</strong> - JS code is simply <strong>run from top to bottom</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>We <strong>declare variables using the <code>var</code> keyword</strong>, and <strong>assign using <code>=</code></strong>. No type specification needed, since JS is loosely typed.</p>
-                    <pre><code><span class="hljs-attribute">var x</span> = <span class="hljs-string">"Hello world!"</span>;
-</code></pre>
-                    <p>We <strong>end statements with <code>;</code></strong>. These are actually optional, but <strong>leaving them out can cause problems</strong>!</p>
-                </section>
-                <section class="slide">
-                    <p>Since <strong>a variable can contain any type</strong>, the language offers a <strong>way to check</strong>:</p>
-                    <pre><code><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> x); <span class="hljs-regexp">//</span> <span class="hljs-string">"string"</span>
-</code></pre>
-                    <p>The output from <code>console.log</code> is visible in the Developer tools console tab.</p>
-                </section>
-                <section class="slide">
-                    <p>You saw <strong>string literals</strong> earlier. There are also...</p>
-                    <ul>
-                        <li><strong>numbers</strong>: <code>3</code>, <code>2.04</code> (all numbers are floating points)</li>
-                        <li><strong>booleans</strong>: <code>true</code>, <code>false</code></li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>And <strong>two single-value voidish types</strong>:</p>
-                    <ul>
-                        <li><strong>null</strong>: <code>null</code></li>
-                        <li><strong>undefined</strong>: <code>undefined</code></li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p><strong>Equality testing</strong> is done in two ways:</p>
-                    <ul>
-                        <li><code>==</code> (which does type coercion, so <code>3 == &quot;3&quot;</code> is <code>true</code>)</li>
-                        <li><code>===</code> (also comparing type, so <code>3 === &quot;3&quot;</code> is <code>false</code>)</li>
-                    </ul>
-                    <p>There are also <code>!=</code> and <code>!==</code> negative variants.</p>
-                </section>
-                <section class="slide">
-                    <p>You will <strong>recognize <code>if</code> statement syntax</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (guess === correctAnswer){
+<p>As you might have guessed, <strong>inline handlers are a bad idea</strong>.</p>
+</section><section class="slide question"  data-pos="5-2-5"><span class="pos">5-2-5</span><p><strong>Question</strong>: Wasn&#39;t all of this <strong>extremely similar</strong> to how <strong>CSS inclusion</strong> works?</p>
+</section><section class="slide answer"  data-pos="5-2-6"><span class="pos">5-2-6</span><p><strong>Answer</strong>: Yes! :)</p>
+</section><section class="slide"  data-pos="5-2-7"><span class="pos">5-2-7</span><p>Btw - remember that we now just talked about <strong>including JS in a web app</strong>, that is, a HTML + CSS + JS app that runs in the browser.</p>
+<p>But <strong>JS can run in other places too</strong> - in Node, servers, IoT - anywhere!</p>
+</section>
+</section><!--ENDSECTION2--><!--STARTSECTION3--><section>
+  <section>
+    <div class='sectioncount'>Section 3/8</div>
+    <h3>JS at a glance</h3>
+    <p>a whirlwind tour!</p>
+  </section>
+  <section class="slide"  data-pos="5-3-1"><span class="pos">5-3-1</span><p>Hold on tight, for now we&#39;ll <strong>run through some JS basics</strong>!</p>
+<p>To try the snippets, <strong>paste them into the Console tab of the Chrome developer tools</strong>.</p>
+</section><section class="slide"  data-pos="5-3-2"><span class="pos">5-3-2</span><p>There <strong>is no <code>main</code> function</strong> - JS code is simply <strong>run from top to bottom</strong>.</p>
+</section><section class="slide"  data-pos="5-3-3"><span class="pos">5-3-3</span><p>We <strong>declare variables using the <code>var</code> keyword</strong>, and <strong>assign using <code>=</code></strong>. No type specification needed, since JS is loosely typed.</p>
+<pre><code><span class="hljs-attribute">var x</span> = <span class="hljs-string">"Hello world!"</span>;
+</code></pre><p>We <strong>end statements with <code>;</code></strong>. These are actually optional, but <strong>leaving them out can cause problems</strong>!</p>
+</section><section class="slide"  data-pos="5-3-4"><span class="pos">5-3-4</span><p>Since <strong>a variable can contain any type</strong>, the language offers a <strong>way to check</strong>:</p>
+<pre><code><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> x); <span class="hljs-regexp">//</span> <span class="hljs-string">"string"</span>
+</code></pre><p>The output from <code>console.log</code> is visible in the Developer tools console tab.</p>
+</section><section class="slide"  data-pos="5-3-5"><span class="pos">5-3-5</span><p>You saw <strong>string literals</strong> earlier. There are also...</p>
+<ul>
+<li><strong>numbers</strong>: <code>3</code>, <code>2.04</code> (all numbers are floating points)</li>
+<li><strong>booleans</strong>: <code>true</code>, <code>false</code></li>
+</ul>
+</section><section class="slide"  data-pos="5-3-6"><span class="pos">5-3-6</span><p>And <strong>two single-value voidish types</strong>:</p>
+<ul>
+<li><strong>null</strong>: <code>null</code></li>
+<li><strong>undefined</strong>: <code>undefined</code></li>
+</ul>
+</section><section class="slide"  data-pos="5-3-7"><span class="pos">5-3-7</span><p><strong>Equality testing</strong> is done in two ways:</p>
+<ul>
+<li><code>==</code> (which does type coercion, so <code>3 == &quot;3&quot;</code> is <code>true</code>)</li>
+<li><code>===</code> (also comparing type, so <code>3 === &quot;3&quot;</code> is <code>false</code>)</li>
+</ul>
+<p>There are also <code>!=</code> and <code>!==</code> negative variants.</p>
+</section><section class="slide"  data-pos="5-3-8"><span class="pos">5-3-8</span><p>You will <strong>recognize <code>if</code> statement syntax</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (guess === correctAnswer){
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Correct!"</span>);
 } <span class="hljs-keyword">else</span> {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Not quite..."</span>);
 }
 </code></pre>
-                    <p>The <code>else</code> part is of course optional.</p>
-                </section>
-                <section class="slide">
-                    <p>Also the <strong>for loop</strong> is rather classical:</p>
-                    <pre><code><span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span>=<span class="hljs-number">0</span>; <span class="hljs-built_in">i</span>&lt;<span class="hljs-number">1000</span>; <span class="hljs-built_in">i</span>=<span class="hljs-built_in">i</span>+<span class="hljs-number">1</span>){
+<p>The <code>else</code> part is of course optional.</p>
+</section><section class="slide"  data-pos="5-3-9"><span class="pos">5-3-9</span><p>Also the <strong>for loop</strong> is rather classical:</p>
+<pre><code><span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span>=<span class="hljs-number">0</span>; <span class="hljs-built_in">i</span>&lt;<span class="hljs-number">1000</span>; <span class="hljs-built_in">i</span>=<span class="hljs-built_in">i</span>+<span class="hljs-number">1</span>){
   console.log(i+" bottles of beer on the wall");
 }
-</code></pre></section>
-                <section class="slide">
-                    <p>As is the <strong>while</strong>:</p>
-                    <pre><code><span class="hljs-keyword">while</span>(x &gt; <span class="hljs-number">0</span>){
+</code></pre></section><section class="slide"  data-pos="5-3-10"><span class="pos">5-3-10</span><p>As is the <strong>while</strong>:</p>
+<pre><code><span class="hljs-keyword">while</span>(x &gt; <span class="hljs-number">0</span>){
   x = x<span class="hljs-number">-1</span>;
   console.<span class="hljs-built_in">log</span>(x+<span class="hljs-string">" bottles left"</span>);
 }
-</code></pre></section>
-                <section class="slide">
-                    <p>This was a <strong>very superficial tour</strong> to give you what you need to test the waters. There is sooo much more to say!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 4/8</div>
-                    <h3>Exercise - testing the waters</h3>
-                    <p>Getting our feet wet</p>
-                </section>
-                <section class="slide">
-                    <p>Best way to learn to swim - <strong>jump into the deep end</strong>! You will now try your hand at JavaScript by creating a simple <strong>guess the number</strong> game.</p>
-                </section>
-                <section class="slide">
-                    <p>Create a <strong>super-simple html file</strong> that only contains the necessary structure, as well as a <strong>script element where you will put your code</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>We <strong>won&#39;t use the html</strong> as an interface. Instead we&#39;ll communicate using two otherwise useless methods:</p>
-                </section>
-                <section class="slide">
-                    <p>First we have <strong><code>prompt</code></strong>. By executing this code:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> answer = prompt(<span class="hljs-string">"What is your name?"</span>);
+</code></pre></section><section class="slide"  data-pos="5-3-11"><span class="pos">5-3-11</span><p>This was a <strong>very superficial tour</strong> to give you what you need to test the waters. There is sooo much more to say!</p>
+</section>
+</section><!--ENDSECTION3--><!--STARTSECTION4--><section>
+  <section>
+    <div class='sectioncount'>Section 4/8</div>
+    <h3>Exercise - testing the waters</h3>
+    <p>Getting our feet wet</p>
+  </section>
+  <section class="slide"  data-pos="5-4-1"><span class="pos">5-4-1</span><p>Best way to learn to swim - <strong>jump into the deep end</strong>! You will now try your hand at JavaScript by creating a simple <strong>guess the number</strong> game.</p>
+</section><section class="slide"  data-pos="5-4-2"><span class="pos">5-4-2</span><p>Create a <strong>super-simple html file</strong> that only contains the necessary structure, as well as a <strong>script element where you will put your code</strong>.</p>
+</section><section class="slide"  data-pos="5-4-3"><span class="pos">5-4-3</span><p>We <strong>won&#39;t use the html</strong> as an interface. Instead we&#39;ll communicate using two otherwise useless methods:</p>
+</section><section class="slide"  data-pos="5-4-4"><span class="pos">5-4-4</span><p>First we have <strong><code>prompt</code></strong>. By executing this code:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> answer = prompt(<span class="hljs-string">"What is your name?"</span>);
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Then <strong>execution of the program is paused</strong> until the user has replied using the <strong>popup</strong> that the browser opened:</p>
-                    <p><img src="resources/images/prompt.png" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>The other otherwise useless method is <strong><code>alert</code></strong>, which is the <strong>same thing but without the input field</strong>.</p>
-                    <pre><code class="lang-javascript">alert(<span class="hljs-string">"WRONG!"</span>);
+</section><section class="slide"  data-pos="5-4-5"><span class="pos">5-4-5</span><p>Then <strong>execution of the program is paused</strong> until the user has replied using the <strong>popup</strong> that the browser opened:</p>
+<p><img src="resources/images/prompt.png" alt=""></p>
+</section><section class="slide"  data-pos="5-4-6"><span class="pos">5-4-6</span><p>The other otherwise useless method is <strong><code>alert</code></strong>, which is the <strong>same thing but without the input field</strong>.</p>
+<pre><code class="lang-javascript">alert(<span class="hljs-string">"WRONG!"</span>);
 </code></pre>
-                    <p><img src="resources/images/alert.png" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>We can <strong>generate a random value</strong> using the <strong><code>random</code> and <code>floor</code> methods</strong> of the built-in <strong><code>Math</code> object</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> randomNumber = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">10</span>)+<span class="hljs-number">1</span>; <span class="hljs-comment">// gives 1-10</span>
+<p><img src="resources/images/alert.png" alt=""></p>
+</section><section class="slide"  data-pos="5-4-7"><span class="pos">5-4-7</span><p>We can <strong>generate a random value</strong> using the <strong><code>random</code> and <code>floor</code> methods</strong> of the built-in <strong><code>Math</code> object</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> randomNumber = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">10</span>)+<span class="hljs-number">1</span>; <span class="hljs-comment">// gives 1-10</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Note that <strong>all values from <code>prompt</code> are strings</strong>, so you might need to <strong>cast it to a number</strong>:</p>
-                    <pre><code>var guess = parseInt(<span class="hljs-name">prompt</span>(<span class="hljs-string">"Enter your guess"</span>))<span class="hljs-comment">;</span>
-</code></pre></section>
-                <section class="slide">
-                    <p>Now - <strong>*use all these pieces</strong> to create a <strong>guess-the-number game</strong>! You should...</p>
-                    <ul>
-                        <li><strong>generate a number</strong> between 1-10</li>
-                        <li>allow the user <strong>up to 3 guesses</strong>.</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>This exercise should be <strong>submitted to the <code>academysubs/guessthenumber</code> folder</strong> in the same repo as before!</p>
-                </section>
-                <section class="slide challenge">
-                    <p><strong>Challenge</strong>: Make it so that the user can play again if he wants to after the game is over!</p>
-                </section>
-                <section class="slide challenge">
-                    <p><strong>Challenge</strong>: Check the input from the user and <strong>give error message</strong> if the input is faulty!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 5/8</div>
-                    <h3>Objects</h3>
-                    <p>bags of data</p>
-                </section>
-                <section class="slide">
-                    <p>The types we&#39;ve seen so far have been <strong>atomic primitives</strong>. But JavaScript also has two <strong>composite data types</strong>, namely <strong>objects</strong> and <strong>arrays</strong>!</p>
-                    <p>Althought technically <strong>arrays are a special kind of objects</strong>, but, never mind.</p>
-                </section>
-                <section class="slide">
-                    <p>An object in JavaScript is a <strong>collection of key-value pairs</strong>, often called a <strong>dictionary</strong> in other languages. </p>
-                    <p>The <strong>property names (keys) are always strings</strong>, and the <strong>property values can be anything</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>We can <strong>create an object literal</strong> like this:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myObject = {
-  someProp: <span class="hljs-number">42</span>,
-  anotherProp: <span class="hljs-string">"hello!"</span>
+</section><section class="slide"  data-pos="5-4-8"><span class="pos">5-4-8</span><p>Note that <strong>all values from <code>prompt</code> are strings</strong>, so you might need to <strong>cast it to a number</strong>:</p>
+<pre><code>var guess = parseInt(<span class="hljs-name">prompt</span>(<span class="hljs-string">"Enter your guess"</span>))<span class="hljs-comment">;</span>
+</code></pre></section><section class="slide"  data-pos="5-4-9"><span class="pos">5-4-9</span><p>Now - <strong>*use all these pieces</strong> to create a <strong>guess-the-number game</strong>! You should...</p>
+<ul>
+<li><strong>generate a number</strong> between 1-10</li>
+<li>allow the user <strong>up to 3 guesses</strong>.</li>
+</ul>
+</section><section class="slide"  data-pos="5-4-10"><span class="pos">5-4-10</span><p>This exercise should be <strong>submitted to the <code>academysubs/guessthenumber</code> folder</strong> in the same repo as before!</p>
+</section><section class="slide challenge"  data-pos="5-4-11"><span class="pos">5-4-11</span><p><strong>Challenge</strong>: Make it so that the user can play again if he wants to after the game is over!</p>
+</section><section class="slide challenge"  data-pos="5-4-12"><span class="pos">5-4-12</span><p><strong>Challenge</strong>: Check the input from the user and <strong>give error message</strong> if the input is faulty!</p>
+</section>
+</section><!--ENDSECTION4--><!--STARTSECTION5--><section>
+  <section>
+    <div class='sectioncount'>Section 5/8</div>
+    <h3>Objects</h3>
+    <p>bags of data</p>
+  </section>
+  <section class="slide"  data-pos="5-5-1"><span class="pos">5-5-1</span><p>The types we&#39;ve seen so far have been <strong>atomic primitives</strong>. But JavaScript also has two <strong>composite data types</strong>, namely <strong>objects</strong> and <strong>arrays</strong>!</p>
+<p>Althought technically <strong>arrays are a special kind of objects</strong>, but, never mind.</p>
+</section><section class="slide"  data-pos="5-5-2"><span class="pos">5-5-2</span><p>An object in JavaScript is a <strong>collection of key-value pairs</strong>, often called a <strong>dictionary</strong> in other languages. </p>
+<p>The <strong>property names (keys) are always strings</strong>, and the <strong>property values can be anything</strong>.</p>
+</section><section class="slide"  data-pos="5-5-3"><span class="pos">5-5-3</span><p>We can <strong>create an object literal</strong> like this:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myObject = {
+  <span class="hljs-attr">someProp</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-attr">anotherProp</span>: <span class="hljs-string">"hello!"</span>
 };
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>There are <strong>two different ways to access a value</strong>.</p>
-                    <p>We can use <strong>dot notation</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = myObject.someProp; <span class="hljs-comment">// 42</span>
+</section><section class="slide"  data-pos="5-5-4"><span class="pos">5-5-4</span><p>There are <strong>two different ways to access a value</strong>.</p>
+<p>We can use <strong>dot notation</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = myObject.someProp; <span class="hljs-comment">// 42</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Or we can use <strong>bracket notation</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> y = myObject[<span class="hljs-string">"someProp"</span>]; <span class="hljs-comment">// "hello!"</span>
+</section><section class="slide"  data-pos="5-5-5"><span class="pos">5-5-5</span><p>Or we can use <strong>bracket notation</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> y = myObject[<span class="hljs-string">"someProp"</span>]; <span class="hljs-comment">// "hello!"</span>
 </code></pre>
-                </section>
-                <section class="slide question">
-                    <p><strong>Question</strong>: The <strong>dot notation seems much smoother</strong>, so <strong>why would we ever want bracket notation</strong>?</p>
-                </section>
-                <section class="slide answer">
-                    <p><strong>Answer</strong>: That allows us to do <strong>dynamic lookups</strong>:</p>
-                    <pre><code><span class="hljs-keyword">var</span> propName = <span class="hljs-string">"someProp"</span>;
+</section><section class="slide question"  data-pos="5-5-6"><span class="pos">5-5-6</span><p><strong>Question</strong>: The <strong>dot notation seems much smoother</strong>, so <strong>why would we ever want bracket notation</strong>?</p>
+</section><section class="slide answer"  data-pos="5-5-7"><span class="pos">5-5-7</span><p><strong>Answer</strong>: That allows us to do <strong>dynamic lookups</strong>:</p>
+<pre><code><span class="hljs-keyword">var</span> propName = <span class="hljs-string">"someProp"</span>;
 <span class="hljs-keyword">var</span> z = myObject[propName]; <span class="hljs-comment">// 42</span>
-</code></pre></section>
-                <section class="slide">
-                    <p>We <strong>add a property simply by assigning to it</strong>:</p>
-                    <pre><code class="lang-javaScript"><span class="hljs-keyword">var</span> myObject.newProp = <span class="hljs-number">777</span>;
+</code></pre></section><section class="slide"  data-pos="5-5-8"><span class="pos">5-5-8</span><p>We <strong>add a property simply by assigning to it</strong>:</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">var</span> myObject.newProp = <span class="hljs-number">777</span>;
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>And we <strong>delete a property</strong> using the <code>delete</code> keyword:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">delete</span> myObject.newProp;
+</section><section class="slide"  data-pos="5-5-9"><span class="pos">5-5-9</span><p>And we <strong>delete a property</strong> using the <code>delete</code> keyword:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">delete</span> myObject.newProp;
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>If we <strong>access a non-existing property</strong> we always get <code>undefined</code>.</p>
-                    <pre><code class="lang-javascript">myObject.bogusProp; <span class="hljs-comment">// undefined</span>
+</section><section class="slide"  data-pos="5-5-10"><span class="pos">5-5-10</span><p>If we <strong>access a non-existing property</strong> we always get <code>undefined</code>.</p>
+<pre><code class="lang-javascript">myObject.bogusProp; <span class="hljs-comment">// undefined</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Contrary to primitives, <strong>objects are references</strong>, which means that this is false since it is <strong>two different objects</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> test = {a:<span class="hljs-number">1</span>} === {a:<span class="hljs-number">1</span>}; <span class="hljs-comment">// false</span>
+</section><section class="slide"  data-pos="5-5-11"><span class="pos">5-5-11</span><p>Contrary to primitives, <strong>objects are references</strong>, which means that this is false since it is <strong>two different objects</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> test = {<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>} === {<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>}; <span class="hljs-comment">// false</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>While this is true, since they <strong>point to the same object</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = {a:<span class="hljs-number">1</span>};
+</section><section class="slide"  data-pos="5-5-12"><span class="pos">5-5-12</span><p>While this is true, since they <strong>point to the same object</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = {<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>};
 <span class="hljs-keyword">var</span> y = x;
 <span class="hljs-keyword">var</span> test = x === y; <span class="hljs-comment">// true</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Since <strong>objects are references</strong> they are <strong>always truthy</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">if</span> ({}){
+</section><section class="slide"  data-pos="5-5-13"><span class="pos">5-5-13</span><p>Since <strong>objects are references</strong> they are <strong>always truthy</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> ({}){
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"An empty object is truthy!"</span>); <span class="hljs-comment">// will be shown!</span>
 }
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>We can <strong>iterate over objects</strong> using a <strong><code>for..in</code>loop</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> myObject){
+</section><section class="slide"  data-pos="5-5-14"><span class="pos">5-5-14</span><p>We can <strong>iterate over objects</strong> using a <strong><code>for..in</code>loop</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> myObject){
   <span class="hljs-built_in">console</span>.log(key+<span class="hljs-string">" has value "</span>+myObject[key]);
 }
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Finally: <strong>object can contain other objects</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> me = {
-  name: <span class="hljs-string">"David"</span>,
-  address: {
-    street: <span class="hljs-string">"Åsgatan 9"</span>,
-    zip: <span class="hljs-number">27131</span>,
-    city: <span class="hljs-string">"Ystad"</span>
+</section><section class="slide"  data-pos="5-5-15"><span class="pos">5-5-15</span><p>Finally: <strong>object can contain other objects</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> me = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"David"</span>,
+  <span class="hljs-attr">address</span>: {
+    <span class="hljs-attr">street</span>: <span class="hljs-string">"Åsgatan 9"</span>,
+    <span class="hljs-attr">zip</span>: <span class="hljs-number">27131</span>,
+    <span class="hljs-attr">city</span>: <span class="hljs-string">"Ystad"</span>
   }
 }
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>We can <strong>access properties to any depth</strong>: </p>
-                    <pre><code><span class="hljs-attribute">var myZip</span> = me.address.zip;
+</section><section class="slide"  data-pos="5-5-16"><span class="pos">5-5-16</span><p>We can <strong>access properties to any depth</strong>: </p>
+<pre><code><span class="hljs-attribute">var myZip</span> = me.address.zip;
 </code></pre></section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 6/8</div>
-                    <h3>Arrays</h3>
-                    <p>Ordered lists</p>
-                </section>
-                <section class="slide">
-                    <p>A special kind of objects are <strong>arrays</strong>, which are an <strong>ordered list of values</strong>.</p>
-                    <p>You could say that they are <strong>objects where the keys are always named 0, 1, 2...</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>We can <strong>create arrays</strong> using the <strong>array literal notation</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> list = [<span class="hljs-string">"tomatoes"</span>,<span class="hljs-number">42</span>,<span class="hljs-literal">false</span>];
+</section><!--ENDSECTION5--><!--STARTSECTION6--><section>
+  <section>
+    <div class='sectioncount'>Section 6/8</div>
+    <h3>Arrays</h3>
+    <p>Ordered lists</p>
+  </section>
+  <section class="slide"  data-pos="5-6-1"><span class="pos">5-6-1</span><p>A special kind of objects are <strong>arrays</strong>, which are an <strong>ordered list of values</strong>.</p>
+<p>You could say that they are <strong>objects where the keys are always named 0, 1, 2...</strong>.</p>
+</section><section class="slide"  data-pos="5-6-2"><span class="pos">5-6-2</span><p>We can <strong>create arrays</strong> using the <strong>array literal notation</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> list = [<span class="hljs-string">"tomatoes"</span>,<span class="hljs-number">42</span>,<span class="hljs-literal">false</span>];
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Since <strong>arrays are objects</strong> we <strong>access elements as before</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> firstItem = list[<span class="hljs-number">0</span>]; <span class="hljs-comment">// "tomatoes"</span>
+</section><section class="slide"  data-pos="5-6-3"><span class="pos">5-6-3</span><p>Since <strong>arrays are objects</strong> we <strong>access elements as before</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> firstItem = list[<span class="hljs-number">0</span>]; <span class="hljs-comment">// "tomatoes"</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>An array <strong>has a length property</strong> that tells us how many elements it contains:</p>
-                    <pre><code class="lang-javascript">list.length <span class="hljs-comment">// 3</span>
+</section><section class="slide"  data-pos="5-6-4"><span class="pos">5-6-4</span><p>An array <strong>has a length property</strong> that tells us how many elements it contains:</p>
+<pre><code class="lang-javascript">list.length <span class="hljs-comment">// 3</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Which means I can <strong>pick the last item</strong> by doing this:</p>
-                    <pre><code><span class="hljs-keyword">var</span> lastItem = <span class="hljs-keyword">list</span>[<span class="hljs-keyword">list</span>.length<span class="hljs-number">-1</span>]; // <span class="hljs-literal">false</span>
-</code></pre></section>
-                <section class="slide">
-                    <p>We can <strong>add a new value</strong> by calling the <code>push</code> method:</p>
-                    <pre><code class="lang-javascript">list.push(<span class="hljs-string">"foobar"</span>);
+</section><section class="slide"  data-pos="5-6-5"><span class="pos">5-6-5</span><p>Which means I can <strong>pick the last item</strong> by doing this:</p>
+<pre><code><span class="hljs-keyword">var</span> lastItem = <span class="hljs-keyword">list</span>[<span class="hljs-keyword">list</span>.length<span class="hljs-number">-1</span>]; // <span class="hljs-literal">false</span>
+</code></pre></section><section class="slide"  data-pos="5-6-6"><span class="pos">5-6-6</span><p>We can <strong>add a new value</strong> by calling the <code>push</code> method:</p>
+<pre><code class="lang-javascript">list.push(<span class="hljs-string">"foobar"</span>);
 list.length <span class="hljs-comment">// 4</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>It is common to <strong>iterate using a regular for loop</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i &lt; list.length; i = i+<span class="hljs-number">1</span>){
+</section><section class="slide"  data-pos="5-6-7"><span class="pos">5-6-7</span><p>It is common to <strong>iterate using a regular for loop</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i &lt; list.length; i = i+<span class="hljs-number">1</span>){
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Item "</span>+i+<span class="hljs-string">" is "</span>+list[i]);
 }
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>There are a <strong>whole bunch of array methods</strong> - see the MDN reference for a full list:</p>
-                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a></p>
-                </section>
-                <section class="slide question">
-                    <p><strong>Question</strong>: The <code>length</code> property was rather convenient - is there something <strong>similar on regular objects</strong>?</p>
-                </section>
-                <section class="slide answer">
-                    <p><strong>Answer</strong>: Not directly, but we can get an <strong>array of all keys for an object</strong> using the <code>keys</code> method of the global <code>Object</code> object:</p>
-                    <pre><code><span class="hljs-built_in">var</span> <span class="hljs-built_in">keys</span> = Object.<span class="hljs-built_in">keys</span>(myObject); <span class="hljs-comment">// ["someProp","anotherProp"]</span>
+</section><section class="slide"  data-pos="5-6-8"><span class="pos">5-6-8</span><p>There are a <strong>whole bunch of array methods</strong> - see the MDN reference for a full list:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a></p>
+</section><section class="slide question"  data-pos="5-6-9"><span class="pos">5-6-9</span><p><strong>Question</strong>: The <code>length</code> property was rather convenient - is there something <strong>similar on regular objects</strong>?</p>
+</section><section class="slide answer"  data-pos="5-6-10"><span class="pos">5-6-10</span><p><strong>Answer</strong>: Not directly, but we can get an <strong>array of all keys for an object</strong> using the <code>keys</code> method of the global <code>Object</code> object:</p>
+<pre><code><span class="hljs-built_in">var</span> <span class="hljs-built_in">keys</span> = Object.<span class="hljs-built_in">keys</span>(myObject); <span class="hljs-comment">// ["someProp","anotherProp"]</span>
 </code></pre></section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 7/8</div>
-                    <h3>Functions</h3>
-                    <p>code in a can</p>
-                </section>
-                <section class="slide">
-                    <p>There are <strong>two different ways to define a function</strong> in JavaScript. First as a <strong>named function</strong>:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echoer</span>(<span class="hljs-params">word,times</span>)</span>{
+</section><!--ENDSECTION6--><!--STARTSECTION7--><section>
+  <section>
+    <div class='sectioncount'>Section 7/8</div>
+    <h3>Functions</h3>
+    <p>code in a can</p>
+  </section>
+  <section class="slide"  data-pos="5-7-1"><span class="pos">5-7-1</span><p>There are <strong>two different ways to define a function</strong> in JavaScript. First as a <strong>named function</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echoer</span>(<span class="hljs-params">word,times</span>)</span>{
   <span class="hljs-keyword">var</span> echo = <span class="hljs-string">""</span>;
   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; times; i = i + <span class="hljs-number">1</span>){
     echo = echo + word;
@@ -424,10 +290,8 @@ list.length <span class="hljs-comment">// 4</span>
   <span class="hljs-keyword">return</span> echo;
 }
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Or as an <strong>anonymous function</strong> which we can assign to a variable:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> echoer = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">word,times</span>)</span>{
+</section><section class="slide"  data-pos="5-7-2"><span class="pos">5-7-2</span><p>Or as an <strong>anonymous function</strong> which we can assign to a variable:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> echoer = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">word,times</span>)</span>{
   <span class="hljs-keyword">var</span> echo = <span class="hljs-string">""</span>;
   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; times; i = i + <span class="hljs-number">1</span>){
     echo = echo + word + <span class="hljs-string">" "</span>;
@@ -435,153 +299,135 @@ list.length <span class="hljs-comment">// 4</span>
   <span class="hljs-keyword">return</span> echo;
 }
 </code></pre>
-                    <p>Mostly it <strong>doesn&#39;t really matter</strong> which way you choose.</p>
-                </section>
-                <section class="slide">
-                    <p>As the example showed, we use <strong><code>return something</code></strong> to return a value. If you just do <code>return;</code>, the returned value is <code>undefined</code>, which it also is if you don&#39;t use <code>return</code>                        at all.</p>
-                </section>
-                <section class="slide">
-                    <p>We <strong>execute a method by using parens</strong>, and <strong>listing eventual parameters</strong> within those:</p>
-                    <pre><code><span class="hljs-keyword">var</span> withEcho = echoer(<span class="hljs-string">"hello"</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// "hello hello hello "</span>
-</code></pre></section>
-                <section class="slide question">
-                    <p><strong>Question</strong>: What is the <strong>difference</strong> between this:</p>
-                    <pre><code>var x = <span class="hljs-function"><span class="hljs-keyword">func</span>;</span>
-</code></pre>
-                    <p>and <strong>this</strong>:</p>
-                    <pre><code><span class="hljs-keyword">var</span> x = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span>;
-</code></pre></section>
-                <section class="slide answer">
-                    <p><strong>Answer</strong>: Well:</p>
-                    <ul>
-                        <li>
-                            <p>In the <strong>first example</strong>, <strong><code>x</code> has a reference to <code>func</code></strong>. Which means that after that, <strong>doing <code>x()</code> and <code>func()</code> would yield the same thing</strong>.</p>
-                        </li>
-                        <li>
-                            <p>In the <strong>second example</strong>, <strong><code>x</code> is whatever <code>func</code> returned</strong>.</p>
-                        </li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>A final observation - There is nothing stopping us from <strong>having functions on objects</strong>:</p>
-                    <pre><code>myObject.beingAnnoying = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+<p>Mostly it <strong>doesn&#39;t really matter</strong> which way you choose.</p>
+</section><section class="slide"  data-pos="5-7-3"><span class="pos">5-7-3</span><p>As the example showed, we use <strong><code>return something</code></strong> to return a value. If you just do <code>return;</code>, the returned value is <code>undefined</code>, which it also is if you don&#39;t use <code>return</code> at all.</p>
+</section><section class="slide"  data-pos="5-7-4"><span class="pos">5-7-4</span><p>We <strong>execute a method by using parens</strong>, and <strong>listing eventual parameters</strong> within those:</p>
+<pre><code><span class="hljs-keyword">var</span> withEcho = echoer(<span class="hljs-string">"hello"</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// "hello hello hello "</span>
+</code></pre></section><section class="slide question"  data-pos="5-7-5"><span class="pos">5-7-5</span><p><strong>Question</strong>: What is the <strong>difference</strong> between this:</p>
+<pre><code>var x = <span class="hljs-function"><span class="hljs-keyword">func</span>;</span>
+</code></pre><p>and <strong>this</strong>:</p>
+<pre><code><span class="hljs-keyword">var</span> x = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span>;
+</code></pre></section><section class="slide answer"  data-pos="5-7-6"><span class="pos">5-7-6</span><p><strong>Answer</strong>: Well:</p>
+<ul>
+<li><p>In the <strong>first example</strong>, <strong><code>x</code> has a reference to <code>func</code></strong>. Which means that after that, <strong>doing <code>x()</code> and <code>func()</code> would yield the same thing</strong>.</p>
+</li>
+<li><p>In the <strong>second example</strong>, <strong><code>x</code> is whatever <code>func</code> returned</strong>.</p>
+</li>
+</ul>
+</section><section class="slide"  data-pos="5-7-7"><span class="pos">5-7-7</span><p>A final observation - There is nothing stopping us from <strong>having functions on objects</strong>:</p>
+<pre><code>myObject.beingAnnoying = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
 };
 myObject.beingAnnoying(); <span class="hljs-comment">// "SPAM!"</span>
-</code></pre>
-                    <p>When a function is a property on an object it is called a <strong>method</strong> of that object.</p>
-                </section>
-                <section class="slide">
-                    <p>And to end on a meta note; there is also nothing stopping us from <strong>having objects (or anything else) on functions</strong>, since <strong>functions are objects</strong>.</p>
-                    <pre><code>var <span class="hljs-function"><span class="hljs-keyword">func</span> = <span class="hljs-title">function</span><span class="hljs-params">()</span>{};</span>
+</code></pre><p>When a function is a property on an object it is called a <strong>method</strong> of that object.</p>
+</section><section class="slide"  data-pos="5-7-8"><span class="pos">5-7-8</span><p>And to end on a meta note; there is also nothing stopping us from <strong>having objects (or anything else) on functions</strong>, since <strong>functions are objects</strong>.</p>
+<pre><code>var <span class="hljs-function"><span class="hljs-keyword">func</span> = <span class="hljs-title">function</span><span class="hljs-params">()</span>{};</span>
 <span class="hljs-function"><span class="hljs-keyword">func</span>.<span class="hljs-title">prop</span> = {<span class="hljs-title">hello</span>:"<span class="hljs-title">world</span>!"};</span>
 console.<span class="hljs-built_in">log</span>(<span class="hljs-function"><span class="hljs-keyword">func</span>.<span class="hljs-title">prop</span>.<span class="hljs-title">hello</span>); // "<span class="hljs-title">world</span>!"</span>
 </code></pre></section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 8/8</div>
-                    <h3>Exercise - cooking time!</h3>
-                    <p>getting functional</p>
-                </section>
-                <section class="slide">
-                    <p>Now that you&#39;ve gotten to know <strong>objects</strong>, <strong>arrays</strong> and <strong>functions</strong> - let&#39;s <strong>throw them into the mixer</strong> and see what happens!</p>
-                </section>
-                <section class="slide">
-                    <p>Create another <strong>barebones html page</strong> with a <strong>script element to house your code</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>In that script element, <strong>define at least 3 recipe objects</strong> using different ingredients:</p>
-                    <pre><code>var supersoup = {
+</section><!--ENDSECTION7--><!--STARTSECTION8--><section>
+  <section>
+    <div class='sectioncount'>Section 8/8</div>
+    <h3>Exercise - cooking time!</h3>
+    <p>getting functional</p>
+  </section>
+  <section class="slide"  data-pos="5-8-1"><span class="pos">5-8-1</span><p>Now that you&#39;ve gotten to know <strong>objects</strong>, <strong>arrays</strong> and <strong>functions</strong> - let&#39;s <strong>throw them into the mixer</strong> and see what happens!</p>
+</section><section class="slide"  data-pos="5-8-2"><span class="pos">5-8-2</span><p>Create another <strong>barebones html page</strong> with a <strong>script element to house your code</strong>.</p>
+</section><section class="slide"  data-pos="5-8-3"><span class="pos">5-8-3</span><p>In that script element, <strong>define at least 3 recipe objects</strong> using different ingredients:</p>
+<pre><code>var supersoup = {
 <span class="hljs-symbol">  potato:</span> <span class="hljs-number">3</span>,
 <span class="hljs-symbol">  onion:</span> <span class="hljs-number">1</span>,
 <span class="hljs-symbol">  corn:</span> <span class="hljs-number">1</span>
 };
-</code></pre>
-                    <p>The <strong>keys are ingredients</strong>, and the values are <strong>how many of the ingredient is needed</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>Now define a <strong>shop object</strong> containing all used <strong>ingredients as keys</strong> and the corresponding <strong>price per ingredient as value</strong>.</p>
-                    <pre><code>var ICA = {
+</code></pre><p>The <strong>keys are ingredients</strong>, and the values are <strong>how many of the ingredient is needed</strong>.</p>
+</section><section class="slide"  data-pos="5-8-4"><span class="pos">5-8-4</span><p>Now define a <strong>shop object</strong> containing all used <strong>ingredients as keys</strong> and the corresponding <strong>price per ingredient as value</strong>.</p>
+<pre><code>var ICA = {
 <span class="hljs-symbol">  potato:</span> <span class="hljs-number">12</span>,
 <span class="hljs-symbol">  tomato:</span> <span class="hljs-number">7</span>,
 <span class="hljs-symbol">  cucumber:</span> <span class="hljs-number">3</span>,
 <span class="hljs-symbol">  corn:</span> <span class="hljs-number">5</span>,
   <span class="hljs-comment">// ...</span>
 };
+</code></pre></section><section class="slide"  data-pos="5-8-5"><span class="pos">5-8-5</span><p>Now <strong>create a function</strong> that <strong>calculates the cost for a recipe</strong>...</p>
+<p><img src="resources/diagrams/recipecostcalc.svg" alt=""></p>
+</section><section class="slide"  data-pos="5-8-6"><span class="pos">5-8-6</span><p>...and <strong>try it for a few of them</strong>:</p>
+<pre><code>console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Supersoup costs "</span>+costOfRecipe(supersoup,ICA));
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"My famous stew costs "</span>+costOfRecipe(stew,ICA));
+</code></pre></section><section class="slide challenge"  data-pos="5-8-7"><span class="pos">5-8-7</span><p><strong>Challenge</strong>: Too easy? How about this:</p>
+<ul>
+<li>Create <strong>a few other shops with different prices</strong></li>
+<li><strong>Collect all shops</strong> in a <code>shops</code> object: <code>{ICA: {...}, coop: {...}, ...}</code>;</li>
+</ul>
+<p>And <strong>THEN</strong>:</p>
+</section><section class="slide"  data-pos="5-8-8"><span class="pos">5-8-8</span><p>Create a <strong><code>findCheapestStore</code> function</strong> that takes the <code>shops</code> object and a recipe, and tells you which store is the chepest for that recipe!</p>
+<p><img src="resources/diagrams/beststore.svg" alt=""></p>
+<p>Now demonstrate that for a few recipes:</p>
+<pre><code>console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Shop for supersoup at "</span>+findCheapestStore(supersoup,stores));
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Shop for stew at "</span>+costOfRecipe(stew,stores));
 </code></pre></section>
-                <section class="slide">
-                    <p>Now <strong>create a function</strong> that <strong>calculates the cost for a recipe</strong>...</p>
-                    <p><img src="resources/diagrams/recipecostcalc.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>...and <strong>try it for a few of them</strong>:</p>
-                    <pre><code>console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Supersoup costs "</span>+costOfRecipe(supersoup,ICA));
-console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"My famous stew costs "</span>+costOfRecipe(stew,ICA));
-</code></pre></section>
-                <section class="slide challenge">
-                    <p><strong>Challenge</strong>: Too easy? How about this:</p>
-                    <ul>
-                        <li>Create <strong>a few other shops with different prices</strong></li>
-                        <li><strong>Collect all shops</strong> in a <code>shops</code> object: <code>{ICA: {...}, coop: {...}, ...}</code>;</li>
-                    </ul>
-                    <p>And <strong>THEN</strong>:</p>
-                </section>
-                <section class="slide">
-                    <p>Create a <strong><code>findCheapestStore</code> function</strong> that takes the <code>shops</code> object and a recipe, and tells you which store is the chepest for that recipe!</p>
-                    <p><img src="resources/diagrams/beststore.svg" alt=""></p>
-                    <p>Now demonstrate that for a few recipes:</p>
-                    <pre><code>console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Shop for supersoup at "</span>+findCheapestStore(supersoup,stores));
-console<span class="hljs-selector-class">.log</span>(<span class="hljs-string">"Shop for stew at "</span>+costOfRecipe(stew,stores));
-</code></pre></section>
-            </section>
+</section><!--ENDSECTION8--><!--ENDCHAPTERCONTENT-->
+        
 
-            <section>
-                <h3>Next</h3><a href="chapter6.html">The DOM & jQuery</a>
-            </section>
-
-        </div>
+      </div>
     </div>
 
-    <script src="js/head.js" type="text/javascript"></script>
-    <script src="js/reveal.js" type="text/javascript"></script>
     <script type="text/javascript">
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-            center: true,
-            showNotes: false,
-            transition: 'slide'
-        })
+      var basehref = window.location.href.replace(/chapter\d.*?$/,'')
 
-        window.onload = function() {
-
-            var basehref = window.location.href.replace(/chapter\d.*?$/, '')
-
-            window.addEventListener("keypress", function(e) {
-                var code = e.which ||  e.keyCode;
-                if (code === 13) {
-                    window.location.href = basehref + "index.html?from=" + (5 - 1);
-                } else if (code >= 49 && code <= 8 + 48) {
-                    window.location.hash = "#/" + (code - 48 + 1 + 0);
-                }
-                if (5 < 7) {
-                    if (code === 99) { // the letter C for next Chapter
-                        window.location.href = basehref + "chapter" + (5 + 1) + ".html"
-                    }
-                }
-            });
-
-            var links = document.querySelectorAll("a.link");
-            for (var i = 0; i < links.length; i++) {
-                var link = links[i];
-                link.innerHTML = link.innerHTML.replace(/ /g, '&nbsp;')
-            }
-
+      document.addEventListener("keydown",function(e){
+        var code = e.which || e.keyCode;
+        if (code===13){
+          window.location.href = basehref+"index.html?from="+(5-1);
+        } else if (code >= 49 && code <= 8+48) {
+          window.location.hash = "#/" + (code-48+1+0);
         }
+        if (5 < 7) {
+          if (code===99){ // the letter C for next Chapter
+            window.location.href = basehref+"chapter"+(5+1)+".html"
+          }
+        }
+      });
     </script>
+    <script src="mc2/scripts/head.js" type="text/javascript"></script>
+    <script src="mc2/scripts/reveal.js" type="text/javascript"></script>
+    <script src="mc2/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
 
-</body>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    showNotes: false,
+    transition: 'slide'
+  })
 
+    window.onload = function(){
+
+      var links = document.querySelectorAll("a.link");
+      for(var i=0;i<links.length;i++){
+        var link = links[i];
+        link.innerHTML = link.innerHTML.replace(/ /g,'&nbsp;')
+      }
+      var posElem = document.getElementById('pos')
+      function updateReference(){
+        setTimeout(function(){
+          var current = document.querySelector('section.present[data-pos]')
+          if (current){
+            posElem.innerHTML = current.getAttribute('data-pos')
+          } else {
+            posElem.innerHTML = ''
+          }
+        },10)
+      }
+
+      window.addEventListener("hashchange",updateReference);
+
+      updateReference();
+    };
+
+    </script>
+    <!--STARTCOURSESPECIFICSCRIPTS--><!--ENDCOURSESPECIFICSCRIPTS-->
+    <script type="text/javascript" src="mc2/scripts/reload.js"></script>
+  </body>
 </html>

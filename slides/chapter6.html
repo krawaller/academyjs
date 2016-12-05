@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
 
     <title>The DOM & jQuery</title>
@@ -10,334 +10,259 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="mc2/styles/bootstrapgrid.css">
+    <link rel="stylesheet" href="mc2/styles/reveal.css">
+    <link rel="stylesheet" href="mc2/styles/theme.css" id="theme">
+    <link rel="stylesheet" href="mc2/styles/code.css">
+    <link rel="stylesheet" href="mc2/styles/chapter.css">
+    <!--STARTCOURSESPECIFICSTYLES--><link rel="stylesheet" href="styles/styles.css"><!--ENDCOURSESPECIFICSTYLES-->
+  </head>
 
-    <link rel="stylesheet" href="styles/reveal.css">
-    <link rel="stylesheet" href="styles/theme.css" id="theme">
-    <link rel="stylesheet" href="styles/code.css">
-    <link rel="stylesheet" href="styles/chapter.css">
-    <link rel="stylesheet" href="styles/styles.css">
-
-</head>
-
-<body>
+  <body>
+    <div id="pos"></div>
     <div class="reveal">
-        <div class="slides">
-            <section>
-                <div class="chapternumber"> chapter 6 of 7 </div>
-                <h1>The DOM & jQuery</h1>
-                <span>JS and HTML:s bastard child</span>
-            </section>
-
-            <section>
-                <h3>Sections in this chapter</h3>
-                <ol>
-                    <li><a href="#/2">Introducing&nbsp;the&nbsp;DOM</a></li>
-                    <li><a href="#/3">Catching&nbsp;DOM&nbsp;events</a></li>
-                    <li><a href="#/4">Exercise&nbsp;-&nbsp;my&nbsp;first&nbsp;form</a></li>
-                    <li><a href="#/5">jQuery</a></li>
-                    <li><a href="#/6">Exercise&nbsp;-&nbsp;jQuery</a></li>
-                    <li><a href="#/7">Demo&nbsp;-&nbsp;a&nbsp;community&nbsp;effort</a></li>
-                </ol>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 1/6</div>
-                    <h3>Introducing the DOM</h3>
-                    <p>DOM DOM DOM!</p>
-                </section>
-                <section class="slide">
-                    <p>In a nutshell: <strong>the DOM is the bridge between JS and HTML</strong>:</p>
-                    <p><img src="resources/diagrams/dom.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>Another way of putting it: <strong>the HTML is the recipe</strong> and <strong>the DOM is the dish</strong>.</p>
-                    <p>The DOM is the <strong>browser&#39;s internal representation of the HTML</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>We&#39;ve <strong>already seen the DOM in the Elements tab in the dev tools</strong>, and noted it looks an awful lot like our HTML.</p>
-                    <p>But that&#39;s just because <strong>we haven&#39;t involved JavaScript</strong> yet. JavaScript can manipulate the DOM. <strong>The DOM is not constant</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>We <strong>interact with the DOM</strong> from JS space through the <strong>global <code>document</code> variable</strong>. Go to a website and try this in the console:</p>
-                    <pre><code>document<span class="hljs-selector-class">.body</span><span class="hljs-selector-class">.setAttribute</span>(<span class="hljs-string">"style"</span>,<span class="hljs-string">"background-color:red;"</span>)
-</code></pre></section>
-                <section class="slide">
-                    <p>Through <code>document.body</code> we got an <strong>HTML node</strong>, an <strong>object that represents an element</strong>. On that we can...</p>
-                    <ul>
-                        <li>call the <strong><code>setAttribute</code></strong> method like we just did</li>
-                        <li>query attributes using the <strong><code>getAttribute</code></strong> method</li>
-                        <li>change its content by assigning to <strong><code>innerHTML</code></strong> or <strong><code>textContent</code></strong></li>
-                        <li>iterate over child nodes using the <strong><code>children</code></strong> property, allowing us to walk down the tree.</li>
-                        <li>go back up the tree using the <strong>parent</strong> property.</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>We don&#39;t have to walk the tree from <code>body</code>, there are <strong>several methods</strong> for <strong>find a specific node or set of nodes</strong> on <code>document</code>:</p>
-                    <ul>
-                        <li><strong><code>getElementById(&quot;someId&quot;)</code></strong></li>
-                        <li><strong><code>getElementsByClassName(&quot;someClass&quot;)</code></strong></li>
-                        <li><strong><code>getElementsByTagName(&quot;div&quot;)</code></strong></li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>And, there are <strong>two new methods</strong> which <strong>gets elements using CSS selectors</strong>:</p>
-                    <ul>
-                        <li>**<code>querySelector(&quot;#someId&quot;)</code></li>
-                        <li><strong><code>querySelectorAll(&quot;article &gt; p&quot;)</code></strong></li>
-                    </ul>
-                    <p>The only difference is that <strong><code>querySelector</code> always return 0 or 1 elements</strong>, while <strong><code>querySelectorAll</code> returns a list</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>The <code>querySelector</code> methods are a good example of how <strong>the DOM has improved in later years</strong>. But go back in time, and it was rather horrible to work with.</p>
-                    <p>This is a big reason for <strong>JavaScript&#39;s bad reputation</strong>, since JS is what we use to interact with the DOM. But, the fact is that <strong>interacting with the DOM would suck in any language</strong>. It wasn&#39;t
-                        JS&#39; fault!</p>
-                </section>
-                <section class="slide question">
-                    <p><strong>Question</strong>: All those words, but we still don&#39;t know <strong>what DOM stands for</strong>?</p>
-                </section>
-                <section class="slide answer">
-                    <p><strong>Answer</strong>: Sorry! The <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel.</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 2/6</div>
-                    <h3>Catching DOM events</h3>
-                    <p>True interaction at last!</p>
-                </section>
-                <section class="slide">
-                    <p>With CSS, the only interaction we could offer was some animations using <code>:hover</code> and <code>:active</code>.</p>
-                    <p>But now is the time for some <strong>true user interaction</strong>!</p>
-                </section>
-                <section class="slide">
-                    <p>The DOM lets us <strong>add event listeners to elements</strong>. These are <strong>functions that will be called whenever that particular event happen</strong> on that element.</p>
-                </section>
-                <section class="slide">
-                    <p>Say we <strong>have this button</strong> in our document:</p>
-                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"doomsdaybtn"</span>&gt;</span>Don't click me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <div class="slides">
+        <section>
+          <div class="chapternumber"> chapter 6 of 7 </div>
+          <h1>The DOM & jQuery</h1>
+          <span>JS and HTML:s bastard child</span>
+        </section>
+        
+        <section>
+          <h3>Sections in this chapter</h3>
+          <ol>
+          <!--STARTSECTIONINDEX--><li><a href="#/2">Introducing&nbsp;the&nbsp;DOM</a></li><li><a href="#/3">Catching&nbsp;DOM&nbsp;events</a></li><li><a href="#/4">Exercise&nbsp;-&nbsp;my&nbsp;first&nbsp;form</a></li><li><a href="#/5">jQuery</a></li><li><a href="#/6">Exercise&nbsp;-&nbsp;jQuery</a></li><li><a href="#/7">Demo&nbsp;-&nbsp;a&nbsp;community&nbsp;effort</a></li><!--ENDSECTIONINDEX-->
+          </ol>
+        </section>
+        <!--STARTCHAPTERCONTENT--><!--STARTSECTION1--><section>
+  <section>
+    <div class='sectioncount'>Section 1/6</div>
+    <h3>Introducing the DOM</h3>
+    <p>DOM DOM DOM!</p>
+  </section>
+  <section class="slide"  data-pos="6-1-1"><span class="pos">6-1-1</span><p>In a nutshell: <strong>the DOM is the bridge between JS and HTML</strong>:</p>
+<p><img src="resources/diagrams/dom.svg" alt=""></p>
+</section><section class="slide"  data-pos="6-1-2"><span class="pos">6-1-2</span><p>Another way of putting it: <strong>the HTML is the recipe</strong> and <strong>the DOM is the dish</strong>.</p>
+<p>The DOM is the <strong>browser&#39;s internal representation of the HTML</strong>.</p>
+</section><section class="slide"  data-pos="6-1-3"><span class="pos">6-1-3</span><p>We&#39;ve <strong>already seen the DOM in the Elements tab in the dev tools</strong>, and noted it looks an awful lot like our HTML.</p>
+<p>But that&#39;s just because <strong>we haven&#39;t involved JavaScript</strong> yet. JavaScript can manipulate the DOM. <strong>The DOM is not constant</strong>.</p>
+</section><section class="slide"  data-pos="6-1-4"><span class="pos">6-1-4</span><p>We <strong>interact with the DOM</strong> from JS space through the <strong>global <code>document</code> variable</strong>. Go to a website and try this in the console:</p>
+<pre><code>document<span class="hljs-selector-class">.body</span><span class="hljs-selector-class">.setAttribute</span>(<span class="hljs-string">"style"</span>,<span class="hljs-string">"background-color:red;"</span>)
+</code></pre></section><section class="slide"  data-pos="6-1-5"><span class="pos">6-1-5</span><p>Through <code>document.body</code> we got an <strong>HTML node</strong>, an <strong>object that represents an element</strong>. On that we can...</p>
+<ul>
+<li>call the <strong><code>setAttribute</code></strong> method like we just did</li>
+<li>query attributes using the <strong><code>getAttribute</code></strong> method</li>
+<li>change its content by assigning to <strong><code>innerHTML</code></strong> or <strong><code>textContent</code></strong></li>
+<li>iterate over child nodes using the <strong><code>children</code></strong> property, allowing us to walk down the tree.</li>
+<li>go back up the tree using the <strong>parent</strong> property.</li>
+</ul>
+</section><section class="slide"  data-pos="6-1-6"><span class="pos">6-1-6</span><p>We don&#39;t have to walk the tree from <code>body</code>, there are <strong>several methods</strong> for <strong>find a specific node or set of nodes</strong> on <code>document</code>:</p>
+<ul>
+<li><strong><code>getElementById(&quot;someId&quot;)</code></strong></li>
+<li><strong><code>getElementsByClassName(&quot;someClass&quot;)</code></strong></li>
+<li><strong><code>getElementsByTagName(&quot;div&quot;)</code></strong></li>
+</ul>
+</section><section class="slide"  data-pos="6-1-7"><span class="pos">6-1-7</span><p>And, there are <strong>two new methods</strong> which <strong>gets elements using CSS selectors</strong>:</p>
+<ul>
+<li>**<code>querySelector(&quot;#someId&quot;)</code></li>
+<li><strong><code>querySelectorAll(&quot;article &gt; p&quot;)</code></strong></li>
+</ul>
+<p>The only difference is that <strong><code>querySelector</code> always return 0 or 1 elements</strong>, while <strong><code>querySelectorAll</code> returns a list</strong>.</p>
+</section><section class="slide"  data-pos="6-1-8"><span class="pos">6-1-8</span><p>The <code>querySelector</code> methods are a good example of how <strong>the DOM has improved in later years</strong>. But go back in time, and it was rather horrible to work with.</p>
+<p>This is a big reason for <strong>JavaScript&#39;s bad reputation</strong>, since JS is what we use to interact with the DOM. But, the fact is that <strong>interacting with the DOM would suck in any language</strong>. It wasn&#39;t JS&#39; fault!</p>
+</section><section class="slide question"  data-pos="6-1-9"><span class="pos">6-1-9</span><p><strong>Question</strong>: All those words, but we still don&#39;t know <strong>what DOM stands for</strong>?</p>
+</section><section class="slide answer"  data-pos="6-1-10"><span class="pos">6-1-10</span><p><strong>Answer</strong>: Sorry! The <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel.</p>
+</section>
+</section><!--ENDSECTION1--><!--STARTSECTION2--><section>
+  <section>
+    <div class='sectioncount'>Section 2/6</div>
+    <h3>Catching DOM events</h3>
+    <p>True interaction at last!</p>
+  </section>
+  <section class="slide"  data-pos="6-2-1"><span class="pos">6-2-1</span><p>With CSS, the only interaction we could offer was some animations using <code>:hover</code> and <code>:active</code>.</p>
+<p>But now is the time for some <strong>true user interaction</strong>!</p>
+</section><section class="slide"  data-pos="6-2-2"><span class="pos">6-2-2</span><p>The DOM lets us <strong>add event listeners to elements</strong>. These are <strong>functions that will be called whenever that particular event happen</strong> on that element.</p>
+</section><section class="slide"  data-pos="6-2-3"><span class="pos">6-2-3</span><p>Say we <strong>have this button</strong> in our document:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"doomsdaybtn"</span>&gt;</span>Don't click me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre>
-                    <p>And a <strong>reference</strong> to the corresponding node:</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> btn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"doomsdaybtn"</span>);
+<p>And a <strong>reference</strong> to the corresponding node:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> btn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"doomsdaybtn"</span>);
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>We now <strong>create a function to be used as an event listener</strong>...</p>
-                    <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> listener = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+</section><section class="slide"  data-pos="6-2-4"><span class="pos">6-2-4</span><p>We now <strong>create a function to be used as an event listener</strong>...</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> listener = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
   alert(<span class="hljs-string">"BOOM!"</span>);
 }
 </code></pre>
-                    <p>...and <strong>attach it using the <code>addEventListener</code> method</strong> on the node:</p>
-                    <pre><code class="lang-javascript">btn.addEventListener(<span class="hljs-string">"click"</span>,listener);
+<p>...and <strong>attach it using the <code>addEventListener</code> method</strong> on the node:</p>
+<pre><code class="lang-javascript">btn.addEventListener(<span class="hljs-string">"click"</span>,listener);
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>We could also <strong>add the anonymous function directly</strong>:</p>
-                    <pre><code class="lang-javascript">btn.addEventListener(<span class="hljs-string">"click"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+</section><section class="slide"  data-pos="6-2-5"><span class="pos">6-2-5</span><p>We could also <strong>add the anonymous function directly</strong>:</p>
+<pre><code class="lang-javascript">btn.addEventListener(<span class="hljs-string">"click"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
   alert(<span class="hljs-string">"BOOM!"</span>);
 });
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Now <strong>when the user clicks the button, the event handler function will run</strong>!</p>
-                    <p>The handler will be called with an <strong>event object</strong> that describes what just happened. These differ depending on what event we were listening to.</p>
-                </section>
-                <section class="slide">
-                    <p>What you just saw is the <strong>cornerstone of user interaction</strong>. We <strong>add event listeners</strong> to <strong>make things happen when the user does stuff</strong>!</p>
-                </section>
-                <section class="slide">
-                    <p>There is a <strong>full list of events</strong> at MDN:</p>
-                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/Events">https://developer.mozilla.org/en-US/docs/Web/Events</a></p>
-                </section>
-                <section class="slide">
-                    <p>Although we can add listener to any elements, the <strong>most common use case is with form elements</strong>. We&#39;ve mentioned buttons and inputs, but there are many more! MDN again has a <strong>full list</strong>:</p>
-                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms</a></p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 3/6</div>
-                    <h3>Exercise - my first form</h3>
-                    <p>Because we all love questionnaires</p>
-                </section>
-                <section class="slide">
-                    <p>Let&#39;s <strong>get you acquainted with the DOM, events and form elements</strong> by - you guessed it - <strong>building a form</strong>!</p>
-                </section>
-                <section class="slide">
-                    <p>Here&#39;s your task in detail:</p>
-                    <ul>
-                        <li>Make an <strong>html document</strong> containing a <strong>simple form</strong></li>
-                        <li>The form should include a submission button</li>
-                        <li>Add an <strong>event handler to run upon submission</strong></li>
-                        <li>In that handler, <strong>collect all the user input and log it to the console</strong>!</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>A good start is likely to <strong>spend some time on the MDN form pages</strong> that we linked before, or some other good resource, to <strong>get familiar with form elements and event handling</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>You don&#39;t have to submit your solution, so when your done, just <strong>give a yell</strong>!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 4/6</div>
-                    <h3>jQuery</h3>
-                    <p>What is the fuss about?</p>
-                </section>
-                <section class="slide">
-                    <p>As life on Earth is based on carbon, so is the <strong>internet based on jQuery</strong>.</p>
-                    <p><img src="resources/images/jquery.png" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>The library functionality is <strong>exposed through a global <code>jQuery</code> object</strong> created when we run the code. It <strong>also has <code>$</code> alias</strong> if you want to be more succinct.</p>
-                    <pre><code><span class="hljs-attr">jQuery</span> === $ // <span class="hljs-literal">true</span>
-</code></pre></section>
-                <section class="slide">
-                    <p>jQuery achieved its popularity through <strong>four good ideas</strong>:</p>
-                    <p><img src="resources/diagrams/jquery.svg" alt=""></p>
-                    <p>We&#39;ll now talk through them one by one!</p>
-                </section>
-                <section class="slide">
-                    <p>First off, <strong>using CSS selectors to match elements</strong>.</p>
-                    <pre><code><span class="hljs-attribute">var firstParagraph</span> = $(<span class="hljs-string">"p:first-child"</span>);
-</code></pre>
-                    <p>The success of this idea was what <strong>caused <code>querySelector(All)</code> to be added to regular CSS</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>Second, the <strong>façade</strong> - jQuery made <strong>better methods to interact with the DOM</strong>, and ensures that they <strong>work the same in all browsers</strong>:</p>
-                    <pre><code>firstParagraph<span class="hljs-selector-class">.addClass</span>(<span class="hljs-string">"fadeanim"</span>);
-</code></pre></section>
-                <section class="slide">
-                    <p>The <strong>jQuery façade has less value now</strong> since</p>
-                    <ul>
-                        <li><strong>browsers are much more standards compliant</strong></li>
-                        <li><strong>the DOM has been much improved</strong></li>
-                    </ul>
-                    <p>But it is <strong>still pretty nice</strong>!</p>
-                </section>
-                <section class="slide">
-                    <p>Third, <strong>implicit looping</strong> - if a jQuery selection catches multiple elements, we can still <strong>act on all elements</strong> with a single method call:</p>
-                    <pre><code><span class="hljs-keyword">var</span> buttons = $(<span class="hljs-string">"button"</span>);
+</section><section class="slide"  data-pos="6-2-6"><span class="pos">6-2-6</span><p>Now <strong>when the user clicks the button, the event handler function will run</strong>!</p>
+<p>The handler will be called with an <strong>event object</strong> that describes what just happened. These differ depending on what event we were listening to.</p>
+</section><section class="slide"  data-pos="6-2-7"><span class="pos">6-2-7</span><p>What you just saw is the <strong>cornerstone of user interaction</strong>. We <strong>add event listeners</strong> to <strong>make things happen when the user does stuff</strong>!</p>
+</section><section class="slide"  data-pos="6-2-8"><span class="pos">6-2-8</span><p>There is a <strong>full list of events</strong> at MDN:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events">https://developer.mozilla.org/en-US/docs/Web/Events</a></p>
+</section><section class="slide"  data-pos="6-2-9"><span class="pos">6-2-9</span><p>Although we can add listener to any elements, the <strong>most common use case is with form elements</strong>. We&#39;ve mentioned buttons and inputs, but there are many more! MDN again has a <strong>full list</strong>:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms</a></p>
+</section>
+</section><!--ENDSECTION2--><!--STARTSECTION3--><section>
+  <section>
+    <div class='sectioncount'>Section 3/6</div>
+    <h3>Exercise - my first form</h3>
+    <p>Because we all love questionnaires</p>
+  </section>
+  <section class="slide"  data-pos="6-3-1"><span class="pos">6-3-1</span><p>Let&#39;s <strong>get you acquainted with the DOM, events and form elements</strong> by - you guessed it - <strong>building a form</strong>!</p>
+</section><section class="slide"  data-pos="6-3-2"><span class="pos">6-3-2</span><p>Here&#39;s your task in detail:</p>
+<ul>
+<li>Make an <strong>html document</strong> containing a <strong>simple form</strong></li>
+<li>The form should include a submission button</li>
+<li>Add an <strong>event handler to run upon submission</strong></li>
+<li>In that handler, <strong>collect all the user input and log it to the console</strong>!</li>
+</ul>
+</section><section class="slide"  data-pos="6-3-3"><span class="pos">6-3-3</span><p>A good start is likely to <strong>spend some time on the MDN form pages</strong> that we linked before, or some other good resource, to <strong>get familiar with form elements and event handling</strong>.</p>
+</section><section class="slide"  data-pos="6-3-4"><span class="pos">6-3-4</span><p>You don&#39;t have to submit your solution, so when your done, just <strong>give a yell</strong>!</p>
+</section>
+</section><!--ENDSECTION3--><!--STARTSECTION4--><section>
+  <section>
+    <div class='sectioncount'>Section 4/6</div>
+    <h3>jQuery</h3>
+    <p>What is the fuss about?</p>
+  </section>
+  <section class="slide"  data-pos="6-4-1"><span class="pos">6-4-1</span><p>As life on Earth is based on carbon, so is the <strong>internet based on jQuery</strong>.</p>
+<p><img src="resources/images/jquery.png" alt=""></p>
+</section><section class="slide"  data-pos="6-4-2"><span class="pos">6-4-2</span><p>The library functionality is <strong>exposed through a global <code>jQuery</code> object</strong> created when we run the code. It <strong>also has <code>$</code> alias</strong> if you want to be more succinct.</p>
+<pre><code><span class="hljs-attr">jQuery</span> === $ // <span class="hljs-literal">true</span>
+</code></pre></section><section class="slide"  data-pos="6-4-3"><span class="pos">6-4-3</span><p>jQuery achieved its popularity through <strong>four good ideas</strong>:</p>
+<p><img src="resources/diagrams/jquery.svg" alt=""></p>
+<p>We&#39;ll now talk through them one by one!</p>
+</section><section class="slide"  data-pos="6-4-4"><span class="pos">6-4-4</span><p>First off, <strong>using CSS selectors to match elements</strong>.</p>
+<pre><code><span class="hljs-attribute">var firstParagraph</span> = $(<span class="hljs-string">"p:first-child"</span>);
+</code></pre><p>The success of this idea was what <strong>caused <code>querySelector(All)</code> to be added to regular CSS</strong>.</p>
+</section><section class="slide"  data-pos="6-4-5"><span class="pos">6-4-5</span><p>Second, the <strong>façade</strong> - jQuery made <strong>better methods to interact with the DOM</strong>, and ensures that they <strong>work the same in all browsers</strong>:</p>
+<pre><code>firstParagraph.addClass(<span class="hljs-string">"fadeanim"</span>)<span class="hljs-comment">;</span>
+</code></pre></section><section class="slide"  data-pos="6-4-6"><span class="pos">6-4-6</span><p>The <strong>jQuery façade has less value now</strong> since</p>
+<ul>
+<li><strong>browsers are much more standards compliant</strong></li>
+<li><strong>the DOM has been much improved</strong></li>
+</ul>
+<p>But it is <strong>still pretty nice</strong>!</p>
+</section><section class="slide"  data-pos="6-4-7"><span class="pos">6-4-7</span><p>Third, <strong>implicit looping</strong> - if a jQuery selection catches multiple elements, we can still <strong>act on all elements</strong> with a single method call:</p>
+<pre><code><span class="hljs-keyword">var</span> buttons = $(<span class="hljs-string">"button"</span>);
 buttons.setAttribute(<span class="hljs-string">"disabled"</span>);
-</code></pre></section>
-                <section class="slide">
-                    <p>Some methods <strong>make no sense to use on many elements</strong> at once - they will <strong>operate on the first element</strong> in the selection.</p>
-                </section>
-                <section class="slide">
-                    <p>Finally, <strong>chaining</strong>. All jQuery methods <strong>return the selection we were working on</strong> which means that instead of this:</p>
-                    <pre><code><span class="hljs-keyword">var</span> buttons = $(<span class="hljs-string">"button"</span>);
+</code></pre></section><section class="slide"  data-pos="6-4-8"><span class="pos">6-4-8</span><p>Some methods <strong>make no sense to use on many elements</strong> at once - they will <strong>operate on the first element</strong> in the selection.</p>
+</section><section class="slide"  data-pos="6-4-9"><span class="pos">6-4-9</span><p>Finally, <strong>chaining</strong>. All jQuery methods <strong>return the selection we were working on</strong> which means that instead of this:</p>
+<pre><code><span class="hljs-keyword">var</span> buttons = $(<span class="hljs-string">"button"</span>);
 buttons.setAttribute(<span class="hljs-string">"disabled"</span>);
-</code></pre>
-                    <p>We can do this:</p>
-                    <pre><code><span class="hljs-variable">$(</span><span class="hljs-string">"button"</span>).setAttribute(<span class="hljs-string">"disabled"</span>);
-</code></pre></section>
-                <section class="slide">
-                    <p>Although <strong>the need for jQuery has diminished</strong>, it is still very popular.</p>
-                    <p>And as its API is rather easy, using jQuery can be a better way to learn the DOM than the DOM itself!</p>
-                </section>
-                <section class="slide">
-                    <p>So: definitely <strong>learn jQuery</strong>, but make sure to <strong>also understand what is actually going on</strong>. </p>
-                    <p>Practice from time to time to <strong>do it without jQuery</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>Ending by <strong>zooming out</strong>; this is what you&#39;ll be doing with jQuery most of the time:</p>
-                    <pre><code>$<span class="hljs-comment">(someSelector)</span>.someMethod<span class="hljs-comment">()</span>;
-</code></pre>
-                    <p>We </p>
-                    <ul>
-                        <li><strong>select some elements</strong>, and</li>
-                        <li><strong>do something with them</strong></li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 5/6</div>
-                    <h3>Exercise - jQuery</h3>
-                    <p>Drinking the coolaid</p>
-                </section>
-                <section class="slide">
-                    <p>Armed with a basic understanding of jQuery, we&#39;re now going to <strong>get started on their bootcamp</strong>!</p>
-                    <p>It is an <strong>interactive tutorial</strong> somewhat reminiscent of the games we&#39;ve been playing with for other techniques.</p>
-                </section>
-                <section class="slide">
-                    <p>Go to <a href="http://try.jquery.com">http://try.jquery.com</a> and you&#39;ll see this:</p>
-                    <p><img src="resources/images/tryjquery.png" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>Working through the screenshot top to bottom, a challenge consists of:</p>
-                    <ul>
-                        <li>an <strong>instruction up top</strong> telling you what to do</li>
-                        <li><strong>rendered HTML code</strong> with currently selected elements highlighted</li>
-                        <li>the <strong>HTML code</strong> that has been rendered</li>
-                        <li>a <strong>console where you enter JS code</strong> and use jQuery</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>The tutorial does a good job of <strong>gradually introducing new concepts</strong> and <strong>ramping up difficulty</strong>.</p>
-                    <p>And as <strong>progress is saved</strong> between sessions, there is nothing to lose by <strong>getting started right now</strong>! Try it out for a bit so you get the hang of it, and finish it later if you want!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 6/6</div>
-                    <h3>Demo - a community effort</h3>
-                    <p>Dynamifying the game</p>
-                </section>
-                <section class="slide">
-                    <p>Let&#39;s try something different - I&#39;ll now lead a <strong>mob programming exercise</strong> where we <strong>together rebuild the game from scratch</strong> using <strong>JavaScript</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>We&#39;ll cover <strong>basic jQuery usage</strong>, but also <strong>how to think</strong> when we <strong>design our data model</strong> and <strong>structure our code</strong>!</p>
-                </section>
-            </section>
+</code></pre><p>We can do this:</p>
+<pre><code><span class="hljs-variable">$(</span><span class="hljs-string">"button"</span>).setAttribute(<span class="hljs-string">"disabled"</span>);
+</code></pre></section><section class="slide"  data-pos="6-4-10"><span class="pos">6-4-10</span><p>Although <strong>the need for jQuery has diminished</strong>, it is still very popular.</p>
+<p>And as its API is rather easy, using jQuery can be a better way to learn the DOM than the DOM itself!</p>
+</section><section class="slide"  data-pos="6-4-11"><span class="pos">6-4-11</span><p>So: definitely <strong>learn jQuery</strong>, but make sure to <strong>also understand what is actually going on</strong>. </p>
+<p>Practice from time to time to <strong>do it without jQuery</strong>.</p>
+</section><section class="slide"  data-pos="6-4-12"><span class="pos">6-4-12</span><p>Ending by <strong>zooming out</strong>; this is what you&#39;ll be doing with jQuery most of the time:</p>
+<pre><code>$<span class="hljs-comment">(someSelector)</span>.someMethod<span class="hljs-comment">()</span>;
+</code></pre><p>We </p>
+<ul>
+<li><strong>select some elements</strong>, and</li>
+<li><strong>do something with them</strong></li>
+</ul>
+</section>
+</section><!--ENDSECTION4--><!--STARTSECTION5--><section>
+  <section>
+    <div class='sectioncount'>Section 5/6</div>
+    <h3>Exercise - jQuery</h3>
+    <p>Drinking the coolaid</p>
+  </section>
+  <section class="slide"  data-pos="6-5-1"><span class="pos">6-5-1</span><p>Armed with a basic understanding of jQuery, we&#39;re now going to <strong>get started on their bootcamp</strong>!</p>
+<p>It is an <strong>interactive tutorial</strong> somewhat reminiscent of the games we&#39;ve been playing with for other techniques.</p>
+</section><section class="slide"  data-pos="6-5-2"><span class="pos">6-5-2</span><p>Go to <a href="http://try.jquery.com">http://try.jquery.com</a> and you&#39;ll see this:</p>
+<p><img src="resources/images/tryjquery.png" alt=""></p>
+</section><section class="slide"  data-pos="6-5-3"><span class="pos">6-5-3</span><p>Working through the screenshot top to bottom, a challenge consists of:</p>
+<ul>
+<li>an <strong>instruction up top</strong> telling you what to do</li>
+<li><strong>rendered HTML code</strong> with currently selected elements highlighted</li>
+<li>the <strong>HTML code</strong> that has been rendered</li>
+<li>a <strong>console where you enter JS code</strong> and use jQuery</li>
+</ul>
+</section><section class="slide"  data-pos="6-5-4"><span class="pos">6-5-4</span><p>The tutorial does a good job of <strong>gradually introducing new concepts</strong> and <strong>ramping up difficulty</strong>.</p>
+<p>And as <strong>progress is saved</strong> between sessions, there is nothing to lose by <strong>getting started right now</strong>! Try it out for a bit so you get the hang of it, and finish it later if you want!</p>
+</section>
+</section><!--ENDSECTION5--><!--STARTSECTION6--><section>
+  <section>
+    <div class='sectioncount'>Section 6/6</div>
+    <h3>Demo - a community effort</h3>
+    <p>Dynamifying the game</p>
+  </section>
+  <section class="slide"  data-pos="6-6-1"><span class="pos">6-6-1</span><p>Let&#39;s try something different - I&#39;ll now lead a <strong>mob programming exercise</strong> where we <strong>together rebuild the game from scratch</strong> using <strong>JavaScript</strong>.</p>
+</section><section class="slide"  data-pos="6-6-2"><span class="pos">6-6-2</span><p>We&#39;ll cover <strong>basic jQuery usage</strong>, but also <strong>how to think</strong> when we <strong>design our data model</strong> and <strong>structure our code</strong>!</p>
+</section>
+</section><!--ENDSECTION6--><!--ENDCHAPTERCONTENT-->
+        
 
-            <section>
-                <h3>Next</h3><a href="chapter7.html">Postludium</a>
-            </section>
-
-        </div>
+      </div>
     </div>
 
-    <script src="js/head.js" type="text/javascript"></script>
-    <script src="js/reveal.js" type="text/javascript"></script>
     <script type="text/javascript">
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-            center: true,
-            showNotes: false,
-            transition: 'slide'
-        })
+      var basehref = window.location.href.replace(/chapter\d.*?$/,'')
 
-        window.onload = function() {
-
-            var basehref = window.location.href.replace(/chapter\d.*?$/, '')
-
-            window.addEventListener("keypress", function(e) {
-                var code = e.which ||  e.keyCode;
-                if (code === 13) {
-                    window.location.href = basehref + "index.html?from=" + (6 - 1);
-                } else if (code >= 49 && code <= 6 + 48) {
-                    window.location.hash = "#/" + (code - 48 + 1 + 0);
-                }
-                if (6 < 7) {
-                    if (code === 99) { // the letter C for next Chapter
-                        window.location.href = basehref + "chapter" + (6 + 1) + ".html"
-                    }
-                }
-            });
-
-            var links = document.querySelectorAll("a.link");
-            for (var i = 0; i < links.length; i++) {
-                var link = links[i];
-                link.innerHTML = link.innerHTML.replace(/ /g, '&nbsp;')
-            }
-
+      document.addEventListener("keydown",function(e){
+        var code = e.which || e.keyCode;
+        if (code===13){
+          window.location.href = basehref+"index.html?from="+(6-1);
+        } else if (code >= 49 && code <= 6+48) {
+          window.location.hash = "#/" + (code-48+1+0);
         }
+        if (6 < 7) {
+          if (code===99){ // the letter C for next Chapter
+            window.location.href = basehref+"chapter"+(6+1)+".html"
+          }
+        }
+      });
     </script>
+    <script src="mc2/scripts/head.js" type="text/javascript"></script>
+    <script src="mc2/scripts/reveal.js" type="text/javascript"></script>
+    <script src="mc2/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
 
-</body>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    showNotes: false,
+    transition: 'slide'
+  })
 
+    window.onload = function(){
+
+      var links = document.querySelectorAll("a.link");
+      for(var i=0;i<links.length;i++){
+        var link = links[i];
+        link.innerHTML = link.innerHTML.replace(/ /g,'&nbsp;')
+      }
+      var posElem = document.getElementById('pos')
+      function updateReference(){
+        setTimeout(function(){
+          var current = document.querySelector('section.present[data-pos]')
+          if (current){
+            posElem.innerHTML = current.getAttribute('data-pos')
+          } else {
+            posElem.innerHTML = ''
+          }
+        },10)
+      }
+
+      window.addEventListener("hashchange",updateReference);
+
+      updateReference();
+    };
+
+    </script>
+    <!--STARTCOURSESPECIFICSCRIPTS--><!--ENDCOURSESPECIFICSCRIPTS-->
+    <script type="text/javascript" src="mc2/scripts/reload.js"></script>
+  </body>
 </html>

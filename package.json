@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mc2": "git+https://github.com/edumentab/mc2.git"
+  },
+  "scripts": {
+    "build": "mc2"
+  }
+}

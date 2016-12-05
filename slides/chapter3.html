@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="utf-8">
 
     <title>CSS basics</title>
@@ -10,296 +10,189 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="mc2/styles/bootstrapgrid.css">
+    <link rel="stylesheet" href="mc2/styles/reveal.css">
+    <link rel="stylesheet" href="mc2/styles/theme.css" id="theme">
+    <link rel="stylesheet" href="mc2/styles/code.css">
+    <link rel="stylesheet" href="mc2/styles/chapter.css">
+    <!--STARTCOURSESPECIFICSTYLES--><link rel="stylesheet" href="styles/styles.css"><!--ENDCOURSESPECIFICSTYLES-->
+  </head>
 
-    <link rel="stylesheet" href="styles/reveal.css">
-    <link rel="stylesheet" href="styles/theme.css" id="theme">
-    <link rel="stylesheet" href="styles/code.css">
-    <link rel="stylesheet" href="styles/chapter.css">
-    <link rel="stylesheet" href="styles/styles.css">
-
-</head>
-
-<body>
+  <body>
+    <div id="pos"></div>
     <div class="reveal">
-        <div class="slides">
-            <section>
-                <div class="chapternumber"> chapter 3 of 7 </div>
-                <h1>CSS basics</h1>
-                <span>layout and style</span>
-            </section>
-            <section class="slide">
-                <p>Now to learn how to affect the layout and look of HTML!</p>
-            </section>
-            <section>
-                <h3>Sections in this chapter</h3>
-                <ol>
-                    <li><a href="#/3">Overview</a></li>
-                    <li><a href="#/4">CSS&nbsp;selectors</a></li>
-                    <li><a href="#/5">Element&nbsp;descriptions</a></li>
-                    <li><a href="#/6">Combinators</a></li>
-                    <li><a href="#/7">Exercise&nbsp;-&nbsp;Battle</a></li>
-                    <li><a href="#/8">Inclusion</a></li>
-                    <li><a href="#/9">Basic&nbsp;styles</a></li>
-                    <li><a href="#/10">The&nbsp;browser&nbsp;devtools</a></li>
-                    <li><a href="#/11">Exercise&nbsp;-&nbsp;Style&nbsp;the&nbsp;game</a></li>
-                </ol>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 1/9</div>
-                    <h3>Overview</h3>
-                    <p>CSS from a chopper</p>
-                </section>
-                <section class="slide">
-                    <p>CSS, or Cascading Style Sheets, is a language to control <strong>style</strong> and <strong>layout</strong> of HTML content.</p>
-                </section>
-                <section class="slide">
-                    <p>It <strong>wasn&#39;t really designed to do much more beyond formatting text</strong>, so regarding the layout part it can feel like a bad fit and has a <strong>bad rep</strong>.</p>
-                    <p><img src="resources/images/cssawesome.jpg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>When we say <strong>CSS</strong>, we are actually talking about <strong>two different languages</strong>. Take a look at this blob:</p>
-                    <pre><code class="lang-CSS"><span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-child</span>, <span class="hljs-selector-class">.first</span>, <span class="hljs-selector-tag">h4</span> {
+      <div class="slides">
+        <section>
+          <div class="chapternumber"> chapter 3 of 7 </div>
+          <h1>CSS basics</h1>
+          <span>layout and style</span>
+        </section>
+        <section class="slide" ><p>Now to learn how to affect the layout and look of HTML!</p>
+</section>
+        <section>
+          <h3>Sections in this chapter</h3>
+          <ol>
+          <!--STARTSECTIONINDEX--><li><a href="#/3">Overview</a></li><li><a href="#/4">CSS&nbsp;selectors</a></li><li><a href="#/5">Element&nbsp;descriptions</a></li><li><a href="#/6">Combinators</a></li><li><a href="#/7">Inclusion</a></li><li><a href="#/8">The&nbsp;browser&nbsp;devtools</a></li><li><a href="#/9">Exercise&nbsp;-&nbsp;Style&nbsp;the&nbsp;game</a></li><!--ENDSECTIONINDEX-->
+          </ol>
+        </section>
+        <!--STARTCHAPTERCONTENT--><!--STARTSECTION1--><section>
+  <section>
+    <div class='sectioncount'>Section 1/7</div>
+    <h3>Overview</h3>
+    <p>CSS from a chopper</p>
+  </section>
+  <section class="slide"  data-pos="3-1-1"><span class="pos">3-1-1</span><p>CSS, or Cascading Style Sheets, is a language to control <strong>style</strong> and <strong>layout</strong> of HTML content.</p>
+</section><section class="slide"  data-pos="3-1-2"><span class="pos">3-1-2</span><p>It <strong>wasn&#39;t really designed to do much more beyond formatting text</strong>, so regarding the layout part it can feel like a bad fit and has a <strong>bad rep</strong>.</p>
+<p><img src="resources/images/cssawesome.jpg" alt=""></p>
+</section><section class="slide"  data-pos="3-1-3"><span class="pos">3-1-3</span><p>When we say <strong>CSS</strong>, we are actually talking about <strong>two different languages</strong>. Take a look at this blob:</p>
+<pre><code class="lang-CSS"><span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-child</span>, <span class="hljs-selector-class">.first</span>, <span class="hljs-selector-tag">h4</span> {
   <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2</span> em;
   <span class="hljs-attribute">text-style</span>: italic;
 }
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>If we &quot;zoom out&quot;, it could be transcribed as this:</p>
-                    <pre><code class="lang-CSS">Selector, Selector, Selector {
+</section><section class="slide"  data-pos="3-1-4"><span class="pos">3-1-4</span><p>If we &quot;zoom out&quot;, it could be transcribed as this:</p>
+<pre><code class="lang-CSS">Selector, Selector, Selector {
   Style rule;
   Style rule;
 }
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>Essentially, CSS consists of <strong>selectors</strong> and <strong>style rules</strong>. All elements matching the selectors will get the style rules.</p>
-                    <p><img src="resources/diagrams/css-split.svg" alt=""></p>
-                    <p>So learning CSS means <strong>learning both</strong> of these!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 2/9</div>
-                    <h3>CSS selectors</h3>
-                    <p>The targeting mechanism</p>
-                </section>
-                <section class="slide">
-                    <p>Let&#39;s look at the first part of CSS - <strong>selectors</strong>!</p>
-                    <p><img src="resources/diagrams/css-split-selector.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>Just like CSS splits into selectors and style rules, so does <strong>selectors split into descriptions and combinators</strong>.</p>
-                    <p><img src="resources/diagrams/css-selectors.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>These are again two completely different things, so we can even make the case that <strong>CSS consists of 3 different languages</strong>!</p>
-                </section>
-                <section class="slide">
-                    <p>We touched on CSS&#39; bad rep for not being very good at doing layout.</p>
-                    <p>CSS selectors, however, are <strong>very good at what they do</strong>, namely select a subset of elements from a document.</p>
-                </section>
-                <section class="slide">
-                    <p>In fact, CSS selectors are so efficient that <strong>JavaScript stole them</strong>, because they got the job done better than the programmatic interface that existed before!</p>
-                </section>
-                <section class="slide">
-                    <p>Many <strong>modern JS frameworks also use CSS selectors</strong>, so all in all there are <strong>many good reasons to learn them well</strong>.</p>
-                    <p>So let&#39;s go do that!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 3/9</div>
-                    <h3>Element descriptions</h3>
-                    <p>The wanted poster</p>
-                </section>
-                <section class="slide">
-                    <p>The most important part of a CSS selector is to <strong>describe elements</strong> that should be selected.</p>
-                    <p><img src="resources/diagrams/css-selectors-desc.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>There are <strong>five different aspects</strong> that we can describe, each with its own syntax:</p>
-                    <p><img src="resources/diagrams/css-descriptions.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>These <strong>can be combined</strong> however you see fit. Here is an (exaggerated) example using all of them:</p>
-                    <pre><code><span class="hljs-selector-tag">button</span>[disabled]<span class="hljs-selector-id">#deletemsg</span><span class="hljs-selector-class">.big</span>:first-child
-</code></pre></section>
-                <section class="slide">
-                    <p>This would match all </p>
-                    <ul>
-                        <li>nodes of <strong>type</strong> buttons</li>
-                        <li>that has a disabled <strong>attribute</strong></li>
-                        <li>and <strong>id</strong> is <code>deletemsg</code></li>
-                        <li>and <strong>class</strong> attribute contains &#39;big&#39;</li>
-                        <li>and it is the <strong>first child</strong> of its parent</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>As per usual the <strong>details can be found on MDN</strong>:</p>
-                    <p><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector">https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector</a></p>
-                    <p>However, we will now make a few observations for each of the five aspects.</p>
-                </section>
-                <section class="slide">
-                    <p>Some notes on the <strong>type</strong> description:</p>
-                    <pre><code><span class="hljs-keyword">div</span>
-</code></pre>
-                    <ul>
-                        <li>There&#39;s no special syntax, just <strong>write out the type</strong>.</li>
-                        <li>They are <strong>optional</strong>, we can make a description with just other aspects.</li>
-                        <li>An <strong>asterisk <code>*</code> is a wildcard</strong> (sometimes called &quot;universal selector&quot;), but rarely useful.</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>The <strong>id</strong> description...</p>
-                    <pre><code><span class="hljs-meta">#app-wrapper</span>
-</code></pre>
-                    <ul>
-                        <li>refers to the <strong>generic attribute</strong> we saw in the HTML chapter</li>
-                        <li>is <strong>prefixed with a <code>#</code></strong></li>
-                        <li>will (or should) only ever <strong>match 1</strong> (or 0) elements.</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>The <strong>class</strong> description...</p>
-                    <pre><code><span class="hljs-title">.container</span>
-</code></pre>
-                    <ul>
-                        <li>again refers to a <strong>generic attribute</strong></li>
-                        <li>is <strong>prefixed with a <code>.</code></strong></li>
-                        <li>can have <strong>multiple classes</strong>: <code>.container.highlight</code></li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>The <strong>attributes</strong> description...</p>
-                    <pre><code>[disabled]   [foo=<span class="hljs-string">"bar"</span>]   [href^=<span class="hljs-string">"http"</span>]
-</code></pre>
-                    <ul>
-                        <li>is probably the <strong>most complex</strong> description aspect</li>
-                        <li>matches elements depending on <strong>attributes and their values</strong></li>
-                        <li>is <strong>surrounded by brackets</strong></li>
-                        <li>can test simply for <strong>attribute existence</strong> by just mentioning the attribute</li>
-                        <li>can test <strong>attribute value</strong> by using <code>=</code> and the wanted value</li>
-                        <li>can match <strong>value beginning</strong> by using <code>^=</code></li>
-                    </ul>
-                </section>
-                <section class="slide question">
-                    <p><strong>Quiz</strong>: Ok, so <code>^=</code> allows us to match against the <strong>beginning of an attribute value</strong>. But what would be the point of that last example we saw?</p>
-                    <pre><code>[href<span class="hljs-comment">^=</span><span class="hljs-string">"http"</span>]
-</code></pre></section>
-                <section class="slide answer">
-                    <p><strong>Answer</strong>: If all local links are relative, which is normally the case, then this would be an excellent way to <strong>catch all external links</strong>, to make them look or behave differently.</p>
-                </section>
-                <section class="slide">
-                    <p>Finally some notes on the pseudo-classes:</p>
-                    <pre><code><span class="hljs-meta">:first-child    :nth-child(2)</span>    :active
-</code></pre>
-                    <ul>
-                        <li>They are <strong>prefixed with <code>:</code></strong></li>
-                        <li>They allow matching on <strong>position or state</strong></li>
-                        <li>Some take <strong>arguments</strong> which are <strong>given within parenthesis</strong></li>
-                        <li>The <strong><code>:not()</code> class takes a full CSS selector</strong></li>
-                        <li>They are obscure but <strong>really powerful</strong>, so worth getting to know!</li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 4/9</div>
-                    <h3>Combinators</h3>
-                    <p>Many wanted posters!</p>
-                </section>
-                <section class="slide">
-                    <p>Let&#39;s now look at the other half of selectors, namely how we <strong>combine</strong> descriptions!</p>
-                    <p><img src="resources/diagrams/css-selectors-comb.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>There are <strong>four different ways</strong> that descriptions can be combined, which we&#39;ll look at one at a time:</p>
-                    <p><img src="resources/diagrams/css-combinators.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>The perhaps most common one is the <strong>descendant combinator</strong>. By having <strong>two descriptions with space between</strong>...</p>
-                    <pre><code><span class="hljs-selector-tag">div</span> p
-</code></pre>
-                    <p>...we match all elements that</p>
-                    <ul>
-                        <li><strong>match the last description</strong></li>
-                        <li>have an <strong>ancestor matching the first description</strong>. This can be any number of generations up the tree.</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>I think it is <strong>unfortunate that the descendant combinators doesn&#39;t have a non-space symbol</strong>, something like this:</p>
-                    <pre><code><span class="hljs-selector-tag">div</span> _ p
-</code></pre>
-                    <p>Whitespace elsewhere in CSS doesn&#39;t have meaning, but here it suddenly does. To help with this, <strong>think of descendant combinators as invisible symbols</strong>!</p>
-                </section>
-                <section class="slide"><pre><code><span class="hljs-selector-tag">div</span> &gt; p
-</code></pre>
-                    <p>The <strong>child combinator</strong> is very similar to descendant selector, but here the first selector must match the <strong>parent</strong> and not just any ancestor.</p>
-                    <p>Thus the child combinator is <strong>smaller in scope</strong> than the descendant combinator.</p>
-                </section>
-                <section class="slide"><pre><code><span class="hljs-selector-tag">div</span> ~ p
-</code></pre>
-                    <p>The <strong>sibling combinator</strong> is similar to the descendant combinator, but <strong>works horisontally</strong> instead: it matches elements that...</p>
-                    <ul>
-                        <li><strong>match the last description</strong></li>
-                        <li>have an <strong>older sibling that matches the first description</strong></li>
-                    </ul>
-                </section>
-                <section class="slide"><pre><code><span class="hljs-selector-tag">div</span> + p
-</code></pre>
-                    <p>Finally the <strong>adjacent sibling combinator</strong> works in the exact same way, but requires the <strong>neighbouring older sibling to match the first description</strong>.</p>
-                </section>
-                <section class="slide">
-                    <p>The two <strong>sibling combinators are not often used</strong>, but they are <strong>good at what they do</strong>.</p>
-                    <p>Solving that problem with other means would require <strong>brittle workarounds</strong>, something you often see from web developers who don&#39;t know about them.</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 5/9</div>
-                    <h3>Exercise - Battle</h3>
-                    <p>2 (or 3) goes in, 1 comes out</p>
-                </section>
-                <section class="slide">
-                    <p>This is a small <strong>intermission exercise</strong> to do some <strong>practicing on CSS selectors</strong>. You&#39;ll need...</p>
-                    <ul>
-                        <li>a <strong>reference</strong> at the ready - MDN works fine</li>
-                        <li><strong>an opponent or two</strong>. Literaly - you must be 2 or 3 people.</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>Go to <a href="http://blog.krawaller.se/cssbattle/">http://blog.krawaller.se/cssbattle/</a>, and you&#39;re met with this simple form:</p>
-                    <p><img src="resources/images/battlehall.png" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>Enter the <strong>same room as your opponent(s)</strong>, but using <strong>different names</strong>. You will then all end up in the same <strong>battle arena</strong>:</p>
-                    <p><img src="resources/images/battle.png" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>Each of you can <strong>set your selector</strong>, and <strong>everyone sees everyone&#39;s results</strong>.</p>
-                    <p>There are <strong>no hardcoded rules</strong>, but we suggest you <strong>take turn to make a selection</strong>, and then the other(s) should <strong>make the same selection</strong> as fast as possible.</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 6/9</div>
-                    <h3>Inclusion</h3>
-                    <p>smuggling in the paint</p>
-                </section>
-                <section class="slide">
-                    <p>There are <strong>3 different ways</strong> in which we can <strong>apply CSS</strong> to our content:</p>
-                    <ul>
-                        <li>linking to a <strong>separate <code>.css</code> file</strong></li>
-                        <li>putting it into a <strong><code>style</code> tag</strong></li>
-                        <li>inlining it in the <strong><code>style</code> attribute</strong> of an element</li>
-                    </ul>
-                    <p>(We can also <strong>mutate styles dynamically</strong> with JavaScript, but that comes later!)</p>
-                </section>
-                <section class="slide">
-                    <p>A separate file means using a <strong><code>&lt;link&gt;</code> element</strong>:</p>
-                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+</section><section class="slide"  data-pos="3-1-5"><span class="pos">3-1-5</span><p>Essentially, CSS consists of <strong>selectors</strong> and <strong>style rules</strong>. All elements matching the selectors will get the style rules.</p>
+<p><img src="resources/diagrams/css-split.svg" alt=""></p>
+<p>So learning CSS means <strong>learning both</strong> of these!</p>
+</section>
+</section><!--ENDSECTION1--><!--STARTSECTION2--><section>
+  <section>
+    <div class='sectioncount'>Section 2/7</div>
+    <h3>CSS selectors</h3>
+    <p>The targeting mechanism</p>
+  </section>
+  <section class="slide"  data-pos="3-2-1"><span class="pos">3-2-1</span><p>Let&#39;s look at the first part of CSS - <strong>selectors</strong>!</p>
+<p><img src="resources/diagrams/css-split-selector.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-2-2"><span class="pos">3-2-2</span><p>Just like CSS splits into selectors and style rules, so does <strong>selectors split into descriptions and combinators</strong>.</p>
+<p><img src="resources/diagrams/css-selectors.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-2-3"><span class="pos">3-2-3</span><p>These are again two completely different things, so we can even make the case that <strong>CSS consists of 3 different languages</strong>!</p>
+</section><section class="slide"  data-pos="3-2-4"><span class="pos">3-2-4</span><p>We touched on CSS&#39; bad rep for not being very good at doing layout.</p>
+<p>CSS selectors, however, are <strong>very good at what they do</strong>, namely select a subset of elements from a document.</p>
+</section><section class="slide"  data-pos="3-2-5"><span class="pos">3-2-5</span><p>In fact, CSS selectors are so efficient that <strong>JavaScript stole them</strong>, because they got the job done better than the programmatic interface that existed before!</p>
+</section><section class="slide"  data-pos="3-2-6"><span class="pos">3-2-6</span><p>Many <strong>modern JS frameworks also use CSS selectors</strong>, so all in all there are <strong>many good reasons to learn them well</strong>.</p>
+<p>So let&#39;s go do that!</p>
+</section>
+</section><!--ENDSECTION2--><!--STARTSECTION3--><section>
+  <section>
+    <div class='sectioncount'>Section 3/7</div>
+    <h3>Element descriptions</h3>
+    <p>The wanted poster</p>
+  </section>
+  <section class="slide"  data-pos="3-3-1"><span class="pos">3-3-1</span><p>The most important part of a CSS selector is to <strong>describe elements</strong> that should be selected.</p>
+<p><img src="resources/diagrams/css-selectors-desc.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-3-2"><span class="pos">3-3-2</span><p>There are <strong>five different aspects</strong> that we can describe, each with its own syntax:</p>
+<p><img src="resources/diagrams/css-descriptions.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-3-3"><span class="pos">3-3-3</span><p>These <strong>can be combined</strong> however you see fit. Here is an (exaggerated) example using all of them:</p>
+<pre><code><span class="hljs-selector-tag">button</span>[disabled]<span class="hljs-selector-id">#deletemsg</span><span class="hljs-selector-class">.big</span>:first-child
+</code></pre></section><section class="slide"  data-pos="3-3-4"><span class="pos">3-3-4</span><p>This would match all </p>
+<ul>
+<li>nodes of <strong>type</strong> buttons</li>
+<li>that has a disabled <strong>attribute</strong></li>
+<li>and <strong>id</strong> is <code>deletemsg</code></li>
+<li>and <strong>class</strong> attribute contains &#39;big&#39;</li>
+<li>and it is the <strong>first child</strong> of its parent</li>
+</ul>
+</section><section class="slide"  data-pos="3-3-5"><span class="pos">3-3-5</span><p>As per usual the <strong>details can be found on MDN</strong>:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector">https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector</a></p>
+<p>However, we will now make a few observations for each of the five aspects.</p>
+</section><section class="slide"  data-pos="3-3-6"><span class="pos">3-3-6</span><p>Some notes on the <strong>type</strong> description:</p>
+<pre><code><span class="hljs-keyword">div</span>
+</code></pre><ul>
+<li>There&#39;s no special syntax, just <strong>write out the type</strong>.</li>
+<li>They are <strong>optional</strong>, we can make a description with just other aspects.</li>
+<li>An <strong>asterisk <code>*</code> is a wildcard</strong> (sometimes called &quot;universal selector&quot;), but rarely useful.</li>
+</ul>
+</section><section class="slide"  data-pos="3-3-7"><span class="pos">3-3-7</span><p>The <strong>id</strong> description...</p>
+<pre><code><span class="hljs-meta">#app-wrapper</span>
+</code></pre><ul>
+<li>refers to the <strong>generic attribute</strong> we saw in the HTML chapter</li>
+<li>is <strong>prefixed with a <code>#</code></strong></li>
+<li>will (or should) only ever <strong>match 1</strong> (or 0) elements.</li>
+</ul>
+</section><section class="slide"  data-pos="3-3-8"><span class="pos">3-3-8</span><p>The <strong>class</strong> description...</p>
+<pre><code><span class="hljs-title">.container</span>
+</code></pre><ul>
+<li>again refers to a <strong>generic attribute</strong></li>
+<li>is <strong>prefixed with a <code>.</code></strong></li>
+<li>can have <strong>multiple classes</strong>: <code>.container.highlight</code></li>
+</ul>
+</section><section class="slide"  data-pos="3-3-9"><span class="pos">3-3-9</span><p>The <strong>attributes</strong> description...</p>
+<pre><code>[disabled]   [foo=<span class="hljs-string">"bar"</span>]   [href^=<span class="hljs-string">"http"</span>]
+</code></pre><ul>
+<li>is probably the <strong>most complex</strong> description aspect</li>
+<li>matches elements depending on <strong>attributes and their values</strong></li>
+<li>is <strong>surrounded by brackets</strong></li>
+<li>can test simply for <strong>attribute existence</strong> by just mentioning the attribute</li>
+<li>can test <strong>attribute value</strong> by using <code>=</code> and the wanted value</li>
+<li>can match <strong>value beginning</strong> by using <code>^=</code></li>
+</ul>
+</section><section class="slide question"  data-pos="3-3-10"><span class="pos">3-3-10</span><p><strong>Quiz</strong>: Ok, so <code>^=</code> allows us to match against the <strong>beginning of an attribute value</strong>. But what would be the point of that last example we saw?</p>
+<pre><code>[href<span class="hljs-comment">^=</span><span class="hljs-string">"http"</span>]
+</code></pre></section><section class="slide answer"  data-pos="3-3-11"><span class="pos">3-3-11</span><p><strong>Answer</strong>: If all local links are relative, which is normally the case, then this would be an excellent way to <strong>catch all external links</strong>, to make them look or behave differently.</p>
+</section><section class="slide"  data-pos="3-3-12"><span class="pos">3-3-12</span><p>Finally some notes on the pseudo-classes:</p>
+<pre><code><span class="hljs-meta">:first-child    :nth-child(2)</span>    :active
+</code></pre><ul>
+<li>They are <strong>prefixed with <code>:</code></strong></li>
+<li>They allow matching on <strong>position or state</strong></li>
+<li>Some take <strong>arguments</strong> which are <strong>given within parenthesis</strong></li>
+<li>The <strong><code>:not()</code> class takes a full CSS selector</strong></li>
+<li>They are obscure but <strong>really powerful</strong>, so worth getting to know!</li>
+</ul>
+</section>
+</section><!--ENDSECTION3--><!--STARTSECTION4--><section>
+  <section>
+    <div class='sectioncount'>Section 4/7</div>
+    <h3>Combinators</h3>
+    <p>Many wanted posters!</p>
+  </section>
+  <section class="slide"  data-pos="3-4-1"><span class="pos">3-4-1</span><p>Let&#39;s now look at the other half of selectors, namely how we <strong>combine</strong> descriptions!</p>
+<p><img src="resources/diagrams/css-selectors-comb.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-4-2"><span class="pos">3-4-2</span><p>There are <strong>four different ways</strong> that descriptions can be combined, which we&#39;ll look at one at a time:</p>
+<p><img src="resources/diagrams/css-combinators.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-4-3"><span class="pos">3-4-3</span><p>The perhaps most common one is the <strong>descendant combinator</strong>. By having <strong>two descriptions with space between</strong>...</p>
+<pre><code><span class="hljs-selector-tag">div</span> p
+</code></pre><p>...we match all elements that</p>
+<ul>
+<li><strong>match the last description</strong></li>
+<li>have an <strong>ancestor matching the first description</strong>. This can be any number of generations up the tree.</li>
+</ul>
+</section><section class="slide"  data-pos="3-4-4"><span class="pos">3-4-4</span><p>I think it is <strong>unfortunate that the descendant combinators doesn&#39;t have a non-space symbol</strong>, something like this:</p>
+<pre><code><span class="hljs-selector-tag">div</span> _ p
+</code></pre><p>Whitespace elsewhere in CSS doesn&#39;t have meaning, but here it suddenly does. To help with this, <strong>think of descendant combinators as invisible symbols</strong>!</p>
+</section><section class="slide"  data-pos="3-4-5"><span class="pos">3-4-5</span><pre><code><span class="hljs-selector-tag">div</span> &gt; p
+</code></pre><p>The <strong>child combinator</strong> is very similar to descendant selector, but here the first selector must match the <strong>parent</strong> and not just any ancestor.</p>
+<p>Thus the child combinator is <strong>smaller in scope</strong> than the descendant combinator.</p>
+</section><section class="slide"  data-pos="3-4-6"><span class="pos">3-4-6</span><pre><code><span class="hljs-selector-tag">div</span> ~ p
+</code></pre><p>The <strong>sibling combinator</strong> is similar to the descendant combinator, but <strong>works horisontally</strong> instead: it matches elements that...</p>
+<ul>
+<li><strong>match the last description</strong></li>
+<li>have an <strong>older sibling that matches the first description</strong></li>
+</ul>
+</section><section class="slide"  data-pos="3-4-7"><span class="pos">3-4-7</span><pre><code><span class="hljs-selector-tag">div</span> + p
+</code></pre><p>Finally the <strong>adjacent sibling combinator</strong> works in the exact same way, but requires the <strong>neighbouring older sibling to match the first description</strong>.</p>
+</section><section class="slide"  data-pos="3-4-8"><span class="pos">3-4-8</span><p>The two <strong>sibling combinators are not often used</strong>, but they are <strong>good at what they do</strong>.</p>
+<p>Solving that problem with other means would require <strong>brittle workarounds</strong>, something you often see from web developers who don&#39;t know about them.</p>
+</section>
+</section><!--ENDSECTION4--><!--STARTSECTION5--><section>
+  <section>
+    <div class='sectioncount'>Section 5/7</div>
+    <h3>Inclusion</h3>
+    <p>smuggling in the paint</p>
+  </section>
+  <section class="slide"  data-pos="3-5-1"><span class="pos">3-5-1</span><p>There are <strong>3 different ways</strong> in which we can <strong>apply CSS</strong> to our content:</p>
+<ul>
+<li>linking to a <strong>separate <code>.css</code> file</strong></li>
+<li>putting it into a <strong><code>style</code> tag</strong></li>
+<li>inlining it in the <strong><code>style</code> attribute</strong> of an element</li>
+</ul>
+<p>(We can also <strong>mutate styles dynamically</strong> with JavaScript, but that comes later!)</p>
+</section><section class="slide"  data-pos="3-5-2"><span class="pos">3-5-2</span><p>A separate file means using a <strong><code>&lt;link&gt;</code> element</strong>:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles/mystyles.css"</span>&gt;</span>
@@ -309,10 +202,8 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p>The <strong><code>&lt;style&gt;</code> element</strong> simply <strong>wraps the CSS code</strong>. It can go anywhere, but customarily in the head:</p>
-                    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+</section><section class="slide"  data-pos="3-5-3"><span class="pos">3-5-3</span><p>The <strong><code>&lt;style&gt;</code> element</strong> simply <strong>wraps the CSS code</strong>. It can go anywhere, but customarily in the head:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
@@ -324,217 +215,124 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-                </section>
-                <section class="slide">
-                    <p><strong>Inlining in the <code>style</code> attribute</strong> means we don&#39;t need selectors, since the style rules are applied to this particular element.</p>
-                    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-weight: bold;"</span>&gt;</span>It will never happen again.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</section><section class="slide"  data-pos="3-5-4"><span class="pos">3-5-4</span><p><strong>Inlining in the <code>style</code> attribute</strong> means we don&#39;t need selectors, since the style rules are applied to this particular element.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-weight: bold;"</span>&gt;</span>It will never happen again.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
-                </section>
-                <section class="slide question">
-                    <p><strong>Quiz</strong>: Which method do you think is the most common, and why?</p>
-                </section>
-                <section class="slide answer">
-                    <p><strong>Answer</strong>: In almost all situations <strong>a separate file is preferred</strong>, since that gives us a good separation of concerns. Style tags arguably gives us that too, so the primary thing is to <strong>be careful with inlining styles</strong>.</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 7/9</div>
-                    <h3>Basic styles</h3>
-                    <p>lipstick on a p</p>
-                </section>
-                <section class="slide">
-                    <p>We spent a lot of time talking about selectors. Now for the <strong>style rules</strong>!</p>
-                    <p><img src="resources/diagrams/css-split-style.svg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>The <strong>syntax</strong> is simple enough:</p>
-                    <pre><code class="lang-css"><span class="hljs-selector-tag">font-weight</span>: <span class="hljs-selector-tag">bold</span>;
-</code></pre>
-                    <ol>
-                        <li>You type out the <strong>property</strong> you want to style,</li>
-                        <li>then a <strong>colon separator</strong>,</li>
-                        <li>followed by the <strong>value</strong> for the property,</li>
-                        <li>and finally an <strong>ending semicolon</strong>.</li>
-                    </ol>
-                </section>
-                <section class="slide">
-                    <p>We can have <strong>as many rules as we want</strong> within the brackets:</p>
-                    <pre><code class="lang-css"><span class="hljs-selector-class">.article</span> <span class="hljs-selector-tag">p</span> {
-  <span class="hljs-attribute">font-weight</span>: normal;
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#EEE</span>;
-  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1.5em</span>;
-}
-</code></pre>
-                </section>
-                <section class="slide">
-                    <p>So, <strong>what properties</strong> can we style? Lots and lots! For this <strong>basic section</strong>, here follows a few you need to know!</p>
-                </section>
-                <section class="slide">
-                    <div style="float:right;width:300px;background-color:white;margin-left:1em;margin-bottom:2em;">
-                        <div style="background-color: magenta; padding-left: 20px; margin-left:10px">
-                            Alea Jacta Est
-                        </div>
-                    </div>
+</section><section class="slide question"  data-pos="3-5-5"><span class="pos">3-5-5</span><p><strong>Quiz</strong>: Which method do you think is the most common, and why?</p>
+</section><section class="slide answer"  data-pos="3-5-6"><span class="pos">3-5-6</span><p><strong>Answer</strong>: In almost all situations <strong>a separate file is preferred</strong>, since that gives us a good separation of concerns. Style tags arguably gives us that too, so the primary thing is to <strong>be careful with inlining styles</strong>.</p>
+</section>
+</section><!--ENDSECTION5--><!--STARTSECTION6--><section>
+  <section>
+    <div class='sectioncount'>Section 6/7</div>
+    <h3>The browser devtools</h3>
+    <p>Your new BFF</p>
+  </section>
+  <section class="slide"  data-pos="3-6-1"><span class="pos">3-6-1</span><p>Contrary to the web developer of yesteryear, today we have <strong>very powerful developer tools</strong> built into almost all browsers. We&#39;ll be looking at Chrome, but there are analogs in the others.</p>
+</section><section class="slide"  data-pos="3-6-2"><span class="pos">3-6-2</span><p>They <strong>show you the element tree</strong> and <strong>provide info on specific elements</strong>.</p>
+<p><img src="resources/images/devtoolcss.png" alt=""></p>
+</section><section class="slide"  data-pos="3-6-3"><span class="pos">3-6-3</span><p>This is especially useful for</p>
+<ul>
+<li><strong>CSS debugging</strong>, as you can see exactly <strong>what styles are applied</strong> and from where and with <strong>which selectors</strong> they came.</li>
+<li><strong>CSS experimenting</strong>, as you can toggle the styles, try out new values and even add completely new styles.</li>
+</ul>
+</section>
+</section><!--ENDSECTION6--><!--STARTSECTION7--><section>
+  <section>
+    <div class='sectioncount'>Section 7/7</div>
+    <h3>Exercise - Style the game</h3>
+    <p>Hiring an illustrator</p>
+  </section>
+  <section class="slide"  data-pos="3-7-1"><span class="pos">3-7-1</span><p>Time to return to your choose-your-own-adventure and make it <strong>slightly less drab</strong>!</p>
+<p><img src="resources/images/houseofhell.jpg" alt=""></p>
+</section><section class="slide"  data-pos="3-7-2"><span class="pos">3-7-2</span><p>In other words: <strong>add some CSS to the site you made earlier</strong>!</p>
+<p>Since we want the same styling on all pages, and aren&#39;t using any templating system, you should <strong>put the styles in a style sheet</strong> which you then <code>link</code> into all pages.</p>
+</section><section class="slide"  data-pos="3-7-3"><span class="pos">3-7-3</span><p>How pretty must it be? Not very, but here are <strong>some suggestions</strong>:</p>
+<ul>
+<li>Find a style for <strong>each different section</strong> (header, main, footer, text, links, etc), and try to make them look clearly defined.</li>
+<li>Also make a good <strong>container</strong> for the entire app. These commonly have side margins.</li>
+<li>Experiment with <strong>typography</strong>. Try out different fonts, letter spacing and line spacing.</li>
+</ul>
+</section><section class="slide"  data-pos="3-7-4"><span class="pos">3-7-4</span><p>We encourage you to use this as an excuse to <strong>get to know the dev tools</strong>. You should <strong>do the experimenting</strong> in there, and only add the CSS code when you have a good idea of what you want.</p>
+</section><section class="slide challenge"  data-pos="3-7-5"><span class="pos">3-7-5</span><p><strong>Challenge</strong>:, use the <code>:first-child</code> and <code>:first-letter</code> pseudoclasses to make some nice <strong>drop caps</strong>. </p>
+<p><img src="resources/images/dropcaps.png" alt=""></p>
+<p>There are some good pointers at <strong>CSS-Tricks</strong>: <a href="https://css-tricks.com/snippets/css/drop-caps/">https://css-tricks.com/snippets/css/drop-caps/</a></p>
+</section><section class="slide challenge"  data-pos="3-7-6"><span class="pos">3-7-6</span><p><strong>Challenge</strong>: Use the <code>@font-face</code> feature to bring in some more game-like font!</p>
+<p><img src="resources/images/gametext.png" alt=""></p>
+<p>You can also cheat by using <a href="https://fonts.google.com">https://fonts.google.com</a>.</p>
+</section><section class="slide"  data-pos="3-7-7"><span class="pos">3-7-7</span><p><strong>Don&#39;t overwrite the old files</strong> - copy them into a new folder.</p>
+<p>Then to <strong>submit the exercise</strong>:</p>
+<ol>
+<li>navigate to <code>/submissions/gamev2</code> in your fork of <code>academysubs</code></li>
+<li><strong>create a folder</strong> with your user name there</li>
+<li>copy the <strong>styled site files</strong> into the folder.</li>
+<li><strong>push</strong> and make a <strong>pull request</strong></li>
+</ol>
+</section><section class="slide challenge"  data-pos="3-7-8"><span class="pos">3-7-8</span><p><strong>Challenge</strong>: If you grow bored with styling your game - do a <strong>pull request to the CSS battle app</strong> to make it look less crap!</p>
+<p>The git repo is at <a href="https://github.com/krawaller/cssbattle">https://github.com/krawaller/cssbattle</a>, and my sad CSS is in <code>styles.css</code> in the root.</p>
+</section>
+</section><!--ENDSECTION7--><!--ENDCHAPTERCONTENT-->
+        
 
-                    <p>In all four cardinal directions you can apply <strong>padding</strong> and <strong>margin</strong> to an element. The inner div has:</p>
-                    <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
-  <span class="hljs-attribute">background-color</span>: magenta;
-  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">2em</span>;
-  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1em</span>;
-}
-</code></pre>
-                </section>
-                <section class="slide">
-                    <p>In essence, <strong>padding becomes part of the element</strong> while <strong>margin sizes the void around it</strong> that no other element can enter.</p>
-                </section>
-                <section class="slide">
-                    <div style="float:right;width:300px;background-color:white;margin-left:1em;margin-bottom:2em;">
-                        <div style="background-color: magenta; padding-left: 20px; margin-left:10px;border-left: 3px solid red;">
-                            Alea Jacta Est
-                        </div>
-                    </div>
-
-                    <p><strong>Between the margin and padding</strong> you can apply a <strong>border</strong>.</p>
-                    <pre><code class="lang-css"><span class="hljs-selector-tag">div</span> {
-  <span class="hljs-attribute">background-color</span>: magenta;
-  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">2em</span>;
-  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">1em</span>;
-  <span class="hljs-attribute">border-left</span>: <span class="hljs-number">3px</span> solid red;
-}
-</code></pre>
-                </section>
-                <section class="slide">
-                    <p>If you want the same margin/padding/border in all directions, there is a <strong>shorthand</strong>:</p>
-                    <pre><code><span class="hljs-keyword">border: </span><span class="hljs-number">3</span>px solid red<span class="hljs-comment">;</span>
-</code></pre></section>
-                <section class="slide">
-                    <p>You&#39;ve already seen <strong><code>background-color</code></strong> - the good twin to that is <strong><code>color</code> which colours the text</strong>.</p>
-                    <p>The <code>color</code> property is <strong>inherited</strong> to children, a trait it shares with some other properties.</p>
-                </section>
-                <section class="slide">
-                    <p>As we said there are many more properties, but now you <strong>have enough to get started</strong>.</p>
-                    <p>Note that <strong>these properties were all for looks</strong> - next chapter we&#39;ll talk more about <strong>layout</strong>!</p>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 8/9</div>
-                    <h3>The browser devtools</h3>
-                    <p>Your new BFF</p>
-                </section>
-                <section class="slide">
-                    <p>Contrary to the web developer of yesteryear, today we have <strong>very powerful developer tools</strong> built into almost all browsers. We&#39;ll be looking at Chrome, but there are analogs in the others.</p>
-                </section>
-                <section class="slide">
-                    <p>They <strong>show you the element tree</strong> and <strong>provide info on specific elements</strong>.</p>
-                    <p><img src="resources/images/devtoolcss.png" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>This is especially useful for</p>
-                    <ul>
-                        <li><strong>CSS debugging</strong>, as you can see exactly <strong>what styles are applied</strong> and from where and with <strong>which selectors</strong> they came.</li>
-                        <li><strong>CSS experimenting</strong>, as you can toggle the styles, try out new values and even add completely new styles.</li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <section>
-                    <div class='sectioncount'>Section 9/9</div>
-                    <h3>Exercise - Style the game</h3>
-                    <p>Hiring an illustrator</p>
-                </section>
-                <section class="slide">
-                    <p>Time to return to your choose-your-own-adventure and make it <strong>slightly less drab</strong>!</p>
-                    <p><img src="resources/images/houseofhell.jpg" alt=""></p>
-                </section>
-                <section class="slide">
-                    <p>In other words: <strong>add some CSS to the site you made earlier</strong>!</p>
-                    <p>Since we want the same styling on all pages, and aren&#39;t using any templating system, you should <strong>put the styles in a style sheet</strong> which you then <code>link</code> into all pages.</p>
-                </section>
-                <section class="slide">
-                    <p>How pretty must it be? Not very, but here are <strong>some suggestions</strong>:</p>
-                    <ul>
-                        <li>Find a style for <strong>each different section</strong> (header, main, footer, text, links, etc), and try to make them look clearly defined.</li>
-                        <li>Also make a good <strong>container</strong> for the entire app. These commonly have side margins.</li>
-                        <li>Experiment with <strong>typography</strong>. Try out different fonts, letter spacing and line spacing.</li>
-                    </ul>
-                </section>
-                <section class="slide">
-                    <p>We encourage you to use this as an excuse to <strong>get to know the dev tools</strong>. You should <strong>do the experimenting</strong> in there, and only add the CSS code when you have a good idea of what you want.</p>
-                </section>
-                <section class="slide challenge">
-                    <p><strong>Challenge</strong>:, use the <code>:first-child</code> and <code>:first-letter</code> pseudoclasses to make some nice <strong>drop caps</strong>. </p>
-                    <p><img src="resources/images/dropcaps.png" alt=""></p>
-                    <p>There are some good pointers at <strong>CSS-Tricks</strong>: <a href="https://css-tricks.com/snippets/css/drop-caps/">https://css-tricks.com/snippets/css/drop-caps/</a></p>
-                </section>
-                <section class="slide challenge">
-                    <p><strong>Challenge</strong>: Use the <code>@font-face</code> feature to bring in some more game-like font!</p>
-                    <p><img src="resources/images/gametext.png" alt=""></p>
-                    <p>You can also cheat by using <a href="https://fonts.google.com">https://fonts.google.com</a>.</p>
-                </section>
-                <section class="slide">
-                    <p><strong>Don&#39;t overwrite the old files</strong> - copy them into a new folder.</p>
-                    <p>Then to <strong>submit the exercise</strong>:</p>
-                    <ol>
-                        <li>navigate to <code>/submissions/gamev2</code> in your fork of <code>academysubs</code></li>
-                        <li><strong>create a folder</strong> with your user name there</li>
-                        <li>copy the <strong>styled site files</strong> into the folder.</li>
-                        <li><strong>push</strong> and make a <strong>pull request</strong></li>
-                    </ol>
-                </section>
-                <section class="slide challenge">
-                    <p><strong>Challenge</strong>: If you grow bored with styling your game - do a <strong>pull request to the CSS battle app</strong> to make it look less crap!</p>
-                    <p>The git repo is at <a href="https://github.com/krawaller/cssbattle">https://github.com/krawaller/cssbattle</a>, and my sad CSS is in <code>styles.css</code> in the root.</p>
-                </section>
-            </section>
-
-            <section>
-                <h3>Next</h3><a href="chapter4.html">More CSS</a>
-            </section>
-
-        </div>
+      </div>
     </div>
 
-    <script src="js/head.js" type="text/javascript"></script>
-    <script src="js/reveal.js" type="text/javascript"></script>
     <script type="text/javascript">
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-            center: true,
-            showNotes: false,
-            transition: 'slide'
-        })
+      var basehref = window.location.href.replace(/chapter\d.*?$/,'')
 
-        window.onload = function() {
-
-            var basehref = window.location.href.replace(/chapter\d.*?$/, '')
-
-            window.addEventListener("keypress", function(e) {
-                var code = e.which ||  e.keyCode;
-                if (code === 13) {
-                    window.location.href = basehref + "index.html?from=" + (3 - 1);
-                } else if (code >= 49 && code <= 9 + 48) {
-                    window.location.hash = "#/" + (code - 48 + 1 + 1);
-                }
-                if (3 < 7) {
-                    if (code === 99) { // the letter C for next Chapter
-                        window.location.href = basehref + "chapter" + (3 + 1) + ".html"
-                    }
-                }
-            });
-
-            var links = document.querySelectorAll("a.link");
-            for (var i = 0; i < links.length; i++) {
-                var link = links[i];
-                link.innerHTML = link.innerHTML.replace(/ /g, '&nbsp;')
-            }
-
+      document.addEventListener("keydown",function(e){
+        var code = e.which || e.keyCode;
+        if (code===13){
+          window.location.href = basehref+"index.html?from="+(3-1);
+        } else if (code >= 49 && code <= 7+48) {
+          window.location.hash = "#/" + (code-48+1+1);
         }
+        if (3 < 7) {
+          if (code===99){ // the letter C for next Chapter
+            window.location.href = basehref+"chapter"+(3+1)+".html"
+          }
+        }
+      });
     </script>
+    <script src="mc2/scripts/head.js" type="text/javascript"></script>
+    <script src="mc2/scripts/reveal.js" type="text/javascript"></script>
+    <script src="mc2/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
 
-</body>
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    showNotes: false,
+    transition: 'slide'
+  })
 
+    window.onload = function(){
+
+      var links = document.querySelectorAll("a.link");
+      for(var i=0;i<links.length;i++){
+        var link = links[i];
+        link.innerHTML = link.innerHTML.replace(/ /g,'&nbsp;')
+      }
+      var posElem = document.getElementById('pos')
+      function updateReference(){
+        setTimeout(function(){
+          var current = document.querySelector('section.present[data-pos]')
+          if (current){
+            posElem.innerHTML = current.getAttribute('data-pos')
+          } else {
+            posElem.innerHTML = ''
+          }
+        },10)
+      }
+
+      window.addEventListener("hashchange",updateReference);
+
+      updateReference();
+    };
+
+    </script>
+    <!--STARTCOURSESPECIFICSCRIPTS--><!--ENDCOURSESPECIFICSCRIPTS-->
+    <script type="text/javascript" src="mc2/scripts/reload.js"></script>
+  </body>
 </html>
