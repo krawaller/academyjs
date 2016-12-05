@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>The Web platform</title>
+  <style type="text/css">
+  #container {
+  margin: 1em 4em;
+}
+
+
+#frontpage h1 {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 80px;
+  text-align: center;
+  padding-top: 300px;
+}
+
+#frontpage div {
+  text-align: center;
+}
+
+
+#overview {
+  break-before: page;
+}
+
+#overview h2 {
+  padding-top: 10px;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+.overviewlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.overviewlist h4 {
+  margin-bottom: 3px;
+}
+
+.overviewlist ol {
+  margin-top: 3px;
+}
+
+.overviewlist > div:first-child {
+    padding-right: 30px;
+}
+
+.overviewlist > div:last-child {
+    padding-left: 30px;
+}
+
+.chapterstart {
+  break-before: page;
+  border-bottom: 1px dashed #CCC;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 60px;
+}
+
+.chapterstart h2 {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  margin-top: 4px;
+}
+
+.chapterstart span {
+  font-style: italic;
+}
+
+.chaptersectionlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide {
+  break-inside: avoid;
+}
+
+.slide ul, .slide ol {
+  margin-left: 30px;
+}
+
+
+/* The slide containing the list of sections in a chapter */
+.chaptercontents > div{
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+}
+
+
+.sectionheader div {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 120px;
+  break-inside: avoid;
+  text-align: center;
+}
+
+.sectionheader h3 {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+.sectionheader h3 span {
+  font-style: inherit;
+}
+
+.sectionheader span, .sectionheader p {
+  font-style: italic;
+}
+
+pre {
+  margin: 25px 30px;
+    font-size: 0.95em;
+}
+
+.chaptercontainer {
+  padding-right: 2em;
+}
+
+.imgcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  margin-left: 30px;
+}
+
+img[src^="graphviz"] { /* because that'll be davids structure charts which are transparent */
+  background-color: #FEFEFE;
+  border-radius: 13px;
+  padding: 7px;
+}
+
+:right slide {
+  border: 1px solid red;
+}
+
+.slide .pos {
+    float: right;
+    color: #BCBCBC;
+    font-size: 0.8em;
+    position: relative;
+    top: 1.2em;
+    right: -90px;
+    font-style: italic;
+}
+
+#demoindex {
+  break-before: page;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*  index styles */
+
+#index {
+  break-after: page;
+}
+
+#index > div {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 2em;
+    align-items: center;
+}
+
+#index > div h3 {
+  margin-top: 0;
+  text-align: center;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+#index > div > div:first-child {
+    display: inline-block;
+    width: 62%;
+}
+
+#index > div > div:nth-child(2) {
+    display: inline-block;
+    width: 35%;
+}
+
+
+section.list ul {
+  list-style-type: none;
+}
+
+section.list li > span {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  padding: 3px;
+  border-radius: 34px;
+  min-width: 18px;
+  text-align: center;
+  margin-right: 5px;
+  border: 1px solid black;
+}
+
+
+/* divider between two "normal" slides, also used for slidemarking */
+
+.slide + .slide:before, .sectionheader:before, .sectionheader + .slide:before {
+  display: block;
+  text-align: center;
+  clear: both;
+  background-color: red;
+  color: white;
+  padding: 3px;
+  border-radius: 34px;
+  margin: 31px auto;
+  width: 18px;
+  height: 18px;
+  position: relative;
+
+  content: " ";
+  margin-left: -10000px; /* hidden for now! :) */
+  border: 1px solid black;
+}
+
+.slide.num:before, .slide.question:before, .slide.answer:before {
+  top: 53px;
+  margin-left: -40px;
+}
+
+.slide.numA:before {content: "A";}
+.slide.numB:before {content: "B";}
+.slide.numC:before {content: "C";}
+.slide.numD:before {content: "D";}
+.slide.numE:before {content: "E";}
+.slide.numF:before {content: "F";}
+.slide.numG:before {content: "G";}
+.slide.numH:before {content: "H";}
+.slide.numI:before {content: "I";}
+.slide.numJ:before {content: "J";}
+
+.slide.question:before {content: "?";}
+.slide.answer:before {content: "!";}
+
+
+.chaptersectionlist ul {
+  list-style-type: none;
+}
+
+
+
+/* ------- code highlight ------- */
+
+
+/* Base16 Atelier Cave Light - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/cave) */
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
+
+/* Atelier-Cave Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #655f6d;
+}
+
+/* Atelier-Cave Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-name,
+.hljs-regexp,
+.hljs-link,
+.hljs-name,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #be4678;
+}
+
+/* Atelier-Cave Orange */
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  color: #aa573c;
+}
+
+/* Atelier-Cave Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet {
+  color: #2a9292;
+}
+
+/* Atelier-Cave Blue */
+.hljs-title,
+.hljs-section {
+  color: #576ddb;
+}
+
+/* Atelier-Cave Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #955ae7;
+}
+
+.hljs-deletion,
+.hljs-addition {
+  color: #19171c;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #be4678;
+}
+
+.hljs-addition {
+  background-color: #2a9292;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #efecf4;
+  color: #585260;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+  </style>
+  <link rel="stylesheet" href="styles/print.css">
+</head>
+<body>
+
+<div id="container">
+  <div id="frontpage">
+    <h1>The Web platform</h1>
+    <div>
+      &copy; Edument 2016
+    </div>
+  </div>
+  <div id="overview">
+    <h2>Chapter overview</h2>
+    <div class="overviewlist"><div><div><h4><span>1.</span> Introduction</h4><ol><li>Your teacher</li><li>The Web platform</li><li>The masterplan</li><li>Tools and resources</li><li>Exercise - Ninjaness</li></ol></div><div><h4><span>2.</span> HTML</h4><ol><li>Nested data</li><li>Exercise - Geneaology</li><li>XML</li><li>Exercise - Back to the past</li><li>HTML basics</li><li>HTML content</li><li>Exercise - Hello world!</li><li>Semantics</li><li>Two special elements</li><li>Exercise - Fighting Fantasy</li></ol></div><div><h4><span>3.</span> CSS basics</h4><ol><li>Overview</li><li>CSS selectors</li><li>Element descriptions</li><li>Combinators</li><li>Inclusion</li><li>The browser devtools</li><li>Exercise - Style the game</li></ol></div><div><h4><span>4.</span> More CSS</h4><ol><li>Pseudo Elements</li><li>CSS Deluxe</li><li>Exercise - Build step</li><li>Transitions</li><li>Animations</li><li>Exercise - Going overboard</li><li>Order</li><li>Good behaviour</li><li>Flexbox</li><li>Exercise - Faux columns</li></ol></div></div><div><div><h4><span>5.</span> JavaScript basics</h4><ol><li>Introducing JavaScript</li><li>Inclusion</li><li>JS at a glance</li><li>Exercise - testing the waters</li><li>Objects</li><li>Arrays</li><li>Functions</li><li>Exercise - cooking time!</li></ol></div><div><h4><span>6.</span> The DOM & jQuery</h4><ol><li>Introducing the DOM</li><li>Catching DOM events</li><li>Exercise - my first form</li><li>jQuery</li><li>Exercise - jQuery</li><li>Demo - a community effort</li></ol></div><div><h4><span>7.</span> Postludium</h4><ol><li>Functional programming</li><li>Remaining JS secrets</li><li>Now what?</li></ol></div></div></div>
+  </div>
+  <div id="slides">
+    <div class="chaptercontainer">
+  <div class="chapterstart">
+    <span>chapter 1 / 7</span>
+    <h2>Introduction</h2>
+    <p>Setting the scene</p>
+  </div>
+  
+  <div class="chaptersectionlist">
+    <h3>Sections in this chapter:</h3>
+    <ul>
+      <li>1. Your teacher</li><li>2. The Web platform</li><li>3. The masterplan</li><li>4. Tools and resources</li><li>5. Exercise - Ninjaness</li>
+    </ul>
+  </div>
+  <div class="chaptersections">
+    <section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>1-1.</span> Your teacher</h3>
+      <p>The preacher</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="1-1-1"><span class="pos">1-1-1</span><p>Let&#39;s <strong>start with the most important</strong> - me!</p>
+<p><img src="resources/diagrams/me.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-1-2"><span class="pos">1-1-2</span><p>Contact information: </p>
+<ul>
+<li><strong>Email</strong>: <a href="mailto:david.waller@edument.se">david.waller@edument.se</a></li>
+<li><strong>Blog</strong>: <a href="http://blog.krawaller.se">http://blog.krawaller.se</a></li>
+<li><strong>Twitter</strong>: <a href="http://twitter.com/krawaller">krawaller</a></li>
+<li><strong>Phone</strong>: 0708-293094</li>
+</ul>
+<p>This week I&#39;m yours to command! :)</p>
+</section><section class="slide"  data-pos="1-1-3"><span class="pos">1-1-3</span><p>But, <strong>fair warning</strong> - I spend my days singing this gospel:</p>
+<div class="equality">
+  <img src="resources/images/js-logo.png" alt="js">
+  <span>=</span>
+  <img src="resources/images/heart.png" alt="heart">
+</div></section><section class="slide"  data-pos="1-1-4"><span class="pos">1-1-4</span><p>Which means you&#39;ll have to put up with quotes like this:</p>
+<blockquote>
+<p>Java is to JavaScript as pain is to painting</p>
+</blockquote>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>1-2.</span> The Web platform</h3>
+      <p>a.k.a. the holy trinity</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="1-2-1"><span class="pos">1-2-1</span><p>The <strong>Web platform</strong> is really the combination of three separate technologies:</p>
+<p><img src="resources/diagrams/platform.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-2-2"><span class="pos">1-2-2</span><p>(There was also a dark time when <strong>Java applets</strong> were used in webpages, but we don&#39;t talk about that...)</p>
+<p><img src="resources/diagrams/platform-java.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-2-3"><span class="pos">1-2-3</span><p>(And we don&#39;t acknowledge the existence of <strong>flash</strong> either)</p>
+<p><img src="resources/diagrams/platform-flash.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-2-4"><span class="pos">1-2-4</span><p>Traditionally, <strong>web apps looked like this</strong>:</p>
+<p><img src="resources/diagrams/webapp-before.svg" alt=""></p>
+<p>Web tech was <strong>just the UI</strong>. The real coding was done in <code>php</code> / <code>ruby</code> / <code>java</code> / <code>.NET</code>.</p>
+</section><section class="slide"  data-pos="1-2-5"><span class="pos">1-2-5</span><p>But a <strong>modern SPA</strong> (Single Page Application) is more like this:</p>
+<p><img src="resources/diagrams/webapp-now.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-2-6"><span class="pos">1-2-6</span><p>Additionally, web tech has <strong>escaped from the browser</strong>:</p>
+<p><img src="resources/diagrams/webapp-deploy.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-2-7"><span class="pos">1-2-7</span><p>And blurring the lines even further - there are framework to <strong>compile web to native code</strong>:</p>
+<p><img src="resources/diagrams/webapp-deploy-compile.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-2-8"><span class="pos">1-2-8</span><p>In essence: <strong>web tech is on the (high) rise</strong>, and even if you intend to stay in a sheltered Java garden, knowledge about the web platform will serve you well.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>1-3.</span> The masterplan</h3>
+      <p>tajmad och klar <span style='text-decoration: line-through;'>in i minsta detalj</span></p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="1-3-1"><span class="pos">1-3-1</span><p>Here follows some points on what is to follow!</p>
+</section><section class="slide"  data-pos="1-3-2"><span class="pos">1-3-2</span><ul>
+<li>The gist: during this week I will teach you the <strong>basics of web development</strong>.</li>
+<li>Exactly <strong>what that entails is not set in stone</strong> - I have the basics prepared, and then there are many roads to take, especially around the JavaScript parts. </li>
+<li>We will <strong>make those decisions together</strong> as the course progresses.</li>
+</ul>
+</section><section class="slide"  data-pos="1-3-3"><span class="pos">1-3-3</span><ul>
+<li>The web course will be <strong>centered around these slides</strong>.</li>
+<li>They are <strong>available online</strong> at <a href="http://blog.krawaller.se/academyjs/slides">http://blog.krawaller.se/academyjs/slides</a>.</li>
+<li>I will <strong>regularly update</strong> them during the week.</li>
+<li>You&#39;ll <strong>get a pdf</strong> when we&#39;re done!</li>
+</ul>
+</section><section class="slide"  data-pos="1-3-4"><span class="pos">1-3-4</span><ul>
+<li>The <strong>focus will be on concepts and the big picture</strong>, not the nitty gritties.</li>
+<li>We will strive to adhere to <strong>accelerated learning&#39;s focus on exercises</strong>, but</li>
+<li>conveying the big picture does <strong>require gorgeing of theory</strong>.</li>
+</ul>
+</section><section class="slide"  data-pos="1-3-5"><span class="pos">1-3-5</span><ul>
+<li>We will talk about <strong>the situation right now</strong>, and not dwell on what has been.</li>
+</ul>
+<div class="equality">
+  <img src="resources/images/html5.png" alt="js">
+  <span></span>
+  <img src="resources/images/css3.png" alt="heart">
+</div></section><section class="slide"  data-pos="1-3-6"><span class="pos">1-3-6</span><ul>
+<li>It is <strong>forbidden to keep a question to yourself</strong>. Ask away! Because,</li>
+<li><strong>there are no stupid questions</strong>. <span style='text-decoration: line-through;'>Only stupid people.</span></li>
+</ul>
+</section><section class="slide"  data-pos="1-3-7"><span class="pos">1-3-7</span><p>The <strong>goal</strong> boiled down - we want you to...</p>
+<ul>
+<li><strong>understand the fundamentals</strong> of <span style='text-decoration: line-through;'>the father</span> HTML, <span style='text-decoration: line-through;'>the son</span> CSS and <span style='text-decoration: line-through;'>the holy spirit</span> JavaScript.</li>
+<li><strong>know where to go fo the specifics</strong></li>
+</ul>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>1-4.</span> Tools and resources</h3>
+      <p>Gear up!</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="1-4-1"><span class="pos">1-4-1</span><p>On this journey, our primary tool is <strong>a browser</strong>. I primarily use Chrome, but any modern browser will do.</p>
+<p>This is not just for consuming web content - the <strong>developer tools</strong> inside the browser is an integral part of our setup. Consider it part of our IDE without the I!</p>
+</section><section class="slide"  data-pos="1-4-2"><span class="pos">1-4-2</span><p>Another very useful function in the browser is to be able to <strong>view source</strong>. All web apps transmit their entire source code to the browser, so snoop away!</p>
+<p><img src="resources/images/viewsource.png" alt=""></p>
+</section><section class="slide"  data-pos="1-4-3"><span class="pos">1-4-3</span><p>We also need an <strong>editor</strong>. As HTML, CSS and JavaScript isn&#39;t (necessarily) compiled, any text editor can be used, but preferrably one with <strong>good web tooling</strong>. You have two good choices:</p>
+<ul>
+<li><strong>Upgrade IntelliJ</strong> (Community edition doesn&#39;t support JS)</li>
+<li>Install the <strong>free trial for Webstorm</strong> which is very similar</li>
+</ul>
+</section><section class="slide"  data-pos="1-4-4"><span class="pos">1-4-4</span><p>There is an <strong>ongoing religious war</strong> between whether <strong>IDE:s or editors</strong> are the optimum. You don&#39;t have to take sides, but it is good to understand the problem to be able to form an opinion.</p>
+<p><img src="resources/diagrams/idewars.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-4-5"><span class="pos">1-4-5</span><p>We&#39;ll likely also <strong>play around with NodeJS</strong>, I haven&#39;t quite decided yet.</p>
+<p>It is a useful tool anyhow, so if you&#39;re curious go ahead and install it!</p>
+</section><section class="slide"  data-pos="1-4-6"><span class="pos">1-4-6</span><p>Finally you need a <strong>good resources</strong> for looking up specifics. I recommend Mozilla Developer Network, or <strong>MDN</strong> for short.</p>
+<p><img src="resources/images/mdn.png" alt=""></p>
+<p>Find it at <a href="https://developer.mozilla.org/">https://developer.mozilla.org/</a>.</p>
+</section><section class="slide"  data-pos="1-4-7"><span class="pos">1-4-7</span><p>I do <strong>NOT recomment W3Schools</strong>, who will be at the top of every googling. They are good at SEO, not explanations and documentations.</p>
+<p>I suggest either</p>
+<ul>
+<li><strong>blocking them from google results</strong>, or </li>
+<li><strong>prefixing your queries with MDN</strong></li>
+</ul>
+</section><section class="slide"  data-pos="1-4-8"><span class="pos">1-4-8</span><p>Whichever resource you use, it is important to <strong>have somewhere within reach to go for details</strong>. </p>
+<p>Therefore, choose a resource and <strong>invest time in getting to know it</strong> and know it well, so that future lookups go quick.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>1-5.</span> Exercise - Ninjaness</h3>
+      <p>are you a ninja or a hyakushō?</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="1-5-1"><span class="pos">1-5-1</span><p>For each part of the holy trinity, and for your interest in the web platform, <strong>rate yourself</strong> on a scale of 1-10 where <strong>1 is hyakushō</strong> and <strong>10 is ninja</strong>!</p>
+<p><img src="resources/diagrams/rateyourself.svg" alt=""></p>
+</section><section class="slide"  data-pos="1-5-2"><span class="pos">1-5-2</span><p>(I promise to try to not let the answer to question 4 affect me)</p>
+</section><section class="slide"  data-pos="1-5-3"><span class="pos">1-5-3</span><p>Throughout the week we&#39;ll be <strong>using Github for exercise submissions</strong>. This &quot;exercise&quot; serves as an excuse to try that process out.</p>
+</section><section class="slide"  data-pos="1-5-4"><span class="pos">1-5-4</span><p>To submit;</p>
+<ul>
+<li>jot down your answers in a simple <strong>text file</strong></li>
+<li><strong>fork the repo</strong> at <a href="https://github.com/krawaller/academysubs">github.com/krawaller/academysubs</a></li>
+<li><strong>download the repo</strong> to your computer</li>
+<li>make sure you are working in the <strong><code>gh-pages</code> branch</strong></li>
+<li>create a folder named after your github user in <code>submissions/ninjaness</code>.</li>
+<li><strong>add the text file</strong> with your answers to that folder </li>
+<li><strong>commit</strong> the changes</li>
+<li><strong>push</strong> to your fork</li>
+<li>now <strong>make a pull request</strong>!</li>
+</ul>
+</section>
+</section>
+  </div>
+  
+</div><div class="chaptercontainer">
+  <div class="chapterstart">
+    <span>chapter 2 / 7</span>
+    <h2>HTML</h2>
+    <p>lingua franca of the web</p>
+  </div>
+  <section class="slide" ><p>Before we begin - are we seriously going to <strong>waste time talking about HTML</strong>? which we all already know how it works or could learn in 5 minutes?!</p>
+</section><section class="slide" ><p>Yes. Having a good <strong>understanding of the fundamentals</strong> is important, and in my experience, <strong>even many web people lack that</strong>.</p>
+<p>However we <strong>won&#39;t dwell on details</strong>, just make sure we have a solid grasp of what&#39;s going on.</p>
+</section>
+  <div class="chaptersectionlist">
+    <h3>Sections in this chapter:</h3>
+    <ul>
+      <li>1. Nested data</li><li>2. Exercise - Geneaology</li><li>3. XML</li><li>4. Exercise - Back to the past</li><li>5. HTML basics</li><li>6. HTML content</li><li>7. Exercise - Hello world!</li><li>8. Semantics</li><li>9. Two special elements</li><li>10. Exercise - Fighting Fantasy</li>
+    </ul>
+  </div>
+  <div class="chaptersections">
+    <section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-1.</span> Nested data</h3>
+      <p>Matryoshka time!</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-1-1"><span class="pos">2-1-1</span><p>Understanding HTML requires understanding the concept of <strong>nested data</strong>. So that is where we&#39;ll start!</p>
+</section><section class="slide"  data-pos="2-1-2"><span class="pos">2-1-2</span><p>We will approach this in a roundabout way by <strong>designing our own language</strong>. </p>
+<p>Let&#39;s first consider how we <strong>describe a single object</strong>!</p>
+</section><section class="slide"  data-pos="2-1-3"><span class="pos">2-1-3</span><p>We need some kind of <strong>divider</strong>, so that people can tell where the description <strong>starts and ends</strong>. Why not go with <strong>opening and closing brackets</strong>?</p>
+<pre><code>[   ]
+</code></pre></section><section class="slide"  data-pos="2-1-4"><span class="pos">2-1-4</span><p>Most systems involve their objects being classified by <strong>type</strong>, so let&#39;s introduce that. We&#39;ll simply put the type within the brackets:</p>
+<pre><code>[apple]   [pear]   [banana]
+</code></pre></section><section class="slide"  data-pos="2-1-5"><span class="pos">2-1-5</span><p>But objects can also have <strong>other characteristics</strong> apart from their type. These are often called <strong>attributes</strong>. They come in two flavours:</p>
+<ul>
+<li><strong>attributes with a value</strong> (<code>length</code> has a number)</li>
+<li><strong>attributes with no value</strong> (<code>disabled</code>, <code>leaf-node</code>)</li>
+</ul>
+<p>We could forbid the no-value option, but that would be cowardly.</p>
+</section><section class="slide"  data-pos="2-1-6"><span class="pos">2-1-6</span><p>How should we <strong>mark up the attributes</strong> in our language? Let&#39;s...</p>
+<ul>
+<li><strong>list them inside curly braces</strong> after the type.</li>
+<li>use <code>:</code> to <strong>separate attribute and value</strong> (if there is a value)</li>
+<li>use <code>,</code> to <strong>separate between different attributes</strong>.</li>
+</ul>
+</section><section class="slide"  data-pos="2-1-7"><span class="pos">2-1-7</span><p>So if we have this:</p>
+<p><img src="resources/diagrams/apple.svg" alt=""></p>
+</section><section class="slide"  data-pos="2-1-8"><span class="pos">2-1-8</span><p>...then we mark it up like this:</p>
+<pre><code>[apple{tastiness:7,ease:8,forbidden}]
+</code></pre><p>(btw: <a href="https://xkcd.com/388/">https://xkcd.com/388/</a>)</p>
+</section><section class="slide"  data-pos="2-1-9"><span class="pos">2-1-9</span><p>Finally, objects can <strong>contain other objects</strong>. Otherwise it wouldn&#39;t be <em>nested</em> data!</p>
+<p>For our toy language we decide to...</p>
+<ul>
+<li><strong>list children inside parenthesis</strong> after the type and attributes</li>
+<li><strong>separate children</strong> with <code>,</code> to be consistent</li>
+</ul>
+</section><section class="slide"  data-pos="2-1-10"><span class="pos">2-1-10</span><p>So with this data:</p>
+<p><img src="resources/diagrams/fruits.svg" alt=""></p>
+</section><section class="slide"  data-pos="2-1-11"><span class="pos">2-1-11</span><p>...we would get this markup:</p>
+<pre><code>[basket{price:15}([apple{price:8}],[banana{price:9}])]
+</code></pre><p>If we <strong>allowed filler whitespace</strong> it could be made more readable, but where&#39;s the sport in that?</p>
+</section><section class="slide"  data-pos="2-1-12"><span class="pos">2-1-12</span><p>To recap - an <strong>object</strong> can have...</p>
+<p><img src="resources/diagrams/object.svg" alt=""></p>
+<p>...so any expression language for nested data must be able to handle these things.</p>
+</section><section class="slide"  data-pos="2-1-13"><span class="pos">2-1-13</span><p>Regarding <strong>object relations</strong> we have so far only discussed parent-child.</p>
+<p>But conceivably there could also be <strong>other relations</strong>! However, this is outside of the scope of our definition of nested data.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-2.</span> Exercise - Geneaology</h3>
+      <p>Adam and Eve, sitting in a tree</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-2-1"><span class="pos">2-2-1</span><p>To truly wrap our brains around nested data you shall now <strong>design your own language</strong>!</p>
+</section><section class="slide"  data-pos="2-2-2"><span class="pos">2-2-2</span><p>That means <strong>revisiting all the decisions</strong> we just went through:</p>
+<ul>
+<li>how to <strong>encapsulate</strong> an object</li>
+<li>how to express object <strong>type</strong></li>
+<li>how to express <strong>attributes</strong>, with and without values, and separation of all</li>
+<li>how to express <strong>children</strong></li>
+</ul>
+</section><section class="slide"  data-pos="2-2-3"><span class="pos">2-2-3</span><p>Your language does <strong>not have to be useful</strong>, so you get bonus points for being far out!</p>
+<p>It does however <strong>have to be unambiguous</strong>, so make your rules very clear!</p>
+</section><section class="slide"  data-pos="2-2-4"><span class="pos">2-2-4</span><p>When you have defined your rules, use them to <strong>encode your family tree</strong>!</p>
+<ol>
+<li>Start with your <strong>favourite grandparent</strong></li>
+<li><strong>Ignore spouses</strong> - we&#39;re only interested in children.</li>
+<li>Decide what you should use for <strong>type</strong>. Name? Gender? Nationality?</li>
+<li>Decide on a <strong>number of attributes</strong> to encode for each person. Name? Zodiac sign? Favourite folk metal band?</li>
+</ol>
+</section><section class="slide"  data-pos="2-2-5"><span class="pos">2-2-5</span><p>Yes, that means it&#39;s not a tree in the traditional sense, but something like this:</p>
+<p><img src="resources/diagrams/tree.svg" alt=""></p>
+</section><section class="slide"  data-pos="2-2-6"><span class="pos">2-2-6</span><p>To submit the exercise;</p>
+<ol>
+<li>navigate to <code>/submissions/geneaology</code> in your fork of <code>academysubs</code></li>
+<li><strong>create a folder</strong> with your user name there</li>
+<li>put the <strong>definition of your rules</strong> and the <strong>encoded family tree</strong> in the folder. One file or two, your choice.</li>
+<li><strong>push</strong> and make a <strong>pull request</strong></li>
+</ol>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-3.</span> XML</h3>
+      <p>not quite as cool as it used to be?</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-3-1"><span class="pos">2-3-1</span><p>Before we talk about HTML, let&#39;s <strong>look at how XML (eXtensible Markup Language) has solved the exercise</strong> you just did!</p>
+<p>There is a lot more to be said about XML, but we don&#39;t care about that - only the syntax.</p>
+</section><section class="slide"  data-pos="2-3-2"><span class="pos">2-3-2</span><p>Starting with the <strong>encapsulation</strong> - XML delimits objects by an <strong>opening and closing tag</strong> which <strong>contains the type</strong>.</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">shelf</span>&gt;</span>
+</code></pre>
+<p>The opening tag is <code>&lt;type&gt;</code>, the closing is <code>&lt;/type&gt;</code> - the same but with a forward slash before the type.</p>
+</section><section class="slide"  data-pos="2-3-3"><span class="pos">2-3-3</span><p>Now, <strong>attributes</strong>! They...</p>
+<ul>
+<li>are put <strong>inside the opening tag</strong>.</li>
+<li>are <strong>separated with whitespace</strong></li>
+<li>uses an <strong>equal sign before the value</strong></li>
+<li>has the <strong>value within quotes</strong></li>
+</ul>
+</section><section class="slide"  data-pos="2-3-4"><span class="pos">2-3-4</span><p>So if we have a heavy oaken shelf, we get: </p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span> <span class="hljs-attr">wood</span>=<span class="hljs-string">"oak"</span> <span class="hljs-attr">weight</span>=<span class="hljs-string">"85kg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">shelf</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="2-3-5"><span class="pos">2-3-5</span><p>What about <strong>children</strong>? They are simply listed <strong>between the opening and closing tags</strong>!</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">shelf</span> <span class="hljs-attr">wood</span>=<span class="hljs-string">"oak"</span> <span class="hljs-attr">weight</span>=<span class="hljs-string">"85kg"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animal</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">shelf</span>&gt;</span>
+</code></pre>
+<p><strong>Whitespace is allowed</strong> wherever, which lets us space out the information in a readable way.</p>
+</section><section class="slide"  data-pos="2-3-6"><span class="pos">2-3-6</span><p>For an element with no children, XML has an alternative shorthand with <strong>self-closing tags</strong>. So instead of this:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">animal</span>&gt;</span>
+</code></pre>
+<p>we could have done this:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">animal</span> <span class="hljs-attr">race</span>=<span class="hljs-string">"Hieraatus Spilogaster"</span> <span class="hljs-attr">taxidermist</span>=<span class="hljs-string">"Bob"</span>/&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="2-3-7"><span class="pos">2-3-7</span><p>Finally something that our discussion on nested data didn&#39;t touch: XML allows <strong>leaf text nodes</strong> as children, by simply typing normal text instead of an element within the tags:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">famous-quote</span>&gt;</span>Alea Jacta Est<span class="hljs-tag">&lt;/<span class="hljs-name">famous-quote</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="2-3-8"><span class="pos">2-3-8</span><p>Although powerful this also gives rise to <strong>ambiguity</strong>. For example, should we encode a book like this...</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">book</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Naiv Super"</span> <span class="hljs-attr">author</span>=<span class="hljs-string">"Erlend Loe"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="2-3-9"><span class="pos">2-3-9</span><p>...or like this?</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">book</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Naiv Super<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">author</span>&gt;</span>Erlend Loe<span class="hljs-tag">&lt;/<span class="hljs-name">author</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span>
+</code></pre>
+<p>Also, we <strong>lied before</strong> - whitespace within the tags does have meaning, as they 
+<strong>become text nodes</strong>! So the definition above...</p>
+</section><section class="slide"  data-pos="2-3-10"><span class="pos">2-3-10</span><p>...will actually be interpreted as this:</p>
+<p><img src="resources/diagrams/book.svg" alt=""></p>
+<p>(although the interpreter can be made to skip those whitespace nodes)</p>
+</section><section class="slide"  data-pos="2-3-11"><span class="pos">2-3-11</span><p>This does however allow us to do stuff like this, which can be quite useful:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">truth</span>&gt;</span>I am <span class="hljs-tag">&lt;<span class="hljs-name">emphasis</span>&gt;</span>really<span class="hljs-tag">&lt;/<span class="hljs-name">emphasis</span>&gt;</span> good at this!<span class="hljs-tag">&lt;/<span class="hljs-name">truth</span>&gt;</span>
+</code></pre>
+<p><img src="resources/diagrams/truth.svg" alt=""></p>
+</section><section class="slide"  data-pos="2-3-12"><span class="pos">2-3-12</span><p>As a final note, learn the <strong>vocabulary</strong>:</p>
+<ul>
+<li>an <strong>element</strong> is an object / entity / thing / whatever you want to call it.</li>
+<li>an element is defined using an opening and a closing <strong>tag</strong> (or a self-closing tag).</li>
+</ul>
+<p>In essence: the <strong>element is the object</strong>, while the <strong>tags are the delimiters</strong> for the object.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-4.</span> Exercise - Back to the past</h3>
+      <p>First blood 2</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-4-1"><span class="pos">2-4-1</span><p>You all saw this one coming - your mission, should you choose to accept it, is to <strong>redo the geneaology in XML</strong>!</p>
+<p>The translation might mean that you have to make choices, as noted earlier. Bonus points if you reason around these!</p>
+</section><section class="slide"  data-pos="2-4-2"><span class="pos">2-4-2</span><p>Before you submit your work you should <strong>validate your xml</strong>. A nice service for that can be found at <a href="https://validator.w3.org/#validate_by_input">https://validator.w3.org/#validate_by_input</a>.</p>
+</section><section class="slide"  data-pos="2-4-3"><span class="pos">2-4-3</span><p>Note that you have to put this line:</p>
+<pre><code><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span><span class="hljs-meta">?&gt;</span></span>
+</code></pre><p>...at the top of your xml, otherwise the validator will balk because <em>reasons</em>.</p>
+</section><section class="slide"  data-pos="2-4-4"><span class="pos">2-4-4</span><p>You can <strong>ignore warnings</strong> - as long as you see the green banner, all is well:</p>
+<p><img src="resources/images/validation.png" alt=""></p>
+</section><section class="slide"  data-pos="2-4-5"><span class="pos">2-4-5</span><p>To submit;</p>
+<ol>
+<li>navigate to <code>/submissions/backtothepast</code> in your fork of <code>academysubs</code></li>
+<li><strong>create a folder</strong> with your user name there</li>
+<li>put the <strong>definition of your rules</strong> and the <strong>encoded family tree</strong> in the folder. One file or two, your choice.</li>
+<li><strong>push</strong> and make a <strong>pull request</strong></li>
+</ol>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-5.</span> HTML basics</h3>
+      <p>finally getting to the point</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-5-1"><span class="pos">2-5-1</span><p>Now, finally - <strong>HTML</strong>! HyperText Markup Language is a <strong>flavour of XML</strong> for <strong>encoding documents meant to be consumed on the web</strong>.</p>
+<p>Much like Photoshop expects a <code>.psd</code> file, your favourite <strong>web browser wants <code>.html</code></strong>.</p>
+</section><section class="slide"  data-pos="2-5-2"><span class="pos">2-5-2</span><p>An <strong>HTML document</strong> has the following structure:</p>
+<p><img src="resources/diagrams/htmldoc.svg" alt=""></p>
+</section><section class="slide"  data-pos="2-5-3"><span class="pos">2-5-3</span><p>Translated to <strong>actual HTML</strong>, that becomes the following:</p>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></section><section class="slide"  data-pos="2-5-4"><span class="pos">2-5-4</span><p>By adding an optional leading <code>&lt;!DOCTYPE html&gt;</code> thingie, we tell the browser that this is a modern <strong>HTML5</strong> document.</p>
+<pre><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre><p>We won&#39;t go into (too) much detail, but suffice to say that <strong>you should always include it</strong>.</p>
+</section><section class="slide"  data-pos="2-5-5"><span class="pos">2-5-5</span><p>So, <strong>what metadata</strong> goes into the <code>&lt;head&gt;</code> tag?</p>
+<p>A heck of a lot of stuff, but we&#39;ll now cover <strong>two common examples</strong>.</p>
+</section><section class="slide"  data-pos="2-5-6"><span class="pos">2-5-6</span><p>First off, we set the <strong>document title</strong> as a text node in a <code>&lt;title&gt;</code> tag:</p>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>My AWESOME site<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+</code></pre><p>The browser will then bubble that title up in different ways when your page is displayed.</p>
+</section><section class="slide"  data-pos="2-5-7"><span class="pos">2-5-7</span><p>We can also set the <strong>character set</strong> as a <code>charset</code> attribute on a <code>&lt;meta&gt;</code> tag:</p>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf8"</span>&gt;</span>
+</code></pre><p>This (hopefully) prepares the browser to show <strong>Unicode characters</strong>. Without this, for example Swedish characters like <code>å</code>, <code>ä</code> and <code>ö</code> might be displayed wrongly.</p>
+</section><section class="slide"  data-pos="2-5-8"><span class="pos">2-5-8</span><p>Although that&#39;s not the entire truth - it also matters <strong>how the file is saved</strong>.</p>
+<p>In short: <strong>encoding sucks</strong>.</p>
+</section><section class="slide question"  data-pos="2-5-9"><span class="pos">2-5-9</span><p><strong>Question</strong>: Did you notice something weird on the slide with the meta element code?</p>
+</section><section class="slide answer"  data-pos="2-5-10"><span class="pos">2-5-10</span><p><strong>Answer</strong>: The <code>&lt;meta&gt;</code> element wasn&#39;t closed!</p>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf8"</span>&gt;</span>
+</code></pre><p>What&#39;s up with that?!</p>
+</section><section class="slide"  data-pos="2-5-11"><span class="pos">2-5-11</span><p>While XML is very strict, HTML takes a looser approach; <strong>elements which never have children do not have to be closed</strong>. OCD:ers beware!</p>
+<p>(to the point: <a href="http://xkcd.com/859/">http://xkcd.com/859/</a></p>
+</section><section class="slide"  data-pos="2-5-12"><span class="pos">2-5-12</span><p>There was a <strong>stricter flavour called XHTML</strong> which enforced well-formed XML, but that never took off.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-6.</span> HTML content</h3>
+      <p>let's talk body parts</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-6-1"><span class="pos">2-6-1</span><p>As we said before the <code>&lt;body&gt;</code> element contains the actual <strong>contents</strong> of the document, that the browser will show on screen.</p>
+<p>So, what does that look like?</p>
+</section><section class="slide"  data-pos="2-6-2"><span class="pos">2-6-2</span><p>Basically, the browser will display the <strong>leaf text nodes</strong>.</p>
+<p>So let&#39;s say we feed it this <strong>nonsense</strong>:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span>BAR BAZ! <span class="hljs-tag">&lt;<span class="hljs-name">bin</span> <span class="hljs-attr">gnu</span>=<span class="hljs-string">"wee"</span>&gt;</span>boo<span class="hljs-tag">&lt;/<span class="hljs-name">bin</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">laj</span> <span class="hljs-attr">boo</span>=<span class="hljs-string">"foo"</span>&gt;</span>gnork.<span class="hljs-tag">&lt;/<span class="hljs-name">laj</span>&gt;</span>
+       Amen.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="2-6-3"><span class="pos">2-6-3</span><p>...then the browser would display this:</p>
+<p><img src="resources/images/nonsense.png" alt=""></p>
+</section><section class="slide"  data-pos="2-6-4"><span class="pos">2-6-4</span><p>This means we can deduce that...</p>
+<ul>
+<li>the <strong>element types and attributes are simply ignored</strong>,</li>
+<li>as are the <strong>linebreaks</strong>.</li>
+<li>Sequences of <strong>spaces are collapsed</strong> into a single space.</li>
+</ul>
+</section><section class="slide"  data-pos="2-6-5"><span class="pos">2-6-5</span><p>But of course, there are <strong>elements with special meaning</strong> to the browser. These fall into <strong>two categories</strong>:</p>
+<ul>
+<li><strong>Block level</strong> elements that take up the full width of the document.</li>
+<li><strong>Inline</strong> elements that flow with the text. This is the default, as we saw with our nonsense elements.</li>
+</ul>
+</section><section class="slide"  data-pos="2-6-6"><span class="pos">2-6-6</span><p>The perhaps <strong>most common elements</strong> are...</p>
+<ul>
+<li>the <strong><code>&lt;div&gt;</code></strong>, short for divider, which is a generic block level element.</li>
+<li>the <strong><code>&lt;span&gt;</code></strong>, which is a generic inline element.</li>
+</ul>
+</section><section class="slide question"  data-pos="2-6-7"><span class="pos">2-6-7</span><p><strong>Quiz</strong>: Knowing what you just learned, what would this look like?</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Thorin Fili <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">Kili</span>=<span class="hljs-string">"Balin"</span>&gt;</span>Dwalin<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">Oin</span>=<span class="hljs-string">"Gloin"</span>&gt;</span>Dori <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Nori<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> Ori<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+       Bifur
+       <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Bombur<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</section><section class="slide answer"  data-pos="2-6-8"><span class="pos">2-6-8</span><p><strong>Answer</strong>: Well, like this of course!</p>
+<p><img src="resources/images/dwarves.png" alt=""></p>
+</section><section class="slide"  data-pos="2-6-9"><span class="pos">2-6-9</span><p>On the subject of generic elements - there are also some <strong>generic attributes</strong> that we can set on all elements. MDN has a full list here:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes</a></p>
+<p>We&#39;ll take a look at a few of them now:</p>
+</section><section class="slide"  data-pos="2-6-10"><span class="pos">2-6-10</span><p>The <strong><code>id</code> attribute</strong> allows us to give a unique name to an element that for some reason is special:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app-wrapper"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>The id allows us to <strong>easily target the element</strong> from CSS or JavaScript.</p>
+</section><section class="slide"  data-pos="2-6-11"><span class="pos">2-6-11</span><p>The <strong><code>class</code> attribute</strong> is a bit special: in that string of text you can list a number of &quot;classes&quot; separated by spaces. Many elements can share the same class(es), allowing us to <strong>group elements together</strong> in themed categories.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrapper article"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>These <strong>groups can then be targeted</strong> in CSS or JavaScript.</p>
+</section><section class="slide"  data-pos="2-6-12"><span class="pos">2-6-12</span><p>And just to show an example that doesn&#39;t have to do with targeting - the <strong><code>lang</code> attribute</strong>...</p>
+<pre><code>&lt;<span class="hljs-keyword">div</span> lang=<span class="hljs-string">"en"</span>&gt;...&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre><p>...allows the browser to <strong>provide spell checking and dictionary lookup</strong> for the correct language.</p>
+</section><section class="slide"  data-pos="2-6-13"><span class="pos">2-6-13</span><p>Finally - if for whatever reason you want to insert a <strong>comment</strong> into HTML, or temporarily exclude some elements from the flow, just wrap it within <code>&lt;!--</code> and <code>--&gt;</code>:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>a paragraph of text<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- &lt;div&gt;a paragraph which has been commented out&lt;/div&gt;
+&lt;div&gt;this paragraph too is outcommented&lt;/div&gt;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>but this one is still visible!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="2-6-14"><span class="pos">2-6-14</span><p>Beware that these <strong>comments still shows up in the source code</strong>, so no cursing!</p>
+<p><img src="resources/images/comments.png" alt=""></p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-7.</span> Exercise - Hello world!</h3>
+      <p>Let your presence be known</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-7-1"><span class="pos">2-7-1</span><p>Time for a quick <strong>hello world</strong> intermission exercise!</p>
+<p><img src="resources/images/helloworld.jpg" alt=""></p>
+</section><section class="slide"  data-pos="2-7-2"><span class="pos">2-7-2</span><p>While steeling ourselves for what is to come;</p>
+<ol>
+<li>open the <strong>simplest possible editor</strong> you can find (likely Notepad on Windows)</li>
+<li>create a <strong>simple html page</strong> where you say hello to the world</li>
+<li><strong>save the file</strong> wherever, with the suffix <code>.html</code></li>
+<li>in your browser select <strong>open file</strong>, navigate to your file and open it</li>
+<li><strong>bask in the glory</strong> of your text showing up on screen!</li>
+</ol>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-8.</span> Semantics</h3>
+      <p>say what you mean</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-8-1"><span class="pos">2-8-1</span><p>You just met <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> which are generic elements. But, most elements you use will be <strong>semantic</strong>.</p>
+<p>And this is important - the primary purpose of HTML is to <strong>explain to the browser what the content is</strong>, so that the browser can make informed decisions on how to display it.</p>
+</section><section class="slide"  data-pos="2-8-2"><span class="pos">2-8-2</span><p>Here are some <strong>common elements</strong> useful for <strong>marking up text</strong>:</p>
+<ul>
+<li>A <strong><code>&lt;p&gt;</code></strong> element represents a <strong>paragraph</strong> of text. It will be displayed as a block with a bottom margin.</li>
+<li>The <strong><code>&lt;h1&gt; - &lt;h6&gt;</code></strong> elements are <strong>headlines</strong>. 1 is the most important. They are blocks, with a bottom margin and a bigger and bolder look the lower the number.</li>
+</ul>
+</section><section class="slide"  data-pos="2-8-3"><span class="pos">2-8-3</span><p>Some more;</p>
+<ul>
+<li>A <strong><code>&lt;strong&gt;</code></strong> element is used for an inline section of text that you want to <strong>highlight</strong>. Typically displayed in bold.</li>
+<li>Similarly there is an <strong><code>&lt;em&gt;</code></strong> element for <strong>emphasis</strong>, typically displayed in italics.</li>
+</ul>
+</section><section class="slide"  data-pos="2-8-4"><span class="pos">2-8-4</span><p>So feeding the browser this:</p>
+<pre><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Monday 24/3<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ashley was so <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>annoying<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> today, OMG!!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>When I badmouth someone, I do it to their <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>FACE<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>!
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre></section><section class="slide"  data-pos="2-8-5"><span class="pos">2-8-5</span><p>...we get this:</p>
+<p><img src="resources/images/textstyle.png" alt=""></p>
+</section><section class="slide"  data-pos="2-8-6"><span class="pos">2-8-6</span><p>There are <strong>rules on where in the structure an element can appear</strong>, which all depend on their semantic meaning. </p>
+<p>For example, it makes no sense to nest a paragraph inside another paragraph, so that is forbidden.</p>
+</section><section class="slide"  data-pos="2-8-7"><span class="pos">2-8-7</span><p>In earlier HTML, many elements dealt with <strong>appearance</strong>. For example;</p>
+<ul>
+<li>there was a <code>&lt;bold&gt;</code> element</li>
+<li>and an <code>&lt;i&gt;</code> element (short for italics).</li>
+</ul>
+</section><section class="slide"  data-pos="2-8-8"><span class="pos">2-8-8</span><p>Now they are <strong>deprecated in favour of semantic versions</strong>:</p>
+<p><img src="resources/diagrams/evolve.svg" alt=""></p>
+<p>This is typical for HTML as a whole.</p>
+</section><section class="slide"  data-pos="2-8-9"><span class="pos">2-8-9</span><p>So, what <strong>other elements</strong> we can use? </p>
+<p>Too many to mention, but check the full reference at MDN:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a></p>
+</section><section class="slide"  data-pos="2-8-10"><span class="pos">2-8-10</span><p>The fact that HTML content is semantic is also the reason why we haven&#39;t mentioned <strong>layout</strong> or <strong>style</strong> yet.</p>
+<p>Those things should <strong>only live in CSS-land</strong>. HTML is content, CSS is style and layout, and never the two shall meet, lest sadness and pandemonium ensues.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-9.</span> Two special elements</h3>
+      <p>Tweedle-dum, tweedle-dee</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-9-1"><span class="pos">2-9-1</span><p>In this section we&#39;ll take a quick look at <strong>two important elements</strong>. First out is the <strong><code>&lt;img&gt;</code></strong> element, which lets us insert images into our documents:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"resources/images/6074.png"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"sooo pretty"</span>&gt;</span>
+</code></pre>
+<p><img src="resources/images/6074.png" title="sooo pretty"></p>
+</section><section class="slide"  data-pos="2-9-2"><span class="pos">2-9-2</span><p>We control the image mainly through two attributes:</p>
+<ul>
+<li><code>src</code> which is an <strong>address to the image file</strong>. It can be either<ul>
+<li><strong>relative</strong>, pointing to a resource on the same server, or</li>
+<li><strong>absolute</strong>, pointing anywhere</li>
+</ul>
+</li>
+<li><code>title</code>, which will be displayed as a tooltip in most browsers</li>
+</ul>
+</section><section class="slide"  data-pos="2-9-3"><span class="pos">2-9-3</span><p>Note that as <strong>an image will never have a child</strong>, just like the meta element, we <strong>don&#39;t need to close it</strong>.</p>
+</section><section class="slide"  data-pos="2-9-4"><span class="pos">2-9-4</span><p>When you need all <strong>details about a specific element</strong> such as the <code>img</code> element, MDN again has you covered:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img</a></p>
+</section><section class="slide question"  data-pos="2-9-5"><span class="pos">2-9-5</span><p><strong>Quiz</strong>: Now for the second important element, which is arguably the <strong>most important of all</strong>. Can you think of which it is?</p>
+</section><section class="slide answer"  data-pos="2-9-6"><span class="pos">2-9-6</span><p><strong>Answer</strong>: The <em>anchor</em>, or <code>&lt;a&gt;</code> element as we know it! Without that, there would be no inter<strong>net</strong>.</p>
+</section><section class="slide"  data-pos="2-9-7"><span class="pos">2-9-7</span><p>The anchor has a <strong><code>href</code> attribute</strong> which control what page it leads to. </p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://bit.ly/hespeaksthetruth"</span>&gt;</span>the truth<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>Just like image sources it can be <strong>relative or absolute</strong>.</p>
+</section><section class="slide"  data-pos="2-9-8"><span class="pos">2-9-8</span><p>Here is MDN:s full spec for the anchor element:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a</a></p>
+</section><section class="slide question"  data-pos="2-9-9"><span class="pos">2-9-9</span><p><strong>Quiz</strong>: The image tooltip is controlled by a title attribute, but for the link text we used the element children. Why didn&#39;t they go for something like this...</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.boardgamegeek.com/"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"best site ever"</span>&gt;</span>
+</code></pre>
+<p>...instead of the current syntax which requires a closing tag?</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.boardgamegeek.com/"</span>&gt;</span>best site ever<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+</section><section class="slide answer"  data-pos="2-9-10"><span class="pos">2-9-10</span><p><strong>Answer</strong>: We might want to make images or big chunks of text or html into a link, but inside an attribute we can only enter text!</p>
+<p>But be careful looking for meaning in syntax details; most of it has just kind of happened.</p>
+</section><section class="slide"  data-pos="2-9-11"><span class="pos">2-9-11</span><p>A final short note; before the anchor, all elements we saw just meant</p>
+<ul>
+<li><strong>semantic meaning</strong> and some</li>
+<li><strong>default styling</strong>, most importantly whether they are</li>
+<li><strong>block or inline</strong>.</li>
+</ul>
+<p>But the anchor is the first example of an element that has <strong>behaviour</strong>.</p>
+</section><section class="slide"  data-pos="2-9-12"><span class="pos">2-9-12</span><p>There are others, but they work mostly in conjunction with JavaScript, so we leave them be for now.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>2-10.</span> Exercise - Fighting Fantasy</h3>
+      <p>left or right, block or strike?</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="2-10-1"><span class="pos">2-10-1</span><div style="float:right;margin-left:2em;">
+<img src="resources/images/ff.jpg" alt="">
+</div>
+
+<p>Apologies, but yes - now you get to <strong>make a website</strong>.</p>
+<p>Not only that, you are going to make a classic <strong>gamebook</strong> adventure! Anyone recognizes this?</p>
+</section><section class="slide"  data-pos="2-10-2"><span class="pos">2-10-2</span><p>They work something like this:</p>
+<blockquote>
+<p>A dark hallway extends into the unknown. You can just make out the outline of a door to your left.</p>
+<ul>
+<li>to try the door, go to page 43</li>
+<li>to fumble down the hallway, go to page 231</li>
+</ul>
+</blockquote>
+</section><section class="slide"  data-pos="2-10-3"><span class="pos">2-10-3</span><p>We are now going to <strong>emulate the same thing</strong> but using a <strong>website with links</strong> instead of a <strong>book with page-turning instructions</strong>.</p>
+</section><section class="slide"  data-pos="2-10-4"><span class="pos">2-10-4</span><div style="float:right;margin-left:2em;">
+<img src="resources/images/files.png" alt="">
+</div>
+
+<p>Create a <strong>folder for your game</strong>. It should contain an <strong>image folder</strong> and <strong>a <code>.html</code> file per page</strong>. The first page should be called <code>index.html</code>.</p>
+<p>Use a <strong>maximum of 5 pages</strong>, we&#39;re just testing the waters here.</p>
+</section><section class="slide"  data-pos="2-10-5"><span class="pos">2-10-5</span><p>To start off, create a <strong>basic html content structure</strong> for your pages. It should...</p>
+<ul>
+<li>have a <strong>header section</strong> with the name of the game</li>
+<li>a <strong>main section</strong> where the text and image of the current page is visible</li>
+<li>a <strong>navigation section</strong>, perhaps a list, with the current possible options</li>
+</ul>
+</section><section class="slide"  data-pos="2-10-6"><span class="pos">2-10-6</span><p>A good tip is to check out the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">MDN element reference</a>, particularly the <strong>Content sectioning</strong> part.</p>
+</section><section class="slide"  data-pos="2-10-7"><span class="pos">2-10-7</span><p>As you&#39;re working, you can try the game out simply by <strong>opening the file in the browser</strong>.</p>
+<p>If you&#39;re using IntelliJ or Webstorm you can do that from inside the IDE.</p>
+</section><section class="slide"  data-pos="2-10-8"><span class="pos">2-10-8</span><p>When you&#39;re done you know what to do;</p>
+<ol>
+<li>navigate to <code>/submissions/fightingfantasy</code> in your fork of <code>academysubs</code></li>
+<li><strong>copy in your game folder</strong> there, but <strong>rename it to your username</strong></li>
+<li><strong>commit</strong>, <strong>push</strong> and create a <strong>pull request</strong>!</li>
+</ol>
+</section><section class="slide"  data-pos="2-10-9"><span class="pos">2-10-9</span><p>Now we get to see <strong>why we&#39;re using the <code>gh-pages</code> branch</strong>; if we have a repo named</p>
+<pre><code>http://www.github.<span class="hljs-keyword">com</span>/<span class="hljs-symbol">&lt;myusername&gt;</span>/<span class="hljs-symbol">&lt;myreponame&gt;</span>
+</code></pre><p>...then the <code>gh-pages</code> branch of that is published on a web server at</p>
+<pre><code>http://<span class="hljs-tag">&lt;<span class="hljs-name">myusername</span>&gt;</span>.github.io/<span class="hljs-tag">&lt;<span class="hljs-name">myreponame</span>&gt;</span>
+</code></pre></section>
+</section>
+  </div>
+  
+</div><div class="chaptercontainer">
+  <div class="chapterstart">
+    <span>chapter 3 / 7</span>
+    <h2>CSS basics</h2>
+    <p>layout and style</p>
+  </div>
+  <section class="slide" ><p>Now to learn how to affect the layout and look of HTML!</p>
+</section>
+  <div class="chaptersectionlist">
+    <h3>Sections in this chapter:</h3>
+    <ul>
+      <li>1. Overview</li><li>2. CSS selectors</li><li>3. Element descriptions</li><li>4. Combinators</li><li>5. Inclusion</li><li>6. The browser devtools</li><li>7. Exercise - Style the game</li>
+    </ul>
+  </div>
+  <div class="chaptersections">
+    <section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>3-1.</span> Overview</h3>
+      <p>CSS from a chopper</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="3-1-1"><span class="pos">3-1-1</span><p>CSS, or Cascading Style Sheets, is a language to control <strong>style</strong> and <strong>layout</strong> of HTML content.</p>
+</section><section class="slide"  data-pos="3-1-2"><span class="pos">3-1-2</span><p>It <strong>wasn&#39;t really designed to do much more beyond formatting text</strong>, so regarding the layout part it can feel like a bad fit and has a <strong>bad rep</strong>.</p>
+<p><img src="resources/images/cssawesome.jpg" alt=""></p>
+</section><section class="slide"  data-pos="3-1-3"><span class="pos">3-1-3</span><p>When we say <strong>CSS</strong>, we are actually talking about <strong>two different languages</strong>. Take a look at this blob:</p>
+<pre><code class="lang-CSS"><span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-child</span>, <span class="hljs-selector-class">.first</span>, <span class="hljs-selector-tag">h4</span> {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2</span> em;
+  <span class="hljs-attribute">text-style</span>: italic;
+}
+</code></pre>
+</section><section class="slide"  data-pos="3-1-4"><span class="pos">3-1-4</span><p>If we &quot;zoom out&quot;, it could be transcribed as this:</p>
+<pre><code class="lang-CSS">Selector, Selector, Selector {
+  Style rule;
+  Style rule;
+}
+</code></pre>
+</section><section class="slide"  data-pos="3-1-5"><span class="pos">3-1-5</span><p>Essentially, CSS consists of <strong>selectors</strong> and <strong>style rules</strong>. All elements matching the selectors will get the style rules.</p>
+<p><img src="resources/diagrams/css-split.svg" alt=""></p>
+<p>So learning CSS means <strong>learning both</strong> of these!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>3-2.</span> CSS selectors</h3>
+      <p>The targeting mechanism</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="3-2-1"><span class="pos">3-2-1</span><p>Let&#39;s look at the first part of CSS - <strong>selectors</strong>!</p>
+<p><img src="resources/diagrams/css-split-selector.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-2-2"><span class="pos">3-2-2</span><p>Just like CSS splits into selectors and style rules, so does <strong>selectors split into descriptions and combinators</strong>.</p>
+<p><img src="resources/diagrams/css-selectors.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-2-3"><span class="pos">3-2-3</span><p>These are again two completely different things, so we can even make the case that <strong>CSS consists of 3 different languages</strong>!</p>
+</section><section class="slide"  data-pos="3-2-4"><span class="pos">3-2-4</span><p>We touched on CSS&#39; bad rep for not being very good at doing layout.</p>
+<p>CSS selectors, however, are <strong>very good at what they do</strong>, namely select a subset of elements from a document.</p>
+</section><section class="slide"  data-pos="3-2-5"><span class="pos">3-2-5</span><p>In fact, CSS selectors are so efficient that <strong>JavaScript stole them</strong>, because they got the job done better than the programmatic interface that existed before!</p>
+</section><section class="slide"  data-pos="3-2-6"><span class="pos">3-2-6</span><p>Many <strong>modern JS frameworks also use CSS selectors</strong>, so all in all there are <strong>many good reasons to learn them well</strong>.</p>
+<p>So let&#39;s go do that!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>3-3.</span> Element descriptions</h3>
+      <p>The wanted poster</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="3-3-1"><span class="pos">3-3-1</span><p>The most important part of a CSS selector is to <strong>describe elements</strong> that should be selected.</p>
+<p><img src="resources/diagrams/css-selectors-desc.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-3-2"><span class="pos">3-3-2</span><p>There are <strong>five different aspects</strong> that we can describe, each with its own syntax:</p>
+<p><img src="resources/diagrams/css-descriptions.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-3-3"><span class="pos">3-3-3</span><p>These <strong>can be combined</strong> however you see fit. Here is an (exaggerated) example using all of them:</p>
+<pre><code><span class="hljs-selector-tag">button</span>[disabled]<span class="hljs-selector-id">#deletemsg</span><span class="hljs-selector-class">.big</span>:first-child
+</code></pre></section><section class="slide"  data-pos="3-3-4"><span class="pos">3-3-4</span><p>This would match all </p>
+<ul>
+<li>nodes of <strong>type</strong> buttons</li>
+<li>that has a disabled <strong>attribute</strong></li>
+<li>and <strong>id</strong> is <code>deletemsg</code></li>
+<li>and <strong>class</strong> attribute contains &#39;big&#39;</li>
+<li>and it is the <strong>first child</strong> of its parent</li>
+</ul>
+</section><section class="slide"  data-pos="3-3-5"><span class="pos">3-3-5</span><p>As per usual the <strong>details can be found on MDN</strong>:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector">https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector</a></p>
+<p>However, we will now make a few observations for each of the five aspects.</p>
+</section><section class="slide"  data-pos="3-3-6"><span class="pos">3-3-6</span><p>Some notes on the <strong>type</strong> description:</p>
+<pre><code><span class="hljs-keyword">div</span>
+</code></pre><ul>
+<li>There&#39;s no special syntax, just <strong>write out the type</strong>.</li>
+<li>They are <strong>optional</strong>, we can make a description with just other aspects.</li>
+<li>An <strong>asterisk <code>*</code> is a wildcard</strong> (sometimes called &quot;universal selector&quot;), but rarely useful.</li>
+</ul>
+</section><section class="slide"  data-pos="3-3-7"><span class="pos">3-3-7</span><p>The <strong>id</strong> description...</p>
+<pre><code><span class="hljs-meta">#app-wrapper</span>
+</code></pre><ul>
+<li>refers to the <strong>generic attribute</strong> we saw in the HTML chapter</li>
+<li>is <strong>prefixed with a <code>#</code></strong></li>
+<li>will (or should) only ever <strong>match 1</strong> (or 0) elements.</li>
+</ul>
+</section><section class="slide"  data-pos="3-3-8"><span class="pos">3-3-8</span><p>The <strong>class</strong> description...</p>
+<pre><code><span class="hljs-title">.container</span>
+</code></pre><ul>
+<li>again refers to a <strong>generic attribute</strong></li>
+<li>is <strong>prefixed with a <code>.</code></strong></li>
+<li>can have <strong>multiple classes</strong>: <code>.container.highlight</code></li>
+</ul>
+</section><section class="slide"  data-pos="3-3-9"><span class="pos">3-3-9</span><p>The <strong>attributes</strong> description...</p>
+<pre><code>[disabled]   [foo=<span class="hljs-string">"bar"</span>]   [href^=<span class="hljs-string">"http"</span>]
+</code></pre><ul>
+<li>is probably the <strong>most complex</strong> description aspect</li>
+<li>matches elements depending on <strong>attributes and their values</strong></li>
+<li>is <strong>surrounded by brackets</strong></li>
+<li>can test simply for <strong>attribute existence</strong> by just mentioning the attribute</li>
+<li>can test <strong>attribute value</strong> by using <code>=</code> and the wanted value</li>
+<li>can match <strong>value beginning</strong> by using <code>^=</code></li>
+</ul>
+</section><section class="slide question"  data-pos="3-3-10"><span class="pos">3-3-10</span><p><strong>Quiz</strong>: Ok, so <code>^=</code> allows us to match against the <strong>beginning of an attribute value</strong>. But what would be the point of that last example we saw?</p>
+<pre><code>[href<span class="hljs-comment">^=</span><span class="hljs-string">"http"</span>]
+</code></pre></section><section class="slide answer"  data-pos="3-3-11"><span class="pos">3-3-11</span><p><strong>Answer</strong>: If all local links are relative, which is normally the case, then this would be an excellent way to <strong>catch all external links</strong>, to make them look or behave differently.</p>
+</section><section class="slide"  data-pos="3-3-12"><span class="pos">3-3-12</span><p>Finally some notes on the pseudo-classes:</p>
+<pre><code><span class="hljs-meta">:first-child    :nth-child(2)</span>    :active
+</code></pre><ul>
+<li>They are <strong>prefixed with <code>:</code></strong></li>
+<li>They allow matching on <strong>position or state</strong></li>
+<li>Some take <strong>arguments</strong> which are <strong>given within parenthesis</strong></li>
+<li>The <strong><code>:not()</code> class takes a full CSS selector</strong></li>
+<li>They are obscure but <strong>really powerful</strong>, so worth getting to know!</li>
+</ul>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>3-4.</span> Combinators</h3>
+      <p>Many wanted posters!</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="3-4-1"><span class="pos">3-4-1</span><p>Let&#39;s now look at the other half of selectors, namely how we <strong>combine</strong> descriptions!</p>
+<p><img src="resources/diagrams/css-selectors-comb.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-4-2"><span class="pos">3-4-2</span><p>There are <strong>four different ways</strong> that descriptions can be combined, which we&#39;ll look at one at a time:</p>
+<p><img src="resources/diagrams/css-combinators.svg" alt=""></p>
+</section><section class="slide"  data-pos="3-4-3"><span class="pos">3-4-3</span><p>The perhaps most common one is the <strong>descendant combinator</strong>. By having <strong>two descriptions with space between</strong>...</p>
+<pre><code><span class="hljs-selector-tag">div</span> p
+</code></pre><p>...we match all elements that</p>
+<ul>
+<li><strong>match the last description</strong></li>
+<li>have an <strong>ancestor matching the first description</strong>. This can be any number of generations up the tree.</li>
+</ul>
+</section><section class="slide"  data-pos="3-4-4"><span class="pos">3-4-4</span><p>I think it is <strong>unfortunate that the descendant combinators doesn&#39;t have a non-space symbol</strong>, something like this:</p>
+<pre><code><span class="hljs-selector-tag">div</span> _ p
+</code></pre><p>Whitespace elsewhere in CSS doesn&#39;t have meaning, but here it suddenly does. To help with this, <strong>think of descendant combinators as invisible symbols</strong>!</p>
+</section><section class="slide"  data-pos="3-4-5"><span class="pos">3-4-5</span><pre><code><span class="hljs-selector-tag">div</span> &gt; p
+</code></pre><p>The <strong>child combinator</strong> is very similar to descendant selector, but here the first selector must match the <strong>parent</strong> and not just any ancestor.</p>
+<p>Thus the child combinator is <strong>smaller in scope</strong> than the descendant combinator.</p>
+</section><section class="slide"  data-pos="3-4-6"><span class="pos">3-4-6</span><pre><code><span class="hljs-selector-tag">div</span> ~ p
+</code></pre><p>The <strong>sibling combinator</strong> is similar to the descendant combinator, but <strong>works horisontally</strong> instead: it matches elements that...</p>
+<ul>
+<li><strong>match the last description</strong></li>
+<li>have an <strong>older sibling that matches the first description</strong></li>
+</ul>
+</section><section class="slide"  data-pos="3-4-7"><span class="pos">3-4-7</span><pre><code><span class="hljs-selector-tag">div</span> + p
+</code></pre><p>Finally the <strong>adjacent sibling combinator</strong> works in the exact same way, but requires the <strong>neighbouring older sibling to match the first description</strong>.</p>
+</section><section class="slide"  data-pos="3-4-8"><span class="pos">3-4-8</span><p>The two <strong>sibling combinators are not often used</strong>, but they are <strong>good at what they do</strong>.</p>
+<p>Solving that problem with other means would require <strong>brittle workarounds</strong>, something you often see from web developers who don&#39;t know about them.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>3-5.</span> Inclusion</h3>
+      <p>smuggling in the paint</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="3-5-1"><span class="pos">3-5-1</span><p>There are <strong>3 different ways</strong> in which we can <strong>apply CSS</strong> to our content:</p>
+<ul>
+<li>linking to a <strong>separate <code>.css</code> file</strong></li>
+<li>putting it into a <strong><code>style</code> tag</strong></li>
+<li>inlining it in the <strong><code>style</code> attribute</strong> of an element</li>
+</ul>
+<p>(We can also <strong>mutate styles dynamically</strong> with JavaScript, but that comes later!)</p>
+</section><section class="slide"  data-pos="3-5-2"><span class="pos">3-5-2</span><p>A separate file means using a <strong><code>&lt;link&gt;</code> element</strong>:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles/mystyles.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- lots of HTML content here --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="3-5-3"><span class="pos">3-5-3</span><p>The <strong><code>&lt;style&gt;</code> element</strong> simply <strong>wraps the CSS code</strong>. It can go anywhere, but customarily in the head:</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+<span class="hljs-comment">/* Lots of CSS code here */</span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- lots of HTML content here --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="3-5-4"><span class="pos">3-5-4</span><p><strong>Inlining in the <code>style</code> attribute</strong> means we don&#39;t need selectors, since the style rules are applied to this particular element.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-weight: bold;"</span>&gt;</span>It will never happen again.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+</section><section class="slide question"  data-pos="3-5-5"><span class="pos">3-5-5</span><p><strong>Quiz</strong>: Which method do you think is the most common, and why?</p>
+</section><section class="slide answer"  data-pos="3-5-6"><span class="pos">3-5-6</span><p><strong>Answer</strong>: In almost all situations <strong>a separate file is preferred</strong>, since that gives us a good separation of concerns. Style tags arguably gives us that too, so the primary thing is to <strong>be careful with inlining styles</strong>.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>3-6.</span> The browser devtools</h3>
+      <p>Your new BFF</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="3-6-1"><span class="pos">3-6-1</span><p>Contrary to the web developer of yesteryear, today we have <strong>very powerful developer tools</strong> built into almost all browsers. We&#39;ll be looking at Chrome, but there are analogs in the others.</p>
+</section><section class="slide"  data-pos="3-6-2"><span class="pos">3-6-2</span><p>They <strong>show you the element tree</strong> and <strong>provide info on specific elements</strong>.</p>
+<p><img src="resources/images/devtoolcss.png" alt=""></p>
+</section><section class="slide"  data-pos="3-6-3"><span class="pos">3-6-3</span><p>This is especially useful for</p>
+<ul>
+<li><strong>CSS debugging</strong>, as you can see exactly <strong>what styles are applied</strong> and from where and with <strong>which selectors</strong> they came.</li>
+<li><strong>CSS experimenting</strong>, as you can toggle the styles, try out new values and even add completely new styles.</li>
+</ul>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>3-7.</span> Exercise - Style the game</h3>
+      <p>Hiring an illustrator</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="3-7-1"><span class="pos">3-7-1</span><p>Time to return to your choose-your-own-adventure and make it <strong>slightly less drab</strong>!</p>
+<p><img src="resources/images/houseofhell.jpg" alt=""></p>
+</section><section class="slide"  data-pos="3-7-2"><span class="pos">3-7-2</span><p>In other words: <strong>add some CSS to the site you made earlier</strong>!</p>
+<p>Since we want the same styling on all pages, and aren&#39;t using any templating system, you should <strong>put the styles in a style sheet</strong> which you then <code>link</code> into all pages.</p>
+</section><section class="slide"  data-pos="3-7-3"><span class="pos">3-7-3</span><p>How pretty must it be? Not very, but here are <strong>some suggestions</strong>:</p>
+<ul>
+<li>Find a style for <strong>each different section</strong> (header, main, footer, text, links, etc), and try to make them look clearly defined.</li>
+<li>Also make a good <strong>container</strong> for the entire app. These commonly have side margins.</li>
+<li>Experiment with <strong>typography</strong>. Try out different fonts, letter spacing and line spacing.</li>
+</ul>
+</section><section class="slide"  data-pos="3-7-4"><span class="pos">3-7-4</span><p>We encourage you to use this as an excuse to <strong>get to know the dev tools</strong>. You should <strong>do the experimenting</strong> in there, and only add the CSS code when you have a good idea of what you want.</p>
+</section><section class="slide challenge"  data-pos="3-7-5"><span class="pos">3-7-5</span><p><strong>Challenge</strong>:, use the <code>:first-child</code> and <code>:first-letter</code> pseudoclasses to make some nice <strong>drop caps</strong>. </p>
+<p><img src="resources/images/dropcaps.png" alt=""></p>
+<p>There are some good pointers at <strong>CSS-Tricks</strong>: <a href="https://css-tricks.com/snippets/css/drop-caps/">https://css-tricks.com/snippets/css/drop-caps/</a></p>
+</section><section class="slide challenge"  data-pos="3-7-6"><span class="pos">3-7-6</span><p><strong>Challenge</strong>: Use the <code>@font-face</code> feature to bring in some more game-like font!</p>
+<p><img src="resources/images/gametext.png" alt=""></p>
+<p>You can also cheat by using <a href="https://fonts.google.com">https://fonts.google.com</a>.</p>
+</section><section class="slide"  data-pos="3-7-7"><span class="pos">3-7-7</span><p><strong>Don&#39;t overwrite the old files</strong> - copy them into a new folder.</p>
+<p>Then to <strong>submit the exercise</strong>:</p>
+<ol>
+<li>navigate to <code>/submissions/gamev2</code> in your fork of <code>academysubs</code></li>
+<li><strong>create a folder</strong> with your user name there</li>
+<li>copy the <strong>styled site files</strong> into the folder.</li>
+<li><strong>push</strong> and make a <strong>pull request</strong></li>
+</ol>
+</section><section class="slide challenge"  data-pos="3-7-8"><span class="pos">3-7-8</span><p><strong>Challenge</strong>: If you grow bored with styling your game - do a <strong>pull request to the CSS battle app</strong> to make it look less crap!</p>
+<p>The git repo is at <a href="https://github.com/krawaller/cssbattle">https://github.com/krawaller/cssbattle</a>, and my sad CSS is in <code>styles.css</code> in the root.</p>
+</section>
+</section>
+  </div>
+  
+</div><div class="chaptercontainer">
+  <div class="chapterstart">
+    <span>chapter 4 / 7</span>
+    <h2>More CSS</h2>
+    <p>sharpening the tools</p>
+  </div>
+  
+  <div class="chaptersectionlist">
+    <h3>Sections in this chapter:</h3>
+    <ul>
+      <li>1. Pseudo Elements</li><li>2. CSS Deluxe</li><li>3. Exercise - Build step</li><li>4. Transitions</li><li>5. Animations</li><li>6. Exercise - Going overboard</li><li>7. Order</li><li>8. Good behaviour</li><li>9. Flexbox</li><li>10. Exercise - Faux columns</li>
+    </ul>
+  </div>
+  <div class="chaptersections">
+    <section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-1.</span> Pseudo Elements</h3>
+      <p>Where did you come from?!</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-1-1"><span class="pos">4-1-1</span><p>You&#39;ve already met pseudo classes. However, the <strong>pseudo elements</strong> do something we haven&#39;t yet seen - they <strong>add new elements</strong> to the document!</p>
+</section><section class="slide"  data-pos="4-1-2"><span class="pos">4-1-2</span><p>Say we have this <code>p</code> element:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Eeexiiit <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>light!<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> Eeenteeer <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>niiiight!<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="4-1-3"><span class="pos">4-1-3</span><p>And we target it with this CSS:</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:before</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">"♬ "</span>;
+}
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:after</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">" ♫♩"</span>
+}
+</code></pre>
+</section><section class="slide"  data-pos="4-1-4"><span class="pos">4-1-4</span><p>Then we get this <strong>output</strong>:</p>
+<p><img src="resources/images/sandman.png" alt=""></p>
+</section><section class="slide"  data-pos="4-1-5"><span class="pos">4-1-5</span><p>Note however that the notes <strong>don&#39;t actually come before and after</strong> the <code>p</code> element, but rather <strong>become the youngest and oldest children</strong>:</p>
+<p><img src="resources/diagrams/sandman.svg" alt=""></p>
+</section><section class="slide"  data-pos="4-1-6"><span class="pos">4-1-6</span><p>In other words, <code>:before</code> and <code>:after</code> are <strong>misleading names</strong>, they should have been called something else. Also there should be an <em>actual</em> before and after, but there isn&#39;t.</p>
+</section><section class="slide"  data-pos="4-1-7"><span class="pos">4-1-7</span><p>But still, the <strong>pseudo elements are a powerful tool</strong> when the moment is right.</p>
+<p>Note that you don&#39;t have to use it for text content - we can also set <code>display</code> to <code>block</code>, add background images and all sort of shenanigans!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-2.</span> CSS Deluxe</h3>
+      <p>bells and whistles</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-2-1"><span class="pos">4-2-1</span><p>Although CSS has grown more powerful, there is still <strong>a lot to be desired</strong>.</p>
+<ul>
+<li><strong>variables</strong></li>
+<li><strong>computations</strong></li>
+<li><strong>mixins</strong></li>
+<li><strong>nested declarations</strong></li>
+</ul>
+</section><section class="slide"  data-pos="4-2-2"><span class="pos">4-2-2</span><p>This has driven many to try to <strong>add a layer on top of CSS</strong>. The two most popular solutions are <strong>SASS and LESS</strong>.</p>
+<div class="equality">
+  <img src="resources/images/sass.svg" alt="js">
+  <span></span>
+  <img src="resources/images/less.png" alt="heart">
+</div>
+
+
+<p>Read more at <a href="http://sass-lang.com/">http://sass-lang.com/</a> and <a href="http://lesscss.org/">http://lesscss.org/</a>.</p>
+</section><section class="slide"  data-pos="4-2-3"><span class="pos">4-2-3</span><p>The idea is that we write in a language that <strong>compiles down to regular CSS</strong>.</p>
+<p><img src="resources/diagrams/css-compile.svg" alt=""></p>
+</section><section class="slide"  data-pos="4-2-4"><span class="pos">4-2-4</span><p>The LESS homepage shows <strong>this LESS code</strong>:</p>
+<pre><code class="lang-less"><span class="hljs-variable">@base:</span> <span class="hljs-number">#f938ab</span>;
+
+<span class="hljs-selector-class">.box-shadow</span>(<span class="hljs-variable">@style</span>, <span class="hljs-variable">@c</span>) <span class="hljs-keyword">when</span> (iscolor(<span class="hljs-variable">@c</span>)) {
+  <span class="hljs-attribute">-webkit-box-shadow</span>: <span class="hljs-variable">@style</span> <span class="hljs-variable">@c</span>;
+  <span class="hljs-attribute">box-shadow</span>:         <span class="hljs-variable">@style</span> <span class="hljs-variable">@c</span>;
+}
+<span class="hljs-selector-class">.box-shadow</span>(<span class="hljs-variable">@style</span>, <span class="hljs-variable">@alpha</span>: <span class="hljs-number">50%</span>) <span class="hljs-keyword">when</span> (isnumber(<span class="hljs-variable">@alpha</span>)) {
+  <span class="hljs-selector-class">.box-shadow</span>(<span class="hljs-variable">@style</span>, rgba(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-variable">@alpha</span>));
+}
+<span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">color</span>: saturate(<span class="hljs-variable">@base</span>, <span class="hljs-number">5%</span>);
+  <span class="hljs-attribute">border-color</span>: lighten(<span class="hljs-variable">@base</span>, <span class="hljs-number">30%</span>);
+  <span class="hljs-selector-tag">div</span> { <span class="hljs-selector-class">.box-shadow</span>(<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span>, <span class="hljs-number">30%</span>) }
+}
+</code></pre>
+</section><section class="slide"  data-pos="4-2-5"><span class="pos">4-2-5</span><p>...which <strong>compiles to this CSS</strong>:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.box</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fe33ac</span>;
+  <span class="hljs-attribute">border-color</span>: <span class="hljs-number">#fdcdea</span>;
+}
+<span class="hljs-selector-class">.box</span> <span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">-webkit-box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-built_in">rgba</span>(0, 0, 0, 0.3);
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-built_in">rgba</span>(0, 0, 0, 0.3);
+}
+</code></pre>
+</section><section class="slide"  data-pos="4-2-6"><span class="pos">4-2-6</span><p>Of course, using something like this means that we require a <strong>build step</strong>!</p>
+<p>But as you will find, this is something that is <strong>regularly used</strong> in the web world, even though HTML, CSS and JS are all interpreted.</p>
+</section><section class="slide"  data-pos="4-2-7"><span class="pos">4-2-7</span><p>Why? <strong>Many reasons</strong>, three of which are:</p>
+<ul>
+<li>use <strong>preprocess languages</strong> for CSS or JS</li>
+<li>write in the <strong>latest tech</strong>, dumb it down for the browser</li>
+<li><strong>minification</strong> (strip whitespace and comments)</li>
+</ul>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-3.</span> Exercise - Build step</h3>
+      <p>LESS is more</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-3-1"><span class="pos">4-3-1</span><p>No surprise - we&#39;ll now <strong>integrate LESS</strong> into our game!</p>
+</section><section class="slide"  data-pos="4-3-2"><span class="pos">4-3-2</span><p>As we saw, this means that we now need a <strong>build step</strong> which <strong>compiles the LESS code into CSS</strong>.And the first step to install LESS is, perhaps surprisingly, to <strong>install Node</strong>!</p>
+<p><img src="resources/images/node.jpg" alt=""></p>
+<p>More on Node, and installation instructions, here: <a href="https://nodejs.org/">https://nodejs.org/</a></p>
+</section><section class="slide"  data-pos="4-3-3"><span class="pos">4-3-3</span><p>We&#39;ll talk more about Node, which is a JavaScript runtime, later. Now we just need it to use <strong>npm</strong>, which is a <strong>package manager</strong> that runs in Node. LESS is distributed as such a package.</p>
+<p><img src="resources/images/npm.png" alt=""></p>
+<p>You can read more about npm here: <a href="https://www.npmjs.com/">https://www.npmjs.com/</a></p>
+</section><section class="slide"  data-pos="4-3-4"><span class="pos">4-3-4</span><p>LESS is installed as a global command. Once you have installed Node, open a <strong>terminal</strong> - it doesn&#39;t matter in which folder you are - and type:</p>
+<pre><code>npm <span class="hljs-keyword">install</span> -g <span class="hljs-keyword">less</span>
+</code></pre></section><section class="slide"  data-pos="4-3-5"><span class="pos">4-3-5</span><p>After that you now have access to the <strong><code>lessc</code> command</strong>. You use it like this:</p>
+<pre><code>lessc path<span class="hljs-regexp">/to/</span>styles.less wanted<span class="hljs-regexp">/output/</span>path<span class="hljs-regexp">/styles.css</span>
+</code></pre></section><section class="slide"  data-pos="4-3-6"><span class="pos">4-3-6</span><p>To integrate this in your project:</p>
+<ol>
+<li><strong>Rename</strong> your <code>.css</code> file to <code>.less</code>. CSS is valid LESS! </li>
+<li>Read up on LESS and <strong>use some features in your file</strong>.</li>
+<li><strong>Use <code>lessc</code></strong> to compile your code into <code>.css</code>!</li>
+</ol>
+</section><section class="slide"  data-pos="4-3-7"><span class="pos">4-3-7</span><p>Submit by <strong>adding, committing, pushing and make a PR</strong> as usual!</p>
+</section><section class="slide challenge"  data-pos="4-3-8"><span class="pos">4-3-8</span><p><strong>Challenge</strong>: Of course, having to remember to compile the <code>.less</code> file is tiresome. It is therefore common to <strong>set up an automagic compiler</strong>. Try your hand at this! There are many solutions, one suggestion is to use this: <a href="https://github.com/jonycheung/deadsimple-less-watch-compiler">https://github.com/jonycheung/deadsimple-less-watch-compiler</a>.</p>
+</section><section class="slide challenge"  data-pos="4-3-9"><span class="pos">4-3-9</span><p><strong>Challenge</strong>: If you still have time and/or energy left over, try to <strong>find some use for pseudo elements</strong> in your app!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-4.</span> Transitions</h3>
+      <p>Slowing things down</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-4-1"><span class="pos">4-4-1</span><p>Normally, if a <strong>style property of an element changes value</strong>, the <strong>change is instantaneous</strong>.</p>
+</section><section class="slide"  data-pos="4-4-2"><span class="pos">4-4-2</span><p>For example, we apply this style...</p>
+<pre><code class="lang-css"><span class="hljs-selector-id">#instantexample</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(45deg);
+}
+</code></pre>
+<p>...to this <code>div</code>, so <strong>try hovering over it</strong>!</p>
+<div id="instantexample"></div></section><section class="slide"  data-pos="4-4-3"><span class="pos">4-4-3</span><p>This div is exactly the same as before, but with <strong>one additional rule</strong>:</p>
+<pre><code><span class="hljs-selector-id">#transitionexample</span> {
+  <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">1s</span> ease;
+}
+</code></pre><p>Try <strong>hovering again</strong>!</p>
+<div id="transitionexample"></div></section><section class="slide"  data-pos="4-4-4"><span class="pos">4-4-4</span><p>As you probably figure, transitions are <strong>a really powerful way to do CSS-only animations</strong>, and <strong>well worth getting to know well</strong>.</p>
+</section><section class="slide"  data-pos="4-4-5"><span class="pos">4-4-5</span><p>Some notes;</p>
+<ul>
+<li>The <strong>full shorthand syntax</strong> is <code>transition: &lt;property&gt; &lt;duration&gt; &lt;timing function&gt; &lt;delay&gt;</code></li>
+<li>We can transition <strong>more than one property</strong> by separating them with <code>,</code>: <code>transition: width 2s, height 2s</code></li>
+<li>As with many new / experimental technologies some browsers might require <strong>vendor prefixes</strong> still: <code>-webkit-transition</code>, <code>-ms-transition</code>, etc. Although the need is growing less and less frequent.</li>
+</ul>
+</section><section class="slide"  data-pos="4-4-6"><span class="pos">4-4-6</span><p>As per usual there are <strong>lots more detail on MDN</strong>:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">https://developer.mozilla.org/en-US/docs/Web/CSS/transition</a></p>
+</section><section class="slide"  data-pos="4-4-7"><span class="pos">4-4-7</span><p>Btw, the <strong><code>transform</code> property</strong> that we used as a transition example is really powerful, and worthy of looking up for its own sake!</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a></p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-5.</span> Animations</h3>
+      <p>ACTUAL animations, that is!</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-5-1"><span class="pos">4-5-1</span><p>With <strong>transitions</strong> we can do <strong>simple animations from one state to another</strong>.</p>
+<p>But CSS also provides <strong>actual animations</strong> where we <strong>change between predefined frames</strong>!</p>
+</section><section class="slide"  data-pos="4-5-2"><span class="pos">4-5-2</span><p>Behold <strong>this beautiful example</strong>!</p>
+<div id="animationexample">
+  <div></div>
+</div></section><section class="slide"  data-pos="4-5-3"><span class="pos">4-5-3</span><p>An animation consists of <strong>two parts</strong>. First we <strong>name the animation</strong> and <strong>define the keyframes</strong>, which contain <strong>property values</strong> to be reached at <strong>various points during the animation timeline</strong>. These values will <strong>transition</strong> from one point to the next.</p>
+</section><section class="slide"  data-pos="4-5-4"><span class="pos">4-5-4</span><p>The earlier animation was <strong>defined like this</strong>:</p>
+<pre><code class="lang-css">@<span class="hljs-keyword">keyframes</span> looparound {
+  0% {
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  }
+  25% {
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">470px</span>;
+  }
+  50% {
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">170px</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">470px</span>;
+  }
+  75% {
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">170px</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  }
+  100% {
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+  }
+}
+</code></pre>
+</section><section class="slide"  data-pos="4-5-5"><span class="pos">4-5-5</span><p>And our element then <strong>used the animation</strong> by specifying <strong>name</strong>, <strong>duration</strong> and <strong>repeats</strong>:</p>
+<pre><code class="lang-css"><span class="hljs-selector-id">#animationexample</span> &gt; <span class="hljs-selector-tag">div</span> {
+  <span class="hljs-attribute">animation-name</span>: looparound;
+  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-number">3s</span>;
+  <span class="hljs-attribute">animation-iteration-count</span>: infinite;
+}
+</code></pre>
+</section><section class="slide"  data-pos="4-5-6"><span class="pos">4-5-6</span><p>If we only want to <strong>go from one set of property values to another</strong>, then we <strong>might as well just use transitions</strong>.</p>
+<p>But there are <strong>more than two frames involved</strong> we must <strong>use animations instead</strong>!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-6.</span> Exercise - Going overboard</h3>
+      <p>Because more is always better</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-6-1"><span class="pos">4-6-1</span><p>Our newfound knowledge leaves us no choice - we absolutely must <strong>add transitions and animations</strong> to our game!</p>
+<p>Look your game over, and <strong>any place where you can cram movement, do it</strong>!</p>
+</section><section class="slide"  data-pos="4-6-2"><span class="pos">4-6-2</span><p>When you&#39;re done, <strong>add new files</strong>, <strong>commit</strong>, <strong>push</strong> and do a <strong>PR</strong> as per usual!</p>
+</section><section class="slide challenge"  data-pos="4-6-3"><span class="pos">4-6-3</span><p><strong>Challenge</strong>: For extra annoyment points, <strong>read up on <code>transform</code></strong> and do some <strong><code>transition</code> or <code>transformation</code></strong> with that! I have it from good authority that <strong>users LOVE when you use <code>skew</code></strong>! Promise!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-7.</span> Order</h3>
+      <p>let the race begin!</p>
+    </div>
+  </section>
+  <section class="slide question"  data-pos="4-7-1"><span class="pos">4-7-1</span><p><strong>Question</strong>: So, styles can be defined in many different places. But, <strong>what happens when the same style is applied in different ways</strong>?</p>
+</section><section class="slide answer"  data-pos="4-7-2"><span class="pos">4-7-2</span><p><strong>Answer</strong>: The browser follows a strict pecking order:</p>
+<p><img src="resources/diagrams/css-order.svg" alt=""></p>
+</section><section class="slide"  data-pos="4-7-3"><span class="pos">4-7-3</span><p>There were some things in there that we don&#39;t yet know about. First, <code>!important</code> - this is a keyword you can <strong>add to the end of a rule</strong> to bring it to the top of the pecking order.</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.special</span> {
+   <span class="hljs-attribute">background</span>: yellow <span class="hljs-meta">!important</span>;
+}
+</code></pre>
+<p>But as noted this is <strong>considered bad practice</strong>, just as <strong>inline styles are considered harmful</strong>.</p>
+</section><section class="slide"  data-pos="4-7-4"><span class="pos">4-7-4</span><p>So if we <strong>avoid those two</strong>...</p>
+<p><img src="resources/diagrams/css-order-ok.svg" alt=""></p>
+<p>...the primary order decider is <strong>specificity</strong>. But, what is that?</p>
+</section><section class="slide"  data-pos="4-7-5"><span class="pos">4-7-5</span><p>Specificity is the <strong>&quot;weight&quot; of the rule</strong>, which is calculated according to a formula. The gist;</p>
+<ul>
+<li><strong><code>#id</code></strong> selectors are the heaviest</li>
+<li>then <strong><code>.class</code></strong>, <strong><code>[attributes]</code></strong> and <strong><code>:pseudo</code></strong></li>
+<li>and finally <strong>type</strong>.</li>
+</ul>
+</section><section class="slide"  data-pos="4-7-6"><span class="pos">4-7-6</span><p>Say you have this style...</p>
+<pre><code><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-line</span> {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2em</span>;
+}
+</code></pre><p>...but you are also using an <strong>external CSS sheet</strong> which <strong>overrides your style</strong>.</p>
+</section><section class="slide"  data-pos="4-7-7"><span class="pos">4-7-7</span><p>Then you need to <strong>make your style more specific</strong>, often by <strong>prefixing it with ancestor specifications</strong> that you otherwise don&#39;t need: </p>
+<pre><code><span class="hljs-selector-tag">body</span> div<span class="hljs-selector-id">#app-wrapper</span> <span class="hljs-selector-tag">p</span>:first-line {
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">2em</span>;
+}
+</code></pre></section><section class="slide"  data-pos="4-7-8"><span class="pos">4-7-8</span><p>A final note; since <strong>browser defaults can vary</strong>, it is common to use a <strong>reset sheet</strong> to be (more) sure that everything looks the same in different browsers.</p>
+<p>An <strong>old but popular sheet</strong> is the one by CSS guru Eric Meyer which you can find here: <a href="http://meyerweb.com/eric/tools/css/reset/">http://meyerweb.com/eric/tools/css/reset/</a></p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-8.</span> Good behaviour</h3>
+      <p>Our code of conduct</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-8-1"><span class="pos">4-8-1</span><p>We&#39;ve touched upon most of these points already, but let&#39;s <strong>gather up the stone tablets of CSS behaviour rules</strong>!</p>
+</section><section class="slide"  data-pos="4-8-2"><span class="pos">4-8-2</span><blockquote>
+<p>Thou shalt not use visual elements</p>
+</blockquote>
+<ul>
+<li><code>&lt;br&gt;</code> for a linebreak</li>
+<li><code>&lt;hr&gt;</code> for a horisontal ruler</li>
+</ul>
+<p>These are <strong>FORBIDDEN</strong>!</p>
+</section><section class="slide"  data-pos="4-8-3"><span class="pos">4-8-3</span><blockquote>
+<p>Thou shalt not use visual attributes</p>
+</blockquote>
+<ul>
+<li><code>&lt;div bgcolor=&quot;red&quot;&gt;</code></li>
+<li><code>&lt;div height=&quot;300&quot;&gt;</code></li>
+</ul>
+<p>These are <strong>VERBOTEN</strong>!</p>
+</section><section class="slide"  data-pos="4-8-4"><span class="pos">4-8-4</span><blockquote>
+<p>Thou shalt keep the <code>html</code> as clean as possible</p>
+</blockquote>
+<p>Instead of doing this...</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"firstParagraph"</span>&gt;</span>Little red riding hood...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Then came the big bad wolf...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>...and this...</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.firstParagraph</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#CCC</span>;
+}
+</code></pre>
+</section><section class="slide"  data-pos="4-8-5"><span class="pos">4-8-5</span><p>...you should <strong>skip the class</strong> and just do this:</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-child</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#CCC</span>;
+}
+</code></pre>
+<p>Try to <strong>solve the selection without cluttering the html</strong>, as much as possible.</p>
+</section><section class="slide"  data-pos="4-8-6"><span class="pos">4-8-6</span><blockquote>
+<p>Thou shalt keep your selectors simple</p>
+</blockquote>
+<p>Don&#39;t make your selectors more specific than they need to be!</p>
+</section><section class="slide question"  data-pos="4-8-7"><span class="pos">4-8-7</span><p><strong>Question</strong>: Ehm, doesn&#39;t that commandment collide with the previous one? Isn&#39;t it <strong>easier to avoid cluttering the html if we have more complex selectors</strong>? And <strong>easier to write short selectors if we add some classes or extra divs to the html</strong>?</p>
+</section><section class="slide answer"  data-pos="4-8-8"><span class="pos">4-8-8</span><p><strong>Answer</strong>: Yes. :D</p>
+</section><section class="slide"  data-pos="4-8-9"><span class="pos">4-8-9</span><blockquote>
+<p>Thou shalt keep your CSS organized</p>
+</blockquote>
+<p>Keeping order in your Java project is easy - <strong>give classes good names</strong>, <strong>sort them in modules</strong>, etc. But <strong>doing it in CSS is hard</strong>!</p>
+<p>Still, <strong>you must try</strong>! Use <strong>comments</strong>, <strong>file separation</strong> and <strong>structure</strong>. A good tip is to <strong>do whatever Nicole Sullivan says</strong>: <a href="http://www.stubbornella.org/">http://www.stubbornella.org/</a></p>
+</section><section class="slide"  data-pos="4-8-10"><span class="pos">4-8-10</span><p>And now for the <strong>most important commandment of all</strong>.</p>
+</section><section class="slide"  data-pos="4-8-11"><span class="pos">4-8-11</span><p>Are you ready?</p>
+</section><section class="slide"  data-pos="4-8-12"><span class="pos">4-8-12</span><blockquote>
+<p>Thou must be patient!</p>
+</blockquote>
+<p>You now <strong>know the basic rules</strong>, but probably feel a <strong>whole lot of frustration</strong>.</p>
+<p>This is because <strong>I have taught you the grammar</strong>, but you still have to <strong>learn the vocabulary</strong>. To this, alas, there are <strong>no shortcuts</strong>.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-9.</span> Flexbox</h3>
+      <p>solving the age-old riddle</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-9-1"><span class="pos">4-9-1</span><p>There are <strong>two common problems</strong> that are embarrasingly hard to solve using regular CSS:</p>
+<ul>
+<li><strong>centering things vertically</strong></li>
+<li>having <strong>columns of equal height</strong></li>
+</ul>
+<p>CSS3 finally brought us a remedy: <strong>Flexbox</strong>!</p>
+</section><section class="slide"  data-pos="4-9-2"><span class="pos">4-9-2</span><p>The basic idea is simple; in this <strong>new display mode</strong> you select...</p>
+<ul>
+<li>opt in to the <strong>new display mode</strong> (<code>display: flex</code>)</li>
+<li>choose <strong>vertical or horisontal direction</strong> (<code>flex-direction</code>)</li>
+<li>how the <strong>content should be aligned along the direction axis</strong> (<code>justify-content</code>)</li>
+<li>and also <strong>perpendicular to the direction axis</strong> (<code>align-items</code>)</li>
+</ul>
+</section><section class="slide"  data-pos="4-9-3"><span class="pos">4-9-3</span><p>There are <strong>some more flex properties</strong>, and also some <strong>for the children</strong> in a box, which gives you <strong>even more control</strong>.</p>
+</section><section class="slide"  data-pos="4-9-4"><span class="pos">4-9-4</span><p>This is <strong>hard to visualise from textual explanations</strong>, so try out an interactive tutorial here: <a href="http://blog.krawaller.se/flexboxdemo/">http://blog.krawaller.se/flexboxdemo/</a></p>
+<p>There are also <strong>two popular games</strong> that demonstrate the concept:</p>
+<ul>
+<li>Flexbox Froggy @ <a href="http://flexboxfroggy.com/">http://flexboxfroggy.com/</a></li>
+<li>Flexbox Defence @ <a href="http://www.flexboxdefense.com/">http://www.flexboxdefense.com/</a></li>
+</ul>
+</section><section class="slide"  data-pos="4-9-5"><span class="pos">4-9-5</span><p>Remember how CSS selectors were so good at what they did that they leaked over into JS? It is <strong>the same with flexbox</strong> - it turned out to be such an efficient way to lay out things that it is <strong>used in many frameworks</strong>, most noteably by <strong>React Native</strong>.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>4-10.</span> Exercise - Faux columns</h3>
+      <p>The holy grail</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="4-10-1"><span class="pos">4-10-1</span><p>We mentioned <strong>columns of equal height</strong> before:</p>
+<p><img src="resources/images/fauxcols.png" alt=""></p>
+</section><section class="slide"  data-pos="4-10-2"><span class="pos">4-10-2</span><p>More specifically, we mean</p>
+<ul>
+<li>Two columns who <strong>both extend to the bottom of their parent</strong></li>
+<li>The <strong>longest column desides the height of the parent</strong></li>
+</ul>
+<p>As previously stated, this is <strong>very difficult with regular CSS</strong>.</p>
+</section><section class="slide"  data-pos="4-10-3"><span class="pos">4-10-3</span><p>But, <strong>rather easy with Flexbox</strong>, which is what I used to create the screenshot!</p>
+<p>And now, of course it is your turn to <strong>recreate the screenshot using HTML and CSS</strong>!</p>
+</section><section class="slide"  data-pos="4-10-4"><span class="pos">4-10-4</span><p>Some pointers;</p>
+<ul>
+<li>I got the <strong>text</strong> from <a href="http://baconipsum.com/">http://baconipsum.com/</a></li>
+<li>The <strong>structure</strong> should just be a div with two divs inside</li>
+<li>You will <strong>need to play with <code>flex</code> on the children</strong></li>
+<li>Experiment yourself first, but if you get stuck then <strong>go googling</strong>!</li>
+</ul>
+</section><section class="slide challenge"  data-pos="4-10-5"><span class="pos">4-10-5</span><p><strong>Challenge</strong>: If you&#39;re really serious about your webdev chops, find a way to <strong>steal my exact colours</strong>!</p>
+</section>
+</section>
+  </div>
+  
+</div><div class="chaptercontainer">
+  <div class="chapterstart">
+    <span>chapter 5 / 7</span>
+    <h2>JavaScript basics</h2>
+    <p>the holy spirit</p>
+  </div>
+  
+  <div class="chaptersectionlist">
+    <h3>Sections in this chapter:</h3>
+    <ul>
+      <li>1. Introducing JavaScript</li><li>2. Inclusion</li><li>3. JS at a glance</li><li>4. Exercise - testing the waters</li><li>5. Objects</li><li>6. Arrays</li><li>7. Functions</li><li>8. Exercise - cooking time!</li>
+    </ul>
+  </div>
+  <div class="chaptersections">
+    <section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>5-1.</span> Introducing JavaScript</h3>
+      <p>better the devil you know</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="5-1-1"><span class="pos">5-1-1</span><p>So, <strong>JavaScript</strong>! It is:</p>
+<ul>
+<li>Functional</li>
+<li>Object Oriented</li>
+<li>Dynamically typed</li>
+<li>Loosely typed</li>
+<li>Syntactically C-like</li>
+</ul>
+<p>What?</p>
+</section><section class="slide"  data-pos="5-1-2"><span class="pos">5-1-2</span><p><strong>Functional</strong>, meaning that it <strong>emphasizes the application of functions</strong></p>
+<p>This in contrast to imperative programming, which <strong>emphasizes changes in state</strong>.</p>
+</section><section class="slide"  data-pos="5-1-3"><span class="pos">5-1-3</span><p><strong>Object Oriented</strong>, meaning that it <strong>uses objects</strong> (data structures consisting of data and behavior) and that <strong>most things are objects</strong>.</p>
+</section><section class="slide"  data-pos="5-1-4"><span class="pos">5-1-4</span><p><strong>Dynamically typed</strong>, meaning that it <strong>performs the majority of its type checking at run-time</strong> as opposed to at compile-time</p>
+</section><section class="slide"  data-pos="5-1-5"><span class="pos">5-1-5</span><p><strong>Loosely typed</strong>, meaning that <strong>any value can be stored in any variable or bound to any parameter</strong>, and JavaScript will do any necessary conversions.</p>
+</section><section class="slide"  data-pos="5-1-6"><span class="pos">5-1-6</span><p><strong>Syntactically C-like</strong>, for instance it has..</p>
+<ul>
+<li><code>{...}</code> for blocks</li>
+<li><code>;</code> as a statement separator</li>
+<li><code>=</code> for assignment</li>
+<li><code>/* ... */</code> and <code>//</code> for comments</li>
+</ul>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>5-2.</span> Inclusion</h3>
+      <p>plugging it in</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="5-2-1"><span class="pos">5-2-1</span><p>There are <strong>three ways to include JS in a web app</strong></p>
+<ul>
+<li>script element containing code</li>
+<li>script element referencing a file</li>
+<li>inline event handler in an element attribute</li>
+</ul>
+</section><section class="slide"  data-pos="5-2-2"><span class="pos">5-2-2</span><p>A <strong>script element with code</strong> might look like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="actionscript">
+    <span class="hljs-comment">/* ...javascript code here... */</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-2-3"><span class="pos">5-2-3</span><p>While a <strong>script element referencing a separate file</strong> might look like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/mycode.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>Note that you <strong>should not self-close the script element</strong>, as that might cause weird behaviour!</p>
+</section><section class="slide"  data-pos="5-2-4"><span class="pos">5-2-4</span><p>An <strong>inline event handler</strong> looks like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"alert('You clicked, OMG!');"</span>&gt;</span>Don't click me<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>As you might have guessed, <strong>inline handlers are a bad idea</strong>.</p>
+</section><section class="slide question"  data-pos="5-2-5"><span class="pos">5-2-5</span><p><strong>Question</strong>: Wasn&#39;t all of this <strong>extremely similar</strong> to how <strong>CSS inclusion</strong> works?</p>
+</section><section class="slide answer"  data-pos="5-2-6"><span class="pos">5-2-6</span><p><strong>Answer</strong>: Yes! :)</p>
+</section><section class="slide"  data-pos="5-2-7"><span class="pos">5-2-7</span><p>Btw - remember that we now just talked about <strong>including JS in a web app</strong>, that is, a HTML + CSS + JS app that runs in the browser.</p>
+<p>But <strong>JS can run in other places too</strong> - in Node, servers, IoT - anywhere!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>5-3.</span> JS at a glance</h3>
+      <p>a whirlwind tour!</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="5-3-1"><span class="pos">5-3-1</span><p>Hold on tight, for now we&#39;ll <strong>run through some JS basics</strong>!</p>
+<p>To try the snippets, <strong>paste them into the Console tab of the Chrome developer tools</strong>.</p>
+</section><section class="slide"  data-pos="5-3-2"><span class="pos">5-3-2</span><p>There <strong>is no <code>main</code> function</strong> - JS code is simply <strong>run from top to bottom</strong>.</p>
+</section><section class="slide"  data-pos="5-3-3"><span class="pos">5-3-3</span><p>We <strong>declare variables using the <code>var</code> keyword</strong>, and <strong>assign using <code>=</code></strong>. No type specification needed, since JS is loosely typed.</p>
+<pre><code><span class="hljs-attribute">var x</span> = <span class="hljs-string">"Hello world!"</span>;
+</code></pre><p>We <strong>end statements with <code>;</code></strong>. These are actually optional, but <strong>leaving them out can cause problems</strong>!</p>
+</section><section class="slide"  data-pos="5-3-4"><span class="pos">5-3-4</span><p>Since <strong>a variable can contain any type</strong>, the language offers a <strong>way to check</strong>:</p>
+<pre><code><span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> x); <span class="hljs-regexp">//</span> <span class="hljs-string">"string"</span>
+</code></pre><p>The output from <code>console.log</code> is visible in the Developer tools console tab.</p>
+</section><section class="slide"  data-pos="5-3-5"><span class="pos">5-3-5</span><p>You saw <strong>string literals</strong> earlier. There are also...</p>
+<ul>
+<li><strong>numbers</strong>: <code>3</code>, <code>2.04</code> (all numbers are floating points)</li>
+<li><strong>booleans</strong>: <code>true</code>, <code>false</code></li>
+</ul>
+</section><section class="slide"  data-pos="5-3-6"><span class="pos">5-3-6</span><p>And <strong>two single-value voidish types</strong>:</p>
+<ul>
+<li><strong>null</strong>: <code>null</code></li>
+<li><strong>undefined</strong>: <code>undefined</code></li>
+</ul>
+</section><section class="slide"  data-pos="5-3-7"><span class="pos">5-3-7</span><p><strong>Equality testing</strong> is done in two ways:</p>
+<ul>
+<li><code>==</code> (which does type coercion, so <code>3 == &quot;3&quot;</code> is <code>true</code>)</li>
+<li><code>===</code> (also comparing type, so <code>3 === &quot;3&quot;</code> is <code>false</code>)</li>
+</ul>
+<p>There are also <code>!=</code> and <code>!==</code> negative variants.</p>
+</section><section class="slide"  data-pos="5-3-8"><span class="pos">5-3-8</span><p>You will <strong>recognize <code>if</code> statement syntax</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (guess === correctAnswer){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Correct!"</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Not quite..."</span>);
+}
+</code></pre>
+<p>The <code>else</code> part is of course optional.</p>
+</section><section class="slide"  data-pos="5-3-9"><span class="pos">5-3-9</span><p>Also the <strong>for loop</strong> is rather classical:</p>
+<pre><code><span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span>=<span class="hljs-number">0</span>; <span class="hljs-built_in">i</span>&lt;<span class="hljs-number">1000</span>; <span class="hljs-built_in">i</span>=<span class="hljs-built_in">i</span>+<span class="hljs-number">1</span>){
+  console.log(i+" bottles of beer on the wall");
+}
+</code></pre></section><section class="slide"  data-pos="5-3-10"><span class="pos">5-3-10</span><p>As is the <strong>while</strong>:</p>
+<pre><code><span class="hljs-keyword">while</span>(x &gt; <span class="hljs-number">0</span>){
+  x = x<span class="hljs-number">-1</span>;
+  console.<span class="hljs-built_in">log</span>(x+<span class="hljs-string">" bottles left"</span>);
+}
+</code></pre></section><section class="slide"  data-pos="5-3-11"><span class="pos">5-3-11</span><p>This was a <strong>very superficial tour</strong> to give you what you need to test the waters. There is sooo much more to say!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>5-4.</span> Exercise - testing the waters</h3>
+      <p>Getting our feet wet</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="5-4-1"><span class="pos">5-4-1</span><p>Best way to learn to swim - <strong>jump into the deep end</strong>! You will now try your hand at JavaScript by creating a simple <strong>guess the number</strong> game.</p>
+</section><section class="slide"  data-pos="5-4-2"><span class="pos">5-4-2</span><p>Create a <strong>super-simple html file</strong> that only contains the necessary structure, as well as a <strong>script element where you will put your code</strong>.</p>
+</section><section class="slide"  data-pos="5-4-3"><span class="pos">5-4-3</span><p>We <strong>won&#39;t use the html</strong> as an interface. Instead we&#39;ll communicate using two otherwise useless methods:</p>
+</section><section class="slide"  data-pos="5-4-4"><span class="pos">5-4-4</span><p>First we have <strong><code>prompt</code></strong>. By executing this code:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> answer = prompt(<span class="hljs-string">"What is your name?"</span>);
+</code></pre>
+</section><section class="slide"  data-pos="5-4-5"><span class="pos">5-4-5</span><p>Then <strong>execution of the program is paused</strong> until the user has replied using the <strong>popup</strong> that the browser opened:</p>
+<p><img src="resources/images/prompt.png" alt=""></p>
+</section><section class="slide"  data-pos="5-4-6"><span class="pos">5-4-6</span><p>The other otherwise useless method is <strong><code>alert</code></strong>, which is the <strong>same thing but without the input field</strong>.</p>
+<pre><code class="lang-javascript">alert(<span class="hljs-string">"WRONG!"</span>);
+</code></pre>
+<p><img src="resources/images/alert.png" alt=""></p>
+</section><section class="slide"  data-pos="5-4-7"><span class="pos">5-4-7</span><p>We can <strong>generate a random value</strong> using the <strong><code>random</code> and <code>floor</code> methods</strong> of the built-in <strong><code>Math</code> object</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> randomNumber = <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">10</span>)+<span class="hljs-number">1</span>; <span class="hljs-comment">// gives 1-10</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-4-8"><span class="pos">5-4-8</span><p>Note that <strong>all values from <code>prompt</code> are strings</strong>, so you might need to <strong>cast it to a number</strong>:</p>
+<pre><code>var guess = parseInt(<span class="hljs-name">prompt</span>(<span class="hljs-string">"Enter your guess"</span>))<span class="hljs-comment">;</span>
+</code></pre></section><section class="slide"  data-pos="5-4-9"><span class="pos">5-4-9</span><p>Now - <strong>*use all these pieces</strong> to create a <strong>guess-the-number game</strong>! You should...</p>
+<ul>
+<li><strong>generate a number</strong> between 1-10</li>
+<li>allow the user <strong>up to 3 guesses</strong>.</li>
+</ul>
+</section><section class="slide"  data-pos="5-4-10"><span class="pos">5-4-10</span><p>This exercise should be <strong>submitted to the <code>academysubs/guessthenumber</code> folder</strong> in the same repo as before!</p>
+</section><section class="slide challenge"  data-pos="5-4-11"><span class="pos">5-4-11</span><p><strong>Challenge</strong>: Make it so that the user can play again if he wants to after the game is over!</p>
+</section><section class="slide challenge"  data-pos="5-4-12"><span class="pos">5-4-12</span><p><strong>Challenge</strong>: Check the input from the user and <strong>give error message</strong> if the input is faulty!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>5-5.</span> Objects</h3>
+      <p>bags of data</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="5-5-1"><span class="pos">5-5-1</span><p>The types we&#39;ve seen so far have been <strong>atomic primitives</strong>. But JavaScript also has two <strong>composite data types</strong>, namely <strong>objects</strong> and <strong>arrays</strong>!</p>
+<p>Althought technically <strong>arrays are a special kind of objects</strong>, but, never mind.</p>
+</section><section class="slide"  data-pos="5-5-2"><span class="pos">5-5-2</span><p>An object in JavaScript is a <strong>collection of key-value pairs</strong>, often called a <strong>dictionary</strong> in other languages. </p>
+<p>The <strong>property names (keys) are always strings</strong>, and the <strong>property values can be anything</strong>.</p>
+</section><section class="slide"  data-pos="5-5-3"><span class="pos">5-5-3</span><p>We can <strong>create an object literal</strong> like this:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myObject = {
+  <span class="hljs-attr">someProp</span>: <span class="hljs-number">42</span>,
+  <span class="hljs-attr">anotherProp</span>: <span class="hljs-string">"hello!"</span>
+};
+</code></pre>
+</section><section class="slide"  data-pos="5-5-4"><span class="pos">5-5-4</span><p>There are <strong>two different ways to access a value</strong>.</p>
+<p>We can use <strong>dot notation</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = myObject.someProp; <span class="hljs-comment">// 42</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-5-5"><span class="pos">5-5-5</span><p>Or we can use <strong>bracket notation</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> y = myObject[<span class="hljs-string">"someProp"</span>]; <span class="hljs-comment">// "hello!"</span>
+</code></pre>
+</section><section class="slide question"  data-pos="5-5-6"><span class="pos">5-5-6</span><p><strong>Question</strong>: The <strong>dot notation seems much smoother</strong>, so <strong>why would we ever want bracket notation</strong>?</p>
+</section><section class="slide answer"  data-pos="5-5-7"><span class="pos">5-5-7</span><p><strong>Answer</strong>: That allows us to do <strong>dynamic lookups</strong>:</p>
+<pre><code><span class="hljs-keyword">var</span> propName = <span class="hljs-string">"someProp"</span>;
+<span class="hljs-keyword">var</span> z = myObject[propName]; <span class="hljs-comment">// 42</span>
+</code></pre></section><section class="slide"  data-pos="5-5-8"><span class="pos">5-5-8</span><p>We <strong>add a property simply by assigning to it</strong>:</p>
+<pre><code class="lang-javaScript"><span class="hljs-keyword">var</span> myObject.newProp = <span class="hljs-number">777</span>;
+</code></pre>
+</section><section class="slide"  data-pos="5-5-9"><span class="pos">5-5-9</span><p>And we <strong>delete a property</strong> using the <code>delete</code> keyword:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">delete</span> myObject.newProp;
+</code></pre>
+</section><section class="slide"  data-pos="5-5-10"><span class="pos">5-5-10</span><p>If we <strong>access a non-existing property</strong> we always get <code>undefined</code>.</p>
+<pre><code class="lang-javascript">myObject.bogusProp; <span class="hljs-comment">// undefined</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-5-11"><span class="pos">5-5-11</span><p>Contrary to primitives, <strong>objects are references</strong>, which means that this is false since it is <strong>two different objects</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> test = {<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>} === {<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>}; <span class="hljs-comment">// false</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-5-12"><span class="pos">5-5-12</span><p>While this is true, since they <strong>point to the same object</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> x = {<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>};
+<span class="hljs-keyword">var</span> y = x;
+<span class="hljs-keyword">var</span> test = x === y; <span class="hljs-comment">// true</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-5-13"><span class="pos">5-5-13</span><p>Since <strong>objects are references</strong> they are <strong>always truthy</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> ({}){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"An empty object is truthy!"</span>); <span class="hljs-comment">// will be shown!</span>
+}
+</code></pre>
+</section><section class="slide"  data-pos="5-5-14"><span class="pos">5-5-14</span><p>We can <strong>iterate over objects</strong> using a <strong><code>for..in</code>loop</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> myObject){
+  <span class="hljs-built_in">console</span>.log(key+<span class="hljs-string">" has value "</span>+myObject[key]);
+}
+</code></pre>
+</section><section class="slide"  data-pos="5-5-15"><span class="pos">5-5-15</span><p>Finally: <strong>object can contain other objects</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> me = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"David"</span>,
+  <span class="hljs-attr">address</span>: {
+    <span class="hljs-attr">street</span>: <span class="hljs-string">"Åsgatan 9"</span>,
+    <span class="hljs-attr">zip</span>: <span class="hljs-number">27131</span>,
+    <span class="hljs-attr">city</span>: <span class="hljs-string">"Ystad"</span>
+  }
+}
+</code></pre>
+</section><section class="slide"  data-pos="5-5-16"><span class="pos">5-5-16</span><p>We can <strong>access properties to any depth</strong>: </p>
+<pre><code><span class="hljs-attribute">var myZip</span> = me.address.zip;
+</code></pre></section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>5-6.</span> Arrays</h3>
+      <p>Ordered lists</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="5-6-1"><span class="pos">5-6-1</span><p>A special kind of objects are <strong>arrays</strong>, which are an <strong>ordered list of values</strong>.</p>
+<p>You could say that they are <strong>objects where the keys are always named 0, 1, 2...</strong>.</p>
+</section><section class="slide"  data-pos="5-6-2"><span class="pos">5-6-2</span><p>We can <strong>create arrays</strong> using the <strong>array literal notation</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> list = [<span class="hljs-string">"tomatoes"</span>,<span class="hljs-number">42</span>,<span class="hljs-literal">false</span>];
+</code></pre>
+</section><section class="slide"  data-pos="5-6-3"><span class="pos">5-6-3</span><p>Since <strong>arrays are objects</strong> we <strong>access elements as before</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> firstItem = list[<span class="hljs-number">0</span>]; <span class="hljs-comment">// "tomatoes"</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-6-4"><span class="pos">5-6-4</span><p>An array <strong>has a length property</strong> that tells us how many elements it contains:</p>
+<pre><code class="lang-javascript">list.length <span class="hljs-comment">// 3</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-6-5"><span class="pos">5-6-5</span><p>Which means I can <strong>pick the last item</strong> by doing this:</p>
+<pre><code><span class="hljs-keyword">var</span> lastItem = <span class="hljs-keyword">list</span>[<span class="hljs-keyword">list</span>.length<span class="hljs-number">-1</span>]; // <span class="hljs-literal">false</span>
+</code></pre></section><section class="slide"  data-pos="5-6-6"><span class="pos">5-6-6</span><p>We can <strong>add a new value</strong> by calling the <code>push</code> method:</p>
+<pre><code class="lang-javascript">list.push(<span class="hljs-string">"foobar"</span>);
+list.length <span class="hljs-comment">// 4</span>
+</code></pre>
+</section><section class="slide"  data-pos="5-6-7"><span class="pos">5-6-7</span><p>It is common to <strong>iterate using a regular for loop</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i &lt; list.length; i = i+<span class="hljs-number">1</span>){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Item "</span>+i+<span class="hljs-string">" is "</span>+list[i]);
+}
+</code></pre>
+</section><section class="slide"  data-pos="5-6-8"><span class="pos">5-6-8</span><p>There are a <strong>whole bunch of array methods</strong> - see the MDN reference for a full list:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a></p>
+</section><section class="slide question"  data-pos="5-6-9"><span class="pos">5-6-9</span><p><strong>Question</strong>: The <code>length</code> property was rather convenient - is there something <strong>similar on regular objects</strong>?</p>
+</section><section class="slide answer"  data-pos="5-6-10"><span class="pos">5-6-10</span><p><strong>Answer</strong>: Not directly, but we can get an <strong>array of all keys for an object</strong> using the <code>keys</code> method of the global <code>Object</code> object:</p>
+<pre><code><span class="hljs-built_in">var</span> <span class="hljs-built_in">keys</span> = Object.<span class="hljs-built_in">keys</span>(myObject); <span class="hljs-comment">// ["someProp","anotherProp"]</span>
+</code></pre></section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>5-7.</span> Functions</h3>
+      <p>code in a can</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="5-7-1"><span class="pos">5-7-1</span><p>There are <strong>two different ways to define a function</strong> in JavaScript. First as a <strong>named function</strong>:</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">echoer</span>(<span class="hljs-params">word,times</span>)</span>{
+  <span class="hljs-keyword">var</span> echo = <span class="hljs-string">""</span>;
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; times; i = i + <span class="hljs-number">1</span>){
+    echo = echo + word;
+  }
+  <span class="hljs-keyword">return</span> echo;
+}
+</code></pre>
+</section><section class="slide"  data-pos="5-7-2"><span class="pos">5-7-2</span><p>Or as an <strong>anonymous function</strong> which we can assign to a variable:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> echoer = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">word,times</span>)</span>{
+  <span class="hljs-keyword">var</span> echo = <span class="hljs-string">""</span>;
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; times; i = i + <span class="hljs-number">1</span>){
+    echo = echo + word + <span class="hljs-string">" "</span>;
+  }
+  <span class="hljs-keyword">return</span> echo;
+}
+</code></pre>
+<p>Mostly it <strong>doesn&#39;t really matter</strong> which way you choose.</p>
+</section><section class="slide"  data-pos="5-7-3"><span class="pos">5-7-3</span><p>As the example showed, we use <strong><code>return something</code></strong> to return a value. If you just do <code>return;</code>, the returned value is <code>undefined</code>, which it also is if you don&#39;t use <code>return</code> at all.</p>
+</section><section class="slide"  data-pos="5-7-4"><span class="pos">5-7-4</span><p>We <strong>execute a method by using parens</strong>, and <strong>listing eventual parameters</strong> within those:</p>
+<pre><code><span class="hljs-keyword">var</span> withEcho = echoer(<span class="hljs-string">"hello"</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// "hello hello hello "</span>
+</code></pre></section><section class="slide question"  data-pos="5-7-5"><span class="pos">5-7-5</span><p><strong>Question</strong>: What is the <strong>difference</strong> between this:</p>
+<pre><code>var x = <span class="hljs-function"><span class="hljs-keyword">func</span>;</span>
+</code></pre><p>and <strong>this</strong>:</p>
+<pre><code><span class="hljs-keyword">var</span> x = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span>;
+</code></pre></section><section class="slide answer"  data-pos="5-7-6"><span class="pos">5-7-6</span><p><strong>Answer</strong>: Well:</p>
+<ul>
+<li><p>In the <strong>first example</strong>, <strong><code>x</code> has a reference to <code>func</code></strong>. Which means that after that, <strong>doing <code>x()</code> and <code>func()</code> would yield the same thing</strong>.</p>
+</li>
+<li><p>In the <strong>second example</strong>, <strong><code>x</code> is whatever <code>func</code> returned</strong>.</p>
+</li>
+</ul>
+</section><section class="slide"  data-pos="5-7-7"><span class="pos">5-7-7</span><p>A final observation - There is nothing stopping us from <strong>having functions on objects</strong>:</p>
+<pre><code>myObject.beingAnnoying = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
+};
+myObject.beingAnnoying(); <span class="hljs-comment">// "SPAM!"</span>
+</code></pre><p>When a function is a property on an object it is called a <strong>method</strong> of that object.</p>
+</section><section class="slide"  data-pos="5-7-8"><span class="pos">5-7-8</span><p>And to end on a meta note; there is also nothing stopping us from <strong>having objects (or anything else) on functions</strong>, since <strong>functions are objects</strong>.</p>
+<pre><code>var <span class="hljs-function"><span class="hljs-keyword">func</span> = <span class="hljs-title">function</span><span class="hljs-params">()</span>{};</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span>.<span class="hljs-title">prop</span> = {<span class="hljs-title">hello</span>:"<span class="hljs-title">world</span>!"};</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-function"><span class="hljs-keyword">func</span>.<span class="hljs-title">prop</span>.<span class="hljs-title">hello</span>); // "<span class="hljs-title">world</span>!"</span>
+</code></pre></section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>5-8.</span> Exercise - cooking time!</h3>
+      <p>getting functional</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="5-8-1"><span class="pos">5-8-1</span><p>Now that you&#39;ve gotten to know <strong>objects</strong>, <strong>arrays</strong> and <strong>functions</strong> - let&#39;s <strong>throw them into the mixer</strong> and see what happens!</p>
+</section><section class="slide"  data-pos="5-8-2"><span class="pos">5-8-2</span><p>Create another <strong>barebones html page</strong> with a <strong>script element to house your code</strong>.</p>
+</section><section class="slide"  data-pos="5-8-3"><span class="pos">5-8-3</span><p>In that script element, <strong>define at least 3 recipe objects</strong> using different ingredients:</p>
+<pre><code>var supersoup = {
+<span class="hljs-symbol">  potato:</span> <span class="hljs-number">3</span>,
+<span class="hljs-symbol">  onion:</span> <span class="hljs-number">1</span>,
+<span class="hljs-symbol">  corn:</span> <span class="hljs-number">1</span>
+};
+</code></pre><p>The <strong>keys are ingredients</strong>, and the values are <strong>how many of the ingredient is needed</strong>.</p>
+</section><section class="slide"  data-pos="5-8-4"><span class="pos">5-8-4</span><p>Now define a <strong>shop object</strong> containing all used <strong>ingredients as keys</strong> and the corresponding <strong>price per ingredient as value</strong>.</p>
+<pre><code>var ICA = {
+<span class="hljs-symbol">  potato:</span> <span class="hljs-number">12</span>,
+<span class="hljs-symbol">  tomato:</span> <span class="hljs-number">7</span>,
+<span class="hljs-symbol">  cucumber:</span> <span class="hljs-number">3</span>,
+<span class="hljs-symbol">  corn:</span> <span class="hljs-number">5</span>,
+  <span class="hljs-comment">// ...</span>
+};
+</code></pre></section><section class="slide"  data-pos="5-8-5"><span class="pos">5-8-5</span><p>Now <strong>create a function</strong> that <strong>calculates the cost for a recipe</strong>...</p>
+<p><img src="resources/diagrams/recipecostcalc.svg" alt=""></p>
+</section><section class="slide"  data-pos="5-8-6"><span class="pos">5-8-6</span><p>...and <strong>try it for a few of them</strong>:</p>
+<pre><code>console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Supersoup costs "</span>+costOfRecipe(supersoup,ICA));
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"My famous stew costs "</span>+costOfRecipe(stew,ICA));
+</code></pre></section><section class="slide challenge"  data-pos="5-8-7"><span class="pos">5-8-7</span><p><strong>Challenge</strong>: Too easy? How about this:</p>
+<ul>
+<li>Create <strong>a few other shops with different prices</strong></li>
+<li><strong>Collect all shops</strong> in a <code>shops</code> object: <code>{ICA: {...}, coop: {...}, ...}</code>;</li>
+</ul>
+<p>And <strong>THEN</strong>:</p>
+</section><section class="slide"  data-pos="5-8-8"><span class="pos">5-8-8</span><p>Create a <strong><code>findCheapestStore</code> function</strong> that takes the <code>shops</code> object and a recipe, and tells you which store is the chepest for that recipe!</p>
+<p><img src="resources/diagrams/beststore.svg" alt=""></p>
+<p>Now demonstrate that for a few recipes:</p>
+<pre><code>console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Shop for supersoup at "</span>+findCheapestStore(supersoup,stores));
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Shop for stew at "</span>+costOfRecipe(stew,stores));
+</code></pre></section>
+</section>
+  </div>
+  
+</div><div class="chaptercontainer">
+  <div class="chapterstart">
+    <span>chapter 6 / 7</span>
+    <h2>The DOM & jQuery</h2>
+    <p>JS and HTML:s bastard child</p>
+  </div>
+  
+  <div class="chaptersectionlist">
+    <h3>Sections in this chapter:</h3>
+    <ul>
+      <li>1. Introducing the DOM</li><li>2. Catching DOM events</li><li>3. Exercise - my first form</li><li>4. jQuery</li><li>5. Exercise - jQuery</li><li>6. Demo - a community effort</li>
+    </ul>
+  </div>
+  <div class="chaptersections">
+    <section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>6-1.</span> Introducing the DOM</h3>
+      <p>DOM DOM DOM!</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="6-1-1"><span class="pos">6-1-1</span><p>In a nutshell: <strong>the DOM is the bridge between JS and HTML</strong>:</p>
+<p><img src="resources/diagrams/dom.svg" alt=""></p>
+</section><section class="slide"  data-pos="6-1-2"><span class="pos">6-1-2</span><p>Another way of putting it: <strong>the HTML is the recipe</strong> and <strong>the DOM is the dish</strong>.</p>
+<p>The DOM is the <strong>browser&#39;s internal representation of the HTML</strong>.</p>
+</section><section class="slide"  data-pos="6-1-3"><span class="pos">6-1-3</span><p>We&#39;ve <strong>already seen the DOM in the Elements tab in the dev tools</strong>, and noted it looks an awful lot like our HTML.</p>
+<p>But that&#39;s just because <strong>we haven&#39;t involved JavaScript</strong> yet. JavaScript can manipulate the DOM. <strong>The DOM is not constant</strong>.</p>
+</section><section class="slide"  data-pos="6-1-4"><span class="pos">6-1-4</span><p>We <strong>interact with the DOM</strong> from JS space through the <strong>global <code>document</code> variable</strong>. Go to a website and try this in the console:</p>
+<pre><code>document<span class="hljs-selector-class">.body</span><span class="hljs-selector-class">.setAttribute</span>(<span class="hljs-string">"style"</span>,<span class="hljs-string">"background-color:red;"</span>)
+</code></pre></section><section class="slide"  data-pos="6-1-5"><span class="pos">6-1-5</span><p>Through <code>document.body</code> we got an <strong>HTML node</strong>, an <strong>object that represents an element</strong>. On that we can...</p>
+<ul>
+<li>call the <strong><code>setAttribute</code></strong> method like we just did</li>
+<li>query attributes using the <strong><code>getAttribute</code></strong> method</li>
+<li>change its content by assigning to <strong><code>innerHTML</code></strong> or <strong><code>textContent</code></strong></li>
+<li>iterate over child nodes using the <strong><code>children</code></strong> property, allowing us to walk down the tree.</li>
+<li>go back up the tree using the <strong>parent</strong> property.</li>
+</ul>
+</section><section class="slide"  data-pos="6-1-6"><span class="pos">6-1-6</span><p>We don&#39;t have to walk the tree from <code>body</code>, there are <strong>several methods</strong> for <strong>find a specific node or set of nodes</strong> on <code>document</code>:</p>
+<ul>
+<li><strong><code>getElementById(&quot;someId&quot;)</code></strong></li>
+<li><strong><code>getElementsByClassName(&quot;someClass&quot;)</code></strong></li>
+<li><strong><code>getElementsByTagName(&quot;div&quot;)</code></strong></li>
+</ul>
+</section><section class="slide"  data-pos="6-1-7"><span class="pos">6-1-7</span><p>And, there are <strong>two new methods</strong> which <strong>gets elements using CSS selectors</strong>:</p>
+<ul>
+<li>**<code>querySelector(&quot;#someId&quot;)</code></li>
+<li><strong><code>querySelectorAll(&quot;article &gt; p&quot;)</code></strong></li>
+</ul>
+<p>The only difference is that <strong><code>querySelector</code> always return 0 or 1 elements</strong>, while <strong><code>querySelectorAll</code> returns a list</strong>.</p>
+</section><section class="slide"  data-pos="6-1-8"><span class="pos">6-1-8</span><p>The <code>querySelector</code> methods are a good example of how <strong>the DOM has improved in later years</strong>. But go back in time, and it was rather horrible to work with.</p>
+<p>This is a big reason for <strong>JavaScript&#39;s bad reputation</strong>, since JS is what we use to interact with the DOM. But, the fact is that <strong>interacting with the DOM would suck in any language</strong>. It wasn&#39;t JS&#39; fault!</p>
+</section><section class="slide question"  data-pos="6-1-9"><span class="pos">6-1-9</span><p><strong>Question</strong>: All those words, but we still don&#39;t know <strong>what DOM stands for</strong>?</p>
+</section><section class="slide answer"  data-pos="6-1-10"><span class="pos">6-1-10</span><p><strong>Answer</strong>: Sorry! The <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel.</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>6-2.</span> Catching DOM events</h3>
+      <p>True interaction at last!</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="6-2-1"><span class="pos">6-2-1</span><p>With CSS, the only interaction we could offer was some animations using <code>:hover</code> and <code>:active</code>.</p>
+<p>But now is the time for some <strong>true user interaction</strong>!</p>
+</section><section class="slide"  data-pos="6-2-2"><span class="pos">6-2-2</span><p>The DOM lets us <strong>add event listeners to elements</strong>. These are <strong>functions that will be called whenever that particular event happen</strong> on that element.</p>
+</section><section class="slide"  data-pos="6-2-3"><span class="pos">6-2-3</span><p>Say we <strong>have this button</strong> in our document:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"doomsdaybtn"</span>&gt;</span>Don't click me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>And a <strong>reference</strong> to the corresponding node:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> btn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"doomsdaybtn"</span>);
+</code></pre>
+</section><section class="slide"  data-pos="6-2-4"><span class="pos">6-2-4</span><p>We now <strong>create a function to be used as an event listener</strong>...</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> listener = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  alert(<span class="hljs-string">"BOOM!"</span>);
+}
+</code></pre>
+<p>...and <strong>attach it using the <code>addEventListener</code> method</strong> on the node:</p>
+<pre><code class="lang-javascript">btn.addEventListener(<span class="hljs-string">"click"</span>,listener);
+</code></pre>
+</section><section class="slide"  data-pos="6-2-5"><span class="pos">6-2-5</span><p>We could also <strong>add the anonymous function directly</strong>:</p>
+<pre><code class="lang-javascript">btn.addEventListener(<span class="hljs-string">"click"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  alert(<span class="hljs-string">"BOOM!"</span>);
+});
+</code></pre>
+</section><section class="slide"  data-pos="6-2-6"><span class="pos">6-2-6</span><p>Now <strong>when the user clicks the button, the event handler function will run</strong>!</p>
+<p>The handler will be called with an <strong>event object</strong> that describes what just happened. These differ depending on what event we were listening to.</p>
+</section><section class="slide"  data-pos="6-2-7"><span class="pos">6-2-7</span><p>What you just saw is the <strong>cornerstone of user interaction</strong>. We <strong>add event listeners</strong> to <strong>make things happen when the user does stuff</strong>!</p>
+</section><section class="slide"  data-pos="6-2-8"><span class="pos">6-2-8</span><p>There is a <strong>full list of events</strong> at MDN:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events">https://developer.mozilla.org/en-US/docs/Web/Events</a></p>
+</section><section class="slide"  data-pos="6-2-9"><span class="pos">6-2-9</span><p>Although we can add listener to any elements, the <strong>most common use case is with form elements</strong>. We&#39;ve mentioned buttons and inputs, but there are many more! MDN again has a <strong>full list</strong>:</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms</a></p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>6-3.</span> Exercise - my first form</h3>
+      <p>Because we all love questionnaires</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="6-3-1"><span class="pos">6-3-1</span><p>Let&#39;s <strong>get you acquainted with the DOM, events and form elements</strong> by - you guessed it - <strong>building a form</strong>!</p>
+</section><section class="slide"  data-pos="6-3-2"><span class="pos">6-3-2</span><p>Here&#39;s your task in detail:</p>
+<ul>
+<li>Make an <strong>html document</strong> containing a <strong>simple form</strong></li>
+<li>The form should include a submission button</li>
+<li>Add an <strong>event handler to run upon submission</strong></li>
+<li>In that handler, <strong>collect all the user input and log it to the console</strong>!</li>
+</ul>
+</section><section class="slide"  data-pos="6-3-3"><span class="pos">6-3-3</span><p>A good start is likely to <strong>spend some time on the MDN form pages</strong> that we linked before, or some other good resource, to <strong>get familiar with form elements and event handling</strong>.</p>
+</section><section class="slide"  data-pos="6-3-4"><span class="pos">6-3-4</span><p>You don&#39;t have to submit your solution, so when your done, just <strong>give a yell</strong>!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>6-4.</span> jQuery</h3>
+      <p>What is the fuss about?</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="6-4-1"><span class="pos">6-4-1</span><p>As life on Earth is based on carbon, so is the <strong>internet based on jQuery</strong>.</p>
+<p><img src="resources/images/jquery.png" alt=""></p>
+</section><section class="slide"  data-pos="6-4-2"><span class="pos">6-4-2</span><p>The library functionality is <strong>exposed through a global <code>jQuery</code> object</strong> created when we run the code. It <strong>also has <code>$</code> alias</strong> if you want to be more succinct.</p>
+<pre><code><span class="hljs-attr">jQuery</span> === $ // <span class="hljs-literal">true</span>
+</code></pre></section><section class="slide"  data-pos="6-4-3"><span class="pos">6-4-3</span><p>jQuery achieved its popularity through <strong>four good ideas</strong>:</p>
+<p><img src="resources/diagrams/jquery.svg" alt=""></p>
+<p>We&#39;ll now talk through them one by one!</p>
+</section><section class="slide"  data-pos="6-4-4"><span class="pos">6-4-4</span><p>First off, <strong>using CSS selectors to match elements</strong>.</p>
+<pre><code><span class="hljs-attribute">var firstParagraph</span> = $(<span class="hljs-string">"p:first-child"</span>);
+</code></pre><p>The success of this idea was what <strong>caused <code>querySelector(All)</code> to be added to regular CSS</strong>.</p>
+</section><section class="slide"  data-pos="6-4-5"><span class="pos">6-4-5</span><p>Second, the <strong>façade</strong> - jQuery made <strong>better methods to interact with the DOM</strong>, and ensures that they <strong>work the same in all browsers</strong>:</p>
+<pre><code>firstParagraph.addClass(<span class="hljs-string">"fadeanim"</span>)<span class="hljs-comment">;</span>
+</code></pre></section><section class="slide"  data-pos="6-4-6"><span class="pos">6-4-6</span><p>The <strong>jQuery façade has less value now</strong> since</p>
+<ul>
+<li><strong>browsers are much more standards compliant</strong></li>
+<li><strong>the DOM has been much improved</strong></li>
+</ul>
+<p>But it is <strong>still pretty nice</strong>!</p>
+</section><section class="slide"  data-pos="6-4-7"><span class="pos">6-4-7</span><p>Third, <strong>implicit looping</strong> - if a jQuery selection catches multiple elements, we can still <strong>act on all elements</strong> with a single method call:</p>
+<pre><code><span class="hljs-keyword">var</span> buttons = $(<span class="hljs-string">"button"</span>);
+buttons.setAttribute(<span class="hljs-string">"disabled"</span>);
+</code></pre></section><section class="slide"  data-pos="6-4-8"><span class="pos">6-4-8</span><p>Some methods <strong>make no sense to use on many elements</strong> at once - they will <strong>operate on the first element</strong> in the selection.</p>
+</section><section class="slide"  data-pos="6-4-9"><span class="pos">6-4-9</span><p>Finally, <strong>chaining</strong>. All jQuery methods <strong>return the selection we were working on</strong> which means that instead of this:</p>
+<pre><code><span class="hljs-keyword">var</span> buttons = $(<span class="hljs-string">"button"</span>);
+buttons.setAttribute(<span class="hljs-string">"disabled"</span>);
+</code></pre><p>We can do this:</p>
+<pre><code><span class="hljs-variable">$(</span><span class="hljs-string">"button"</span>).setAttribute(<span class="hljs-string">"disabled"</span>);
+</code></pre></section><section class="slide"  data-pos="6-4-10"><span class="pos">6-4-10</span><p>Although <strong>the need for jQuery has diminished</strong>, it is still very popular.</p>
+<p>And as its API is rather easy, using jQuery can be a better way to learn the DOM than the DOM itself!</p>
+</section><section class="slide"  data-pos="6-4-11"><span class="pos">6-4-11</span><p>So: definitely <strong>learn jQuery</strong>, but make sure to <strong>also understand what is actually going on</strong>. </p>
+<p>Practice from time to time to <strong>do it without jQuery</strong>.</p>
+</section><section class="slide"  data-pos="6-4-12"><span class="pos">6-4-12</span><p>Ending by <strong>zooming out</strong>; this is what you&#39;ll be doing with jQuery most of the time:</p>
+<pre><code>$<span class="hljs-comment">(someSelector)</span>.someMethod<span class="hljs-comment">()</span>;
+</code></pre><p>We </p>
+<ul>
+<li><strong>select some elements</strong>, and</li>
+<li><strong>do something with them</strong></li>
+</ul>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>6-5.</span> Exercise - jQuery</h3>
+      <p>Drinking the coolaid</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="6-5-1"><span class="pos">6-5-1</span><p>Armed with a basic understanding of jQuery, we&#39;re now going to <strong>get started on their bootcamp</strong>!</p>
+<p>It is an <strong>interactive tutorial</strong> somewhat reminiscent of the games we&#39;ve been playing with for other techniques.</p>
+</section><section class="slide"  data-pos="6-5-2"><span class="pos">6-5-2</span><p>Go to <a href="http://try.jquery.com">http://try.jquery.com</a> and you&#39;ll see this:</p>
+<p><img src="resources/images/tryjquery.png" alt=""></p>
+</section><section class="slide"  data-pos="6-5-3"><span class="pos">6-5-3</span><p>Working through the screenshot top to bottom, a challenge consists of:</p>
+<ul>
+<li>an <strong>instruction up top</strong> telling you what to do</li>
+<li><strong>rendered HTML code</strong> with currently selected elements highlighted</li>
+<li>the <strong>HTML code</strong> that has been rendered</li>
+<li>a <strong>console where you enter JS code</strong> and use jQuery</li>
+</ul>
+</section><section class="slide"  data-pos="6-5-4"><span class="pos">6-5-4</span><p>The tutorial does a good job of <strong>gradually introducing new concepts</strong> and <strong>ramping up difficulty</strong>.</p>
+<p>And as <strong>progress is saved</strong> between sessions, there is nothing to lose by <strong>getting started right now</strong>! Try it out for a bit so you get the hang of it, and finish it later if you want!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>6-6.</span> Demo - a community effort</h3>
+      <p>Dynamifying the game</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="6-6-1"><span class="pos">6-6-1</span><p>Let&#39;s try something different - I&#39;ll now lead a <strong>mob programming exercise</strong> where we <strong>together rebuild the game from scratch</strong> using <strong>JavaScript</strong>.</p>
+</section><section class="slide"  data-pos="6-6-2"><span class="pos">6-6-2</span><p>We&#39;ll cover <strong>basic jQuery usage</strong>, but also <strong>how to think</strong> when we <strong>design our data model</strong> and <strong>structure our code</strong>!</p>
+</section>
+</section>
+  </div>
+  
+</div><div class="chaptercontainer">
+  <div class="chapterstart">
+    <span>chapter 7 / 7</span>
+    <h2>Postludium</h2>
+    <p>Tiiime tooo saay goodbyyyye</p>
+  </div>
+  <section class="slide" ><p>Before we say good bye, let&#39;s touch upon what I <strong>haven&#39;t</strong> said!</p>
+</section>
+  <div class="chaptersectionlist">
+    <h3>Sections in this chapter:</h3>
+    <ul>
+      <li>1. Functional programming</li><li>2. Remaining JS secrets</li><li>3. Now what?</li>
+    </ul>
+  </div>
+  <div class="chaptersections">
+    <section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>7-1.</span> Functional programming</h3>
+      <p>Jumping down the rabbit hole</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="7-1-1"><span class="pos">7-1-1</span><p>So - since <strong>functions are first class citizens</strong>, we can <strong>send them around just like any value</strong>.</p>
+<p>Which also means that <strong>a function can take, and/or return, other functions</strong>! Such a function is called a <strong>higher order function</strong>.</p>
+</section><section class="slide"  data-pos="7-1-2"><span class="pos">7-1-2</span><p>As a contrived example, say we have this function:</p>
+<pre><code><span class="hljs-keyword">var</span> spam = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"SPAM!"</span>);
+}
+</code></pre></section><section class="slide"  data-pos="7-1-3"><span class="pos">7-1-3</span><p>And then we have this higher order function:</p>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">repeater</span><span class="hljs-params">(func,times)</span>{</span>
+  <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
+    func();
+  }
+}
+</code></pre></section><section class="slide"  data-pos="7-1-4"><span class="pos">7-1-4</span><p>If we now do this:</p>
+<pre><code class="lang-javascript">repeater(spam,<span class="hljs-number">3</span>);
+</code></pre>
+<p>We would see this in the console:</p>
+<pre><code><span class="hljs-string">"SPAM!"</span>
+<span class="hljs-string">"SPAM!"</span>
+<span class="hljs-string">"SPAM!"</span>
+</code></pre></section><section class="slide"  data-pos="7-1-5"><span class="pos">7-1-5</span><p>To show we can also <strong>return new functions</strong>, take a look at this beauty:</p>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiplier</span><span class="hljs-params">(func,times)</span>{</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    <span class="hljs-keyword">for</span>(var <span class="hljs-built_in">i</span> = <span class="hljs-number">0</span>; <span class="hljs-built_in">i</span> &lt; times; <span class="hljs-built_in">i</span> = <span class="hljs-built_in">i</span> + <span class="hljs-number">1</span>){
+      func();
+    }
+  };
+}
+</code></pre></section><section class="slide"  data-pos="7-1-6"><span class="pos">7-1-6</span><p>Did you see the difference? <code>multiplier</code> doesn&#39;t execute the parameter function, but <strong>returns a new function</strong>!</p>
+<pre><code><span class="hljs-attribute">var tripleSpam</span> = multiplier(spam,3);
+</code></pre><p>If we <strong>execute the returned function</strong> we get the triple spam:</p>
+<pre><code>tripleSpam(); // SPAM! SPAM! SPAM!
+</code></pre></section><section class="slide"  data-pos="7-1-7"><span class="pos">7-1-7</span><p>Functional programming is a <strong>really powerful tool</strong>, and something that is likely to <strong>get you hooked once you have learned it</strong>. We warmly encourage you to explore the subject!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>7-2.</span> Remaining JS secrets</h3>
+      <p>Unspoken words</p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="7-2-1"><span class="pos">7-2-1</span><p>There are a number of things about JavaScript programming that we <strong>haven&#39;t covered yet</strong> and that you need to know about.</p>
+</section><section class="slide"  data-pos="7-2-2"><span class="pos">7-2-2</span><p>I&#39;ll demo them now, but also wanted to <strong>mention them here in the slides</strong> so you can remember later to check them out.</p>
+</section><section class="slide"  data-pos="7-2-3"><span class="pos">7-2-3</span><p>First out - the <strong><code>this</code> and <code>arguments</code> pseudoarguments</strong> to function calls. They&#39;re not really needed, but at the very least you <strong>need to recognize them</strong>.</p>
+</section><section class="slide"  data-pos="7-2-4"><span class="pos">7-2-4</span><p>Next - <strong>closures and scope</strong>. This is a weird one which will bend your minds for time to come. :)</p>
+</section><section class="slide"  data-pos="7-2-5"><span class="pos">7-2-5</span><p>Finally - <strong>JavaScript inheritance</strong>. It is a strange subject, made stranger still by the incursion of <strong>functional programming</strong>!</p>
+</section>
+</section><section class="chaptersection">
+  <section class="sectionheader">
+    <div>
+      <h3><span>7-3.</span> Now what?</h3>
+      <p></p>
+    </div>
+  </section>
+  <section class="slide"  data-pos="7-3-1"><span class="pos">7-3-1</span><p>Again: I&#39;ve given you the grammar, now <strong>learn the vocabulary</strong>! No shortcuts; you must earn your chops by <strong>coding</strong>.</p>
+</section><section class="slide"  data-pos="7-3-2"><span class="pos">7-3-2</span><p><strong>Translate Java exercises to Java and the other way around</strong>. This is an <strong>excellent</strong> way to gain perspective.</p>
+</section><section class="slide"  data-pos="7-3-3"><span class="pos">7-3-3</span><p>If you really want to <strong>devote time to learn JS</strong>, go through the free online book <strong><a href="http://eloquentjavascript.net/">Eloquent JavaScript</a></strong>.</p>
+</section><section class="slide"  data-pos="7-3-4"><span class="pos">7-3-4</span><p>Finally - <strong>don&#39;t be a stranger</strong>! I&#39;d love to know how you&#39;re doing, so don&#39;t hesitate to <strong>reach out down the road</strong>!</p>
+</section><section class="slide"  data-pos="7-3-5"><span class="pos">7-3-5</span><p>Peace out! :)</p>
+</section>
+</section>
+  </div>
+  
+</div>
+  </div>
+</div>
+
+<script type="text/javascript" src="mc2/scripts/reload.js"></script>
+</body>
+</html>

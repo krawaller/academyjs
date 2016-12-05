@@ -3,6 +3,7 @@
     "mc2": "git+https://github.com/edumentab/mc2.git"
   },
   "scripts": {
-    "build": "mc2"
+    "build": "mc2",
+    "print": "mc2-print"
   }
 }
